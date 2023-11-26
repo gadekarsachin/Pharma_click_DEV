@@ -1,0 +1,50 @@
+<div class="eventDiv">
+    <div class="row">
+        <div class="col-12 backArrow">
+            <i class="fa-solid fa-arrow-left" (click)="backButton()"></i>
+        </div>
+    </div>
+
+    <div class="row toggleventRow">
+        <div>
+            <div>
+                <div class="events3Div">
+                    <div class="eventsCol">
+                        <p [class]="upComingEve" (click)="onUpcoming()">UPCOMING</p>
+                        <p [class]="pastEve" (click)="onPastEve()">PAST EVENTS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 noEventCol">
+            <div class="noEventSubCol">
+                <img class="noEveImg" src="./assets/Logos/299096_calendar_clock_icon.svg" alt="Calender Icon">
+            </div>
+        </div>
+        <div class="col-12 eveStatusCol">
+            <p class="eveStatus">{{eventStatus}}</p>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8 eventDesc">
+                    <p>Lorem ipsum dolor sit amet consectetur</p>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row submitRow">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="LoginSubmit">
+                <button class="btn btn-primary submitBtn">Explore Events</button>
+                <i class="fa-solid fa-arrow-right submitIcon"></i>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>

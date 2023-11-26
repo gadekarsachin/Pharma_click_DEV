@@ -1,0 +1,105 @@
+
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 col-12 container-center"></div>
+      <div class="col-md-6 col-sm-12 col-12 container-center">
+        <div class="modal1" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content modal-content-2">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-2">
+                            <i class="fa fa-arrow-left fa-2x" (click)="goBack()" aria-hidden="true"></i>
+                        </div>
+                        <div class="modal-header col-10">
+                            <h5 class="modal-title" id="applyModalLabel">Apply Job Form</h5>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]="jobApplyForm">
+        
+                            <div class="row">
+                                <div class="col-md-12 martop-10">
+                                    <label class="gray-shade font-normal">TO </label>
+                                    <input [value]="CompanyemailId" type="text" name="to" id="to" class="form-control"
+                                        placeholder="Enter Email Id" formControlName="to" />
+        
+                                    <div *ngIf="jobApplyForm.controls['to'].invalid && (jobApplyForm.controls['to'].dirty || jobApplyForm.controls['to'].touched)"
+                                        class="error-message">
+                                        <div *ngIf="jobApplyForm.controls['to'].errors.required">
+                                            <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter Email Id
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-12 martop-10">
+                                    <label class="gray-shade font-normal">CC</label>
+                                    <input type="text" name="cc" id="cc" class="form-control" placeholder="Enter Email Id"
+                                        formControlName="cc" />
+        
+                                    <div *ngIf="jobApplyForm.controls['cc'].invalid && (jobApplyForm.controls['cc'].dirty || jobApplyForm.controls['cc'].touched)"
+                                        class="error-message">
+                                        <div *ngIf="jobApplyForm.controls['cc'].errors.required">
+                                            <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter Email Id
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="col-md-12 martop-10">
+                                    <label class="gray-shade font-normal">From </label>
+                                    <input type="text" name="from" id="from" class="form-control" placeholder="Enter Email Id"
+                                        formControlName="from" />
+        
+                                    <div *ngIf="jobApplyForm.controls['from'].invalid && (jobApplyForm.controls['from'].dirty || jobApplyForm.controls['from'].touched)"
+                                        class="error-message">
+                                        <div *ngIf="jobApplyForm.controls['from'].errors.required">
+                                            <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter Email Id
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="col-md-12 martop-10">
+                                    <label class="gray-shade font-normal"> Attach CV </label>
+                                    <input type="file" name="attachment" id="attachment" class="form-control"
+                                        placeholder="Attach CV" formControlName="attachment"
+                                        (change)="onUploadChange($event)" />
+        
+                                    <div *ngIf="jobApplyForm.controls['attachment'].invalid && isSubmitted"
+                                        class="error-message">
+                                        <div *ngIf="jobApplyForm.controls['attachment'].errors.required" class="error-msg">
+                                            <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please Attach File
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 martop-10">
+                                    <label class="gray-shade font-normal">Subject </label>
+                                    <input type="text" name="Subject" id="Subject" class="form-control"
+                                        placeholder="Enter Email Id" formControlName="Subject" />
+                                </div>
+        
+                                <div class="col-md-12 martop-10">
+                                    <label class="gray-shade font-normal"> Email Body </label>
+                                    <textarea type="text" name="body" id="body" class="form-control"
+                                        placeholder="Enter Email Body" formControlName="body" maxlength="250" rows="5">
+                                </textarea>
+                                    <div *ngIf="jobApplyForm.controls['body'].invalid && isSubmitted" class="error-message">
+                                        <div *ngIf="jobApplyForm.controls['body'].errors.required" class="error-msg">
+                                            <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter Email Body
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </form>
+                    </div>
+                    <div class="modal-footer text-center mt-4">
+                        <button type="button" class="btn-danger btn1 mx-3" data-bs-dismiss="modal"
+                            (click)="goBack()">Cancel</button>
+                        <button type="submit" class="btn btn-success btn2" (click)="ApplyJob()">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="col-md-3 col-sm-6 col-12 container-center"></div>
+    </div>
+  </div>
+  

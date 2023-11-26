@@ -1,0 +1,105 @@
+<div class="main login_main_wrapper">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12 login_inner_wrapper">
+                <div class="imgDiv main_logo mb-5">
+                    <img class="mainImg img-fluid" src="./assets/images/Brand_logo01.png" alt="Pharma Logos">
+                </div>
+                <div class="login_form_wrapper">
+                    <form [formGroup]="myForm" (ngSubmit)="onSubmitForm()">
+                        <h3 class="main_heading_text text-center mb-5">login</h3>
+                        <div class="mb-3 mt-5">
+                            <div class="inputContainerMail input_main_group">
+                                <div class="input_group">
+                                    <i class="fa-solid fa-envelope loginImage "></i>
+                                </div>
+                                <input class="inputMail" id="username" type="email" formControlName="username" required
+                                    [ngClass]="{'is-invalid':  f.username.errors}" placeholder="abc@email.com">
+                                
+                                <div *ngIf=" f.username.errors?.required && (f.username.dirty || f.username.touched)"
+                                    class="invalid-feedback mx-2">Email is required</div>
+                                <div *ngIf=" f.username.errors?.pattern" class="invalid-feedback mx-2">Please Enter
+                                    valid email.</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="inputContainerPas input_main_group">
+                                <div class="input_group">
+                                    <i class="fa-solid fa-lock loginImage "></i>
+                                </div>
+                                <input class="inputPass  " id="pass" type="password" formControlName="password" required
+                                    [ngClass]="{'is-invalid': f.password.errors}" placeholder="Your Password">
+                               
+                                <span class="fa fa-eye-slash loginImage eye " aria-hidden="true"></span>
+
+                                <div *ngIf="f.password.errors?.required && (f.password.dirty || f.password.touched)"
+                                    class="invalid-feedback mx-2">Password is required</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class=" mt-2"id="warning">
+                                <h4 class="text-danger invalid_text">Invalid UserId And Password </h4>
+                            </div>
+                        </div>
+                        <div class="row rememberRow justify-content-between m-0">
+                            <div class="col-6 rememberCol text-left">
+                                <div class="custom-control custom-switch form-check form-switch">
+                                    <input type="checkbox" class="custom-control-input form-check-input inputSwitch"
+                                        id="remember_me">
+                                    <label class="custom-control-label" for="customSwitch1">Remember Me</label>
+                                </div>
+                            </div>
+                            <div class="col-6 forgotDiv text-right">
+                                <a class="forgotLink " routerLink="/auth/forgot-password">Forgot Password ?</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-check mt-3">
+                                <input type="checkbox" class="form-check-input mt-2 " id="accepted1"
+                                    formControlName="accepted1" required
+                                    [ngClass]="{ 'is-invalid': isSubmitted && f.accepted1.errors }" />
+                                <label class="form-check-label mx-3 " for="check1 ">I have read and<a
+                                        routerLink="/auth/terms-condition"
+                                        class="text-decoration-none terms_text">&nbsp;Accept Terms & Conditions</a>
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="LoginSubmit mt-3">
+                                <button class="btn  submitBtn " id="id_complete1" [disabled]="myForm.invalid">SIGN
+                                    IN</button>
+                                <i class=" fa-solid fa-arrow-right submitIcon "></i>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5 justify-content-center login_signup_text">
+            <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="orpart ">OR</h1>
+                    </div>
+                    <div class="col-12">
+                        <div class="socialLogin text-center">
+                            <span class="askAccountTitle ">Don't have an account?</span>
+                            <a class="signUpLink " routerLink="/auth/register " (click)="signUp() ">Sign Up</a>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-5 text-center">
+                        <div class="socialLogin_button">
+                            <a (click)="signInFB() ">
+                                <img src="../../../../../assets/icons/icons8-google.svg " alt="Google Icon ">
+                                <label class="socialTitle ">Login With Google</label>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

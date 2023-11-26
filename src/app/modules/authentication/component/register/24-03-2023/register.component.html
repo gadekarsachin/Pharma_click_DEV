@@ -1,0 +1,168 @@
+<div class="main">
+    <div class="row inputRow">
+
+        <div class="col-2 inputFirstRow"> <i class="fa-solid fa-arrow-left " (click)="goBack()"></i></div>
+        <div class="col-8 text-center "> <img src="../../../../../assets/images/Brand_logo.png" alt="" class="mainimg"></div>
+        <div class="col-2"></div>
+        <div class="col-12">
+            <label class="inputLabel" for="">Sign Up</label>
+        </div>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmitForm()">
+            <div class="col-12 inputDesign">
+                <div class="inputContainerFName">
+                    <input class="inputFName" formControlName="FirstName" type="text" required [ngClass]="{'is-invalid': isSubmitted && f.FirstName.errors}" placeholder="First Name">
+                    <i class="far fa-user loginImage"></i>
+                    <div *ngIf="isSubmitted && f.FirstName.errors?.required" class="invalid-feedback text-danger">First name is required</div>
+                </div>
+            </div>
+            <div class="col-12 inputDesign">
+                <div class="inputContainerLName">
+                    <input class="inputLName" type="text" formControlName="LastName" type="text" required [ngClass]="{'is-invalid': isSubmitted && f.LastName.errors}" placeholder="Last Name">
+                    <i class="far fa-user loginImage"></i>
+                    <div *ngIf="isSubmitted && f.LastName.errors?.required" class="invalid-feedback text-danger">Last name is required</div>
+                </div>
+            </div>
+
+            <div class="col-12 inputDesign">
+                <div class="inputContainerLName">
+                    <input class="inputLName" type="text" formControlName="userName" type="text" required [ngClass]="{'is-invalid': isSubmitted && f.userName.errors}" placeholder="User Name">
+                    <i class="far fa-user loginImage"></i>
+                    <div *ngIf="isSubmitted && f.userName.errors?.required" class="invalid-feedback text-danger">User name is required</div>
+                </div>
+            </div>
+
+            <div class="col-12 inputDesign">
+                <div class="inputContainerMob">
+                    <select name="" id="" class="selectIsd form-control" (change)="selectIsd($event)">
+                            <option [value]="isd.dial_code"  class="isdOpt" *ngFor="let isd of IsdCodes"> {{isd.code}} &nbsp;  {{isd.dial_code}} </option>
+                    </select>
+                    <input class="inputMob" type="text" formControlName="MobileNumber" required [ngClass]="{'is-invalid': isSubmitted && f.MobileNumber.errors}" placeholder="Mobile Number">
+                    <i class="fa fa-mobile mobIcon"></i>
+                   
+                    <div *ngIf="isSubmitted && f.MobileNumber.errors?.required" class="invalid-feedback text-danger">Mobile Number is required</div>
+                    <div *ngIf="isSubmitted && f.MobileNumber.errors?.pattern" class="invalid-feedback">Please Enter valid Mobile Number.</div>
+                </div>
+            </div>
+            <div class="col-12 inputDesign ">
+                <div class="inputContainerMail ">
+                    <input class="inputMail " type="email " formControlName="Email" required [ngClass]="{'is-invalid': isSubmitted && f.Email.errors}" placeholder="abc@email.com ">
+                    <i class="fa-solid fa-envelope loginImage"></i>
+                    <div *ngIf="isSubmitted && f.Email.errors?.pattern" class="invalid-feedback text-danger">Please Enter valid email.</div>
+                    <div *ngIf="isSubmitted && f.Email.errors?.required" class="invalid-feedback">Email is required</div>
+                </div>
+
+            </div>
+            <div class="col-12 inputDesign ">
+                <div class="inputContainerOrg ">
+                    <input class="inputOrg " type="text " formControlName="CompanyName" type="text" required [ngClass]="{'is-invalid': isSubmitted && f.CompanyName.errors}" placeholder="Company Name ">
+                    <i class="fa fa-building loginImage "></i>
+                    <div *ngIf="isSubmitted && f.CompanyName.errors?.required" class="invalid-feedback text-danger">Company Name is required</div>
+                </div>
+            </div>
+            <div class="col-12 inputDesign ">
+                <div class="inputContainerEdu ">
+                    <input class="inputEdu " type="text " formControlName="Designation" type="text" required [ngClass]="{'is-invalid': isSubmitted && f.Designation.errors}" placeholder="Designation ">
+                    <i class="fas fa-user-tie  loginImage "></i>
+                    <div *ngIf="isSubmitted && f.Designation.errors?.required" class="invalid-feedback ">Designation is required</div>
+                </div>
+            </div>
+            <!-- <div class="col-12 inputDesign ">
+                <div class="inputContainerRole ">
+                    <select name=" " id=" " class="form-control inputRole " formControlName="UserType" type="text" required [ngClass]="{'is-invalid': isSubmitted && f.UserType.errors}">
+                        <option value="" disabled selected>Select your option as user</option>
+                        <option value="User">User</option>
+                <option value="Company">Company</option>                
+            </select>
+                    <i class="far fa-user loginImage "></i>
+                    <div *ngIf="isSubmitted && f.UserType.errors?.required" class="invalid-feedback">User Type is required</div>
+                </div>
+            </div> -->
+            <div class="col-12 inputDesign ">
+                <div class="inputContainerPas ">
+                    <input class="inputPass " type="password " formControlName="Password" type="text" required [ngClass]="{'is-invalid': isSubmitted && f.Password.errors}" placeholder="Your Password ">
+                    <i class="fa-solid fa-lock loginImage "></i>
+                    <div *ngIf="isSubmitted && f.Password.errors?.required" class="invalid-feedback">Password is required</div>
+                    <div *ngIf="isSubmitted && f.Password.errors?.pattern" class="invalid-feedback text-danger">Password must contain more than 8 characters, 1 numeric, 1 upper case letter, and 1 special character($@$!%*?&).</div>
+                </div>
+            </div>
+            <div class="col-12 inputDesign ">
+                <div class="inputContainerConfPas ">
+                    <input class="inputConfPass " type="password " formControlName="ConfirmPassword" type="text" required [ngClass]="{'is-invalid': isSubmitted && f.ConfirmPassword.errors}" placeholder="Confirm Password ">
+                    <i class="fa-solid fa-lock loginImage "></i>
+                    <div *ngIf="isSubmitted && f.ConfirmPassword.errors?.required" class="invalid-feedback">Confirm is required</div>
+                    <div *ngIf="isSubmitted && f.ConfirmPassword.errors?.confirmPasswordValidator
+                    
+                    
+                    " class="invalid-feedback text-danger">Password Confirmation must match password</div>
+                </div>
+            </div>
+
+
+            <!-- <div class="mt-5">
+                <div class="form-check checkbox">
+                    <input type="checkbox" class="form-check-input mt-2" name="option1" formControlName="acceptTerms"  [ngClass]="{ 'is-invalid': isSubmitted && f.acceptTerms.invalid }" />
+                    <label class="mx-3 ">Accept Terms & Conditions</label>
+                    <div *ngIf="isSubmitted && f.acceptTerms.errors" class="invalid-feedback mx-5">Accept Ts & Cs is required</div>
+                </div>
+            </div> -->
+
+
+            <div class="row submitRow ">
+                <div class="col-2 "></div>
+                <div class="col-8 ">
+                    <div class="LoginSubmit ">
+                        <!-- <button class="btn  submitBtn " id="id_complete2" [disabled]="myForm.invalid ">SIGN UP</button>-->
+                        <button class="btn  submitBtn " id="id_complete2">SIGN UP</button>
+                        <i class="fa-solid fa-arrow-right submitIcon "></i>
+                    </div>
+                </div>
+                <div class="col-2 "></div>
+            </div>
+        </form>
+    </div>
+    <!-- <div class="row orRow ">
+        <div class="col-12 ">
+            <h1 class="orPart ">OR</h1>
+        </div>
+    </div> -->
+    <!-- <div class="row ">
+        <div class="col-1 "></div>
+        <div class="col-10 socialCol ">
+            <div class="socialLogin ">
+                <img src="../../../../../assets/icons/icons8-google.svg " alt="Google Icon ">
+                <label class="socialTitle ">Login With Google</label>
+            </div>
+        </div>
+        <div class="col-1 "></div>
+    </div> -->
+    <!-- <div class="row mt-2 ">
+        <div class="col-1 "></div>
+        <div class="col-10 socialCol ">
+            <div class="socialLogin ">
+                <img src="../../../../../assets/icons/icons8-linkedin-circled.svg " alt="Linkdin Icon ">
+                <label class="socialTitle ">Login With Linkedin</label>
+            </div>
+        </div>
+        <div class="col-1 "></div>
+    </div> -->
+    <!-- <div class="row mt-2 ">
+        <div class="col-1 "></div>
+        <div class="col-10 socialCol ">
+            <div class="socialLogin ">
+                <img src="../../../../../assets/icons/icons8-facebook.svg " alt="Facebook Icon ">
+                <label class="socialTitle ">Login With Facebook</label>
+            </div>
+        </div>
+        <div class="col-1 "></div>
+    </div> -->
+    <div class="row my-5 ">
+        <div class="col-1 "></div>
+        <div class="col-10 ">
+            <div class="socialLogin ">
+                <label class="askAccountTitle ">Already have an account?</label>
+                <a class="signUpLink " routerLink="/auth/login " (click)="signIn() ">Sign In</a>
+            </div>
+        </div>
+        <div class="col-1 "></div>
+    </div>
+</div>

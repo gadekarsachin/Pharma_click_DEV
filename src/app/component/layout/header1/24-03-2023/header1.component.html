@@ -1,0 +1,155 @@
+<div [class]="classMenu">
+    <div class="main1" id="main">
+        <div class="nav__links" id="closN">
+            <a class="closebtn" (click)="closeNav()"><i class="fa-solid fa-xmark"></i></a>
+
+            <div class="profile justify-content-center mb-2">
+                <!-- <img class="profileImg" src="../../../../assets/images/profile.png" alt="Profile Image"> -->
+                <span class="profileImgBack"><img class="profilepic" [src]="base64textString" alt="Profile Image" onerror="this.src='../../../../../assets/images/user.png'"></span>
+                <h2 class="profileTitle mt-2 ">{{profileName}}</h2>
+            </div>
+            <ul class="mx-auto">
+                <li><i class="far fa-user px-2"></i> <a routerLink="/profile" class="px-2">My Account</a>
+                </li>
+                <li><i class="fa fa-briefcase px-2"></i>
+                    <a routerLink="/profile" class="px-2">Job Profile</a>
+                </li>
+                <li>
+                    <i class="fa fa-bookmark-o px-3" aria-hidden="true"></i>
+                    <a class="feat-btn">Saved Items
+                    <!-- <span class="fas fa-caret-down first"></span> -->
+                    <span class="fa-solid fa-angle-right first  px-3" aria-hidden="true"></span>
+                    </a>
+                    <ul class="feat-show">
+                        <li><a routerLink="/GetSaveItem/Company">Companies</a></li>
+                        <li><a routerLink="/GetSaveItem/News">News</a></li>
+                        <li><a routerLink="/GetSaveItem/Events">Events</a></li>
+                        <li><a>Blogs</a></li>
+                        <li><a>Jobs</a></li>
+                    </ul>
+                </li>
+                <li><i class=" fa-solid fa-message px-2 " style="font-weight: normal; "></i> <a class="px-2 ">Chat</a>
+                </li>
+                <li>
+                    <i class="fa fa-calendar-o px-2 "></i> <a class="px-2 ">Calender</a>
+                </li>
+                <li>
+                    <i class="fa fa-star-o px-2 "></i> <a class="px-2 ">Rated Companies</a>
+                </li>
+                <li>
+                    <i class="fa fa-thumbs-o-up px-2 "></i> <a class="px-2 ">Following</a>
+                </li>
+                <li>
+                    <i class="fa fa-cog px-3" aria-hidden="true"></i>
+                    <a class="feat-btn1">Setting
+                    <!-- <span class="fas fa-caret-down first"></span> -->
+                    <span class="fa-solid fa-angle-right first1  px-3" aria-hidden="true"></span>
+                    </a>
+                    <ul class="feat-show1">
+                        <li><a>Notification</a></li>
+                        <li><a routerLink="/auth/change-password">Change Password</a></li>
+                        <li><a routerLink="/alert">Alert</a></li>
+                        <li><a>Rate Us</a></li>
+                        <li (click)="moveToPrivacy()">
+                            <a routerLink="/privacyPolicy ">Privacy & policy</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <i class="far fa-circle-question px-2 "></i> <a class="px-2 ">Help & FAQs</a>
+                </li>
+                <li>
+                    <i class="fa fa-envelope-o px-2 "></i> <a routerLink="/contact " class="px-2 ">Contact Us</a>
+                </li>
+                <li>
+                    <a class="px-2 " (click)="logout() "> <i class="fas fa-arrow-right-to-bracket px-2 "></i> Sign Out</a>
+                </li>
+            </ul>
+
+
+        </div>
+
+        <div class=" nav__overlay " (click)="closeMenu() "></div>
+    </div>
+
+</div>
+<div class=" mainheder pb-2 ">
+
+    <!-- Header -->
+
+    <div class="row navs " id="mobile_header">
+        <div class="col-4 ">
+            <!-- <div class="menuDiv " (click)="openMenu() ">
+                <i class="fa fa-bars menuIcon mx-4 mt-2 " aria-hidden="true "></i>
+            </div> -->
+
+            <div class="menuDiv ">
+                <i (click)="openMenu() " class="fa fa-bars menuIcon mx-4 mt-2 " aria-hidden="true "></i>
+            </div>
+
+        </div>
+        <div class="col-4 ">
+            <img src="./assets/images/Brand_logo01.png " class="img-fluid logimg mt-3 " alt="OrgLogo ">
+        </div>
+
+        <div class="col-4 bell ">
+            <div class="notifier new float-end mx-5 ">
+                <a routerLink="/notifications">
+                    <i class="bell1 fa fa-bell-o " aria-hidden="true "></i>
+                    <div class="badge ">.</div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class=" mainheder pb-2 " >
+
+        <!-- <div class="row navs"id="menu">
+            <div class="col-4" >
+                <div class="menuDiv">
+                    <i class="fa fa-bars menuIcon mx-4 mt-2 " aria-hidden="true " (click)="openMenu() "></i>
+                </div>
+            </div>
+            <div class="col-4 ">
+                <img src="../../../../assets/images/Brand_logo01.png " class="img-fluid logimg mt-3 " alt="OrgLogo ">
+            </div>
+            <div class="col-2 ">
+                <div class="menuDiv " (click)="openSearch() ">
+                    <i class="fa fa-search menuIcon mt-2 mx-2 float-end " aria-hidden="true "></i>
+                </div>
+            </div>
+            <div class="col-2 bell ">
+                <div class="notifier new ">
+                    <a routerLink="/notifications"><i class="bell1 fa fa-bell-o " aria-hidden="true "></i></a>
+                    <div class="badge ">.</div>
+                </div>
+            </div>
+    
+        </div> -->
+        <div class="row navs1 " id="hamburger">
+            
+            <div class="col-lg-3 ">
+                <img src="./assets/images/Brand_logo01.png " class="img-fluid logimg1 mt-3 " alt="OrgLogo ">
+            </div>
+            <div class="col-lg-4 ">
+                <div class="menuDiv">
+                    <i class="fa fa-search menuIcon mt-2 mx-2 float-end " aria-hidden="true "></i>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="menuDiv1">
+                    <i class="fa fa-bars menuIcon mx-4 mt-2 " aria-hidden="true " (click)="openMenu() "></i>
+                </div>
+            </div>
+            <div class="col-lg-1 bell ">
+                <div class="notifier new ">
+                    <a routerLink="/notifications"><i class="bell1 fa fa-bell-o " aria-hidden="true "></i></a>
+                    <div class="badge ">.</div>
+                </div>
+            </div>
+    
+        </div>
+    
+</div>
+
+<!-- <app-navbar [classList]="classList " (toggleEvent)="receiveMessage($event) "></app-navbar> -->

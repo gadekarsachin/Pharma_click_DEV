@@ -1,0 +1,108 @@
+<div class="container-fluid main_nav_bar">
+    <div class="container main_nav_bar_inner">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-3 text-left">
+                <div class="menu_icon_header">
+                    <button (click)="openMenu()"><i class="fa fa-bars menuIcon" aria-hidden="true "></i></button>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-6 text-center">
+                <div class="menu_logo">
+                    <img src="../../../../assets/images/Brand_logo.png" class="img-fluid logimg" alt="Pharma Click Logo ">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-3 text-right">
+                <div class="d-flex align-items-center justify-content-end">
+                    <div class="search_menu mr-2">
+                        <div class="menuDiv">
+                            <a (click)="openSearch() ">
+                                <i class="fa fa-search menuIcon mt-2 mx-2 float-end " aria-hidden="true "></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="notification_icon ">
+                        <a routerLink="/notifications">
+                            <i class="fa fa-bell-o" aria-hidden="true "></i>
+                            <div class="badge ">.</div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div [class]="classMenu" id="side_menu_drawer">
+        <div class="main1" id="sideNavClose">
+            <div class="nav__links" id="closN">
+                <a class="closebtn" (click)="closeNav()">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+                <div class="profile justify-content-start">
+                    <span class="profileImgBack">
+                        <img class="profilepic" [src]="base64textString" alt="Profile Image"
+                            onerror="this.src='../../../../../assets/images/user.png'" />
+                    </span>
+                    <h2 class="profileTitle ">{{profileName}}</h2>
+                </div>
+                <ul class="mx-auto">
+                    <li><i class="far fa-user"></i> <a routerLink="/profile" class="">My Account</a>
+                    </li>
+                    <li><i class="fa fa-briefcase "></i>
+                        <a routerLink="/profile" class="">Job Profile</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                        <a class="feat-btn">Saved Items
+                            <span class="fa-solid fa-angle-right first " aria-hidden="true"></span>
+                        </a>
+                        <ul class="feat-show">
+                            <li><a routerLink="/GetSaveItem/Company">Companies</a></li>
+                            <li><a routerLink="/GetSaveItem/News">News</a></li>
+                            <li><a routerLink="/GetSaveItem/Events">Events</a></li>
+                            <li><a>Blogs</a></li>
+                            <li><a>Jobs</a></li>
+                        </ul>
+                    </li>
+                    <li><i class=" fa-solid fa-message  " style="font-weight: normal; "></i> <a class=" ">Chat</a>
+                    </li>
+                    <!-- <li>
+                        <i class="fa fa-calendar-o  "></i> <a class=" ">Calender</a>
+                    </li> -->
+                    <li>
+                        <i class="fa fa-star-o  "></i> <a class=" ">Rated Companies</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-thumbs-o-up  "></i> <a class=" ">Following</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                        <a class="feat-btn1">Setting
+                            <span class="fa-solid fa-angle-right first1" aria-hidden="true"></span>
+                        </a>
+                        <ul class="feat-show1">
+                            <li><a>Notification</a></li>
+                            <li><a routerLink="/auth/change-password">Change Password</a></li>
+                            <li><a routerLink="/alert">Alert</a></li>
+                            <li><a>Rate Us</a></li>
+                            <li (click)="moveToPrivacy()">
+                                <a routerLink="/privacyPolicy ">Privacy & policy</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="far fa-circle-question  "></i> <a class=" ">Help & FAQs</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope-o  "></i> <a routerLink="/contact " class=" ">Contact Us</a>
+                    </li>
+                    <li>
+                        <a class=" " (click)="logout() "> <i class="fas fa-arrow-right-to-bracket  "></i> Sign
+                            Out</a>
+                    </li>
+                </ul>
+            </div>
+            <div class=" nav__overlay " (click)="closeMenu() "></div>
+        </div>
+    </div>
+</div>
+<app-search [classSearch]="classSearch " (toggleEvent)="receiveSearchMesg($event) "></app-search>

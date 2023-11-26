@@ -1,0 +1,22 @@
+<div [class]="classSearch" id="event_search_wrapper">
+
+    <div class="nav__links">
+
+        <form name="frm" #frm="ngForm" (ngSubmit)="getsearchinfo(frm)">
+            <div class="my-2  mx-auto">
+                <div class="fontuser">
+                    <label class="mx-3 my-3">Search Events By </label>
+                    <input type="text" placeholder="Title / Location / Description" name="keyword" #keyword="ngModel" ngModel>
+                    <!-- <i class="mx-3 fas fa-regular fa-location-dot"></i> -->
+                </div>
+            </div>
+
+            <div class=" text-center mt-3 ">
+                <button class="btn btn-primary btn-block mx-auto " (click)="closesearch() ">Confirm</button>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="nav__overlay " (click)="closesearch() "></div>
+</div>

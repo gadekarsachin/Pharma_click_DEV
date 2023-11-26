@@ -1,0 +1,144 @@
+.Parent_Div{
+    height: 69vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.sub_div{
+    position: fixed;
+    background: url(../../../../../assets/images/background.png);
+}
+.fa-arrow-left{
+    /* color: black; */
+    font-size: 15px;
+}
+.compTitle{
+    height: 8vh;
+    vertical-align: middle;    
+}
+img{
+    height: 8vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.comp_name h4{
+    font-family: 'Pensum Sans';
+    font-weight: bold;
+    text-align: center;
+    font-size: 22px;
+}
+
+.fa-bookmark-o {
+/* color: #8397A5; */
+font-size: 15px;
+margin-left: 15px;
+}
+
+
+
+.info_nav{
+    font-size: 12px;
+    font-family: 'Pensum Sans';    
+    margin: 10px 5px 10px 5px;
+}
+
+
+/* .nav-tabs{   
+    border-color:rgb(72, 123, 156); 
+} */
+.nav-link{
+   
+    padding-left: 5px;
+    padding-right: 5px;
+    /* border-bottom-color: transparent; */
+    color: #8397A5;
+
+}
+  .nav-tabs > li > .nav-link.active {
+    /* border-color: rgb(72, 123, 156);
+    border-bottom-color: transparent; */
+    font-weight: bold;
+    /* color: rgb(72, 123, 156);
+    border-left-color: rgb(72, 123, 156);
+    border-right-color: rgb(72, 123, 156);
+    border-top-color: rgb(72, 123, 156); */
+    
+ } 
+
+.all_cont{
+    margin-top: 155px;
+}
+.desc{
+    font-family: 'Pensum Sans';
+    font-size: 12px;
+}
+.heading{
+    font-weight: bold;
+    font-size: 17px;
+}
+.prdct_name{
+    font-family: 'Pensum Sans'; 
+    font-size: 13px ;
+  
+}
+
+table tr{
+   border-bottom: 1px solid lightgray;
+}
+.cont_all{
+    font-family: 'Pensum Sans';
+}
+
+.fa-user-circle{
+    color: #8397A5;
+    font-size: 17px;
+}
+
+.name h5{
+    font-size: 16px;
+    line-height: 0.8;
+    font-weight: bold;
+}
+
+.name .mang{
+    font-size: 14px;
+    line-height: 0.8;
+    font-weight: bold;
+    
+}
+
+.add_head{
+font-size: 13px;
+font-weight: bold;
+margin-left: 29px;
+}
+
+.add{
+    font-size: 12px;
+    margin-left:29px ;
+    line-height: 1;
+}
+
+.fa-envelope-square{
+    font-size: 18px; 
+}
+.star{
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Pensum Sans'; 
+}
+.share{
+    font-size: 13px;  
+    color: rgb(33, 78, 108);
+    font-weight: bold;
+}
+.share span{
+    margin-left: 2px;
+}
+.iconBox{
+    color: rgb(33, 78, 108);
+    text-align: center;
+    font-weight: bold;
+}

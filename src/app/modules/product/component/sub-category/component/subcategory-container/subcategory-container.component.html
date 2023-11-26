@@ -1,0 +1,24 @@
+<div class="container d-flex justify-content-center">
+    <div class="d-flex justify-content-between w-100 row flex-wrap">
+        <div
+            class="cards d-flex"
+            *ngFor="let category of subCategory"
+        >
+            <div class="card-body col-xs-12 col-xs-6 col-md-4">
+                <a
+                    routerLink="/home/product/product-list"
+                    routerLinkActive="active"
+                >
+                    <img
+                        class="d-flex justify-content-center align-items-center py-2"
+                        src="{{category.url}}"
+                        alt="..."
+                    >
+                </a>
+                <a routerLink="/home/product/product-list">
+                    <h3 class="d-flex justify-content-center text-align-center">{{category.title}}</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div *ngFor="let profile of profiles" class="row mainRow">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-3 imgCol">
+                <img class="profileImg" src="../../../../../assets/images/Dipak1-1.JPG" alt="Profile Image">
+            </div>
+            <div class="col-9">
+                <h2 class="profTitle">{{profile['candidateName']}}</h2>
+                <p class="profDesc">{{profile['description']}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-6 text-end">
+                        <div class="btnCol">
+                            <button class="btn btn-outline-primary actionBtn">View Profile</button>
+                            <i class="fas fa-user btnIcon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 text-start">
+                        <div class="btnCol">
+                            <button class="btn btn-outline-danger actionBtn">Delete</button>
+                            <i class="fas fa-trash btnIcon2"></i>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

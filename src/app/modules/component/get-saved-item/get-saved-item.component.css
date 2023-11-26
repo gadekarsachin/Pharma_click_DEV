@@ -1,0 +1,327 @@
+.company_details_header {
+    background-color: var(--thm-white);
+    padding: 10px 0;
+    margin-bottom: 15px;
+}
+
+.company_details_header .logo_image img {
+    width: 160px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.company_details_header .left_arrow {
+    text-align: right;
+}
+
+.company_details_header .right_arrow {
+    text-align: left;
+}
+
+.company_details_header .right_arrow i {
+    margin: 0px 8px;
+}
+
+.company_details_header .right_arrow i,
+.company_details_header .left_arrow i {
+    font-size: 27px;
+    color: var(--thm-black);
+    cursor: pointer;
+}
+
+.column_bg_border {
+    background-color: var(--thm-white);
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid #bfbfbf;
+    box-shadow: 1px 1px 15px 1.5px rgba(121, 119, 119, 0.15);
+}
+
+.main_event_list {
+    background-color: #f8f4f4;
+    /* height: 105px; */
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.main_event_list .event_date_bg {
+    background-color: var(--thm-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.main_event_list .event_date_bg h3 {
+    color: var(--thm-white);
+    font-size: 16px;
+}
+
+.main_event_list .event_details {
+    padding: 10px;
+}
+
+.main_event_list .event_details .event_name {
+    font-size: 17px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--thm-black);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.main_event_list {
+    height: 105px;
+}
+
+.main_event_list .event_details .Venue_location i {
+    font-size: 16.5px;
+    color: var(--thm-color);
+    margin-right: 10px;
+}
+
+.main_event_list .event_details .Venue_location {
+    font-size: 15px;
+    color: var(--thm-black);
+}
+
+@media only screen and (max-width: 991.5px) {
+
+    .company_details_header .logo_image img {
+        width: 135px;
+    }
+
+    .company_details_header .right_arrow i,
+    .company_details_header .left_arrow i {
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (min-width: 290px) and (max-width: 767px) {
+    .company_details_header .left_arrow {
+        text-align: left;
+    }
+
+    .company_details_header .right_arrow {
+        text-align: right;
+    }
+
+    .company_details_header .left_arrow {
+        padding-left: 15px;
+    }
+
+    .company_details_header .right_arrow {
+        padding-right: 15px;
+    }
+
+    .company_details_header .right_arrow i {
+        margin: 0px 10px 0 0;
+    }
+
+    .company_details_header .right_arrow i,
+    .company_details_header .left_arrow i {
+        font-size: 19px;
+    }
+
+    .company_details_header {
+        position: fixed;
+        margin-bottom: 5px;
+        top: 0;
+        left: 0;
+        height: 70px;
+        background-color: var(--thm-white) !important;
+        z-index: 999;
+    }
+
+    .column_bg_border {
+        background-color: transparent;
+        border: 1px solid transparent;
+        box-shadow: none;
+    }
+
+}
+
+.navs1 {
+    height: 10vh;
+}
+
+.fa-arrow-left11 {
+    font-size: 18px;
+    color: black;
+}
+
+.logimg {
+    height: 6.6vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.compny_Div {
+    overflow: auto;
+    /* height: 48vh; */
+    height: auto;
+    font-family: 'Pensum Sans';
+}
+
+.cols {
+    background-color: rgb(240, 237, 237);
+    border-radius: 15px;
+    height: max-content;
+}
+
+.Sort {
+    margin-top: 8px;
+}
+
+h5 {
+    font-weight: bold;
+    font-size: 15px;
+    font-family: Pensum Sans;
+    color: black;
+    text-transform: lowercase;
+}
+
+h5::first-letter {
+    text-transform: capitalize;
+}
+
+.fa-star-o {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.allrate {
+    background-color: rgb(32, 72, 99);
+    margin-top: -8px;
+    padding-right: 9px;
+    padding-left: 3px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-weight: bold;
+}
+
+.rate {
+    font-size: 13px;
+    color: white;
+    font-family: 'Times New Roman';
+}
+
+.cat_type {
+    font-size: 12px;
+    color: #878d91;
+    ;
+    line-height: 1;
+    font-family: Pensum Sans;
+}
+
+.descrip {
+    font-size: 10px;
+    color: black;
+    font-family: Pensum Sans;
+    text-transform: lowercase;
+}
+
+.fa-map-marker {
+    color: rgb(32, 72, 99);
+}
+
+.city {
+    float: left;
+    font-size: 11px;
+    line-height: 1;
+    font-family: Pensum Sans;
+    color: #888b8e;
+}
+
+.link_extr {
+    text-decoration: none;
+    font-size: 9px;
+    color: #376F93;
+    font-family: 'Pensum Sans';
+}
+
+
+/* News Css */
+
+.grand_Div {
+    height: auto;
+    /* overflow-y: hidden; */
+    overflow: scroll;
+    height: 79vh;
+}
+
+.Parent_Div {
+    background-color: rgb(244, 244, 244);
+}
+
+.today {
+    font-size: 15px;
+    font-weight: bolder ! important;
+    color: rgb(59, 114, 149);
+    border-radius: 5px;
+    /* position: relative; */
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.links {
+    text-decoration: none;
+    color: rgb(59, 114, 149);
+}
+
+.innerDiv {
+    font-size: 14px;
+    text-decoration: none;
+    color: #8397A5;
+    width: 100%;
+    /* position: absolute; */
+    /* bottom: 0%; */
+}
+
+.innerDiv .float-start {
+    font-family: 'Times New Roman';
+}
+
+.innerDiv .hr {
+    font-family: 'Poppins';
+    font-size: 12px;
+}
+
+
+/* Event Css */
+
+.eventData {
+    display: flex;
+    background-color: #f8f4f4;
+    height: 13vh;
+    width: auto;
+    border-radius: 10px;
+    margin: 5px 8px 5px 8px;
+    margin-bottom: 20px;
+}
+
+.eventDates {
+    height: 13vh;
+    background-color: rgb(30, 71, 97);
+    border-radius: 8px;
+    color: white;
+    /* vertical-align: middle; */
+    text-align: center;
+    padding: 22px 10px 10px 5px;
+    font-size: 16px;
+}
+
+.title {
+    font-size: 19px;
+    font-weight: bolder ! important;
+}

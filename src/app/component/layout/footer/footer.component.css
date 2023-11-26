@@ -1,0 +1,64 @@
+.nav {
+    font-family: 'Pensum Sans';
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 10vh;
+    background-color: RGB(32, 72, 99);
+    display: flex;
+    overflow: hidden;
+    z-index: 9;
+}
+
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    /* min-width: 50px; */
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 15px;
+    color: RGB(118, 136, 147);
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.1s ease-in-out;
+} 
+
+.active{
+    color: white !important;                                                                                  
+}
+
+/* .nav__link:hover {
+    background-color: #eeeeee;
+} */
+
+.active-link {
+    color: white;
+}
+
+/* .nav a:hover,
+.nav a.active,
+.nav a.active:hover
+  {
+    background-color: transparent !important;
+    color:white !important;    
+ } */
+ 
+
+.nav__icon {
+    font-size: 18px;
+}
+
+@media screen and (max-width:1350px) {
+    .nav {
+        height: 10vh;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .nav {
+        display: none;
+    }
+}

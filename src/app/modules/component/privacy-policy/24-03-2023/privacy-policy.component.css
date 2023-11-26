@@ -1,0 +1,31 @@
+.main_div {
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.heading {
+    padding: 25px 0 25px 0;
+    background-color: rgb(244, 244, 244);
+}
+
+.heading h1 {
+    font-family: 'Pensum Sans';
+    font-size: 27px;
+}
+
+.point {
+    font-size: 19px;
+    font-weight: bold;
+    /* text-decoration: underline; */
+    text-underline-offset: 5px;
+}
+
+.fa-circle {
+    font-size: 10px;
+    margin-right: 5px;
+    margin-top: -14px;
+}
+
+b {
+    text-shadow: 0 0 black;
+}

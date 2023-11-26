@@ -1,0 +1,236 @@
+.main_nav_bar {
+    background-color: var(--thm-white);
+    padding: 10px 0;
+    margin-bottom: 15px;
+}
+
+.main_nav_bar .main_nav_bar_inner .menu_logo {
+    width: 160px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.main_nav_bar .menu_icon_header button {
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.main_nav_bar .notification_icon i,
+.main_nav_bar .search_menu i,
+.main_nav_bar .menu_icon_header button i {
+    font-size: 30px;
+    color: var(--thm-black);
+}
+
+.main_nav_bar .notification_icon,
+.main_nav_bar .search_menu {
+    border: none;
+    padding: 5px;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    box-shadow: none;
+    position: relative;
+}
+
+.main_nav_bar .notification_icon .badge {
+    position: absolute;
+    top: 8px;
+    right: 6px;
+    padding: 2px;
+    line-height: 22px;
+    height: 9px;
+    background: #f77754;
+    color: var(--thm-white);
+    border-radius: 11px;
+    white-space: nowrap;
+}
+
+#side_menu_drawer .nav__links {
+    position: fixed;
+    padding: 15px 30px;
+    left: 0px;
+    height: 100vh;
+    width: calc(100vw - 80vw);
+    bottom: 0;
+    color: RGB(32, 72, 99);
+    background: url("../../../../assets/images/background1.png");
+    background-position: center center;
+    background-color: var(--thm-white);
+    background-repeat: no-repeat;
+    transform: translateX(-600px);
+    transition: transform 0.3s;
+    transition: all 0.6s ease-in-out;
+}
+
+#side_menu_drawer .closebtn {
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    margin: 0;
+    border: none;
+    float: right;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+#side_menu_drawer .closebtn i {
+    font-size: 30px;
+    color: var(--thm-black);
+}
+
+#side_menu_drawer.nav--open .nav__links {
+    transform: translateX(0);
+    box-shadow: 0 0 10px var(--thm-black);
+    overflow-y: auto;
+    z-index: 4;
+}
+
+#side_menu_drawer .nav__links::-webkit-scrollbar {
+    -webkit-appearance: scrollbartrack-vertical;
+    width: 7px;
+}
+
+#side_menu_drawer .nav__links::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #215578;
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+#side_menu_drawer .nav__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#side_menu_drawer.nav--open .nav__overlay {
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+    height: 100vh;
+}
+
+#side_menu_drawer .profile {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start !important;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#side_menu_drawer .profileImgBack {
+    display: flex;
+    background-color: var(--thm-white);
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    border: 2.5px var(--thm-color) solid;
+    margin-right: 15px;
+    padding: 5px;
+}
+
+#side_menu_drawer .profilepic {
+    height: 70px;
+    width: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#side_menu_drawer .profileTitle {
+    width: 100%;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+#side_menu_drawer .nav__links ul li {
+    margin-bottom: 15px;
+    font-size: 1.7rem;
+    color: var(--thm-black);
+    cursor: pointer;
+}
+
+#side_menu_drawer .nav__links ul li a {
+    text-decoration: none;
+    color: var(--thm-black);
+}
+
+#side_menu_drawer .nav__links ul li a span::before {
+    font-size: 15px;
+}
+
+#side_menu_drawer .nav__links ul li ul.feat-show,
+#side_menu_drawer .nav__links ul li ul.feat-show1 {
+    position: static;
+    display: none;
+}
+
+#side_menu_drawer .nav__links ul li ul.feat-show.show,
+#side_menu_drawer .nav__links ul li ul.feat-show1.show1 {
+    display: block;
+    margin-left: 35px !important;
+    width: 90% !important;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: var(--thm-bg-color);
+    border-radius: 10px;
+}
+
+#side_menu_drawer .nav__links ul li i {
+    color: var(--thm-gray);
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+@media only screen and (max-width: 991.5px) {
+    #side_menu_drawer .nav__links {
+        width: calc(100vw - 50vw);
+    }
+
+    .main_nav_bar .main_nav_bar_inner .menu_logo {
+        width: 130px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .main_nav_bar .notification_icon i,
+    .main_nav_bar .search_menu i,
+    .main_nav_bar .menu_icon_header button i {
+        font-size: 24px;
+    }
+
+    .main_nav_bar {
+        margin-bottom: 5px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 70px;
+        background-color: var(--thm-white) !important;
+        z-index: 999;
+    }
+}
+
+@media (min-width: 280px) and (max-width: 640px) {
+    #side_menu_drawer .nav__links {
+        width: calc(100vw - 25vw);
+    }
+}

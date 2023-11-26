@@ -1,0 +1,22 @@
+<div [class]="classSearch1" id="blog_search_wrapper">
+
+    <form name="data" #data="ngForm" (ngSubmit)="findBlogs(data)">
+        <div class="nav__links">
+
+            <div class="w-90">
+                <label class="mx-3 my-3">Search Blog By Title</label>
+                <div class="form-group d-flex justify-content-center ">
+                    <input type="text" class="form-control" placeholder="Search Title Blog" name="keyText" #keyText="ngModel" ngModel>
+                </div>
+            </div>
+
+
+            <div class=" text-center mt-2 ">
+                <button class="btn btn-primary btn-block mx-auto" (click)="closesearch()">Confirm</button>
+            </div>
+
+        </div>
+    </form>
+
+    <div class="nav__overlay " (click)="closesearch() "></div>
+</div>

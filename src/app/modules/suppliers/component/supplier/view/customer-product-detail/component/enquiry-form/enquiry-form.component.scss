@@ -1,0 +1,39 @@
+.container{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 0.5rem;
+    .header-title{
+        font-size:2.5rem;
+        color:blue;
+        text-align: center;
+        padding:2rem;
+    }
+    .title{
+        margin-bottom: 1rem;
+    }
+    .quntity-box{
+        max-width:20%;
+        height:4rem;
+    }
+    .radio-inline{
+        // padding: 1rem;
+        margin: 1rem;
+        
+    }
+    .input-group-text{
+        background-color:white;
+        height: 4rem;
+        border:1px solid lightgray;
+        border-radius:3rem;
+        margin-right: 2.5rem;
+    }
+    .input-box{
+        height:7rem;
+        width: 60%;
+    }
+    .btn{
+        font-size: 1.5rem;
+        width:15%;
+        height:4rem;
+        margin:1rem;
+    }
+}

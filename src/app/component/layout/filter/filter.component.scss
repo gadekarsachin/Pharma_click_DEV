@@ -1,0 +1,78 @@
+.nav__links{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    height: 700px;
+    width: 100vw;
+    background-color:white;
+    transform: translateY(700px);
+    transition: transform 0.3s;
+    border-radius: 2rem 2rem 0 0;
+}
+.nav--open .nav__links{
+    transform: translateY(0);
+    box-shadow: 0 0 10px black;
+}
+.nav__overlay{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.nav--open .nav__overlay{
+    visibility: visible;
+    opacity: 1;
+}
+.menuListCol{
+    margin-top: 1rem;
+}
+.menuList{
+    margin-left: 2rem;
+    width: 800px;
+    height: 80px;
+}
+ul li{
+    float: left; 
+}
+li div{
+    float: left;
+}
+::-webkit-scrollbar{
+    width: 0px;
+}
+.filterLogo{
+    height: 5rem;
+    border-radius: 1rem;
+    padding: 0.6rem;
+    background-color: #e2e6adb8;
+    box-shadow: 0 0 15px -5px black;
+}
+.filterDiv{
+    padding: 1rem;
+    margin: 0.5rem 1rem;
+}
+.filterDiv > p{
+    font-family: 'Abhaya Libre', serif;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+.filterTitle{
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 600;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+.filterTitleCol{
+    margin-top: 2rem;
+    margin-left: 1.7rem;
+}

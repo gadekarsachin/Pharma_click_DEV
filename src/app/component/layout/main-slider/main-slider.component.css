@@ -1,0 +1,8 @@
+  /*Advertisment slider  */
+  #demo{
+    margin-top: -15px;
+  }
+  .carousel-slide, .carousel-image, .carousel-inner{
+    height: 15vh;
+    
+  }

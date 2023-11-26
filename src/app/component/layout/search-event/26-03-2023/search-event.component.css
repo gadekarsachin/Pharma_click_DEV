@@ -1,0 +1,118 @@
+hr {
+    margin: 0;
+}
+
+.nav__links {
+    font-family: 'Pensum Sans';
+    font-weight: 600;
+    position: fixed;
+    /* top: 0px; */
+    padding-top: 0px;
+    left: 0px;
+    z-index: 2;
+    /* height: 43vh; */
+    width: 100vw;
+    bottom: 0;
+    color: RGB(32, 72, 99);
+    background-color: white;
+    transform: translateY(600px);
+    transition: transform 0.3s;
+    border-radius: 25px 25px 0px 0px;
+    /* background-color:rgb(158, 181, 195); */
+}
+
+.nav--open .nav__links {
+    height: 35vh;
+    transform: translateY(0);
+    box-shadow: 0 0 10px black;
+}
+
+.nav__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.nav--open .nav__overlay {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s;
+    z-index: 1;
+}
+
+label {
+    color: RGB(32, 72, 99);
+}
+
+.btn {
+    height: 7vh;
+    font-size: 15px;
+    width: 90%;
+    margin-top: 20px;
+    background-color: RGB(32, 72, 99);
+    border-radius: 10px;
+}
+
+input[type=text] {
+    width: 90%;
+    padding: 4px 26px 4px 2%;
+    margin: 0px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 15px;
+    height: 8vh;
+    background-color: whitesmoke;
+    color: gray;
+    font-family: 'Pensum Sans';
+    border-radius: 10px;
+    font-size: 15px;
+    font-style: italic;
+    border: 1px solid gray;
+    margin-left: 4%;
+}
+
+.fontuser {
+    position: relative;
+    margin-top: 6px;
+    font-size: 18px;
+}
+
+.fontuser i {
+    position: absolute;
+    left: 7%;
+    top: 62%;
+    color: gray;
+}
+/* CSS */
+@media (max-width: 767px) {
+    .hidden-sm {
+      display: none;
+    }
+  }
+
+  @media (min-width:1440px) {
+    .nav__links {
+        font-family: 'Pensum Sans';
+        font-weight: 600;
+        position: fixed;
+        padding-top: 0px;
+        left: 450px;
+        z-index: 3;
+        width: 40vw;
+        bottom: 0px;
+        color: RGB(32, 72, 99);
+        background-color: white;
+        transform: translateY(600px);
+        transition: transform 0.3s;
+        border-radius: 25px 25px 0px 0px;
+        height: 61vh;
+        margin: auto;
+    }
+  }

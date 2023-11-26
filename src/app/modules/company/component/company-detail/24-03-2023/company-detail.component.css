@@ -1,0 +1,110 @@
+.backArr {
+    font-size: 15px;
+}
+
+.compny_Div {
+    overflow: auto;
+    /* height: 48vh; */
+    height: auto;
+    font-family: 'Pensum Sans';
+}
+
+.cols {
+    background-color: rgb(240, 237, 237);
+    border-radius: 15px;
+    height: max-content;
+}
+
+.Sort {
+    margin-top: 8px;
+}
+
+h5 {
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Pensum Sans;
+    color: black;
+    text-transform: lowercase;
+}
+
+h5::first-letter {
+    text-transform: capitalize;
+}
+
+.fa-star-o {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.allrate {
+    background-color: rgb(32, 72, 99);
+    margin-top: -8px;
+    padding-right: 9px;
+    padding-left: 3px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-weight: bold;
+}
+
+.rate {
+    font-size: 13px;
+    color: white;
+    font-family: 'Times New Roman';
+}
+
+.cat_type {
+    font-size: 12px;
+    color: #878d91;
+    ;
+    line-height: 1;
+    font-family: Pensum Sans;
+}
+
+.descrip {
+    font-size: 10px;
+    color: black;
+    font-family: Pensum Sans;
+    text-transform: capitalize;
+}
+
+.fa-map-marker {
+    color: rgb(32, 72, 99);
+}
+
+.city {
+    float: left;
+    font-size: 11px;
+    line-height: 1;
+    font-family: Pensum Sans;
+    color: #888b8e;
+}
+
+.link_extr {
+    text-decoration: none;
+    font-size: 9px;
+    color: #376F93;
+    font-family: 'Pensum Sans';
+}
+@media screen and (min-width: 1440px) {
+    h5 {
+        font-weight: bold;
+        font-size: 18px;
+        font-family: Pensum Sans;
+        color: black;
+        text-transform: lowercase;
+        color:  rgb(32, 72, 99);
+    }
+    .cat_type {
+        font-size: 15px;
+        color: #878d91;
+        line-height: 1;
+        font-family: Pensum Sans;
+    }
+    .descrip {
+        font-size: 13px;
+        color: black;
+        font-family: Pensum Sans;
+        text-transform: capitalize;
+    }
+
+}

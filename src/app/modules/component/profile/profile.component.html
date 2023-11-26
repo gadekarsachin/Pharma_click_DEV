@@ -1,0 +1,260 @@
+<div class="profile_wrapper">
+    <div class="container mb-5 p-0">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="profile_inner_wrapper">
+                    <form [formGroup]="editProfileForm">
+                        <div class="profilediv">
+                            <div class="row mb-5 mt-5">
+                                <div class="col-2 text-left">
+                                    <a (click)="goBack()" class="back-icon">
+                                        <i class="fa-solid fa-arrow-left backArrow"></i>
+                                    </a>
+                                </div>
+                                <div class="col-8 profileImg text-center">
+                                    <div class="position-relative">
+                                        <div *ngIf="profileDataValueImage">
+                                            <span class="profileImgBack"><img class="profilepic"
+                                                    [src]="base64textString" alt="Profile Image"
+                                                    name="UserImage" /></span>
+                                        </div>
+                                        <div *ngIf="!profileDataValueImage">
+                                            <span class="profileImgBack"><img class="profilepic"
+                                                    [src]="base64textString" alt="Profile Image" /></span>
+                                            <input [hidden]="true" type="file" #file (change)="onUploadChange($event)"
+                                                accept=".png, .jpg, .jpeg, .pdf" [(ngModel)]="profileData.UserImage"
+                                                class="profilepic" name="UserImage" />
+                                            <span (click)="file.click()"><i class="fa-solid fa-pencil icon"></i></span>
+                                        </div>
+                                        <div class="mt-5">
+                                            <h2 class="profileTitle">{{profileName}}</h2>
+                                            <h2 class="profile_designation">{{profileData.UserDesignation}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2 text-right">
+                                    <a (click)="onClickEdit()" class="edit-icon">
+                                        <i class="fa-solid fa-pen-to-square penIcon"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="profile_bottom_wrapper">
+                    <form [formGroup]="editProfileForm">
+                        <div class="profile_top_wrapper">
+                            <div class="row justify-content-center">
+                                <div class="col-10">
+                                    <h4 class="heading1">Email Address</h4>
+                                    <div class="input_main">
+                                        <div class="input_icon">
+                                            <i class="fa-regular fa-envelope icons"></i>
+                                        </div>
+                                        <div class="form-group input_group">
+                                            <div *ngIf="profileDataValue">
+                                                <input type="text" [(ngModel)]="profileData.Email" class="form-control"
+                                                    formControlName="Email" />
+                                            </div>
+                                            <div *ngIf="!profileDataValue">
+                                                <h5 class="email" style="font-size: 16px;">{{profileData.Email}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <h4 class="heading1">Phone Number</h4>
+                                    <div class="input_main">
+                                        <div class="input_icon">
+                                            <i class="fa-solid fa-phone icons"></i>
+                                        </div>
+                                        <div class="form-group input_group">
+                                            <div *ngIf="profileDataValue">
+                                                <input type="text" [(ngModel)]="profileData.Phone" class="form-control"
+                                                    formControlName="Phone" />
+                                            </div>
+                                            <div *ngIf="!profileDataValue">
+                                                <h5 class="phone" style="font-size: 16px;">{{profileData.Phone}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main_scroll_content">
+                            <div class="row justify-content-center">
+                                <div class="col-10">
+                                    <h4 class="heading1">Current Position</h4>
+                                    <div class="input_main">
+                                        <div class="input_icon">
+                                            <i class="fa-regular fa-user icons"></i>
+                                        </div>
+                                        <div class="form-group input_group">
+                                            <div *ngIf="profileDataValue">
+                                                <input type="text" [(ngModel)]="profileData.UserDesignation"
+                                                    class="form-control" formControlName="UserDesignation" />
+                                            </div>
+                                            <div *ngIf="!profileDataValue">
+                                                <h5 class="heading2">{{profileData.UserDesignation}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <h4 class="heading1">Company Name</h4>
+                                    <div class="input_main">
+                                        <div class="input_icon">
+                                            <i class="fa-solid fa-user-o icons"></i>
+                                        </div>
+                                        <div class="form-group input_group">
+                                            <div *ngIf="profileDataValue">
+                                                <input type="text" [(ngModel)]="profileData.Industry"
+                                                    class="form-control" formControlName="Industry" />
+                                            </div>
+                                            <div *ngIf="!profileDataValue">
+                                                <h5 class="heading2">{{profileData.Industry}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <h4 class="heading1">Education</h4>
+                                    <div class="input_main">
+                                        <div class="input_icon">
+                                            <i class="fa-solid fa-book icons"></i>
+                                        </div>
+                                        <div class="form-group input_group">
+                                            <div *ngIf="profileDataValue">
+                                                <input type="text" [(ngModel)]="profileData.Education"
+                                                    class="form-control" formControlName="Education" />
+                                            </div>
+                                            <div *ngIf="!profileDataValue">
+                                                <h5 class="heading2">{{profileData.Education}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <h4 class="heading1">Location</h4>
+                                    <div class="input_main">
+                                        <div class="input_icon">
+                                            <i class="fa-solid fa-map-marker icons"></i>
+                                        </div>
+                                        <div class="form-group input_group">
+                                            <div *ngIf="profileDataValue">
+                                                <input type="text" [(ngModel)]="profileData.Location"
+                                                    class="form-control" formControlName="Location" />
+                                            </div>
+                                            <div *ngIf="!profileDataValue">
+                                                <h5 class="heading2">{{profileData.Location}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row contact_information justify-content-center">
+                                <div class="col-10">
+                                    <div class="border_contact"></div>
+                                </div>
+                                <div class="col-10">
+                                    <h4 class="contact-heading1">Contact Information</h4>
+                                    <div class="input_main">
+                                        <div class="input_icon">
+                                            <i class="fa-solid fa-phone icons"></i>
+                                        </div>
+                                        <div class="form-group input_group">
+                                            <div *ngIf="profileDataValue">
+                                                <input type="text" [(ngModel)]="profileData.Phone" class="form-control"
+                                                    formControlName="Phone">
+                                            </div>
+                                            <div *ngIf="!profileDataValue">
+                                                <h5 class="heading2">{{profileData.ContactInformation}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <h4 class="heading1">Phone number</h4>
+                                    <div class="input_main">
+                                        <div class="input_icon">
+                                            <i class="fa-solid fa-phone icons"></i>
+                                        </div>
+                                        <div class="form-group input_group">
+                                            <div *ngIf="profileDataValue">
+                                                <input type="text" [(ngModel)]="profileData.Phone" class="form-control"
+                                                    formControlName="Phone">
+                                            </div>
+                                            <div *ngIf="!profileDataValue">
+                                                <h5 class="heading2">{{profileData.Phone}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <h4 class="heading1">Address</h4>
+                                    <div class="input_main">
+                                        <div class="input_icon">
+                                            <i class="fa-solid fa-map-marker icons"></i>
+                                        </div>
+                                        <div class="form-group input_group">
+                                            <div *ngIf="profileDataValue">
+                                                <input type="text" [(ngModel)]="profileData.Location"
+                                                    class="form-control" formControlName="Location">
+                                            </div>
+                                            <div *ngIf="!profileDataValue">
+                                                <h5 class="heading2">{{profileData.Location}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <h4 class="heading1">Email Address</h4>
+                                    <div class="input_main">
+                                        <div class="input_icon">
+                                            <i class="fa-solid fa-envelope icons"></i>
+                                        </div>
+                                        <div class="form-group input_group">
+                                            <div *ngIf="profileDataValue">
+                                                <input type="text" [(ngModel)]="profileData.Email" class="form-control"
+                                                    formControlName="Email">
+                                            </div>
+                                            <div *ngIf="!profileDataValue">
+                                                <h5 class="heading2">{{profileData.Email}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <h4 class="heading1">Website</h4>
+                                    <div class="input_main">
+                                        <div class="input_icon">
+                                            <i class="fa fa-chrome icons"></i>
+                                        </div>
+                                        <div class="form-group input_group">
+                                            <div *ngIf="profileDataValue">
+                                                <input type="text" [(ngModel)]="profileData.Website"
+                                                    class="form-control" formControlName="Website">
+                                            </div>
+                                            <div *ngIf="!profileDataValue">
+                                                <h5 class="heading2">{{profileData.Website}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-10 text-center">
+                                    <div class="profile_button" *ngIf="profileDataValue">
+                                        <button class="btn btn-sm updateButtons outline"
+                                            (click)="profileDataValue=false">Cancel</button>
+                                        <button class="btn btn-sm updateButtons"
+                                            (click)="updateProfileData()">Update</button>&nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

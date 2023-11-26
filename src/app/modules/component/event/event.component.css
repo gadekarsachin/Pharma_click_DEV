@@ -1,0 +1,97 @@
+.backArrow{
+    padding-top: 3rem;
+}
+.backArrow > i{
+    font-size: 2.5rem;
+    padding-left: 4rem;
+}
+.toggleventRow{
+    margin-top: 2rem;
+}
+.eventsCol{
+    position: relative;
+    width: 29rem;
+    margin: auto;
+    background-color: rgba(157, 157, 157, 0.1);
+    border-radius: 2rem;
+    padding: 2.5rem 0.5rem 2.5rem 0.5rem;
+}
+.eventsCol > p{
+    display: inline;
+    margin-bottom: 0;
+    padding: 0.7rem 3rem 0.7rem 3rem;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 600;
+    color: rgb(199, 199, 199);
+}
+.para1{
+    position: absolute;
+    top: 0.7rem;
+    left: 0.7rem;
+}
+.para2{
+    position: absolute;
+    top: 0.7rem;
+    right: 0.7rem;
+}
+.highlight{
+    color: #5669FF !important;
+    background-color: white;
+    box-shadow: 0 0 10px -7px black;
+}
+.noEventCol{
+    padding-top: 13rem;
+    padding-left: 9rem;
+}
+.noEventSubCol{
+    height: 22rem;
+    width: 22rem;
+    border-radius: 15rem;
+    overflow: hidden;
+    background-color: #EBF5FC;
+}
+.noEveImg{
+    height: 19rem;
+    margin: 3rem 1.5rem 1rem 1.5rem;
+}
+.eveStatusCol{
+    text-align: center;
+    margin-top: 2rem;
+}
+.eveStatus{
+    font-family: 'Aclonica', sans-serif;
+    font-size: 2.3rem;
+}
+.eventDesc > p{
+    font-family: 'Abhaya Libre', serif;
+    color: gray;
+    font-size: 2rem;
+    text-align: center;
+}
+.submitRow{
+    text-align: center;
+    margin-top: 5rem;
+}
+.LoginSubmit{
+    position: relative;
+}
+.submitBtn{
+    width: 100%;
+    padding: 0.9rem 1rem 1rem 1rem;;
+    font-size: 2rem;
+    border-radius: 1.5rem;
+    font-family: 'Aclonica', sans-serif;
+}
+.submitIcon{
+    position: absolute;
+    right: 1.3rem;
+    top: 0.8rem;
+    font-size: 2rem;
+    color: white;
+    /* border: 1px solid rgb(225, 224, 224); */
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0.6rem 0.7rem 0.8rem 0.7rem;;
+    border-radius: 5rem;
+}

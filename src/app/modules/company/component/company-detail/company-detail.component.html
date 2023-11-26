@@ -1,0 +1,35 @@
+<!-- Company Swtich Case -->
+<!-- <h3 class="text-success" *ngSwitchCase="'Company'">{{selectedPro}}</h3> -->
+<div class="menuDiv" *ngIf="matchUrl ==='/home/company/company-details' && matchUrl !== 'home/product/product-create'">
+    <i class="fa fa-arrow-left mx-4 mt-2 pt-2 backArr" (click)="goBack()" aria-hidden="true"></i>
+</div>
+<div *ngIf="!companylist || companylist.length === 0"class="spinner-overlay">
+    <div class="spinner"></div>
+</div>
+<!-- <div *ngIf="companylist.length === 0" class="spinner-overlay">
+    <div class="spinner"></div>
+</div> -->
+
+<div class="row mt-5 compny_Div company_listing_wrapper" *ngFor="let org of companylist">
+
+    <div class="col-12 bg_wrapper" (click)="companyData(org.CompanyId)">
+        <a style="text-decoration: none;">
+            <h5 class="text-start category_heading">{{org.Company}}</h5>
+            <span class="float-end rating_wrapper">
+                <i class="fa fa-star-o text-warning mx-1" aria-hidden="true"></i>
+                <span class="rate">{{org.Rating}}</span>
+            </span>
+
+            <h6 class="cat_type">{{org.BusinessType}}</h6>
+            <div class="mx-2 descrip" style="word-break: break-all;">
+                <span *ngFor="let pro of org.Products;let i = index;">
+                    <span *ngIf="i<10" class="category_details">{{pro.ProductName }}<span
+                            *ngIf="(org.Products.length >= 10 && i<9)||( org.Products.length < 10 && i<org.Products.length-1)">,</span></span>
+                </span>
+
+            </div>
+            <h5 class="city mx-2 my-2"> <i class="fa fa-map-marker" aria-hidden="true"></i> {{org.City }} &nbsp;
+                {{org.State}}</h5>
+        </a>
+    </div>
+</div>

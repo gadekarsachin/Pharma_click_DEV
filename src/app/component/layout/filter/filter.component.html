@@ -1,0 +1,81 @@
+<div [class]="filterList">
+
+    <div class="nav__links">
+        <div class="row">
+            <div class="col-12 filterTitleCol">
+                <p class="filterTitle">Filter</p>
+            </div>
+        </div>
+        <div class="row" style="overflow: scroll;">
+            <div class="col-12 menuListCol">
+                <ul class="menuList">
+                    <li>
+                        <div class="filterDiv" (click)="onBusiness()">
+                            <img class="filterLogo" src="../../../../assets/Logos/b2b.png" alt="B2BLogo">
+                            <p>B2B</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="filterDiv" (click)="onJobs()">
+                            <img class="filterLogo" src="../../../../assets/Logos/suitcase.png" alt="JobLogo">
+                            <p>Jobs</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="filterDiv" (click)="onNews()">
+                            <img class="filterLogo" src="../../../../assets/Logos/news.png" alt="NewsLogo">
+                            <p>News</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="filterDiv" (click)="onEvents()">
+                            <img class="filterLogo" src="../../../../assets/Logos/calendar.png" alt="EventsLogo">
+                            <p>Event</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="filterDiv" (click)="onBlogs()">
+                            <img class="filterLogo" src="../../../../assets/Logos/new-post.png" alt="BlogsLogo">
+                            <p>Blogs</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="filterDiv" (click)="onProfile()">
+                            <img class="filterLogo" src="../../../../assets/Logos/login.png" alt="BlogsLogo">
+                            <p>Profile</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="filterDiv" (click)="onTest()">
+                            <img class="filterLogo" src="../../../../assets/Logos/b2b.png" alt="BlogsLogo">
+                            <p>Test</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div *ngIf="filterListVal == 'b2b'" class="row">
+            <p></p>
+        </div>
+        <div *ngIf="filterListVal == 'jobs'" class="row">
+            <button class="btn btn-outline-primary" (click)="candidateList()">Search Candidate</button>
+        </div>
+        <div *ngIf="filterListVal == 'news'" class="row">
+            <p>News Works</p>
+        </div>
+        <div *ngIf="filterListVal == 'events'" class="row">
+            <p>Events Works</p>
+        </div>
+        <div *ngIf="filterListVal == 'blogs'" class="row">
+            <p>Blogs Works</p>
+        </div>
+        <div *ngIf="filterListVal == 'profile'" class="row">
+            <p>Profile Works</p>
+        </div>
+        <div *ngIf="filterListVal == 'test'" class="row">
+            <p>Test Works</p>
+        </div>
+
+    </div>
+    <div class="nav__overlay" (click)="closeNav()"></div>
+</div>

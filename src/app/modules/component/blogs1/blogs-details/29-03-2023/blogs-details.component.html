@@ -1,0 +1,276 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+
+<div class="container">
+    <div class="const" >
+        <div class="row header w-100"id="web_header">
+            <div class="col-4 ">
+                <img src="./assets/images/Brand_logo01.png" class="img-fluid logimg1 mt-2" alt="OrgLogo">
+            </div>
+            <div class="col-4 col-sm-3 col-lg-4"style="margin-left: -90px;" >
+                <i class="fa fa-arrow-left mx-3  mt-4 " (click)="goBack()" aria-hidden="true"></i>
+            </div>
+            <div class="col-3"style="margin-right: -176px;">
+                <img id="share" src="./assets/images/share_PNG27.png" alt="Share" class="mt-4" style="width: 18px; margin-left: 48px; height: 18px; float: end;">
+            </div>
+            <div class="col-1" id="bookmark">
+                <i class="fa fa-bookmark-o  mt-4 mx-4" aria-hidden="true"></i>
+
+            </div>
+        </div>
+    <div class="row">
+      <div class="col-md-3 hidden-sm hidden-xs"> 
+        <!-- <app-menu></app-menu>    -->
+        <div class="container2">
+        <div class="gallery">
+            <div class="img">
+                <a routerLink="/home/product/category"[routerLinkActive]="'active-link1'">
+                    <h1 class="title">
+                        <i class="fa fa-comments nav__icon" aria-hidden="true"></i>
+                        <div class="content">Marketplace</div>
+                    </h1>
+                </a>
+            </div>
+             <div class="img pharmaclick">
+                <h1 class="title" style="background: white; color: rgb(32,72,99);">
+                    <img src="/assets/images/uuu.png" alt="" style="height: 55px;" class="nav__icon">
+                    <div class="content" style="font-weight: 600;">PharmaClick</div>
+                </h1>
+            </div>
+            <div class="img">
+                <a routerLink="/allnews"[routerLinkActive]="'active-link1'">
+                    <h1 class="title">
+                        <i class="fa fa-newspaper-o nav__icon" aria-hidden="true"></i>
+                        <div class="content">News</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/events"[routerLinkActive]="'active-link1'">
+                    <h1 class="title">
+                        <i class="fa fa-globe nav__icon" aria-hidden="true"></i>
+                        <div class="content">Events</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/blogs">
+                    <h1 class="title"[routerLinkActive]="'active-link1'" [class.active-link1]="path1=='/blogs/blogsdetail' ">
+                        <i class="fa-solid fa-message nav__icon"></i>
+                        <div class="content">Blogs</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/all-section"[routerLinkActive]="'active-link1'">
+                    <h1 class="title">
+                        <i class="fa-solid fa-list nav__icon"></i>
+                        <div class="content">All</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/job"[routerLinkActive]="'active-link1'">
+                    <h1 class="title">
+                        <i class="fas fa-user-tie nav__icon"></i>
+                        <div class="content">Jobs</div>
+                    </h1>
+                </a>
+            </div> 
+
+        </div>
+
+  </div>
+</div>
+      <div class="col-md-6">
+ 
+        <div class="mainheader">
+            <div class="const" id="mobile_header">
+                <div class="row header w-100">
+                    <div class="col-4 col-sm-3 col-lg-4" >
+                        <i class="fa fa-arrow-left mx-3  mt-4 " (click)="goBack()" aria-hidden="true"></i>
+                    </div>
+        
+                    <div class="col-4 ">
+                        <img src="./assets/images/Brand_logo01.png" class="img-fluid logimg mt-2" alt="OrgLogo">
+                    </div>
+                    <div class="col-3">
+                        <img id="share" src="./assets/images/share_PNG27.png" alt="Share" class="mt-4" style="width: 18px; margin-left: 48px; height: 18px; float: end;">
+                    </div>
+                    <div class="col-1" id="bookmark">
+                        <i class="fa fa-bookmark-o  mt-4 mx-4" aria-hidden="true"></i>
+        
+                    </div>
+                </div>
+            </div>
+            <div class="row mx-3">
+                <div class="col-2 col-lg-1">
+                    <img onerror="this.src='./assets/images/user.png'" src="{{blogData.AuthourImg}}" alt="" class="img-fluid idimg ">
+                </div>
+                <div class="col-6 col-lg-7">
+                    <a class="text-decoration-none" (click)="redirectToAthour(blogData.blogAthourId)">
+                        <h5 class="name mt-2">{{blogData.AuthorName}}</h5>
+                    </a>
+                    <h5 class="time"> <span>{{blogData.PostedAt | date:'dd MMMM yyyy, h:mm a'}}</span>
+                        <!-- <span>{{blogData.PostedAt | date:'h:mm a'}}</span> -->
+                    </h5>
+                </div>
+                <div class="col-4">
+                    <button class="btn btnfollw mx-3 mt-2">Follow</button>
+                </div>
+            </div>
+            <h5 class="title1 mx-4 my-3">{{blogData.Title}}</h5>
+            <div class="row mx-3 media">
+                <div class="col-2 col-lg-1">
+                    <span clas><i class="fa fa-thumbs-o-up  " aria-hidden="true"></i> <small> {{blogData.blogLike}}</small></span>
+                </div>
+                <div class="col-10 col-lg-11">
+                    <span><i class="fa fa-comment-o " aria-hidden="true"></i><small> {{blogData.totalComments}}</small></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll scroll_slider  mx-2">
+            <div class="blogimg">
+                <img onerror="this.src='./assets/images/pexels-karolina-grabowska-4210615.jpg'" src="{{blogData.blogImage}}" alt="blog-details" class=" blog_img img-fluid mainimg w-100 my-2 mb-5 px-3" style="height: 20vh; border-radius: 22px;">
+        
+        
+                <div class="container-fluid paragp ">{{blogData.blogDescription}}</div>
+                <div class="comment mx-3 my-3">
+                    <h5 class="comnt my-3 ">Comment</h5>
+                    <form [formGroup]="myForm" (ngSubmit)="addNewBlogComment()">
+                        <textarea class="form-control tarea" formControlName="BlogComment" required [ngClass]="{'is-invalid': isSubmitted && f.BlogComment.errors}" placeholder="Share Your thoughts" style="min-width: 98%; height:16vh; border-radius: 12px;"></textarea>
+                        <button class="btn btnpost" [disabled]="myForm.invalid">Post</button>
+                    </form>
+        
+        
+                </div>
+        
+                <div class="comment_list">
+                    <h5 class="mx-3 commthead">Comments(3)</h5>
+                    <div class="scrollercommt">
+                        <div class="row my-2 w-100" *ngFor="let c of blogComment; let i=index">
+                            <div class="col-2 col-sm-3 col-lg-2">
+                                <img onerror="this.src='./assets/images/user.png'" src="{{c.BlogCommentImg}}" alt="" class=" mx-3 img-fluid idimg1">
+                            </div>
+                            <div class="col-8 col-sm-6 col-lg-7">
+                                <h5 class="commtname"> {{c.blogCommenterName}}</h5>
+                                <div class="timecomt"> {{calcDate1(c)}} {{hourTime1(c)}} </div>
+                                <div class="comtbord  pb-2 ">{{c.blogComment}}</div>
+                                <div class="my-2 commtmedia">
+                                    <span class="mr-5"><i class="fa fa-heart" aria-hidden="true"></i><small  class="mx-1">Liked{{c.Likes}}</small></span>
+                                    <span (click)="replayshow(i)"><i class="fa fa-comment-o" aria-hidden="true"></i><small class="mx-1">{{c.Reply}} Reply</small></span>
+                                </div>
+                            </div>
+                            <!-- [attr.id]="cmts.Id" -->
+                            <div [id]="'replaydiv'+i" class=" comment mx-3 my-3 " style="display: none;">
+                                <form [formGroup]="myForms1" (ngSubmit)="(replaySubmit())">
+                                    <textarea class="form-control tarea mb-3 " formControlName="ReplyText" required [ngClass]="{'is-invalid': isSubmitted2 && g.ReplyText.errors}" placeholder="Reply to comment " style="width: 98%; height:12vh; border-radius: 12px; "></textarea>
+                                    <button class="btn btn-success btn-sm mx-4 " [disabled]="myForms1.invalid">Submit</button><button class="btn btn-danger btn-sm " (click)="replayshow(i)">Cancel</button>
+                                </form>
+        
+                                <div class="replayscroll ">
+                                    <h5 class="mx-3 commthead mt-3 ">Replay List...</h5>
+                                    <div class="row my-2 w-100 mx-auto ">
+        
+                                        <!-- <div class=" col-2 "> -->
+                                        <!-- <img src="../../../../../assets/images/Dipak1-1.JPG " alt=" " class=" mx-3 img-fluid idimg1 "> -->
+                                        <!-- </div>  -->
+        
+                                        <!-- <div class="col-12 mb-2 ">
+                                        <h5 class="commtname1 mx-3 ">{{rply.ReplierName}} </h5>
+                                        <div class="timecomt1 mx-3 "> {{calcDate2(rply)}} <span>{{hourTime2(rply)}}&nbsp;</span></div>
+                                        <div class="comtbord1 mx-3 pb-2 ">{{rply.ReplyText}}</div>
+                                    </div> -->
+                                        <div class="col-12 mb-2 ">
+                                            <h5 class="commtname1 mx-3 "> Sunil Sale </h5>
+                                            <div class="timecomt1 mx-3 "> 2 min Ago</div>
+                                            <div class="comtbord1 mx-3 pb-2 ">very Goodifugofiuhweoifjiowf</div>
+                                        </div>
+        
+                                        <div class="col-12 mb-2 ">
+                                            <h5 class="commtname1 mx-3 "> Sunil Sale </h5>
+                                            <div class="timecomt1 mx-3 "> 2 min Ago</div>
+                                            <div class="comtbord1 mx-3 pb-2 ">very Goodifugofiuhweoifjiowf</div>
+                                        </div>
+                                        <div class="col-12 mb-2 ">
+                                            <h5 class="commtname1 mx-3 "> Sunil Sale </h5>
+                                            <div class="timecomt1 mx-3 "> 2 min Ago</div>
+                                            <div class="comtbord1 mx-3 pb-2 ">very Goodifugofiuhweoifjiowf</div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                            </div>
+        
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="row w-100 mx-1 mb-5">
+                <div class="col-6 morecommt">More From {{blogData.AuthorName}}</div>
+                <div class="col-6  ">
+                    <span class="seeall mt-1">See all <i class="fa fa-chevron-right mx-1" aria-hidden="true"></i></span>
+                </div>
+            </div>
+        
+        
+            <div class="contain mb-4 my-3 d-flex" id="owl-carousel" class="owl-carousel owl-theme">
+                <ul class="item">
+                    <li *ngFor="let blogData of blogList" style="margin-left: 20px; background-color: rgb(244, 244, 244);">
+                        <div class="mx-1 p-2" style="width: 200px;">
+                            <div class="relat">
+                                <img src="{{blogData.blogImage}}" alt="" class="img-fliud artical">
+                                <div class="absu">
+                                    <i class="fa fa-bookmark-o" id="bookmark1" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="my-1 articl_head">{{blogData.Title}}</div>
+                            <div class="row mt-2">
+                                <div class="col-3">
+                                    <img src="{{blogData.AuthourImg}}" alt="" class=" img-fluid idimg2">
+                                </div>
+                                <div class="col-5">
+                                    <span class="txtmiddle mt-2">By {{blogData.AuthorName}}</span>
+                                </div>
+                                <div class="col-4">
+                                    <span class="txtmiddle1 mt-2">5 min Read</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        
+        <app-footer></app-footer>
+
+
+      </div>
+   
+      <div class="col-md-3 hidden-sm hidden-xs ">
+        <div class="classadd text-center">
+           <p>Advertiesment</p>
+       </div>
+       <div class="classadd2 text-center">
+           <p>Advertiesment</p>
+       </div>
+       <div class="classadd1 text-center">
+           <p>Advertiesment</p>
+       </div> 
+</div>
+        
+        
+      </div>    
+  </div>
+  <app-footer></app-footer>

@@ -1,0 +1,30 @@
+.appComponentMainDiv {
+    background-color: rgb(252, 248, 248);
+    padding-left: 0;
+    padding-right: 0;
+    font-family: "Pensum Sans";
+    // background-color: var(--thm-bg-color);
+    // height: 100vh;
+    background: url("../assets/images/background1.png");
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: top center;
+    overflow-x: hidden;
+}
+body {
+    overflow-x: hidden;
+}
+@media screen and (min-width: 991px) {
+}
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+}
+
+@media screen and (min-width: 290px) and (max-width: 767px) {
+    .appComponentMainDiv {
+        background: url("../assets/images/background1.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: unset;
+    }
+}

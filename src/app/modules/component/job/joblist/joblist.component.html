@@ -1,0 +1,503 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/solid.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+
+<div class="container-fluid main_nav_bar">
+    <div class="container main_nav_bar_inner">
+      <div class="row align-items-center">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-3 text-left">
+          <div class="menu_icon_header">
+            <button (click)="openMenu()"><i class="fa fa-bars menuIcon" aria-hidden="true "></i></button>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-6 text-center">
+          <div class="menu_logo">
+            <img src="../../../../assets/images/Brand_logo.png" class="img-fluid logimg" alt="Pharma Click Logo ">
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-3 text-right">
+          <div class="d-flex align-items-center justify-content-end">
+            <div class="search_menu mr-2">
+              <div class="menuDiv">
+                <a (click)="openSearch() ">
+                  <!-- <i class="fa fa-search menuIcon mt-2 mx-2 float-end " aria-hidden="true "></i> -->
+                </a>
+              </div>
+            </div>
+            <div class="notification_icon ">
+              <a routerLink="/notifications">
+                <i class="fa fa-bell-o" aria-hidden="true "></i>
+                <div class="badge ">.</div>
+              </a>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+    <div [class]="classMenu" id="side_menu_drawer">
+      <div class="main1" id="sideNavCloseE">
+        <div class="nav__links" id="closN">
+            <a class="closebtn" (click)="closeNav()"><i class="fa-solid fa-xmark"></i></a>
+          <div class="profile justify-content-start">
+            <span class="profileImgBack">
+                <img class="profilepic" [src]="base64textString" alt="Profile Image"
+                onerror="this.src='../../../../../assets/images/user.png'" />
+            </span>
+            <h2 class="profileTitle ">{{profileName}}</h2>
+          </div>
+          <ul class="mx-auto">
+            <li><i class="far fa-user"></i> <a routerLink="/profile" class="">My Account</a>
+            </li>
+            <li><i class="fa fa-briefcase "></i>
+              <a routerLink="/profile" class="">Job Profile</a>
+            </li>
+            <li>
+              <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+              <a class="feat-btn">Saved Items
+                <span class="fa-solid fa-angle-right first " aria-hidden="true"></span>
+              </a>
+              <ul class="feat-show">
+                <li><a routerLink="/GetSaveItem/Company">Companies</a></li>
+                <li><a routerLink="/GetSaveItem/News">News</a></li>
+                <li><a routerLink="/GetSaveItem/Events">Events</a></li>
+                <li><a>Blogs</a></li>
+                <li><a>Jobs</a></li>
+              </ul>
+            </li>
+            <li><i class=" fa-solid fa-message  " style="font-weight: normal; "></i> <a class=" ">Chat</a>
+            </li>
+            <!-- <li>
+              <i class="fa fa-calendar-o  "></i> <a class=" ">Calender</a>
+            </li> -->
+            <li>
+              <i class="fa fa-star-o  "></i> <a class=" ">Rated Companies</a>
+            </li>
+            <li>
+              <i class="fa fa-thumbs-o-up  "></i> <a class=" ">Following</a>
+            </li>
+            <li>
+              <i class="fa fa-cog" aria-hidden="true"></i>
+              <a class="feat-btn1">Setting
+                <span class="fa-solid fa-angle-right first1" aria-hidden="true"></span>
+              </a>
+              <ul class="feat-show1">
+                <li><a>Notification</a></li>
+                <li><a routerLink="/auth/change-password">Change Password</a></li>
+                <li><a routerLink="/alert">Alert</a></li>
+                <li><a>Rate Us</a></li>
+                <li (click)="moveToPrivacy()">
+                  <a routerLink="/privacyPolicy ">Privacy & policy</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <i class="far fa-circle-question  "></i> <a class=" ">Help & FAQs</a>
+            </li>
+            <li>
+              <i class="fa fa-envelope-o  "></i> <a routerLink="/contact " class=" ">Contact Us</a>
+            </li>
+            <li>
+              <a class=" " (click)="logout() "> <i class="fas fa-arrow-right-to-bracket  "></i> Sign
+                Out</a>
+            </li>
+          </ul>
+        </div>
+        <div class=" nav__overlay " (click)="closeMenu() "></div>
+      </div>
+    </div>
+  </div>
+    <div class="container blog_main_wrapper">
+        <div class="row justify-content-center set-to-top">
+            <div class="col-lg-6 text-left">
+                <h2 class="content_heading mb-3">Jobs</h2>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-lg-3 col-md-12 co-sm-12 hidden-sm hidden-xs mt-2">
+                <div class="left_side_icon_listing column_bg_border">
+                    <div class="hexagon_img">
+                        <a routerLink="/home/product/category">
+                            <h1 class="title">
+                                <i class="fa fa-comments nav__icon" aria-hidden="true"></i>
+                                <div class="content">Marketplace</div>
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="hexagon_img">
+                        <a routerLink="/allnews">
+                            <h1 class="title">
+                                <i class="fa fa-newspaper-o nav__icon" aria-hidden="true"></i>
+                                <div class="content">News</div>
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="hexagon_img">
+                        <a routerLink="/events">
+                            <h1 class="title">
+                                <i class="fa fa-globe nav__icon" aria-hidden="true"></i>
+                                <div class="content">Events</div>
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="hexagon_img">
+                        <a routerLink="/blogs">
+                            <h1 class="title1">
+                                <i class="fa-solid fa-message nav__icon"></i>
+                                <div class="content">Blogs</div>
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="hexagon_img">
+                        <a routerLink="/job">
+                            <h1 class="title" [routerLinkActive]="'active-link1'"
+                                [class.active-link1]="path1=='/job/joblist' ">
+                                <i class="fas fa-user-tie nav__icon"></i>
+                                <div class="content">Jobs</div>
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="hexagon_img">
+                        <a routerLink="/all-section">
+                            <h1 class="title">
+                                <i class="fa-solid fa-list nav__icon"></i>
+                                <div class="content">All</div>
+                            </h1>
+                        </a>
+                    </div>
+                </div>
+    </div>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLongTitle" style="font-size: 25px; margin-left:-134px; font-weight: 500;">Share</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" style="margin-right: -350px;">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="social-icons">      
+             
+             <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fpharmaclick.co.in%2Fweb%2Fevents%2Fevents%2Fevent-list
+             " target="_blank" rel="noopener noreferrer"class="btn btn-primary" style="background-color: #3b5998; margin-right: 10px; font-size: 22px;padding-bottom: 35px;" role="button"><i class="fab fa-facebook-f text-white"></i></a> 
+                <a href="https://twitter.com/intent/tweet?text={{share1}}&url=https://pharmaclick.co.in/web/job/joblist&title={{share1}}"  target="_blank" rel="noopener noreferrer"class="btn btn-primary" style="background-color: #55acee; margin-right: 10px; font-size: 22px; padding-bottom: 35px;"  role="button"><i class="fab fa-twitter text-white"></i></a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://pharmaclick.co.in/web/job/joblist&title={{share1}}" target="_blank" rel="noopener" class="btn btn-primary" style="background-color: #0077B5; margin-right: 10px; font-size: 22px;padding-bottom: 35px;">
+        <i class="fa fa-linkedin text-white"></i>
+      </a>
+                <a href="mailto:?subject={{share1}}&amp;body=I%20found%20this%20awesome%20website%20and%20thought%20you%20might%20like%20it:%20https://pharmaclick.co.in/web/job/joblist" class="btn btn-primary" style="background-color: #333333; margin-right: 10px; font-size: 22px;padding-bottom: 35px;" role="button"> <i class="fa fa-envelope text-white"></i></a>
+            
+               
+              </div>
+            </div>
+            <div class="modal-footer" style="margin-left: 262px;">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="col-lg-6 col-md-12 co-sm-12 mt-2">
+        <div class="column_bg_border">
+            <div class="granddiv">
+                <div class="row my-3">
+                    <div class="col-10">
+                        <div class="inputContainerjob">
+                            <input class="inputjob form-control  mx-4" type="text" placeholder="Position,Company..."
+                                (keyup)="searchJobs()" [(ngModel)]="searchValue">
+                            <i class="fa fa-search loginImage "></i>
+                        </div>
+                    </div>
+                    <div class="col-2 text-center">
+                        <span class="" data-bs-whatever="@star" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="fa-solid fa-sliders mt-1"></i></span>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-7">
+                        <h1 class="recommand mx-4">Recommended for you</h1>
+                    </div>
+                    <div class="col-5 text-center">
+                        <span>
+                            <button class="btn px-5" routerLink="/job/jobpost">Post job <i class="fa fa-plus mx-1"
+                                    aria-hidden="true"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <div *ngIf="!jobListArray|| jobListArray === 0"class="spinner-overlay">
+                    <div class="spinner"></div>
+                  </div>
+                <div class="main">
+                       <!-- <div *ngIf="!blogList || blogList.length === 0"class="spinner-overlay">
+                                    <div class="spinner"></div>
+                                  </div> -->
+                    <div *ngFor="let item of jobListArray" class="row jobdiv py-1">
+                        <div class="row d-flex justify-content-around my-2" style="cursor: pointer;">
+                            <div class="col-2">
+                                <img [src]="item.CompanyImage" alt="" class="img-fluid companyImg">
+                            </div>
+                            <div class="col-6 text-start" (click)="jobbyid(item.Id)">
+                                <h2 class>{{item.JobPost}}</h2>
+                                <div>
+                                    <span>
+                                        {{item.CompanyName }}
+                                    </span>
+                                    <span class="mx-2">
+                                        <i class="fa fa-star" aria-hidden="true"></i> <span class="mx-1"> {{item.Rating
+                                            }}</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-4 my-auto">
+                                <span class="float-end my-2" (click)="saveJobs(item)">
+        
+                                    <i *ngIf="!allSavedJobs.includes(item.Id)" class="fa-regular fa-bookmark mx-2"
+                                        id="changeColor"></i>
+                                    <i *ngIf="allSavedJobs.includes(item.Id)" class="fa fa-bookmark px-2"
+                                        aria-hidden="true "></i>
+        
+                                </span>
+                                <span class="float-end mx-2">
+                                    <img src="../../../../../assets/images/share.png" alt=""(click)="share(item.JobPost)"aria-hidden="true"type="button" data-toggle="modal" data-target="#exampleModalCenter"
+                                        class="img-fluid share"> </span>
+                            </div>
+                        </div>
+        
+                        <div class="row d-flex justify-content-around my-2">
+                            <div class="col-3 float-star">
+                                <div class="sal py-1 t">
+                                    <i class="fa fa-money mx-2" aria-hidden="true"></i>
+                                    <i class="fa fa-inr " aria-hidden="true"></i> {{item.Salary}}
+                                </div>
+                            </div>
+                            <div class="col-3 float-start">
+                                <div class="sal py-1">
+                                    <i class="fa fa-map-marker my-2" aria-hidden="true"></i> {{item.City}}
+                                </div>
+                            </div>
+                            <div class="col-3 float-start">
+                                <div class="sal py-1">
+                                    <i class="fa fa-briefcase" aria-hidden="true"></i> {{item.Experience}}
+                                </div>
+                            </div>
+        
+                            <div class="col-3">
+        
+                                <div *ngIf="companyId!=item.CompanyId">
+                                    <button class="btn-info px-3 py-1 float-end" data-bs-whatever="@star"
+                                        (click)="getId(item.Id)"> Apply</button>
+                                </div>
+        
+                                <div *ngIf="companyId===item.CompanyId" class="row ms-3">
+                                    <i (click)="editJob(item.Id)" class="fa fa-pencil-square-o fa-2x py-1 float-end col"
+                                        style="color: #0d4161; cursor:pointer"></i>
+                                    <!-- <i [routerLink]="['/job/editJob',item.Id]"
+                                        class="fa fa-pencil-square-o fa-2x py-1 float-end col"
+                                        style="color: #0d4161; cursor:pointer"></i> -->
+                                    <i class="fa fa-trash-o fa-2x py-1 float-end col" style="color: #ff0000 ; cursor:pointer"
+                                        (click)="deleteJob(item.Id)"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- <h5 class="my-1 mb-3 mx-3 fet_comp pt-2 pb-1">Top Companies</h5>
+                <div class="banner">
+        
+                    <div class="marquee-item">
+                        <img src="../../../../../assets/images/adv_img1.png" class="img-fluid adv_img " alt="">
+                    </div>
+                    <div class="marquee-item">
+                        <img src="../../../../../assets/images/adv_img2.png" class="img-fluid adv_img " alt="">
+                    </div>
+                    <div class="marquee-item">
+                        <img src="../../../../../assets/images/adv_img3.png" class="img-fluid adv_img " alt="">
+                    </div> -->
+        
+                <!-- ---code for carousal --main-slider -->
+                <div id="demo" class="carousel slide rounded-5 pb-1 px-3 mt-1" data-bs-ride="carousel">
+                    <!-- The slideshow/carousel -->
+                    <div class="carousel-inner rounded-4">
+                        <div *ngFor="let ytd of banner; let i = index" class="carousel-item {{ (i == 0) ? 'active' : ''}}">
+                            <!-- <img [src]="ytd.imgs" alt="First slide" class="d-block rounded-3" style="width:100%;height: 18vh;"> -->
+                            <div [innerHTML]='ytd.ImageContent' class="d-block rounded-3"
+                                style="width:100%;height: 18vh; image-rendering: auto;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        </div>
+        <!-- ------------job filter modal---- -->
+        <div class="modal modal1" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" style=" display: flex;
+            justify-content: center;
+            align-items: center;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="exampleModalLabel" style="font-size: 20px;
+                        font-weight: 400;">Filter Jobs</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <ul class="filter">
+                                    <li>Salary</li>
+                                    <li>Location</li>
+                                    <!-- <li id="toggleCmp">Company</li> -->
+                                    <!-- <li>Role</li> -->
+                                    <!-- <li>Sort</li> -->
+                                    <li>Posted By</li>
+                                    <li>Department</li>
+                                    <li>Company Name</li>
+                                    <li>Job Type</li>
+                                    <li>Experience</li>
+                                </ul>
+                            </div>
+                            <div class="col-7">
+                                <div style="overflow-y: scroll;"><select [(ngModel)]="salary" class="form-control salary mt-3">
+                                        <option class="salary" disabled selected value="">Salary</option>
+                                        <!-- <option value="" selected>Select Salary</option> -->
+                                        <option value="1-2 LPA">1-2 LPA</option>
+                                        <option value="2-3 LPA">2-3 LPA</option>
+                                        <option value="3-5 LPA">3-5 LPA</option>
+                                        <option value="5-7 LPA">5-7 LPA</option>
+                                        <option value="7-10 LPA">7-10 LPA</option>
+                                        <option value="10-12 LPA">10-12 LPA</option>
+                                        <option value="12-15 LPA">12-15 LPA</option>
+                                        <option value="15-20 LPA">15-20 LPA</option>
+                                        <option value="20-25 LPA">20-25 LPA</option>
+                                        <option value="25-30 LPA">25-30 LPA</option>
+                                        <option value="30-40 LPA">30-40 LPA</option>
+                                        <option value="40-50 LPA">40-50 LPA</option>
+                                        <option value="50-75 LPA">50-75 LPA</option>
+                                        <option value="1-2 cr PA">1-2 cr PA</option>
+                                        <option value="2-5 cr PA">2-5 cr PA</option>
+                                        <option value="5-10 cr PA">5-10 cr PA</option>
+                                        <option value="10 cr+ PA">10 cr+ PA</option>
+                                    </select></div>
+        
+                                <input [(ngModel)]="filterLocation" type="text" class="form-control my-4"
+                                    placeholder="Enter your prefered location">
+                                <select [(ngModel)]="postedby" class="form-control my-4">
+                                    <option disabled selected value=null>Posted By</option>
+                                    <option value="Company">Company</option>
+                                    <option value="Consultant">Consultant</option>
+                                </select>
+                                <input [(ngModel)]="department" type="text" class="form-control my-4"
+                                    placeholder="Enter your prefered department">
+                                <input [(ngModel)]="companyName" type="text" class="form-control my-4"
+                                    placeholder="Enter your prefered Company">
+                                <select [(ngModel)]="jobType" class="form-control my-4">
+                                    <option disabled selected value=null>Job Type</option>
+                                    <option value="fulltime">Full Time</option>
+                                    <option value="parttime">Part Time</option>
+                                </select>
+                                <input [(ngModel)]="exp" type="text" class="form-control my-4"
+                                    placeholder="Experience in Years">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer ">
+                        <button type="button" class="btn-danger btn1 mx-5" data-bs-dismiss="modal"
+                            (click)="clearFilters()">Clear
+                            Filters</button>
+                        <button type="submit" class="btn btn-success btn2" data-bs-dismiss="modal"
+                            (click)="filterJob()">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ------- -->
+        
+         <div class="modal modal1" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content modal-content-2">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="applyModalLabel">Apply Job</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]="jobApplyForm">
+        
+                            <div class="row">
+                                <!-- <div class="col-md-12 martop-10">
+                                    <label class="gray-shade font-normal">From </label>
+                                    <input type="text" name="to" id="to" class="form-control" placeholder="Enter Email Id"
+                                        formControlName="to" />
+        
+                                    <div *ngIf="jobApplyForm.controls['to'].invalid && (jobApplyForm.controls['to'].dirty || jobApplyForm.controls['to'].touched)"
+                                        class="error-message">
+                                        <div *ngIf="jobApplyForm.controls['to'].errors.required">
+                                            <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter Email Id
+                                        </div>
+                                    </div>
+                                </div> -->
+        
+                                <div class="col-md-12 martop-10">
+                                    <label class="gray-shade font-normal"> Attach CV </label>
+                                    <input type="file" name="attachment" id="attachment" class="form-control"
+                                        placeholder="Attach CV" formControlName="attachment"
+                                        (change)="onUploadChange($event)" />
+        
+                                    <div *ngIf="jobApplyForm.controls['attachment'].invalid && isSubmitted"
+                                        class="error-message">
+                                        <div *ngIf="jobApplyForm.controls['attachment'].errors.required" class="error-msg">
+                                            <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please Attach File
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="col-md-12 martop-10">
+                                    <label class="gray-shade font-normal"> Email Body </label>
+                                    <textarea type="text" name="body" id="body" class="form-control"
+                                        placeholder="Enter Email Body" formControlName="body" maxlength="250" rows="5">
+                                </textarea>
+                                    <div *ngIf="jobApplyForm.controls['body'].invalid && isSubmitted" class="error-message">
+                                        <div *ngIf="jobApplyForm.controls['body'].errors.required" class="error-msg">
+                                            <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter Email Body
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </form>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button type="button" class="btn-danger btn1" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-success btn2" (click)="ApplyJob()">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-12 co-sm-12 mt-2 hidden-sm hidden-xs">
+            <div class="right_side_listing column_bg_border mb-3">
+                <div class="p-2 pt-0">
+                    <div class="mt-0">
+                        <h2 class="content_medium_heading mb-5">Advertiesment</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="right_side_listing column_bg_border">
+                <div class="p-2 pt-0">
+                    <div class="mt-0">
+                        <h2 class="content_medium_heading mb-5">Advertiesment</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+   
+<app-footer></app-footer>

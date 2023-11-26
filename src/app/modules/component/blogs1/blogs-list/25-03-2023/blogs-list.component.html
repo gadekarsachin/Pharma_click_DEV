@@ -1,0 +1,369 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<div class=" mainheder pb-2">
+    <div class="row navs1 " id="hamburger">
+        
+        <div class="col-lg-3 ">
+            <img src="./assets/images/Brand_logo01.png " class="img-fluid logimg1 mt-3 " alt="OrgLogo ">
+        </div>
+        <div class="col-lg-4 ">
+            <div class="menuDiv " (click)="openSearch() ">
+                <i class="fa fa-search menuIcon mt-2 mx-2 float-end " aria-hidden="true "></i>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="menuDiv1">
+                <i class="fa fa-bars menuIcon mx-4 mt-2 " aria-hidden="true " (click)="openMenu() "></i>
+            </div>
+        </div>
+        <div class="col-lg-1 bell ">
+            <div class="notifier new ">
+                <a routerLink="/notifications"><i class="bell1 fa fa-bell-o " aria-hidden="true "></i></a>
+                <div class="badge ">.</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="container">
+    <div class="row">
+      <div class="col-md-3 hidden-sm hidden-xs">   
+        <!-- <app-menu></app-menu>  -->
+        <div class="container2">
+        <div class="gallery">
+            <div class="img">
+                <a routerLink="/home/product/category"[routerLinkActive]="'active-link1'">
+                    <h1 class="title1">
+                        <i class="fa fa-comments nav__icon" aria-hidden="true"></i>
+                        <div class="content">Marketplace</div>
+                    </h1>
+                </a>
+            </div>
+             <div class="img pharmaclick">
+                <h1 class="title1" style="background: white; color: rgb(32,72,99);">
+                    <img src="/assets/images/uuu.png" alt="" style="height: 55px;" class="nav__icon">
+                    <div class="content" style="font-weight: 600;">PharmaClick</div>
+                </h1>
+            </div>
+            <div class="img">
+                <a routerLink="/allnews"[routerLinkActive]="'active-link1'">
+                    <h1 class="title1">
+                        <i class="fa fa-newspaper-o nav__icon" aria-hidden="true"></i>
+                        <div class="content">News</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/events"[routerLinkActive]="'active-link1'">
+                    <h1 class="title1">
+                        <i class="fa fa-globe nav__icon" aria-hidden="true"></i>
+                        <div class="content">Events</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/blogs">
+                    <h1 class="title1"[routerLinkActive]="'active-link1'" [class.active-link1]="path1=='/blogs/blogslist' ">
+                        <i class="fa-solid fa-message nav__icon"></i>
+                        <div class="content">Blogs</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/all-section"[routerLinkActive]="'active-link1'">
+                    <h1 class="title1">
+                        <i class="fa-solid fa-list nav__icon"></i>
+                        <div class="content">All</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/job"[routerLinkActive]="'active-link1'">
+                    <h1 class="title1">
+                        <i class="fas fa-user-tie nav__icon"></i>
+                        <div class="content">Jobs</div>
+                    </h1>
+                </a>
+            </div> 
+
+        </div>
+
+  </div>
+</div>
+      <div class="col-md-6">
+        <div [class]="classMenu">
+
+            <div class="main1" id="sideNavClose">
+                <div class="nav__links" id="closN">
+                    <a class="closebtn" (click)="closeNav()"><i class="fa-solid fa-xmark"></i></a>
+        
+                    <div class="profile justify-content-center mb-2">
+                        <!-- <img class="profileImg" src="../../../../assets/images/profile.png" alt="Profile Image"> -->
+                        <span class="profileImgBack"><img class="profilepic" [src]="base64textString" alt="Profile Image" onerror="this.src='../../../../../assets/images/user.png'"></span>
+        
+                        <h2 class="profileTitle mt-2 ">{{profileName}}</h2>
+                    </div>
+                    <ul class="mx-auto">
+                        <li><i class="far fa-user px-2"></i> <a routerLink="/profile" class="px-2">My Account</a>
+                        </li>
+                        <li><i class="fa fa-briefcase px-2"></i>
+                            <a routerLink="/profile" class="px-2">Job Profile</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-bookmark-o px-3" aria-hidden="true"></i>
+                            <a class="feat-btn">Saved Items
+                            <!-- <span class="fas fa-caret-down first"></span> -->
+                            <span class="fa-solid fa-angle-right first  px-3" aria-hidden="true"></span>
+                            </a>
+                            <ul class="feat-show">
+                                <li><a routerLink="/GetSaveItem/Company">Companies</a></li>
+                                <li><a routerLink="/GetSaveItem/News">News</a></li>
+                                <li><a routerLink="/GetSaveItem/Events">Events</a></li>
+                                <li><a>Blogs</a></li>
+                                <li><a>Jobs</a></li>
+                            </ul>
+                        </li>
+                        <li><i class="fa-solid fa-message px-2" style="font-weight: normal;"></i> <a class="px-2">Chat</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-calendar-o px-2 "></i> <a class="px-2 ">Calender</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-star-o px-2 "></i> <a class="px-2 ">Rated Companies</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-thumbs-o-up px-2 "></i> <a class="px-2 ">Following</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-cog px-3" aria-hidden="true"></i>
+                            <a class="feat-btn1">Setting
+                            <!-- <span class="fas fa-caret-down first"></span> -->
+                            <span class="fa-solid fa-angle-right first1  px-3" aria-hidden="true"></span>
+                            </a>
+                            <ul class="feat-show1">
+                                <li>
+                                    <a>Notification</a>
+                                </li>
+                                <li><a routerLink="/auth/change-password">Change Password</a></li>
+                                <li><a routerLink="/alert">Alert</a></li>
+                                <li><a>Rate Us</a></li>
+                                <li (click)="moveToPrivacy()">
+                                    <a routerLink="/privacyPolicy ">Privacy & policy</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <i class="far fa-circle-question px-2 "></i> <a class="px-2 ">Help & FAQs</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope-o px-2 "></i> <a routerLink="/contact" class="px-2 ">Contact Us</a>
+                        </li>
+                        <li>
+                            <a class="px-2 " (click)="logout()"> <i class="fas fa-arrow-right-to-bracket px-2 "></i> Sign Out</a>
+                        </li>
+                    </ul>
+        
+        
+                </div>
+        
+                <div class=" nav__overlay " (click)="closeMenu() "></div>
+            </div>
+        </div>
+        <!-- <div> -->
+        
+        
+        <div class=" mainheder pb-2">
+        
+            <div class="row navs" id="hamburger1">
+                <div class="col-4">
+                    <div class="menuDiv">
+                        <i class="fa fa-bars menuIcon mx-4 mt-2" aria-hidden="true" (click)="openMenu()"></i>
+                    </div>
+                </div>
+                <div class="col-4 ">
+                    <img src="./assets/images/Brand_logo01.png" class="img-fluid logimg mt-3 " alt="OrgLogo">
+                </div>
+                <div class="col-2 ">
+                    <div class="menuDiv" (click)="openSearch()">
+                        <i class="fa fa-search menuIcon mt-2 mx-2 float-end" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-2 bell">
+                    <div class="notifier new">
+                        <a routerLink="/notifications"><i class="bell1 fa fa-bell-o" aria-hidden="true"></i>
+                        <div class="badge">.</div></a>
+                    </div>
+                </div>
+        
+            </div>
+        
+        </div>
+        
+        <!-- <app-navbar [classList]="classList" (toggleEvent)="receiveMessage($event)"></app-navbar> -->
+        <app-search-blogs [classSearch1]="classSearch1" (toggleEvent)="receiveSearchMesg($event)"></app-search-blogs>
+        
+        <!-- -------------------------------------------------------- -->
+        <div id="div1">
+            <div class="main">
+                <div class="subdiv scroll_slider" style="overflow-y: scroll;">
+        
+        
+                    <div class="mobile-nav-content mx-2">
+        
+                        <!-- Read Blog -->
+                        <!-- <div id="div1"> -->
+                        <div id="search" class="content-item ">
+                            <h5 class="blogtitle mx-4 mb-3">BLOGS</h5>
+                            <div class="row mx-4 my-3 rowBack" *ngFor="let obj of blogList" (click)="blogsData(obj.Id)">
+        
+                                <div class="col-8 col-sm-6 col-lg-8 relat">
+        
+                                    <span class="mx-1">
+                                <img onerror="this.src='./assets/images/user.png'" src="{{obj.AuthourImg}}" alt="" class="img-fluid idimg mt-1">
+                                 <span class="mx-3 name">{{obj.AuthorName}}</span>
+                                    </span>
+                                    <div class="desc ">
+                                        <a (click)="blogsData(obj.Id)" style="text-decoration: none;overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"> 
+                                    {{obj.Title}}</a>
+                                    </div>
+                                    <div class="rel">
+                                        <div class="absu">
+                                            <span class="time my-1"><span>{{obj.PostedAt | date:'MMMM d'}}</span>
+                                            <span class="mx-2">{{calcDate(obj)}}</span>
+                                            <span class="">{{hourTime(obj)}}</span>
+                                            </span>
+                                            <div class="media py-1">
+                                                <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                                                <i id="share"  class="fa fa-share mx-4" aria-hidden="true"></i>
+                                                <span><i id="thumb" class="fa fa-thumbs-o-up" aria-hidden="true"></i> <small> {{obj.blogLike}}</small></span>
+                                                <span class="mx-4"><i class="fa fa-comment-o " aria-hidden="true"></i><small> {{obj.totalComments}}</small></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4 col-sm-6 col-lg-4">
+        
+                                    <img onerror="this.src='./assets/images/img_new2.png'" [src]="obj.BlogImg" class="img-fluid img-center">
+        
+                                    <!-- Using class throught take image -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                        <!-- div1 -->
+                        <!-- Write Bloack -->
+                        <div style="display:none" id="menu" class="content-item ">
+        
+                            <form [formGroup]="myForm" (ngSubmit)="onSubmitForm()">
+                                <div class="form-group my-2">
+                                    <label> Blog Title:</label>
+                                    <input type="text" class="form-control py-3" formControlName="Title" required [ngClass]="{'is-invalid': isSubmitted && f.Title.errors}">
+                                    <div *ngIf="isSubmitted && f.Title.errors?.required" class="invalid-feedback">Title is required</div>
+                                </div>
+        
+                                <div class="form-group my-2">
+                                    <label> Blogs Description:</label>
+                                    <ckeditor [config]="ckeConfig " formControlName="Body" required [ngClass]="{'is-invalid': isSubmitted && f.Body.errors}">
+                                    </ckeditor>
+                                    <div *ngIf="isSubmitted && f.Title.Body?.required" class="invalid-feedback">Description is required</div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="customFile">Blog Image:</label>
+                                    <input type="file" (change)="handleUpload($event)" accept="image/*" class="form-control " size="60" id="customFile" />
+                                </div>
+                                <button [disabled]="myForm.invalid" class="btn btn-primary mt-3 " style="background-color:rgb(59, 114, 149); color:rgb(244, 244, 244); width: auto; height: auto; border-radius: 2px; ">Save</button>
+                            </form>
+        
+        
+                            <!-- <div [innerHTML]="mycontent "></div> -->
+        
+        
+                        </div>
+                    </div>
+        
+                </div>
+                <!-- subdiv -->
+        
+                <div class="btn-group btn-toggle ">
+                    <button class="btn btn1 btn-lg active mobile-nav-tab " id="search-tab ">Read Blogs</button>
+                    <button class="btn btn2 btn-lg btn-default mobile-nav-tab " id="menu-tab ">Write Blogs</button>
+                </div>
+        
+            </div>
+        </div>
+        
+        <!-- </div> -->
+        
+        <!-- Search Data -->
+        
+        <!-- <div style="height: 79.2vh; overflow-y: auto;" id="div2">
+            <div class="row">
+                <div class="col-2">
+                    <a (click)="goBack() " class="fa fa-arrow-left mx-4 mt-2" aria-hidden="true" style="text-decoration:none; color: black; font-size: 20px;"></a>
+                </div>
+                <div class="col-10  mt-1">
+                    <h1>Search Blog List</h1>
+                </div>
+            </div>
+            <div *ngIf="!getSearchData || getSearchData.length === 0">
+                <p class="mx-3 my-3">Search Blog Not Found</p>
+            </div>
+            <div class="row mx-4 my-3 rowBack" *ngFor="let obj of getSearchData">
+                <div class="col-8 relat" (click)="blogsData(obj.BlogId)">
+                    <span class="mx-1">
+                                <img onerror="this.src='../../../../../assets/images/user.png'" src="{{obj.AuthourImg}}"  src="{{obj.AthourImg}}" alt="" class="img-fluid idimg mt-1">
+                                 <span class="mx-3 name">{{obj.AuthorName}}</span>
+                    </span>
+                    <div class="desc ">
+                        <a style="text-decoration: none;">
+                                    {{obj.Title}}</a>
+                    </div>
+                    <div class="rel">
+                        <div class="absu">
+                            <span class="time my-1"><span>{{obj.CreatedOnUtc | date}}</span>
+                            <span class="mx-2">{{calcDate(obj)}}</span>
+                            <span class="">{{hourTime(obj)}}</span>
+                            </span>
+                            <div class="media py-1">
+                                <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                                <i class="fa fa-share mx-4" aria-hidden="true"></i>
+                                <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <small> {{obj.LikeCount}}</small></span>
+                                <span class="mx-4"><i class="fa fa-comment-o " aria-hidden="true"></i><small> {{obj.totalComments}}</small></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img onerror="this.src='../../../../../assets/images/img_new2.png'" [src]="obj.BlogImg" class="img-fluid img-center">       
+                </div>
+            </div>
+        </div> -->
+        <app-footer></app-footer>
+        
+
+      </div>
+   
+      <div class="col-md-3 hidden-sm hidden-xs ">
+         <div class="classadd text-center">
+            <p>Advertiesment</p>
+        </div>
+        <div class="classadd2 text-center">
+            <p>Advertiesment</p>
+        </div>
+        <div class="classadd1 text-center">
+            <p>Advertiesment</p>
+        </div> 
+ </div>
+ 
+ 
+</div>    
+</div>   
+  <app-footer></app-footer>

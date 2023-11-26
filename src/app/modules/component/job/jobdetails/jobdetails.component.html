@@ -1,0 +1,567 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/solid.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<div class="container-fluid company_details_header">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-3 left_arrow">
+              <i class="fa fa-arrow-left" (click)="goBack()" aria-hidden="true"></i>
+          </div>
+          <div class="col-6 logo_image text-center">
+              <img src="./assets/images/Brand_logo01.png" class="img-fluid logimg1" alt="OrgLogo" />
+          </div>
+          <div class="col-3 bookmark right_arrow">
+              <!-- <i class="fa fa-share mr-5" aria-hidden="true"></i> -->
+              <span id="share-message" style="display:none;">Link copied successfully!</span>
+              <i  id="" class="fa fa-share-alt"  (click)="share(jobdata.JobPost)" aria-hidden="true"type="button" data-toggle="modal" data-target="#exampleModalCenter"></i>
+              <!-- <i class="fa fa-bookmark-o" aria-hidden="true"></i> -->
+              <i class="fa fa-bookmark-o mt-4 mx-4" aria-hidden="true"></i>
+              <!-- <i  class="fa fa-bookmark-o" aria-hidden="true"></i> -->
+
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container category_main_wrapper category_details_wrapper">
+  <div class="row">
+      <div class="col-lg-3 col-md-12 co-sm-12 hidden-sm hidden-xs mt-2">
+          <div class="left_side_icon_listing column_bg_border">
+              <div class="hexagon_img">
+                  <a routerLink="/home/product/category">
+                      <h1 class="title">
+                          <i class="fa fa-comments nav__icon" aria-hidden="true"></i>
+                          <div class="content">Marketplace</div>
+                      </h1>
+                  </a>
+              </div>
+              <div class="hexagon_img">
+                  <a routerLink="/allnews">
+                      <h1 class="title">
+                          <i class="fa fa-newspaper-o nav__icon" aria-hidden="true"></i>
+                          <div class="content">News</div>
+                      </h1>
+                  </a>
+              </div>
+              <div class="hexagon_img">
+                  <a routerLink="/events">
+                      <h1 class="title">
+                          <i class="fa fa-globe nav__icon" aria-hidden="true"></i>
+                          <div class="content">Events</div>
+                      </h1>
+                  </a>
+              </div>
+              <div class="hexagon_img">
+                  <a routerLink="/blogs">
+                      <h1 class="title" >
+                          <i class="fa-solid fa-message nav__icon"></i>
+                          <div class="content">Blogs</div>
+                      </h1>
+                  </a>
+              </div>
+          
+              <div class="hexagon_img">
+                  <a routerLink="/job">
+                      <h1 class="title"[routerLinkActive]="'active-link1'"
+                      [class.active-link1]="path1=='/job/jobdetail' ">
+                          <i class="fas fa-user-tie nav__icon"></i>
+                          <div class="content">Jobs</div>
+                      </h1>
+                  </a>
+              </div>
+              <div class="hexagon_img">
+                <a routerLink="/all-section">
+                    <h1 class="title">
+                        <i class="fa-solid fa-list nav__icon"></i>
+                        <div class="content">All</div>
+                    </h1>
+                </a>
+            </div>
+          </div>
+      </div>
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLongTitle" style="font-size: 25px; margin-left:-1px; font-weight: 500;">Share</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" style="margin-right: -350px;">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="social-icons">
+                <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fpharmaclick.co.in%2Fweb%2Fjob%2Fjobdetail%{{jobId}}" target="_blank" rel="noopener noreferrer"class="btn btn-primary" style="background-color: #3b5998; margin-right: 10px; font-size: 22px;" role="button"><i class="fab fa-facebook-f text-white"></i></a> 
+                   <a href="https://twitter.com/intent/tweet?text={{share1}}&url=https://pharmaclick.co.in/web/job/jobdetail?id={{jobId}}&title={{share1}}"  target="_blank" rel="noopener noreferrer"class="btn btn-primary" style="background-color: #55acee; margin-right: 10px; font-size: 22px;"  role="button"><i class="fab fa-twitter text-white"></i></a>
+                   <a href="https://www.linkedin.com/shareArticle?mini=true&url={{redirecturl}}&title={{share1}}" target="_blank" rel="noopener" class="btn btn-primary" style="background-color: #0077B5; margin-right: 10px; font-size: 22px;">
+           <i class="fa fa-linkedin text-white"></i>
+         </a>
+                   <a href="mailto:?subject={{share1}}&amp;body=I%20found%20this%20awesome%20website%20and%20thought%20you%20might%20like%20it:%20https://pharmaclick.co.in/web/job/jobdetail?id={{jobId}}" class="btn btn-primary" style="background-color: #333333; margin-right: 10px; font-size: 22px;" role="button"> <i class="fa fa-envelope text-white"></i></a>
+                 
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12 co-sm-12 mt-2">
+        <div class="column_bg_border">
+        
+       
+  <div class="middle">
+    <div class="text-center mt-5">
+      <div class="divimg text-center">
+        <img [src]="jobdata.CompanyImage" alt="" class="img-fluid jobimg" />
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-12 text-center jobtitle">
+        {{ jobdata.JobPost }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 rating d-flex justify-content-center">
+        <div>
+          <span class="allrate">
+            <i class="fa fa-star-o text-warning" aria-hidden="true"></i>
+            <span class="rate">({{ jobdata.Rating }})</span>
+          </span>
+
+          <span class="reviewscount"> (90 reviews) </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center allinfo mt-2">
+      <div class="mx-3">{{ jobdata.CompanyName }}</div>
+      <div class="mx-5">
+        <i
+          class="fa fa-circle mx-2"
+          aria-hidden="true"
+          style="font-size: 6px; vertical-align: middle"
+        ></i>
+        {{ jobdata.Location }}
+      </div>
+      <div class="mx-3">
+        <i
+          class="fa fa-circle mx-2"
+          aria-hidden="true"
+          style="font-size: 6px; vertical-align: middle"
+        ></i>
+        {{ getTimeAgo(jobdata) }}
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-4">
+        <div class="text-center">
+          <i class="fa fa-usd fa-usd1" aria-hidden="true"></i>
+          <h5 class="mt-1 mb-0">Salary</h5>
+          <h5 class="boldinfo">
+            <i class="fa fa-usd" aria-hidden="true"></i>{{ jobdata.Salary }}k
+          </h5>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="text-center">
+          <i class="fas fa-stopwatch"></i>
+          <h5 class="mt-1 mb-0">Job Type</h5>
+          <h5 class="boldinfo">{{ jobdata.JobType }}</h5>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="text-center">
+          <i class="fa fa-briefcase fa-briefcase1" aria-hidden="true"></i>
+          <h5 class="mt-1 mb-0">Experience</h5>
+          <h5 class="boldinfo">{{ jobdata.Experience }}</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav">
+      <ul>
+        <li class="active"><a href="#Description">Description</a></li>
+        <li><a href="#Company">Company</a></li>
+        <li><a href="#Review">Reviews</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <div id="Description">
+        {{ jobdata.Description }}
+      </div>
+      <div class="hidden" id="Company">
+        <h5>About Company</h5>
+        <p *ngIf="!showFullContent">{{ jobdata.About | slice:0:500}}...<a (click)="showFullContent = true"
+            class="readmore">Read more</a>
+        </p>
+        <p *ngIf="showFullContent">{{ jobdata.About}} <a (click)="showFullContent = false" class="readmore">Read
+            less</a></p>
+        <!-- {{jobdata.About}} -->
+      </div>
+      <div class="hidden" id="Review">
+        <!-- <div>
+          <button class="addrev mx-2">Add Review</button
+          ><span class="revcount">(90) Reviews</span>
+          <span class="float-end seerev">View all</span>
+        </div> -->
+
+        <!-- <ul class="mainUL mt-3">
+          <li class="mainLI">
+            <span class="allrate">
+              <i class="fa fa-star-o text-warning" aria-hidden="true"></i>
+              <span class="rate">(4.5)</span>
+            </span>
+            <div class="my-2">
+           
+            </div>
+            <div class="revOrg">Software Engineer in Varahi Technical</div>
+          </li>
+
+          <li class="mainLI">
+            <span class="allrate">
+              <i class="fa fa-star-o text-warning" aria-hidden="true"></i>
+              <span class="rate">(4.5)</span>
+            </span>
+            <div class="my-2">
+          
+            </div>
+            <div class="revOrg">Software Engineer in Varahi Technical</div>
+          </li>
+
+          <li class="mainLI">
+            <span class="allrate">
+              <i class="fa fa-star-o text-warning" aria-hidden="true"></i>
+              <span class="rate">(4.5)</span>
+            </span>
+            <div class="my-2">
+        
+            </div>
+            <div class="revOrg">Software Engineer in Varahi Technical</div>
+          </li>
+        </ul> -->
+
+        <!-- <h5>Similar jobs</h5> -->
+
+        <!-- <div class="row jobdiv py-1">
+          <div class="col-2">
+            <img
+              src="../../../../../assets/images/adv_img2.png"
+              alt=""
+              class="img-fluid companyImg"
+            />
+          </div>
+          <div class="col-6 text-start">
+            <h2 class>Development</h2>
+            <div>
+              <span> Varahi </span>
+              <span class="mx-2">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <span class="mx-1">4.5</span>
+              </span>
+            </div>
+          </div>
+          <div class="col-4 my-auto">
+            <span class="float-end">
+              <i class="fa-regular fa-bookmark mx-3 mt-1" id="changeColor"></i
+            ></span>
+            <span class="float-end"
+              ><img
+                src="../../../../../assets/images/share.png"
+                alt=""
+                class="img-fluid share"
+              />
+            </span>
+          </div>
+
+          <div class="row d-flex justify-content-around my-2">
+            <div class="col-3 float-star">
+              <div class="sal py-1 t">
+                <i class="fa fa-money mx-2" aria-hidden="true"></i>
+                <i class="fa fa-usd" aria-hidden="true"></i> 50-115 K
+              </div>
+            </div>
+            <div class="col-3 float-start">
+              <div class="sal py-1">
+                <i class="fa fa-map-marker" aria-hidden="true"></i> Pune
+              </div>
+            </div>
+            <div class="col-3 float-start">
+              <div class="sal py-1">
+                <i class="fa fa-briefcase" aria-hidden="true"></i> Fulltime +2
+              </div>
+            </div>
+            <div class="col-3">
+              <div>
+                <button class="btn-info px-3 py-1 float-end">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div> -->
+<!-- 
+        <div class="row jobdiv py-1">
+          <div class="col-2">
+            <img
+              src="../../../../../assets/images/adv_img2.png"
+              alt=""
+              class="img-fluid companyImg"
+            />
+          </div>
+          <div class="col-6 text-start">
+            <h2 class>Development</h2>
+            <div>
+              <span> Varahi </span>
+              <span class="mx-2">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <span class="mx-1">4.5</span>
+              </span>
+            </div>
+          </div>
+          <div class="col-4 my-auto">
+            <span class="float-end">
+              <i class="fa-regular fa-bookmark mx-3 mt-1" id="changeColor"></i
+            ></span>
+            <span class="float-end"
+              ><img
+                src="../../../../../assets/images/share.png"
+                alt=""
+                class="img-fluid share"
+              />
+            </span>
+          </div>
+
+          <div class="row d-flex justify-content-around my-2">
+            <div class="col-3 float-star">
+              <div class="sal py-1 t">
+                <i class="fa fa-money mx-2" aria-hidden="true"></i>
+                <i class="fa fa-usd" aria-hidden="true"></i> 50-115 K
+              </div>
+            </div>
+            <div class="col-3 float-start">
+              <div class="sal py-1">
+                <i class="fa fa-map-marker" aria-hidden="true"></i> Pune
+              </div>
+            </div>
+            <div class="col-3 float-start">
+              <div class="sal py-1">
+                <i class="fa fa-briefcase" aria-hidden="true"></i> Fulltime +2
+              </div>
+            </div>
+            <div class="col-3">
+              <div>
+                <button class="btn-info px-3 py-1 float-end">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div class="row jobdiv py-1">
+          <div class="col-2">
+            <img
+              src="../../../../../assets/images/adv_img2.png"
+              alt=""
+              class="img-fluid companyImg"
+            />
+          </div>
+          <div class="col-6 text-start">
+            <h2 class>Development</h2>
+            <div>
+              <span> Varahi </span>
+              <span class="mx-2">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <span class="mx-1">4.5</span>
+              </span>
+            </div>
+          </div>
+          <div class="col-4 my-auto">
+            <span class="float-end">
+              <i class="fa-regular fa-bookmark mx-3 mt-1" id="changeColor"></i
+            ></span>
+            <span class="float-end"
+              ><img
+                src="../../../../../assets/images/share.png"
+                alt=""
+                class="img-fluid share"
+              />
+            </span>
+          </div>
+
+          <div class="row d-flex justify-content-around my-2">
+            <div class="col-3 float-star">
+              <div class="sal py-1 t">
+                <i class="fa fa-money mx-2" aria-hidden="true"></i>
+                <i class="fa fa-usd" aria-hidden="true"></i> 50-115 K
+              </div>
+            </div>
+            <div class="col-3 float-start">
+              <div class="sal py-1">
+                <i class="fa fa-map-marker" aria-hidden="true"></i> Pune
+              </div>
+            </div>
+            <div class="col-3 float-start">
+              <div class="sal py-1">
+                <i class="fa fa-briefcase" aria-hidden="true"></i> Fulltime +2
+              </div>
+            </div>
+            <div class="col-3">
+              <div>
+                <button class="btn-info px-3 py-1 float-end">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div> -->
+<!-- 
+        <div class="row jobdiv py-1">
+          <div class="col-2">
+            <img
+              src="../../../../../assets/images/adv_img2.png"
+              alt=""
+              class="img-fluid companyImg"
+            />
+          </div>
+          <div class="col-6 text-start">
+            <h2 class>Development</h2>
+            <div>
+              <span> Varahi </span>
+              <span class="mx-2">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <span class="mx-1">4.5</span>
+              </span>
+            </div>
+          </div>
+          <div class="col-4 my-auto">
+            <span class="float-end">
+              <i class="fa-regular fa-bookmark mx-3 mt-1" id="changeColor"></i
+            ></span>
+            <span class="float-end"
+              ><img
+                src="../../../../../assets/images/share.png"
+                alt=""
+                class="img-fluid share"
+              />
+            </span>
+          </div>
+
+          <div class="row d-flex justify-content-around my-2">
+            <div class="col-3 float-star">
+              <div class="sal py-1 t">
+                <i class="fa fa-money mx-2" aria-hidden="true"></i>
+                <i class="fa fa-usd" aria-hidden="true"></i> 50-115 K
+              </div>
+            </div>
+            <div class="col-3 float-start">
+              <div class="sal py-1">
+                <i class="fa fa-map-marker" aria-hidden="true"></i> Pune
+              </div>
+            </div>
+            <div class="col-3 float-start">
+              <div class="sal py-1">
+                <i class="fa fa-briefcase" aria-hidden="true"></i> Fulltime +2
+              </div>
+            </div>
+            <div class="col-3">
+              <div>
+                <button class="btn-info px-3 py-1 float-end">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div class="row jobdiv py-1">
+          <div class="col-2">
+            <img
+              src="../../../../../assets/images/adv_img2.png"
+              alt=""
+              class="img-fluid companyImg"
+            />
+          </div>
+          <div class="col-6 text-start">
+            <h2 class>Development</h2>
+            <div>
+              <span> Varahi </span>
+              <span class="mx-2">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <span class="mx-1">4.5</span>
+              </span>
+            </div>
+          </div>
+          <div class="col-4 my-auto">
+            <span class="float-end">
+              <i class="fa-regular fa-bookmark mx-3 mt-1" id="changeColor"></i
+            ></span>
+            <span class="float-end"
+              ><img
+                src="../../../../../assets/images/share.png"
+                alt=""
+                class="img-fluid share"
+              />
+            </span>
+          </div>
+
+          <div class="row d-flex justify-content-around my-2">
+            <div class="col-3 float-star">
+              <div class="sal py-1 t">
+                <i class="fa fa-money mx-2" aria-hidden="true"></i>
+                <i class="fa fa-usd" aria-hidden="true"></i> 50-115 K
+              </div>
+            </div>
+            <div class="col-3 float-start">
+              <div class="sal py-1">
+                <i class="fa fa-map-marker" aria-hidden="true"></i> Pune
+              </div>
+            </div>
+            <div class="col-3 float-start">
+              <div class="sal py-1">
+                <i class="fa fa-briefcase" aria-hidden="true"></i> Fulltime +2
+              </div>
+            </div>
+            <div class="col-3">
+              <div>
+                <button class="btn-info px-3 py-1 float-end">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="applydiv">
+    <button class="appplynowbtn" (click)="getId(jobId)">Apply Now</button>
+  </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-12 co-sm-12 mt-2 hidden-sm hidden-xs">
+      <div class="right_side_listing column_bg_border mb-5">
+          <div class="p-2 pt-0">
+              <div class="mt-0">
+                  <h2 class="content_medium_heading mb-5">Advertiesment</h2>
+              </div>
+          </div>
+      </div>
+      <div class="right_side_listing column_bg_border mb-5">
+          <div class="p-2 pt-0">
+              <div class="mt-0">
+                  <h2 class="content_medium_heading mb-5">Advertiesment</h2>
+              </div>
+          </div>
+      </div>
+      <div class="right_side_listing column_bg_border mb-5">
+          <div class="p-2 pt-0">
+              <div class="mt-0">
+                  <h2 class="content_medium_heading mb-5">Advertiesment</h2>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</div>
+  
+
+<app-footer></app-footer>

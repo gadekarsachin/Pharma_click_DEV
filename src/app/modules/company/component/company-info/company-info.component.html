@@ -1,0 +1,179 @@
+<!-- header -->
+<div class="row navs">
+    <div class="col-4">
+        <div class="menuDiv" (click)="openMenu()">
+            <i class="fa fa-bars mx-4 mt-2" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <div class="col-4 ">
+        <img src="../../../../assets/images/Brand_logo.png" class="img-fluid logimg mt-2" alt="OrgLogo">
+    </div>
+    <div class="col-4">
+        <img src="/assets/images/share_PNG27.png" alt="Share" style="width: 18px; margin-left: 50px; height: 18px; float: end;">
+
+        <i class="fa fa-bookmark-o  mt-2" aria-hidden="true"></i>
+        <!-- <i class="far fa-share menuIcon"></i>  -->
+    </div>
+</div>
+<!-- ----------------------- -->
+
+<div class="sub_div ">
+
+    <div class="row compTitle w-100 mx-4" *ngFor="let p of companyData">
+        <div class="col-3">
+            <img src="../../../../../assets/images/pioma-logo.png" class="img-fluid bg-dark" alt="Company_Logo">
+        </div>
+        <div class="col-9  comp_name">
+            <a href="company-info/:{{p.id}}">
+                <h4 class="mt-0">{{p.company_name}}Pioma Chemicals</h4>
+            </a>
+            <p style="font-size: 13px; font-weight: bold;"> Rate Us
+                <span class="mt-2" style="background-color: rgb(225, 245, 248)">
+              <i class="fa fa-star text-warning mt-2 mx-1" aria-hidden="true"></i>4.6
+          </span></p>
+        </div>
+    </div>
+    <!-- row compTitle -->
+    <!-- -------------Navbar--------------------- -->
+    <div class="info_nav">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/company-data#aboutus" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/company-data#product" routerLinkActive="active-link">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/company-data#application" routerLinkActive="active-link">Certification/Application</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/company-data#contact" routerLinkActive="active-link">Contact Us</a>
+            </li>
+        </ul>
+    </div>
+    <!-- info_nav -->
+</div>
+<!-- sub_div -->
+<!-- -------------------------------------------------------- -->
+<div class="Parent_Div">
+
+    <div class="all_cont" data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+        <div id="aboutus">
+            <p class="mx-4 my-4 desc w-100 mt-1">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nesciunt eaque? Omnis at in ipsum dolore minus, totam commodi assumenda provident possimus eos eius quo laborum tenetur error nisi ducimus? Molestiae repudiandae soluta pariatur eaque
+                doloribus, sed aut laudantium accusantium dolorum doloremque eos temporibus odio! Iste eius iure repellat, id numquam atque tenetur unde architecto, nemo consectetur vel cum accusamus blanditiis maxime deleniti. Corrupti perspiciatis dolore
+                quia Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nesciunt eaque? Omnis at in ipsum dolore minus, totam commodi assumenda provident possimus eos eius quo laborum tenetur error nisi ducimus? Molestiae repudiandae
+                soluta pariatur eaque doloribus, sed aut laudantium accusantium dolorum doloremque eos temporibus odio! Iste eius iure repellat, id numquam atque tenetur unde architecto, nemo consectetur vel cum accusamus blanditiis maxime deleniti. Corrupti
+                perspiciatis dolore quia Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam accusamus non deserunt expedita illum quis aut numquam iusto temporibus tenetur?
+            </p>
+        </div>
+        <div id="product">
+            <h5 class="h5 heading mt-2 mx-2">PRODUCTS</h5>
+            <table class="prdct_name w-100 ">
+                <tr>
+                    <li class="mx-3">Alkalizing Agent</li>
+                </tr>
+                <tr>
+                    <li class="mx-3">Anti-Acne</li>
+                </tr>
+                <tr>
+                    <li class="mx-3">Anti-Aging</li>
+                </tr>
+                <tr>
+                    <li class="mx-3">Anti-Bacterial</li>
+                </tr>
+                <tr>
+                    <li class="mx-3">Anti-Dandruff</li>
+                </tr>
+                <tr>
+                    <li class="mx-3">Anti-Fungal</li>
+                </tr>
+                <tr>
+                    <li class="mx-3">Anti-Inflammatory</li>
+                </tr>
+                <tr>
+                    <li class="mx-3">Anti-Microbial</li>
+                </tr>
+                <tr>
+                    <li class="mx-3">Anti-Static & Softening Agent</li>
+                </tr>
+            </table>
+        </div>
+
+        <div id="contact">
+            <h5 class="h5 heading mt-2 mx-2 mt-5">CONTACT US</h5>
+            <div class="cont_all">
+
+                <div class="row w-100">
+                    <div class="col-1 mt-3"><i class="fa fa-user-circle mx-2" aria-hidden="true"></i></div>
+                    <div class="col-10 name mt-4">
+                        <h5>MR.Doshi</h5>
+                        <h5 class="mang mt-3">Manging Director</h5>
+                    </div>
+                    <div class="col-1 mt-3"><i class="fa fa-envelope-square text-primary" aria-hidden="true"></i></div>
+                </div>
+                <h5 class="add"><b> Corporate office :</b> 101-103,<b style="line-height: 1.2;">Shyam Kamal 'D',Agarwal Market, Vile Parle(E),</b></h5>
+                <h5 class="add"><b> Mumbai -</b> 400&nbsp;057, India</h5>
+                <h5 class="add"><b> Phone : </b> +91-22-4512000/2001</h5>
+                <h5 class="add"><b> Mobile : </b> +91-93728&nbsp;00045</h5>
+                <h5 class="add"><b> Email : </b> product@pioma.net</h5>
+            </div>
+
+            <h5 class="star mx-2 mt-4">Rating </h5>
+            <div class="mx-1">
+                <i class="fa fa-star text-warning mx-1" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1" aria-hidden="true"></i>
+                <b>28</b>
+            </div>
+
+            <div class="mx-1">
+                <i class="fa fa-star text-warning mx-1" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1" aria-hidden="true"></i>
+                <b>10</b>
+            </div>
+
+            <div class="mx-1">
+                <i class="fa fa-star text-warning mx-1" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1" aria-hidden="true"></i>
+                <b>20</b>
+            </div>
+
+            <div class="mx-1">
+                <i class="fa fa-star text-warning mx-1" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1" aria-hidden="true"></i>
+                <b>27</b>
+            </div>
+
+            <div class="mx-1">
+                <i class="fa fa-star text-warning mx-1" aria-hidden="true"></i>
+                <b>7</b>
+            </div>
+
+
+            <div class="d-flex iconBox mt-4">
+                <div class="p-2">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i> Send Mail
+                </div>
+                <div class="p-2  flex-fill">
+                    <i class="fa fa-phone" aria-hidden="true"></i> Call Now
+                </div>
+                <div class="p-2  flex-fill">
+                    <i class="fa fa-comments-o" aria-hidden="true"></i> Chat Now
+                </div>
+                <div class="p-2  flex-fill">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <!-- ------id contact---- -->
+    </div>
+
+
+    <!-- <app-footer></app-footer> -->

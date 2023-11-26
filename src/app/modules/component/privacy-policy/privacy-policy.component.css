@@ -1,0 +1,56 @@
+
+.privacy_content_wrapper .terms_sub_heading 
+{
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-weight: 900;
+    text-decoration: underline;
+    
+}
+.privacy_content_wrapper .mainhead 
+{
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--thm-black);
+    margin-bottom: 20px;
+}
+.privacy_content_wrapper .mainsub_heading 
+{
+    font-size: 18px;
+    color: var(--thm-color);
+    width: 15px;
+    font-weight: 600;
+    margin-right: 15px;
+}
+.privacy_content_wrapper span.mainsub_heading 
+{
+    width: auto;
+    margin-right: 3px;
+}
+.privacy_content_wrapper
+{
+    margin-bottom: 100px;
+}
+.privacy_content_wrapper .lsiting_ul
+{
+    margin-left: 30px;
+}
+.privacy_content_wrapper ul li
+{
+    list-style: disc;
+}
+.privacy_content_wrapper ul li,
+.privacy_content_wrapper .terms_content 
+{
+    font-size: 17.5px;
+    font-weight: 400;
+}
+.privacy_content_wrapper .terms_content b
+{
+    font-weight: 800;
+}
+.privacy_content_wrapper .terms_content a
+{
+    color: var(--thm-color);
+    text-decoration: none;
+}

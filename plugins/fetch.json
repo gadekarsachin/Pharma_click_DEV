@@ -1,0 +1,91 @@
+{
+  "cordova-plugin-inappbrowser": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-inappbrowser@5.0.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-x-socialsharing": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-x-socialsharing@^6.0.4"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-device-rotation-vector": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-x-socialsharing@^6.0.4"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "es6-promise-plugin": {
+    "source": {
+      "type": "registry",
+      "id": "es6-promise-plugin@^4.1.0"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "mx.ferreyra.callnumber": {
+    "source": {
+      "type": "registry",
+      "id": "call-number"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-dialogs": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-dialogs@^2.0.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-googleplus": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-googleplus@^8.5.2"
+    },
+    "is_top_level": true,
+    "variables": {
+      "REVERSED_CLIENT_ID": "com.googleusercontent.apps.521276623139-38efp6j3h0kh87rfpjhij5lktieo5vpo",
+      "WEB_APPLICATION_CLIENT_ID": "521276623139-gsd9akaitthe89em1lne1sjf0tvppn6v.apps.googleusercontent.com"
+    }
+  },
+  "cordova-plugin-facebook-connect": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-facebook-connect@^3.2.0"
+    },
+    "is_top_level": true,
+    "variables": {
+      "APP_ID": "668185911639772",
+      "APP_NAME": "PharmaClick"
+    }
+  },
+  "cordova-plugin-facebook4": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-facebook4@^3.1.0"
+    },
+    "is_top_level": true,
+    "variables": {
+      "APP_ID": "1073726543296976",
+      "APP_NAME": "PharmaClick"
+    }
+  },
+  "cordova-plugin-spinner-dialog": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-spinner-dialog"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

@@ -1,0 +1,53 @@
+<div [class]="classList">
+
+    <div *ngFor="let dd of val">
+        <div class="nav__links">
+            <div class="profile">
+                <img class="profileImg" src="{{dd.userImg}}" alt="Profile Image">
+                <h2 class="profileTitle">{{dd.userName}}</h2>
+            </div>
+            <ul class="navList">
+                <li class="subList profileList">
+                    <a routerLink="/profile" (click)="profile()">My Profile</a>
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                </li>
+                <li class="subList msgList">
+                    <a routerLink="">{{dd.userMsg}}</a>
+                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                </li>
+                <li class="subList calList">
+                    <a routerLink="">{{dd.userCalender}}</a>
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                </li>
+                <li class="subList bookList">
+                    <a routerLink="">{{dd.userbookmark}}</a>
+                    <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                </li>
+                <li class="subList contactList">
+                    <a routerLink="">{{dd.userContact}}</a>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                </li>
+                <li class="subList settingList">
+                    <a routerLink="">{{dd.userSett}}</a>
+                    <i class="fa fa-gear" aria-hidden="true"></i>
+                </li>
+                <li class="subList helpList">
+                    <a routerLink="">{{dd.appInfo}}</a>
+                    <i class="fa fa-question-circle" aria-hidden="true"></i>
+                </li>
+                <li class="subList signOutList">
+                    <a routerLink="/auth/login">{{dd.userlogout}}</a>
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                </li>
+            </ul>
+            <!-- <div class="navTitle">
+            <h2>List of {{navTitle}}</h2>
+        </div>
+        <hr>
+        <a routerLink="" class="nav__link" *ngFor="let product of Products">
+            {{product}}
+        </a> -->
+        </div>
+        <div class="nav__overlay" (click)="closeNav()"></div>
+    </div>
+</div>

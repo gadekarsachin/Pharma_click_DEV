@@ -1,0 +1,208 @@
+.company_details_header {
+    background-color: var(--thm-white);
+    padding: 10px 0;
+    margin-bottom: 15px;
+}
+
+.company_details_header .logo_image img {
+    width: 160px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.company_details_header .left_arrow {
+    text-align: right;
+}
+
+.company_details_header .right_arrow {
+    text-align: left;
+}
+
+.company_details_header .right_arrow i {
+    margin: 0px 8px;
+}
+
+.company_details_header .right_arrow i,
+.company_details_header .left_arrow i {
+    font-size: 27px;
+    color: var(--thm-black);
+    cursor: pointer;
+}
+
+.chat_wrapper {
+    margin-bottom: 80px;
+}
+
+.chat_wrapper .chat_inner_wrapper .profileImgBack {
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--thm-color);
+    background-color: var(--thm-white);
+    border-radius: 50%;
+    padding: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat_wrapper .chat_inner_wrapper {
+    border: 2px solid #225679;
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 10px;
+    background-color: var(--thm-white);
+    margin: 10px;
+}
+
+.chat_wrapper .chat_inner_wrapper .border-bottom-line {
+    border-bottom: 2px solid var(--thm-color);
+    padding-bottom: 10px;
+    border-radius: 2px;
+}
+
+.chat_wrapper .chat_inner_wrapper .profileImgBack img {
+    width: 90%;
+    height: auto;
+    object-fit: cover;
+}
+
+.chat_wrapper .chat_inner_wrapper .chatHeader {
+    font-size: 19px;
+    padding: 0;
+    margin: 0;
+    margin-left: 10px !important;
+}
+
+.chat_wrapper .chat_innerchat_wrapper .textInput {
+    height: 50vh;
+    overflow-y: scroll;
+    margin-top: 10px;
+    margin-bottom: 55px;
+}
+
+.chat_wrapper .chat_inner_wrapper .chat-message-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 95%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.chat_wrapper .chat_inner_wrapper .chat-message-wrapper .chatprofileImgBack {
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--thm-color);
+    background-color: var(--thm-white);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    padding: 1px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+}
+
+.chat_wrapper .chat_inner_wrapper .chat-message-wrapper .chatprofileImgBack img.chatprofilepic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chat_wrapper .chat_inner_wrapper .chat-message-wrapper input {
+    width: calc(100% - 50px);
+    height: 50px;
+    border: 2px solid rgb(27, 58, 108);
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 2px;
+    margin: 0px 10px 10px 15px;
+}
+
+.chat_wrapper .chat_inner_wrapper .chat-message-wrapper button.chat-message-create-button {
+    height: 48px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    width: 50px;
+    background-color: rgb(40, 62, 103);
+    border: 1px solid rgb(27, 58, 108);
+    margin-right: 5px;
+    position: absolute;
+    top: -4px;
+    right: 5px;
+
+}
+
+.chat_wrapper .chat_inner_wrapper .chat-message-wrapper button.chat-message-create-button .icons {
+    transform: rotate(39deg);
+}
+
+.chat_wrapper .chat_inner_wrapper .chat-message-show-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+.chat_wrapper .chat_inner_wrapper #message-list li {
+    background: #dfdede;
+    color: black;
+    padding: 2px;
+    margin: 5px 30px;
+    text-align: right;
+    font-size: 16px;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 991.5px) {
+    .company_details_header .logo_image img {
+        width: 135px;
+    }
+
+    .company_details_header .right_arrow i,
+    .company_details_header .left_arrow i {
+        font-size: 20px;
+    }
+
+    .chat_wrapper .chat_inner_wrapper .chat-message-wrapper {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+}
+
+@media screen and (min-width: 290px) and (max-width: 767px) {
+    .company_details_header .left_arrow {
+        text-align: left;
+    }
+
+    .company_details_header .right_arrow {
+        text-align: right;
+    }
+
+    .company_details_header .left_arrow {
+        padding-left: 15px;
+    }
+
+    .company_details_header .right_arrow {
+        padding-right: 15px;
+    }
+
+    .chat_wrapper .chat_innerchat_wrapper .textInput {
+        height: 47vh;
+    }
+}

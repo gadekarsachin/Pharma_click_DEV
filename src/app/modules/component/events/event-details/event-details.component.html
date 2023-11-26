@@ -1,0 +1,312 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<div class="container-fluid company_details_header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-3 left_arrow">
+                <i class="fa fa-arrow-left" (click)="goBack()" aria-hidden="true"></i>
+            </div>
+            <div class="col-6 logo_image text-center">
+                <img src="./assets/images/Brand_logo01.png" class="img-fluid logimg1" alt="OrgLogo" />
+            </div>
+            <!-- <div class="col-3 bookmark right_arrow" (click)="saveCompany()"> -->
+            <div class="col-3 bookmark right_arrow">
+                <!-- <img src="./assets/images/share_PNG27.png" (click)="sendMsg()" alt="Share"> -->
+                <!-- <span [id]="'share-message-yesterday'+i" style="display:none;">Link copied successfully!</span> -->
+                <span id="share-message" style="display:none;">Link copied successfully!</span>
+                <!-- <i  class="fa fa-share mr-5 " aria-hidden="true " (click)="copyLink()"></i> -->
+                <i  id="" class="fa fa-share-alt" (click)="copyLink()" (click)="share(eventList.Name)" aria-hidden="true"type="button" data-toggle="modal" data-target="#exampleModalCenter"></i>
+                <i *ngIf="!allSavedEvents.includes(eventList.Id)" class="fa fa-bookmark-o " aria-hidden="true"
+                    (click)="saveEventD(eventList.Id)"></i>
+                <i *ngIf="allSavedEvents.includes(eventList.Id)" class="fa fa-bookmark" aria-hidden="true"
+                    (click)="saveEventD(eventList.Id)"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLongTitle" style="font-size: 25px; margin-left:-178px; font-weight: 500;">Share</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="margin-right: -350px;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fpharmaclick.co.in%2Fweb%2Fevents%2Fevent-details%3Fid%{{eventId}}" target="_blank" rel="noopener noreferrer"class="btn btn-primary" style="background-color: #3b5998; margin-right: 10px; font-size: 22px;" role="button"><i class="fab fa-facebook-f text-white"></i></a> 
+               <a href="https://twitter.com/intent/tweet?text={{share1}}&url=https://pharmaclick.co.in/web/events/event-details?id={{eventId}}&title={{share1}}"  target="_blank" rel="noopener noreferrer"class="btn btn-primary" style="background-color: #55acee; margin-right: 10px; font-size: 22px;"  role="button"><i class="fab fa-twitter text-white"></i></a>
+               <a href="https://www.linkedin.com/shareArticle?mini=true&url={{redirecturl}}&title={{share1}}" target="_blank" rel="noopener" class="btn btn-primary" style="background-color: #0077B5; margin-right: 10px; font-size: 22px;">
+       <i class="fa fa-linkedin text-white"></i>
+     </a>
+               <a href="mailto:?subject={{share1}}&amp;body=I%20found%20this%20awesome%20website%20and%20thought%20you%20might%20like%20it:%20https://pharmaclick.co.in/web/events/event-details?id={{eventId}}" class="btn btn-primary" style="background-color: #333333; margin-right: 10px; font-size: 22px;" role="button"> <i class="fa fa-envelope text-white"></i></a>
+             
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+   
+<div class="container category_main_wrapper category_details_wrapper">
+    <div class="row">
+        <div class="col-lg-3 col-md-12 co-sm-12 hidden-sm hidden-xs mt-2">
+            <div class="left_side_icon_listing column_bg_border">
+                <div class="hexagon_img">
+                    <a routerLink="/home/product/category" [routerLinkActive]="'active-link1'">
+                        <h1 class="title">
+                            <i class="fa fa-comments nav__icon" aria-hidden="true"></i>
+                            <div class="content">Marketplace</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/allnews">
+                        <h1 class="title">
+                            <i class="fa fa-newspaper-o nav__icon" aria-hidden="true"></i>
+                            <div class="content">News</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/events" [routerLinkActive]="'active-link1'">
+                        <h1 class="title1" [routerLinkActive]="'active-link1'"
+                            [class.active-link1]="path1=='/events/events/event-list' ">
+                            <i class="fa fa-globe nav__icon" aria-hidden="true"></i>
+                            <div class="content">Events</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/blogs">
+                        <h1 class="title">
+                            <i class="fa-solid fa-message nav__icon"></i>
+                            <div class="content">Blogs</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/job">
+                        <h1 class="title">
+                            <i class="fas fa-user-tie nav__icon"></i>
+                            <div class="content">Jobs</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/all-section">
+                        <h1 class="title">
+                            <i class="fa-solid fa-list nav__icon"></i>
+                            <div class="content">All</div>
+                        </h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 co-sm-12 mt-2 company_details_inner_wrapper news_details_center_wrapper">
+            <div class="column_bg_border event_details_wrapper">
+                <div class="row compTitle w-100">
+                    <div class="col-4 col-lg-3 event_logo">
+                        <img onerror="this.src='./assets/images/event.jpg'" [src]="eventList.CompanyLogo"
+                            class="img-fluid  h-75 py-3" alt="Company_Logo">
+                    </div>
+                    <div class="col-8 col-lg-9 comp_name">
+                        <div>
+                            <h4 class="event_name">{{eventList.Name}}</h4>
+                            <h5 class="event_listing">
+                                {{eventList.StartDateUtc | date:'MMM dd'}} - {{eventList.EndDateUtc | date:'dd yyyy'}}
+                            </h5>
+                            <h5 class="event_listing">{{eventList.Venue}}</h5>
+                            <p class="rating_event"> Rate Us :
+                                <span data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                    class="p-2 my-2 rating_values">
+                                    <!-- Modal -->
+                                    <i class="fa fa-star text-warning mt-2 mx-1" aria-hidden="true"></i><span
+                                        class="text-white"> ({{newRating}})</span>
+                                    <div class="modal" id="exampleModal" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-body text-center">
+                                                    <!-- <a (click)="colorChange()"> -->
+                                                    <i class="fa-solid fa-star mt-2 mx-1 starIcons"
+                                                        (click)="colorChange('1')" id="btn1" aria-hidden="true"></i>
+                                                    <i class="fa-solid fa-star mt-2 mx-1 starIcons"
+                                                        (click)="colorChange('2')" id="btn2" aria-hidden="true"></i>
+                                                    <i class="fa-solid fa-star mt-2 mx-1 starIcons"
+                                                        (click)="colorChange('3')" id="btn3" aria-hidden="true"></i>
+                                                    <i class="fa-solid fa-star mt-2 mx-1 starIcons"
+                                                        (click)="colorChange('4')" id="btn4" aria-hidden="true"></i>
+                                                    <i class="fa-solid fa-star mt-2 mx-1 starIcons"
+                                                        (click)="colorChange('5')" id="btn5" aria-hidden="true"></i>
+                                                    <!-- </a> -->
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger  p-2"
+                                                        data-bs-dismiss="modal">Cancel</button>
+                                                    <button type="submit" class="btn btn-success p-2"
+                                                        (click)="submitRatings(eventList)"
+                                                        data-bs-dismiss="modal">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="event_description">
+                            <div class="" id="scroll_slider">
+                                <div class="mx-3  maindesc">
+                                    <h5 class="desctitle eventhead my-3 ">Description</h5>
+                                    <div class="Description">
+                                        <!-- {{e.eventDescription.length}} -->
+                                        <span class="event_desc_main"
+                                            *ngIf="'{{eventList.Description}}'.length <= wordLimit">{{eventList.Description}}
+                                        </span>
+                                        <span *ngIf="'{{eventList.Description}}'.length > wordLimit && !showMore">
+                                            {{eventList.Description | slice:0:300}}...<span
+                                                (click)="showMore = true"><span
+                                                    style="font-weight: bold; color: hsl(217, 39%, 25%);">Read
+                                                    more..</span></span>
+                                        </span>
+                                        <span *ngIf="'{{eventList.Description}}'.length > wordLimit && showMore">
+                                            {{eventList.Description}} <span (click)="showMore = false"><span
+                                                    style="font-weight: bold; color: hsl(218, 33%, 24%);"> Read
+                                                    less..</span></span>
+                                        </span>
+                                    </div>
+
+
+                                    <!-- contact start -->
+                                    <div class="event_contact_main contact my-3">
+                                        <h5 class="my-2 d-flex"><b>Website :</b><span
+                                                class="space">{{eventList.WebAddress}}</span></h5>
+                                        <h5 class="my-3 d-flex"><b>Venue :</b><span
+                                                class="space">{{eventList.Venue}}</span></h5>
+                                        <h5 class="my-2 d-flex"><b>Organizer :</b><span
+                                                class="space">{{eventList.Organizer}}</span></h5>
+                                    </div>
+                                    <!-- contact end -->
+
+
+                                    <!-- Map-start -->
+
+                                    <div class="row map justify-content-center">
+                                        <h5 class="direction mx-2 eventhead">Direction</h5>
+                                        <div class="col-12 col-lg-9 col-md-12 mapdiv my-3">
+                                            <div id="maps" class="row full">
+                                                <img src="./assets/images/mapBlue.png" alt="event Image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Map-End -->
+
+                                    <!-- rating Start -->
+
+                                    <div class="allstar">
+
+                                        <h5 class="star mx-2 mt-4 mb-3 eventhead">Rating :</h5>
+                                        <div class="mx-2">
+                                            <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                                            <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                                            <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                                            <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                                            <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                                            <b class="no mx-1">({{eventList.FiveStar}})</b>
+                                        </div>
+
+                                        <div class="mx-2">
+                                            <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                                            <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                                            <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                                            <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                                            <b class="no mx-1">({{eventList.FourStar}})</b>
+                                        </div>
+
+                                        <div class="mx-2">
+                                            <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                                            <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                                            <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                                            <b class="no mx-1">({{eventList.ThreeStar}})</b>
+                                        </div>
+
+                                        <div class="mx-2">
+                                            <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                                            <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                                            <b class="no mx-1">({{eventList.TwoStar}})</b>
+                                        </div>
+
+                                        <div class="mx-2">
+                                            <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                                            <b class="no mx-1">({{eventList.OneStar}})</b>
+                                        </div>
+                                    </div>
+                                    <!-- rating End -->
+                                </div>
+                                <!-- event Slider start -->
+                                <div class="col-12 p-0 other_event_details">
+                                    <h5 class="mx-2 mt-5 mb-2 eventhead">Other Events :</h5>
+                                    <div class="allevent">
+                                        <ul class="d-flex " style="overflow-x: scroll;">
+                                            <li class="mylist" *ngFor="let e of eventAllList">
+                                                <div class="my_event" (click)="eventData(e.Id)">
+                                                    <div class="dates my-1 ">{{e.StartDateUtc}}</div>
+                                                    <div class="eventname my-2 ">{{e.Name}}</div>
+                                                    <div class="City d-flex"><i class="fa fa-map-marker mr-2 "
+                                                            aria-hidden="true "></i>
+                                                        <p>{{e.Venue}}</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-12 co-sm-12 mt-2 hidden-sm hidden-xs">
+            <div class="right_side_listing column_bg_border mb-5">
+                <div class="p-2 pt-0">
+                    <div class="mt-0">
+                        <h2 class="content_medium_heading mb-5">MonthList</h2>
+                    </div>
+                    <div class="">
+                        <ul class="category_listing">
+                            <li *ngFor="let obj of monthList">
+                              <a [class.active-link]="activeClass===obj.month" class="newClassItem"
+                                (click)="searchEventByMonth(obj)" style="text-decoration: none;">{{obj.month}}</a>
+                            </li>
+                          </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right_side_listing column_bg_border">
+                <div class="p-2 pt-0">
+                    <div class="mt-0">
+                        <h2 class="content_medium_heading mb-5">Advertiesment</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

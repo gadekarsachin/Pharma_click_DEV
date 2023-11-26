@@ -1,0 +1,330 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<app-header1></app-header1>
+
+<div class="container category_main_wrapper news_main_wrapper">
+    <div class="row">
+        <div class="col-lg-3 col-md-12 co-sm-12 hidden-sm hidden-xs mt-2">
+            <div class="left_side_icon_listing column_bg_border">
+                <div class="hexagon_img">
+                    <a routerLink="/home/product/category">
+                        <h1 class="title">
+                            <i class="fa fa-comments nav__icon" aria-hidden="true"></i>
+                            <div class="content">Marketplace</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/allnews">
+                        <h1 class="title">
+                            <i class="fa fa-newspaper-o nav__icon" aria-hidden="true"></i>
+                            <div class="content">News</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/events">
+                        <h1 class="title">
+                            <i class="fa fa-globe nav__icon" aria-hidden="true"></i>
+                            <div class="content">Events</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/blogs">
+                        <h1 class="title">
+                            <i class="fa-solid fa-message nav__icon"></i>
+                            <div class="content">Blogs</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/job">
+                        <h1 class="title">
+                            <i class="fas fa-user-tie nav__icon"></i>
+                            <div class="content">Jobs</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/all-section">
+                        <h1 class="title1"[routerLinkActive]="'active-link1'" [class.active-link1]="path1=='/all-section' ">
+                            <i class="fa-solid fa-list nav__icon"></i>
+                            <div class="content">All</div>
+                        </h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 co-sm-12 mt-2">
+            <div class="all_section_center_wrapper column_bg_border">
+                <div class="main content-item newstopics1 news_listing_todays" id="scroll_slider">
+                    <div class="market_place_wrapper">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="content_medium_heading">Marketplace</h5>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <h5 class="view_all">View all</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="slider">
+                                    <div class="row first_slider">
+                                        <div class="col-12 menuListCol mx-3 my-3" *ngFor="let obj of categoryList">
+                                            <div class="mx-auto menuList" [class.active]="activeClass===obj.Id" (click)="redirect(obj)">
+                                                <h1 class="title">{{obj.Name}}</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                      
+                              
+                        </div>
+                    </div>
+                    <div  class="today_news_wrapper">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row align-items-center">
+                                    <div class="col-6">
+                                        <h5 class="content_medium_heading">Today's News</h5>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <h5 class="view_all">View all</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-5">
+                                <div *ngIf="!allNews || allNews.length === 0">
+                                    <p class="mx-3 text-center"> There is no news for Today...!!!</p>
+                                </div>
+                                <div class="slider1">
+                                    <div class="row first_slider1">
+                                        <div class="col-12 menuListNews" *ngFor="let n of allNews">
+                                            <div (click)="newsData(n.Id) " class=" row Parent_Div" >
+                                                <div class="col-5">
+                                                    <img onerror="this.src='./assets/images/img_new.png'" src="{{n.NewsImglink.replace('/api/v1/News/','/')}} " alt="news " class="img-center event_image">
+                                                </div>
+                                                <div class="col-7 today">
+                                                    <div class="row ">
+                                                        <a (click)="newsData(n.Id ) " class="links ">{{n.Title}}</a>
+                                                    </div>
+                                                    <div class="innerDiv row">
+                                                        <div class="col-7 date_event">
+                                                            <span class="float-start ">{{calcDate(n)}}&nbsp;</span>
+                                                            <span class="float-start ">{{hourTime(n)}}&nbsp;</span>
+                                                        </div>
+                                                        <div class="col-5 ">
+                                                            <span class="float-end sharing_image">
+                                                                <img id="share" src="./assets/images/shareim.png" (click)="sendMsg()" alt="Share">
+                                                                <img src="./assets/images/icobook.png" *ngIf="!allSavedNews.includes(n.Id)" (click)="saveNews(n.Id)" alt="Save">
+                                                                <img src="./assets/images/icobook.png" *ngIf="allSavedNews.includes(n.Id)" (click)="saveNews(n.Id)" alt="Save">
+                                                                </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="upcoming_events_wrapper">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="content_medium_heading">Upcoming events</h5>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <h5 class="view_all">View all</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-5">
+                                <div class="sliderEvnt" >
+                                    <div class="row sliderEvent">
+                                        <div class="col-12 menuListEvent" >
+                                        <div class="row eventData" *ngFor="let e of eventList">
+                                            <div class="row upcomingevent_details_main align-items-center">
+                                                <div class="col-7 eventDates" (click)="eventData(e.Id)">
+                                                    <h3>{{e.StartDateUtc | date}}</h3>
+                                                </div>
+                                                <div class="col-5">
+                                                    <img id="share"src="./assets/images/icons8-share-24.png" (click)="sendMsg()" alt="Share">
+                                                    <a (click)="saveEventD(e)">
+                                                        <img src="./assets/images/icons82.png"  alt="Share">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="upcoming_details mb-5">
+                                                <div class="row">
+                                                    <a (click)="eventData(e.Id)">
+                                                        <h2 class="eventTitle mt-3 mb-1">{{e.Name | uppercase}}</h2>
+                                                    </a>
+                                                </div>
+                                                <div class="row align-items-center d-flex mb-0">
+                                                    <div class="col-12 d-flex">
+                                                        <span><img src="./assets/images/map.png" alt="map image"></span>
+                                                        <span class="eventVenue">{{e.Venue}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-12">
+                                <div class="demo_slider">
+                                    <div><h3>1</h3></div>
+                                    <div><h3>2</h3></div>
+                                    <div><h3>3</h3></div>
+                                    <div><h3>4</h3></div>
+                                    <div><h3>5</h3></div>
+                                    <div><h3>6</h3></div>
+                                  </div>
+                            </div> -->
+                            <!-- <div class="horizontal-scroll-wrapper squares">
+                                <div>item 1</div>
+                                <div>item 2</div>
+                                <div>item 3</div>
+                                <div>item 4</div>
+                                <div>item 5</div>
+                                <div>item 6</div>
+                                <div>item 7</div>
+                                <div>item 8</div>
+                              </div> -->
+                        </div>
+                    </div>
+                    <div  class="recent_blogs_wrapper">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="content_medium_heading">Recent Blogs</h5>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <h5 class="view_all">View all</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-5">
+                                <div class="sliderBlog">
+                                    <div class="row first_slider1">
+                                        <div *ngIf="!dispayData">
+                                            <!-- <content-loader>
+                                                <svg:rect x="20" y="20" rx="5" ry="5" width="360" height="350" />
+                
+                                            </content-loader>
+                                            <content-loader>
+                                                <svg:rect x="20" y="20" rx="5" ry="5" width="360" height="350" />
+                
+                                            </content-loader>
+                                            <content-loader>
+                                                <svg:rect x="20" y="20" rx="5" ry="5" width="360" height="350" />
+                
+                                            </content-loader>
+                                            <content-loader>
+                                                <svg:rect x="20" y="20" rx="5" ry="5" width="360" height="350" />
+                
+                                            </content-loader> -->
+                                        </div>
+        
+                                        <div class="col-12 menuListBlogs" *ngFor="let obj of blogList" (click)="blogsData(obj.Id)">
+                                            <div class="row rowBack" >
+                                                <div class="col-7 relat">
+                                                    <div class="row p-3 justify-content-between h-100">
+                                                        <div class="col-12 p-0">
+                                                            <div class="desc mb-4">
+                                                                <a (click)="blogsData(obj.Id)" style="text-decoration: none;"> {{obj.Title}}</a>
+                                                            </div>
+                                        
+                                                            <span class="mx-1 user_details d-flex">
+                                                                <img onerror="this.src='./assets/images/user.png'" src="{{obj.AuthourImg}}" alt="" class="img-fluid idimg">
+                                                                
+                                                                <span class=" pl-2 name">{{obj.AuthorName}}</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-12 p-0 div_bottm">
+                                                            <div class="rel blog_bottom_details">
+                                                                <div class="absu d-flex align-items-end">
+                                                                   <div class="w-50">
+                                                                    <span class="time my-1">
+                                                                        <span class="mx-2">{{calcDate(obj)}}</span>
+                                                                        <span class="">{{hourTime(obj)}}</span>
+                                                                    </span>
+                                                                   </div>
+                                                                    <div class="media m-0 float-end text-right w-50">
+                                                                        <img id="share"src="./assets/images/shareim.png" (click)="sendMsg()" alt="Share" >
+                                                                        <img src="./assets/images/icobook.png" *ngIf="!allSavedNews.includes(obj.Id)" (click)="saveNews(obj.Id)" alt="Save">
+                                                                        <img src="./assets/images/icobook.png" *ngIf="allSavedNews.includes(obj.Id)" (click)="saveNews(obj.Id)" alt="Save">
+                                                                    </div> 
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-5 p-0 left_image_wrapper">
+                                
+                                                    <img onerror="this.src='../../../../../assets/images/img_new2.png'"
+                                                    [src]="obj.BlogImglink" class="img-fluid img-center image-center" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="add_image_wrapper">
+                        <div class="row">
+                            <!-- <div class="col-12" style="margin-top: 8px;">
+                                <img src="./assets/images/adv_news.png " alt="Adervtisment " class="img-fluid w-100 px-3">
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-12 co-sm-12 mt-2 hidden-sm hidden-xs">
+            <div class="right_side_listing column_bg_border mb-3">
+                <div class="p-2 pt-0">
+                    <div class="mt-0">
+                        <h2 class="content_medium_heading mb-5">Advertiesment</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="right_side_listing column_bg_border mb-3">
+                <div class="p-2 pt-0">
+                    <div class="mt-0">
+                        <h2 class="content_medium_heading mb-5">Advertiesment</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="right_side_listing column_bg_border mb-3">
+                <div class="p-2 pt-0">
+                    <div class="mt-0">
+                        <h2 class="content_medium_heading mb-5">Advertiesment</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

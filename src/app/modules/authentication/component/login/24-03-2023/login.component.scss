@@ -1,0 +1,189 @@
+    .main {
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    
+    .imgDiv {
+        text-align: center;
+    }
+    
+    .mainImg {
+        height: 6rem;
+    }
+    
+    .imgRow {
+        padding-top: 4rem;
+    }
+    
+    .inputRow {
+        margin-top: 2.5rem;
+    }
+    
+    .inputLabel {
+        font-size: 2.6rem;
+        font-family: "Pensum Sans";
+        padding-left: 2rem;
+    }
+    
+    .inputDesign {
+        padding-left: 4rem;
+        margin-top: 1rem;
+    }
+    
+    .rememberRow {
+        margin-left: 1rem;
+    }
+    
+    .inputMail,
+    .inputPass {
+        width: 89%;
+        padding: 0.8rem 0 1rem 4rem;
+        border-radius: 0.8rem;
+        outline: none;
+        border: 1px solid gray;
+        font-size: 1.5rem;
+    }
+    
+    .inputContainerMail {
+        position: relative;
+    }
+    
+    .inputContainerMail>i {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+    }
+    
+    .inputContainerPas {
+        position: relative;
+    }
+    
+    .inputContainerPas>i {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+    }
+    
+    .inputContainerPas>span {
+        position: absolute;
+        top: 5px;
+        // left: 10px;
+        right: 15%;
+    }
+    
+    .loginImage {
+        color: lightgray;
+        font-size: 2.3rem;
+    }
+    
+    .inputSwitch {
+        font-size: 2rem;
+    }
+    
+    .form-switch {
+        padding-left: 6.5rem;
+    }
+    
+    .rememberCol {
+        margin-top: 1.5rem;
+        // margin-left: 4rem;
+    }
+    
+    .forgotDiv {
+        text-align: center;
+        margin-top: 1.5rem;
+    }
+    
+    .forgotLink {
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: black;
+        // padding-right: 23%;
+        // float: right;
+    }
+    
+    .checkbox {
+        padding-left: 49px;
+    }
+    
+    .form-check-input[type=checkbox] {
+        border-radius: 0.25em;
+        padding: 5px;
+    }
+    
+    .LoginSubmit {
+        position: relative;
+    }
+    
+    .invalid-feedback {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    
+    .fa-eye,
+    .fa-eye-slash {
+        padding-top: 4px;
+    }
+    
+    .submitBtn {
+        width: 100%;
+        padding: 1rem;
+        font-size: 2rem;
+        border-radius: 1.5rem;
+        font-family: "Pensum Sans";
+        background-color: #215578 !important;
+        color: white !important;
+    }
+    
+    .submitIcon {
+        position: absolute;
+        right: 2rem;
+        top: 0.5rem;
+        font-size: 2.7rem;
+        color: white;
+        /* border: 1px solid rgb(225, 224, 224); */
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 0.6rem;
+        border-radius: 5rem;
+    }
+    
+    .submitRow {
+        text-align: center;
+        margin-top: 2rem;
+    }
+    
+    .orRow {
+        margin-top: 1rem;
+        text-align: center;
+    }
+    
+    .orPart {
+        color: gray;
+        font-family: "Pensum Sans";
+    }
+    
+    .socialLogin {
+        padding: 1rem;
+    }
+    
+    .socialCol {
+        border: 0.1rem solid rgb(230, 227, 227);
+        border-radius: 2rem;
+    }
+    
+    .socialTitle {
+        margin-left: 1.5rem;
+        font-family: "Pensum Sans";
+    }
+    
+    .signUpLink {
+        text-decoration: none;
+        padding-left: 1rem;
+        font-weight: 500;
+        font-size: 1.5rem;
+    }
+    
+    #warning {
+        display: none;
+    }

@@ -1,0 +1,22 @@
+.container {
+  margin-top: 2rem;
+  .cards {
+    // width: 32%;
+    width:50%;
+    background-color: white;
+    border: 2px solid lightgray;
+    border-radius: 1.5rem;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin-bottom: 1rem;
+    a {
+      text-decoration: none;
+      img {
+        align-content: center;
+        // height: 20rem;
+        max-width: 100%;
+        // width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

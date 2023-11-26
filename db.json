@@ -1,0 +1,34 @@
+{
+    "products":{
+        "category":[
+            {
+                "_id":"category1",
+                "url": "assets/images/1.jfif"
+            },
+            {
+                "_id":"category2",
+                "url": "assets/images/2.jfif"
+            },
+            {
+                "_id":"category3",
+                "url": "assets/images/3.jfif"
+            },
+            {
+                "_id":"category4",
+                "url": "assets/images/4.jfif"
+            },
+            {
+                "_id":"category5",
+                "url": "assets/images/5.jfif"
+            },
+            {
+                "_id":"category6",
+                "url": "assets/images/6.jfif"
+            },
+            {
+                "_id":"category7",
+                "url": "assets/images/7.jfif"
+            }
+        ]
+    }
+}

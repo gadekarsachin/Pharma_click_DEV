@@ -1,0 +1,353 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/solid.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+
+<!--Main header-->
+<div class="container-fluid main_nav_bar">
+    <div class="container main_nav_bar_inner" style="padding: 10px;">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-3 text-left">
+                <div class="menu_icon_header">
+                    <button (click)="openMenu()"><i class="fa fa-bars menuIcon" aria-hidden="true "></i></button>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-6 text-center">
+                <div class="menu_logo">
+                    <img src="../../../../assets/images/Brand_logo.png" class="img-fluid logimg"
+                        alt="Pharma Click Logo ">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-3 text-right">
+                <div class="d-flex align-items-center justify-content-end">
+                    <div class="search_menu mr-2">
+                        <div class="menuDiv">
+                            <a (click)="openSearch() ">
+                                <i class="fa fa-search menuIcon mt-2 mx-2 float-end " aria-hidden="true "></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="notification_icon ">
+                        <a routerLink="/notifications">
+                            <i class="fa fa-bell-o" aria-hidden="true "></i>
+                            <div class="badge ">.</div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div [class]="classMenu" id="side_menu_drawer">
+        <div class="main1" id="sideNavClose">
+            <div class="nav__links" id="closN">
+                <a class="closebtn" (click)="closeNav()"><i class="fa-solid fa-xmark"></i></a>
+                <div class="profile justify-content-start">
+                    <span class="profileImgBack">
+                        <img class="profilepic" [src]="base64textString" alt="Profile Image"
+                            onerror="this.src='../../../../../assets/images/user.png'" />
+                    </span>
+                    <h2 class="profileTitle ">{{profileName}}</h2>
+                </div>
+                <ul class="mx-auto">
+                    <li><i class="far fa-user"></i> <a routerLink="/profile" class="">My Account</a>
+                    </li>
+                    <li><i class="fa fa-briefcase "></i>
+                        <a routerLink="/profile" class="">Job Profile</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                        <a class="feat-btn">Saved Items
+                            <span class="fa-solid fa-angle-right first " aria-hidden="true"></span>
+                        </a>
+                        <ul class="feat-show">
+                            <li><a routerLink="/GetSaveItem/Company">Companies</a></li>
+                            <li><a routerLink="/GetSaveItem/News">News</a></li>
+                            <li><a routerLink="/GetSaveItem/Events">Events</a></li>
+                            <li><a>Blogs</a></li>
+                            <li><a>Jobs</a></li>
+                        </ul>
+                    </li>
+                    <li><i class=" fa-solid fa-message  " style="font-weight: normal; "></i> <a class=" ">Chat</a>
+                    </li>
+                    <!-- <li>
+                        <i class="fa fa-calendar-o  "></i> <a class=" ">Calender</a>
+                    </li> -->
+                    <li>
+                        <i class="fa fa-star-o  "></i> <a class=" ">Rated Companies</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-thumbs-o-up  "></i> <a class=" ">Following</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                        <a class="feat-btn1">Setting
+                            <span class="fa-solid fa-angle-right first1" aria-hidden="true"></span>
+                        </a>
+                        <ul class="feat-show1">
+                            <li><a>Notification</a></li>
+                            <li><a routerLink="/auth/change-password">Change Password</a></li>
+                            <li><a routerLink="/alert">Alert</a></li>
+                            <li><a>Rate Us</a></li>
+                            <li (click)="moveToPrivacy()">
+                                <a routerLink="/privacyPolicy ">Privacy & policy</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="far fa-circle-question  "></i> <a class=" ">Help & FAQs</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope-o  "></i> <a routerLink="/contact " class=" ">Contact Us</a>
+                    </li>
+                    <li>
+                        <a class=" " (click)="logout() "> <i class="fas fa-arrow-right-to-bracket  "></i> Sign
+                            Out</a>
+                    </li>
+                </ul>
+            </div>
+            <div class=" nav__overlay " (click)="closeMenu() "></div>
+        </div>
+    </div>
+</div>
+
+<!-- <app-search-blogs [classSearch1]="classSearch1" (toggleEvent)="receiveSearchMesg($event)"></app-search-blogs> -->
+
+
+<div>
+
+    <div class="granddiv">
+
+        <h1 class="job mx-4">JOBS</h1>
+
+        <div class="row my-3">
+            <div class="col-10">
+                <div class="inputContainerjob">
+                    <input class="inputjob form-control  mx-4" type="text" placeholder="Position,Company..."
+                        (keyup)="searchJobs()" [(ngModel)]="searchValue">
+                    <i class="fa fa-search loginImage "></i>
+                </div>
+            </div>
+            <div class="col-2 text-center">
+                <span class="" data-bs-whatever="@star" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="fa-solid fa-sliders mt-1"></i></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-7">
+                <h1 class="recommand mx-4">Recommended for you</h1>
+            </div>
+            <div class="col-5 text-center">
+                <span>
+                    <button class="btn px-5" routerLink="/job/jobpost">Post job <i class="fa fa-plus mx-1"
+                            aria-hidden="true"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+
+        <div class="main">
+            <div *ngFor="let item of jobListArray" class="row jobdiv py-1">
+                <div class="row d-flex justify-content-around my-2" (click)="jobbyid(item.Id)" style="cursor: pointer;">
+                    <div class="col-2">
+                        <img src="{{item.CompanyImage}}" alt="" class="img-fluid companyImg">
+                    </div>
+                    <div class="col-6 text-start">
+                        <h2 class>{{item.JobPost}}</h2>
+                        <div>
+                            <span>
+                                {{item.CompanyName }}
+                            </span>
+                            <span class="mx-2">
+                                <i class="fa fa-star" aria-hidden="true"></i> <span class="mx-1"> {{item.Rating
+                                    }}</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-4 my-auto">
+                        <span class="float-end"> <i class="fa-regular fa-bookmark mx-3 mt-1"
+                                id="changeColor"></i></span>
+                        <span class="float-end"><img src="../../../../../assets/images/share.png" alt=""
+                                class="img-fluid share"> </span>
+                    </div>
+                </div>
+
+                <div class="row d-flex justify-content-around my-2">
+                    <div class="col-3 float-star">
+                        <div class="sal py-1 t">
+                            <i class="fa fa-money mx-2" aria-hidden="true"></i>
+                            <i class="fa fa-usd " aria-hidden="true"></i> {{item.Salary}}
+                        </div>
+                    </div>
+                    <div class="col-3 float-start">
+                        <div class="sal py-1">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i> {{item.Location}}
+                        </div>
+                    </div>
+                    <div class="col-3 float-start">
+                        <div class="sal py-1">
+                            <i class="fa fa-briefcase" aria-hidden="true"></i> {{item.Experience}}
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div *ngIf="companyId!=item.CompanyId">
+                            <button class="btn-info px-3 py-1 float-end" data-bs-whatever="@star" data-bs-toggle="modal"
+                                data-bs-target="#applyModal" (click)="getId(item.CompanyId)"> Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <h5 class="my-1 mb-3 mx-3 fet_comp pt-2 pb-1">Top Companies</h5>
+        <div class="banner">
+
+            <!-- <div class="marquee-item">
+                <img src="../../../../../assets/images/adv_img1.png" class="img-fluid adv_img " alt="">
+            </div>
+            <div class="marquee-item">
+                <img src="../../../../../assets/images/adv_img2.png" class="img-fluid adv_img " alt="">
+            </div>
+            <div class="marquee-item">
+                <img src="../../../../../assets/images/adv_img3.png" class="img-fluid adv_img " alt="">
+            </div> -->
+
+        <!-- ---code for carousal --main-slider -->
+        <div id="demo" class="carousel slide rounded-5 pb-1 px-3 mt-1" data-bs-ride="carousel">
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner rounded-4">
+                <div *ngFor="let ytd of banner; let i = index" class="carousel-item {{ (i == 0) ? 'active' : ''}}">
+                    <!-- <img [src]="ytd.imgs" alt="First slide" class="d-block rounded-3" style="width:100%;height: 18vh;"> -->
+                    <div [innerHTML]='ytd.ImageContent' class="d-block rounded-3"
+                        style="width:100%;height: 18vh; image-rendering: auto;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!-- ------------job filter modal---- -->
+
+<div class="modal modal1" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Filter Jobs</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-5">
+                        <ul>
+                            <li id="toggleBtn">Job Type</li>
+                            <li id="toggleBtnLoc">Location</li>
+                            <li id="toggleCmp">Company</li>
+                            <li>Department</li>
+                            <li>Role</li>
+                            <li>Salary</li>
+                            <li>Experience</li>
+                            <li>Sort</li>
+                            <li>Posted By</li>
+                        </ul>
+                    </div>
+                    <div class="col-7" id="box1">
+                        <input type="text" class="form-control" placeholder="Enter your job preferences">
+                    </div>
+                    <div class="col-7" id="box2">
+                        <input type="text" class="form-control" placeholder="Enter your prefered location">
+                    </div>
+                    <div class="col-7" id="box3">
+                        <input type="text" class="form-control" placeholder="Enter your prefered Company">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer text-center">
+                <button type="button" class="btn-danger btn1" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-success btn2" data-bs-dismiss="modal">Apply</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ------- -->
+
+<div class="modal modal1" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-content-2">
+            <div class="modal-header">
+                <h5 class="modal-title" id="applyModalLabel">Apply Job</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="jobApplyForm">
+
+                    <div class="row">
+                        <div class="col-md-12 martop-10">
+                            <label class="gray-shade font-normal">From </label>
+                            <input type="text" name="to" id="to" class="form-control" placeholder="Enter Email Id"
+                                formControlName="to" />
+
+                            <div *ngIf="jobApplyForm.controls['to'].invalid && (jobApplyForm.controls['to'].dirty || jobApplyForm.controls['to'].touched)"
+                                class="error-message">
+                                <div *ngIf="jobApplyForm.controls['to'].errors.required">
+                                    <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter Email Id
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 martop-10">
+                            <label class="gray-shade font-normal"> Attach CV </label>
+                            <input type="file" name="attachment" id="attachment" class="form-control"
+                                placeholder="Attach CV" formControlName="attachment"
+                                (change)="onUploadChange($event)" />
+
+                            <div *ngIf="jobApplyForm.controls['attachment'].invalid && isSubmitted"
+                                class="error-message">
+                                <div *ngIf="jobApplyForm.controls['attachment'].errors.required" class="error-msg">
+                                    <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please Attach File
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 martop-10">
+                            <label class="gray-shade font-normal"> Email Body </label>
+                            <textarea type="text" name="body" id="body" class="form-control"
+                                placeholder="Enter Email Body" formControlName="body" maxlength="250" rows="5">
+                        </textarea>
+                            <div *ngIf="jobApplyForm.controls['body'].invalid && isSubmitted" class="error-message">
+                                <div *ngIf="jobApplyForm.controls['body'].errors.required" class="error-msg">
+                                    <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter Email Body
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer text-center">
+                <button type="button" class="btn-danger btn1" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-success btn2" (click)="ApplyJob()">Apply</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 
+<div class="container">
+    <div class="wrapper">
+        <div class="content">
+            <div class="item">
+                <h1>COMING SOON</h1>
+                <p>This page is under construction.</p>
+            </div>
+        </div>
+    </div>
+</div>  -->
+
+<app-footer></app-footer>

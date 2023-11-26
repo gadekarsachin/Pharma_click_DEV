@@ -1,0 +1,43 @@
+.navs1 {
+    height: 10vh;
+}
+
+.fa-arrow-left11 {
+    font-size: 18px;
+    color: black;
+}
+
+.logimg {
+    height: 6.6vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title1 {
+    font-size: 19px;
+    font-weight: bolder ! important;
+}
+
+.title {
+    font-size: 19px;
+}
+
+.icon {
+    font-size: 28px;
+    color: white;
+}
+
+.bgcolor {
+    background-color: rgb(18, 64, 92);
+    padding: 11px;
+    border-radius: 25%;
+    width: 14vw;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+#remember_me {
+    padding-bottom: 18px;
+    padding-left: 41px;
+}

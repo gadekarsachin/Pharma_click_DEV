@@ -1,0 +1,131 @@
+/* .market {
+    font-family: 'Pensum Sans';
+    text-shadow: 1px 0 #215578;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #215578;
+    text-transform: uppercase;
+}
+
+.view {
+    font-size: 13px;
+    float: right;
+    color: #215578;
+}
+
+ul {
+    white-space: nowrap;
+    overflow-x: auto;
+    width: 100vw;
+    padding: 16px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+li {
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 0%;
+    margin-right: 6%;
+    border: 1px solid #215578;
+    padding: 15px;
+    height: auto;
+    width: auto;
+    word-wrap: break-word;
+    color: white;
+    background-color: #215578;
+    border-radius: 6px;
+}
+
+.contain {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.item {
+    align-items: center;
+    background-color: tomato;
+    color: white;
+    display: flex;
+    height: 300px;
+    justify-content: center;
+} */
+
+.logimg {
+    height: 6.6vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* @import url(https://fonts.googleapis.com/css?family=Montserrat); */
+/* @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700); */
+h1 {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4em;
+    color: #333;
+    -webkit-text-shadow: 0 2px 1px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7);
+    -moz-text-shadow: 0 2px 1px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7);
+    text-shadow: 0 2px 1px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7);
+    word-spacing: 1px;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #222;
+    text-shadow: 0 0 40px #FFFFFF, 0 0 30px #FFFFFF, 0 0 20px #FFFFFF;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    /* background: url('../../../../assets/images/background1.png'); */
+    background-size: cover;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    display: table;
+}
+
+.content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.item {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    padding: 8px;
+}
+
+@media only screen and (min-width: 800px) {
+    h1 {
+        font-size: 6em;
+    }
+    p {
+        font-size: 1.6em;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1.2em;
+    }
+}

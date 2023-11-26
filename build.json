@@ -1,0 +1,20 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "pharma-click.keystore",
+            "storePassword": "varahi",
+            "alias": "pharma-click",
+            "password": "varahi",
+            "keystoreType": "",
+            "packageType": "apk"
+        },
+        "release": {
+            "keystore": "pharma-click.keystore",
+            "storePassword": "varahi",
+            "alias": "pharma-click",
+            "password": "varahi",
+            "keystoreType": "",
+            "packageType": "apk"
+        }
+    }
+}

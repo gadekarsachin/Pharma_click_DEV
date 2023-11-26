@@ -1,0 +1,770 @@
+{
+    "productDetails": [{
+            "proId": 1,
+            "catId": 1,
+            "subCatId": 1,
+            "quantity": 20,
+            "url": "assets/images/pioma-logo.png",
+            "prodName": "Tablats",
+            "price": 50,
+            "type": "Sachet, Pouches, Strips, Carton, Bottles",
+            "dose": ">600mg, 501mg-600mg, <100 mg, 101mg-250mg, 251mg-350mg, 351mg-500mg",
+            "application": "Brain And Nervous System Medicines, Digestive System Medicines, Cardiovascular And Respiratory Medicines",
+            "madicine_type": "Allopathic",
+            "please make company details api for company": "",
+            "companyId": 1,
+            "company_name": "Pioma Chemicals",
+            "company_address": "Syndicate,Thane",
+            "company_phone": "034865433678",
+            "company_type": "Exporter & Manufacturer",
+            "company_rate": 4.6,
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam accusamus non deserunt expedita illum quis.",
+            "extra_info": "View more",
+            "companyLogo": "assets/images/adv_img1.png"
+        },
+        {
+            "proId": 2,
+            "companyId": 2,
+            "url": "assets/images/img-2.jpg",
+            "prodName": "forte Tablats",
+            "quantity": 28,
+            "price": 300,
+            "type": "",
+            "dose": "",
+            "application": "",
+            "madicine_type": "",
+            "company_name": "Gandhi Medicos",
+            "company_address": "Sadar Bazaar,New Delhi",
+            "company_phone": "034865433678",
+            "company_type": "Exporter & Manufacturer",
+            "company_rate": 4.6,
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima facilis sapiente autem pariatur inventore iure.",
+            "extra_info": "View more",
+            "companyLogo": "assets/images/adv_img2.png"
+        },
+        {
+            "proId": 3,
+            "companyId": 3,
+            "url": "assets/images/img-3.jpg",
+            "prodName": "cleanbuterol Tablats",
+            "quantity": 26,
+            "price": 400,
+            "type": "",
+            "dose": "",
+            "application": "",
+            "madicine_type": "",
+            "company_name": "Yashita Pharmaceuticals Private Limited",
+            "company_address": "Syndicate,Thane",
+            "company_phone": "034865433678",
+            "company_type": "Exporter & Manufacturer",
+            "company_rate": 4.6,
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima facilis sapiente autem pariatur inventore iure.",
+            "extra_info": "View more",
+            "companyLogo": "assets/images/adv_img3.png"
+        },
+        {
+            "proId": 4,
+            "companyId": 4,
+            "url": "assets/images/img-4.jpg",
+            "prodName": "Varenicline Tablats",
+            "quantity": 11,
+            "price": 400,
+            "type": "",
+            "dose": "",
+            "application": "",
+            "madicine_type": "",
+            "company_name": "Yashita Pharmaceuticals Private Limited",
+            "company_address": "Syndicate,Thane",
+            "company_phone": "034865433678",
+            "company_type": "Exporter & Manufacturer",
+            "company_rate": 4.6,
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima facilis sapiente autem pariatur inventore iure.",
+            "extra_info": "View more",
+            "companyLogo": "assets/images/adv_img4.png"
+        },
+        {
+            "proId": 5,
+            "companyId": 5,
+            "url": "assets/images/img-5.jpg",
+            "prodName": "Avanafil Tablats",
+            "quantity": 28,
+            "price": 200,
+            "type": "",
+            "dose": "",
+            "application": "",
+            "madicine_type": "",
+            "company_name": "Yashita Pharmaceuticals Private Limited",
+            "company_address": "Syndicate,Thane",
+            "company_phone": "034865433678",
+            "company_type": "Exporter & Manufacturer",
+            "company_rate": 4.6,
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima facilis sapiente autem pariatur inventore iure.",
+            "extra_info": "View more",
+            "companyLogo": "assets/images/adv_img5.png"
+        },
+        {
+            "proId": 6,
+            "companyId": 6,
+            "url": "assets/images/img-6.jpg",
+            "prodName": "Tadlafil Tablats",
+            "quantity": 33,
+            "price": 300,
+            "type": "",
+            "dose": "",
+            "application": "",
+            "madicine_type": "",
+            "company_name": "Yashita Pharmaceuticals Private Limited",
+            "company_address": "Syndicate,Thane",
+            "company_phone": "034865433678",
+            "company_type": "Exporter & Manufacturer",
+            "company_rate": 4.6,
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima facilis sapiente autem pariatur inventore iure.",
+            "extra_info": "View more",
+            "companyLogo": "assets/images/adv_img6.png"
+        },
+        {
+            "proId": 7,
+            "companyId": 7,
+            "url": "assets/images/img-7.jpg",
+            "prodName": "Slidenafil Tablats",
+            "quantity": 20,
+            "price": 300,
+            "type": "",
+            "dose": "",
+            "application": "",
+            "madicine_type": "",
+            "company_name": "Yashita Pharmaceuticals Private Limited",
+            "company_address": "Syndicate,Thane",
+            "company_phone": "034865433678",
+            "company_type": "Exporter & Manufacturer",
+            "company_rate": 4.6,
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima facilis sapiente autem pariatur inventore iure.",
+            "extra_info": "View more",
+            "companyLogo": "assets/images/adv_img3.png"
+        }
+    ],
+    "categories": [{
+            "catId": 1,
+            "categoryName": "API"
+        },
+        {
+            "catId": 2,
+            "categoryName": "fine chemicals"
+        },
+        {
+            "catId": 3,
+            "categoryName": "Natural ingredients"
+        },
+        {
+            "catId": 4,
+            "categoryName": "bioproduct"
+        },
+        {
+            "catId": 5,
+            "categoryName": "finished dosage"
+        },
+        {
+            "catId": 6,
+            "categoryName": "fluid equipment"
+        },
+        {
+            "catId": 7,
+            "categoryName": "natural ingredients"
+        }
+    ],
+    "subCategories": [{
+            "subCatId": 1,
+            "subCategoryName": "Antiparasitic"
+        },
+        {
+            "subCatId": 2,
+            "subCategoryName": "Alkakoiids"
+        },
+        {
+            "subCatId": 3,
+            "subCategoryName": "Anesthestics"
+        },
+        {
+            "subCatId": 4,
+            "subCategoryName": "Hormones"
+        },
+        {
+            "subCatId": 5,
+            "subCategoryName": "Antiparasitic"
+        },
+        {
+            "subCatId": 6,
+            "subCategoryName": "Alkakoiids"
+        },
+        {
+            "subCatId": 7,
+            "subCategoryName": "Anesthestics"
+        },
+        {
+            "subCatId": 8,
+            "subCategoryName": "Hormones"
+        }
+    ],
+    "News": [{
+            "newsId": 1,
+            "newsCatId": 1,
+            "newsTitle": "Pharma MSMEs seek DoP's intervention to get input tax credit on penalty paid on excess",
+            "publishedAt": "7/28/22 12:30:00",
+            "newsContent": "Small and Medium Pharmaceutical Manufacturers have sought the department of pharmaceuticals (DOPY Intervention to ensure avaliability of goods and services tax (GST) credit on GST portal for penalty paid on excess Import quantity under Advance Authorization scheme as per paragraph 4-49/4.50 of Hand Book Procedures (HBP). It will help manufacturers take input tax credit on GST paid in the total penalty on excess import quantity. Earlier drug manufacturers who used to pay penalty on excess import quantity under Advance Authorization scheme as per para 4-49/4-50 of HBP, could avall input credit on excise duty by producing original manual challan. After implementation of GST, if a drugmaker pays a penalty on excess import quantity through TR-6 Challan, the same does not reflect in the portal of GST, therefore the company is unable to take input tax credit on GST paid in the total penalty on excess import quantity. Expressing concern over it, the Small and Medium Pharma Manufacturers Association, representing the small and medium pharma manufacturers pan India has requested DoP joint secretary N Yuvaraj to ensure that payment made through TR-6 Challan may be reflected on the GST portal so that the company can take input credit of GST We have appealed to the DoP to make necessary provision In the software of the customs and GST so that payment made through TR-6 Challan is reflected in the GSTtal of the importer for the GST portion so that company may get the input credit of GST paid, said Nipun Jain, chairman, Small and Medium Pharma Manufacturers Association. According to G51 law, an importer under Advance Authorization scheme does not need to pay basic customs duty and Integrated Goods and Services Tax (GST) on imports.",
+            "newsImg": "assets/images/img_new5.png"
+        },
+        {
+            "newsId": 2,
+            "newsCatId": 1,
+            "newsTitle": "Pharma MSMEs seek DoP's intervention to get input tax credit on penalty paid",
+            "publishedAt": "7/22/22 12:30:00",
+            "newsContent": "Small and Medium Pharmaceutical Manufac of goods and services tax (GST) credit on GST portal for penalty",
+            "newsImg": "/assets/images/img_new2.png"
+        },
+        {
+            "newsId": 3,
+            "newsCatId": 1,
+            "newsTitle": "Pharma MSMEs seek DoP's intervention to get input tax credit on penalty paid on excess",
+            "publishedAt": "7/22/22",
+            "newsContent": "Small and Medium Pharmaceutical Manufac of goods and services tax (GST) credit on GST portal for penalty",
+            "newsImg": "assets/images/img_new3.png"
+        },
+        {
+            "newsId": 4,
+            "newsCatId": 1,
+            "newsTitle": "Pharma MSMEs seek DoP's intervention to get input tax credit on penalty paid on excess",
+            "publishedAt": "7/22/22",
+            "newsContent": "Small and Medium Pharmaceutical Manufac of goods and services tax (GST) credit on GST portal for penalty",
+            "newsImg": "assets/images/img_new3.png"
+        },
+        {
+            "newsId": 5,
+            "newsCatId": 2,
+            "newsTitle": "Pharma MSMEs seek DoP's intervention to get input tax credit on penalty paid on excess",
+            "publishedAt": "7/22/22",
+            "newsContent": "Small and Medium Pharmaceutical Manufac of goods and services tax (GST) credit on GST portal for penalty",
+            "newsImg": "assets/images/img_new3.png"
+        },
+        {
+            "newsId": 6,
+            "newsCatId": 2,
+            "newsTitle": "Pharma MSMEs seek DoP's intervention to get input tax credit on penalty paid on excess",
+            "publishedAt": "7/22/22",
+            "newsContent": "Small and Medium Pharmaceutical Manufac of goods and services tax (GST) credit on GST portal for penalty",
+            "newsImg": "assets/images/img_new3.png"
+        },
+        {
+            "newsId": 7,
+            "newsCatId": 2,
+            "newsTitle": "Pharma MSMEs seek DoP's intervention to get input tax credit on penalty paid on excess",
+            "publishedAt": "7/22/22",
+            "newsContent": "Small and Medium Pharmaceutical Manufac of goods and services tax (GST) credit on GST portal for penalty",
+            "newsImg": "assets/images/img_new3.png"
+        },
+        {
+            "newsId": 8,
+            "newsCatId": 2,
+            "newsTitle": "Pharma MSMEs seek DoP's intervention to get input tax credit on penalty paid on excess",
+            "publishedAt": "7/22/22",
+            "newsContent": "Small and Medium Pharmaceutical Manufac of goods and services tax (GST) credit on GST portal for penalty",
+            "newsImg": "assets/images/img_new3.png"
+        },
+        {
+            "newsId": 9,
+            "newsCatId": 3,
+            "newsTitle": "Pharma MSMEs seek DoP's intervention to get input tax credit on penalty paid on excess",
+            "publishedAt": "7/22/22",
+            "newsContent": "Small and Medium Pharmaceutical Manufac of goods and services tax (GST) credit on GST portal for penalty",
+            "newsImg": "assets/images/img_new3.png"
+        },
+        {
+            "newsId": 10,
+            "newsCatId": 3,
+            "newsTitle": "Pharma MSMEs seek DoP's intervention to get input tax credit on penalty paid on excess",
+            "publishedAt": "7/22/22",
+            "newsContent": "Small and Medium Pharmaceutical Manufac of goods and services tax (GST) credit on GST portal for penalty",
+            "newsImg": "assets/images/img_new3.png"
+        },
+        {
+            "newsId": 11,
+            "newsCatId": 3,
+            "newsTitle": "Pharma MSMEs seek DoP's intervention to get input tax credit on penalty paid on excess",
+            "publishedAt": "7/22/22",
+            "newsContent": "Small and Medium Pharmaceutical Manufac of goods and services tax (GST) credit on GST portal for penalty",
+            "newsImg": "assets/images/img_new3.png"
+        },
+        {
+            "newsId": 12,
+            "newsCatId": 3,
+            "newsTitle": "Pharma MSMEs seek DoP's intervention to get input tax credit on penalty paid on excess",
+            "publishedAt": "7/22/22",
+            "newsContent": "Small and Medium Pharmaceutical Manufac of goods and services tax (GST) credit on GST portal for penalty",
+            "newsImg": "assets/images/img_new3.png"
+        }
+    ],
+    "newCategories": [{
+            "newsCatId": 1,
+            "newsCatName": "Corporate"
+        },
+        {
+            "newsCatId": 2,
+            "newsCatName": "Biotechnology"
+        },
+        {
+            "newsCatId": 3,
+            "newsCatName": "Environment"
+        }
+    ],
+    "Events": [{
+            "eventId": 1,
+            "eventCompLogo": "",
+            "eventName": "your key to the korean pharma industry",
+            "eventDate": "22 - 26 Aug 2022",
+            "eventVenue": "COEX, Seoul, Korea",
+            "eventDescription": "Lorem Ipsum is  south east asia's only end-to-end pharma event south east asia's only end-to-end pharma event south east asia's only end-to-end pharma event simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+            "eventWeb": "https://www.cphi.com/europe/en/home.html",
+            "eventOrganiser": "",
+            "eventRatings": ""
+        },
+        {
+            "eventId": 2,
+            "eventCompLogo": "",
+            "eventName": "CPHI: JOIN THE WORLD’S LEADING PHARMA EVENT",
+            "eventDate": "19 - 21  Oct 2022",
+            "eventVenue": "FRANKHURT, Germany",
+            "eventDescription": "In 2022, CPhI Worldwide will become CPHI Frankfurt: a 3-day event that will take place in person and online. This hybrid model will fuse the best elements of our traditional show with interactive online features to help you get the most out of your CPHI experience! In addition to our dates in Frankfurt, this format will see our event take place online over an extended period of time, allowing you the flexibility to connect, network, learn and do business – when and how it suits you.",
+            "eventWeb": "https://www.cphi.com/europe/en/home.html",
+            "eventOrganiser": "CPHI Frankfurt",
+            "eventRatings": "4.6"
+        },
+        {
+            "eventId": 3,
+            "eventCompLogo": "",
+            "eventName": "south east asia's only end-to-end pharma event",
+            "eventDate": "01 - 03 Nov 2022",
+            "eventVenue": "IMPACT, Thailand",
+            "eventDescription": "Lorem Ipsum is simply south east asia's  south east asia's only end-to-end pharma event south east asia's only end-to-end pharma event south east asia's only end-to-end pharma eventonly end-to-end pharma event dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+            "eventWeb": "https://www.cphi.com/europe/en/home.html",
+            "eventOrganiser": "CPHI Frankfurt",
+            "eventRatings": "4.6"
+        },
+        {
+            "eventId": 4,
+            "eventCompLogo": "",
+            "eventName": "south east asia's only end-to-end pharma event",
+            "eventDate": "01 - 03 Nov 2022",
+            "eventVenue": "IMPACT, Thailand",
+            "eventDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+            "eventWeb": "https://www.cphi.com/europe/en/home.html",
+            "eventOrganiser": "CPHI Frankfurt",
+            "eventRatings": "4.6"
+        },
+        {
+            "eventId": 5,
+            "eventCompLogo": "",
+            "eventName": "south east asia's only end-to-end pharma event",
+            "eventDate": "01 - 03 Nov 2022",
+            "eventVenue": "IMPACT, Thailand",
+            "eventDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+            "eventWeb": "",
+            "eventOrganiser": "",
+            "eventRatings": ""
+        },
+        {
+            "eventId": 5,
+            "eventCompLogo": "",
+            "eventName": "south east asia's only end-to-end pharma event",
+            "eventDate": "01 - 03 Nov 2022",
+            "eventVenue": "IMPACT, Thailand",
+            "eventDescription": "Lorem Ipsum  south east asia's only end-to-end pharma event is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+            "eventWeb": "https://www.cphi.com/europe/en/home.html",
+            "eventOrganiser": "CPHI Frankfurt",
+            "eventRatings": "4.6"
+        },
+        {
+            "eventId": 5,
+            "eventCompLogo": "",
+            "eventName": "south east asia's only end-to-end pharma event",
+            "eventDate": "01 - 03 Nov 2022",
+            "eventVenue": "IMPACT, Thailand",
+            "eventDescription": "",
+            "eventWeb": "",
+            "eventOrganiser": "",
+            "eventRatings": ""
+        },
+        {
+            "eventId": 5,
+            "eventCompLogo": "",
+            "eventName": "south east asia's only end-to-end pharma event",
+            "eventDate": "01 - 03 Nov 2022",
+            "eventVenue": "IMPACT, Thailand",
+            "eventDescription": "",
+            "eventWeb": "",
+            "eventOrganiser": "",
+            "eventRatings": ""
+        },
+        {
+            "eventId": 5,
+            "eventCompLogo": "",
+            "eventName": "south east asia's only end-to-end pharma event",
+            "eventDate": "01 - 03 Nov 2022",
+            "eventVenue": "IMPACT, Thailand",
+            "eventDescription": "",
+            "eventWeb": "",
+            "eventOrganiser": "",
+            "eventRatings": ""
+        },
+        {
+            "eventId": 5,
+            "eventCompLogo": "",
+            "eventName": "south east asia's only end-to-end pharma event",
+            "eventDate": "01 - 03 Nov 2022",
+            "eventVenue": "IMPACT, Thailand",
+            "eventDescription": "",
+            "eventWeb": "",
+            "eventOrganiser": "",
+            "eventRatings": ""
+        },
+        {
+            "eventId": 5,
+            "eventCompLogo": "",
+            "eventName": "south east asia's only end-to-end pharma event",
+            "eventDate": "01 - 03 Nov 2022",
+            "eventVenue": "IMPACT, Thailand",
+            "eventDescription": "",
+            "eventWeb": "",
+            "eventOrganiser": "",
+            "eventRatings": ""
+        },
+        {
+            "eventId": 5,
+            "eventCompLogo": "",
+            "eventName": "south east asia's only end-to-end pharma event",
+            "eventDate": "01 - 03 Nov 2022",
+            "eventVenue": "IMPACT, Thailand",
+            "eventDescription": "",
+            "eventWeb": "",
+            "eventOrganiser": "",
+            "eventRatings": ""
+        },
+        {
+            "eventId": 5,
+            "eventCompLogo": "",
+            "eventName": "south east asia's only end-to-end pharma event",
+            "eventDate": "01 - 03 Nov 2022",
+            "eventVenue": "IMPACT, Thailand",
+            "eventDescription": "",
+            "eventWeb": "",
+            "eventOrganiser": "",
+            "eventRatings": ""
+        },
+        {
+            "eventId": 5,
+            "eventCompLogo": "",
+            "eventName": "south east asia's only end-to-end pharma event",
+            "eventDate": "01 - 03 Nov 2022",
+            "eventVenue": "IMPACT, Thailand",
+            "eventDescription": "",
+            "eventWeb": "",
+            "eventOrganiser": "",
+            "eventRatings": ""
+        }
+    ],
+    "Company": [{
+        "companyId": 1,
+        "company_name": "Pioma Chemicals",
+        "company_address": "Syndicate,Thane",
+        "company_phone": "034865433678",
+        "company_type": "Exporter & Manufacturer",
+        "company_rate": 4.6,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam accusamus non deserunt expedita illum quis.",
+        "extra_info": "View more",
+        "companyLogo": "assets/images/adv_img1.png",
+        "ContactPersonName": "Mr. Doshi",
+        "ContactPersonDesignation": "Manager",
+        "mobile": 24575666666,
+        "email": "fghjk@gmail.com",
+
+        "Ratings": [{
+            "fiveStar": 28,
+            "fourStar": 19,
+            "threeStar": 17,
+            "twoStar": 10,
+            "oneStar": 2
+        }]
+    }],
+    "Blogs": [{
+            "blogId": 1,
+            "blogAthourId": 1,
+            "blogAuthorName": "Hiral Shah",
+            "blogAuthorDesignation": "Senior Cardiologist",
+            "blogFollowers": 80,
+            "blogTitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "blogPostedAt": "02-July-22",
+            "blogAthourImg": "/assets/images/Dipak1-1.JPG",
+            "lastViewed": "6 minute read",
+            "blogImage": "/assets/images/img_new.png",
+            "blogSave": "",
+            "blogShare": "",
+            "blogLike": "192",
+            "totalComments": "19",
+            "blogDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos maxime hic cum exercitationem commodi illum voluptatum accusantium nostrum facere repellat earum cumque aut voluptatem similique, tenetur cupiditate est consectetur. Consectetur harum doloremque aperiam accusantium illum modi impedit delectus consequuntur tempore repudiandae. Sequi nihil quo voluptatem ipsum maxime quae porro a, voluptates autem asperiores quam laborum repellendus doloribus modi, cupiditate sed est. Vero minima voluptatibus adipisci, temporibus sit quas officia eligendi id corporis vitae, aperiam repellat nemo provident consequuntur sunt similique voluptates cumque magni necessitatibus beatae facilis libero molestias illo! Velit beatae veritatis alias"
+        },
+        {
+            "blogId": 2,
+            "blogAthourId": 2,
+            "blogAuthorName": "Hiral Shah",
+            "blogAuthorDesignation": "Senior Cardiologist",
+            "blogTitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam accusamus non ",
+            "blogPostedAt": "02-July-22",
+            "blogAthourImg": "/assets/images/Dipak1-1.JPG",
+            "lastViewed": "6 minute read",
+            "blogImage": "/assets/images/img_new.png",
+            "blogSave": "",
+            "blogShare": "",
+            "blogLike": "121",
+            "totalComments": "19",
+            "blogDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos maxime hic cum exercitationem commodi illum voluptatum accusantium nostrum facere repellatoluptates autem asperiores quam laborum repellendus doloribus modi, cupiditate sed est. Vero m"
+        },
+        {
+            "blogId": 3,
+            "blogAthourId": 3,
+            "blogAuthorName": "Hiral Shah",
+            "blogAuthorDesignation": "Senior Cardiologist",
+            "blogTitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam accusamus non ",
+            "blogPostedAt": "02-July-22",
+            "blogAthourImg": "/assets/images/Dipak1-1.JPG",
+            "lastViewed": "6 minute read",
+            "blogImage": "/assets/images/img_new.png",
+            "blogSave": "",
+            "blogShare": "",
+            "blogLike": "121",
+            "blogDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos maxime hic cum exercitationem commodi illum voluptatum accusantium nostrum facere repellatoluptates autem asperiores quam laborum repellendus doloribus modi, cupiditate sed est. Vero m"
+        },
+        {
+            "blogId": 4,
+            "blogAthourId": 4,
+            "blogAuthorName": "Hiral Shah",
+            "blogAuthorDesignation": "Senior Cardiologist",
+            "blogTitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "blogPostedAt": "02-July-22",
+            "blogAthourImg": "/assets/images/Dipak1-1.JPG",
+            "lastViewed": "6 minute read",
+            "blogImage": "/assets/images/img_new.png",
+            "blogSave": "",
+            "blogShare": "",
+            "blogLike": "192",
+            "blogDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos maxime hic cum exercitationem commodi illum voluptatum accusantium nostrum facere repellat earum cumque aut voluptatem similique, tenetur cupiditate est consectetur. Consectetur harum doloremque aperiam accusantium illum modi impedit delectus consequuntur tempore repudiandae. Sequi nihil quo voluptatem ipsum maxime quae porro a, voluptates autem asperiores quam laborum repellendus doloribus modi, cupiditate sed est. Vero minima voluptatibus adipisci, temporibus sit quas officia eligendi id corporis vitae, aperiam repellat nemo provident consequuntur sunt similique voluptates cumque magni necessitatibus beatae facilis libero molestias illo! Velit beatae veritatis alias"
+        }
+    ],
+    "blogComments": [{
+            "id": 101,
+            "blogCommentId": 1,
+            "blogComment": "Amazing write-up! Your write up is always give good advise",
+            "blogCommenterName": "Anita Sharma",
+            "commentedAt": "7/28/22 12:30:00",
+            "BlogCommenterImg": "/assets/images/img_new.png",
+            "likeComment": "",
+            "commentReply": "45",
+            "blogCommenterImg": "/assets/images/Dipak1-1.JPG"
+        },
+        {
+            "id": 102,
+            "blogCommentId": 2,
+            "blogComment": "Amazing write-up! Your write up is always give good advise",
+            "blogCommenterName": "Anita Sharma",
+            "commentedAt": "7/28/22 12:30:00",
+            "BlogCommenterImg": "/assets/images/img_new.png",
+            "likeComment": "",
+            "commentReply": "45",
+            "blogCommenterImg": "/assets/images/Dipak1-1.JPG"
+        },
+        {
+            "id": 103,
+            "blogCommentId": 3,
+            "blogComment": "Amazing write-up! Your write up is always give good advise",
+            "blogCommenterName": "Anita Sharma",
+            "commentedAt": "7/28/22 12:30:00",
+            "BlogCommenterImg": "/assets/images/img_new.png",
+            "likeComment": "",
+            "commentReply": "45",
+            "blogCommenterImg": "/assets/images/Dipak1-1.JPG"
+        }
+    ],
+    "profile": [{
+        "Id": 1,
+        "UserName": "Dipak Sir",
+        "UserImage": "/assets/images/Dipak1-1.JPG",
+        "UserDesignation": "Javascript Developer",
+        "Email": "agfahdgjhg@gmail.com",
+        "Phone": 12666777887,
+        "EditProfile": false,
+        "CurrentPosition": "Javascript Developer",
+        "Industry": "Pharmaceutical industry",
+        "Education": "B.Pharmacy 2021 Full time",
+        "Location": "Pune Maharashtra",
+        "ContactInformation": "Add url, email and phone",
+        "Website": "Add website"
+    }],
+    "userEvetn": [{
+            "eventIdss": 1,
+            "userId": 1,
+            "eventLog": "/assets/images/8.jfif",
+            "eventTimeDate": "1ST MAY-SAT -2:00 PM",
+            "eventTitle": "A Virtual Evening of smooth Jazz"
+        },
+        {
+            "eventIdss": 2,
+            "userId": 1,
+            "eventLog": "/assets/images/8.jfif",
+            "eventTimeDate": "1ST MAY-SAT -2:00 PM",
+            "eventTitle": "A Virtual Evening of smooth Jazz"
+        },
+        {
+            "eventIdss": 3,
+            "userId": 1,
+            "eventLog": "/assets/images/8.jfif",
+            "eventTimeDate": "1ST MAY-SAT -2:00 PM",
+            "eventTitle": "A Virtual Evening of smooth Jazz"
+        },
+        {
+            "eventIdss": 4,
+            "userId": 1,
+            "eventLog": "/assets/images/8.jfif",
+            "eventTimeDate": "1ST MAY-SAT -2:00 PM",
+            "eventTitle": "A Virtual Evening of smooth Jazz"
+        },
+        {
+            "eventIdss": 5,
+            "userId": 1,
+            "eventLog": "/assets/images/8.jfif",
+            "eventTimeDate": "1ST MAY-SAT -2:00 PM",
+            "eventTitle": "A Virtual Evening of smooth Jazz"
+        },
+        {
+            "eventIdss": 6,
+            "userId": 1,
+            "eventLog": "/assets/images/8.jfif",
+            "eventTimeDate": "1ST MAY-SAT -2:00 PM",
+            "eventTitle": "A Virtual Evening of smooth Jazz"
+        }
+    ],
+    "userReview": [{
+            "reviewId": 1,
+            "reviewerName": "Dipak Sir",
+            "userId": 1,
+            "userreviewImg": "/assets/images/Dipak1-1.JPG",
+            "reviewDate": "10 Feb",
+            "reviewDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quae ea eveniet quidem suscipit. Voluptates amet autem temporibus, deleniti nam ratione vero? Corporis autem assumenda nostrum sequi explicabo atque et."
+        },
+        {
+            "reviewId": 2,
+            "reviewerName": "Dipak Sir",
+            "userId": 1,
+            "userreviewImg": "/assets/images/Dipak1-1.JPG",
+            "reviewDate": "10 Feb",
+            "reviewDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quae ea eveniet quidem suscipit. Voluptates amet autem temporibus, deleniti nam ratione vero? Corporis autem assumenda nostrum sequi explicabo atque et."
+        },
+        {
+            "reviewId": 3,
+            "reviewerName": "Dipak Sir",
+            "userId": 1,
+            "userreviewImg": "/assets/images/Dipak1-1.JPG",
+            "reviewDate": "10 Feb",
+            "reviewDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quae ea eveniet quidem suscipit. Voluptates amet autem temporibus, deleniti nam ratione vero? Corporis autem assumenda nostrum sequi explicabo atque et."
+        },
+        {
+            "reviewId": 4,
+            "reviewerName": "Dipak Sir",
+            "userId": 1,
+            "userreviewImg": "/assets/images/Dipak1-1.JPG",
+            "reviewDate": "10 Feb",
+            "reviewDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quae ea eveniet quidem suscipit. Voluptates amet autem temporibus, deleniti nam ratione vero? Corporis autem assumenda nostrum sequi explicabo atque et."
+        },
+        {
+            "reviewId": 5,
+            "reviewerName": "Dipak Sir",
+            "userId": 1,
+            "userreviewImg": "/assets/images/Dipak1-1.JPG",
+            "reviewDate": "10 Feb",
+            "reviewDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quae ea eveniet quidem suscipit. Voluptates amet autem temporibus, deleniti nam ratione vero? Corporis autem assumenda nostrum sequi explicabo atque et."
+        },
+        {
+            "reviewId": 6,
+            "reviewerName": "Dipak Sir",
+            "userId": 1,
+            "userreviewImg": "/assets/images/Dipak1-1.JPG",
+            "reviewDate": "10 Feb",
+            "reviewDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quae ea eveniet quidem suscipit. Voluptates amet autem temporibus, deleniti nam ratione vero? Corporis autem assumenda nostrum sequi explicabo atque et."
+        }
+    ],
+    "slider": [{
+            "id": 1,
+            "imgs": "/assets/images/main_adv.png"
+        },
+        {
+            "id": 2,
+            "imgs": "/assets/images/img_new5.png"
+        }
+    ],
+    "NotificationCat": [{
+            "notificationCatId": 1,
+            "notificationCatName": "Marketplace"
+        },
+        {
+            "notificationCatId": 2,
+            "notificationCatName": "News"
+        },
+        {
+            "notificationCatId": 3,
+            "notificationCatName": "Events"
+        },
+        {
+            "notificationCatId": 4,
+            "notificationCatName": "Blogs"
+        },
+        {
+            "notificationCatId": 5,
+            "notificationCatName": "Jobs"
+        }
+    ],
+    "Notifications": [{
+            "notificationId": 1,
+            "notificationCatId": 1,
+            "notificationCatName": "Marketplace",
+            "companyId": 1,
+            "weekTime": "Tuesday 12:30 pm",
+            "timeAgo": "2 days ago",
+            "notificationTitle": "Miteinander leben 2020",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+        },
+        {
+            "notificationId": 2,
+            "notificationCatId": 2,
+            "notificationCatName": "News",
+            "companyId": 1,
+            "weekTime": "Tuesday 12:30 pm",
+            "timeAgo": "2 days ago",
+            "notificationTitle": "Miteinander leben 2020",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+        },
+        {
+            "notificationId": 3,
+            "notificationCatId": 3,
+            "notificationCatName": "Events",
+            "companyId": 1,
+            "weekTime": "Tuesday 12:30 pm",
+            "timeAgo": "2 days ago",
+            "notificationTitle": "Miteinander leben 2020",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+        }
+    ],
+    "Email": [{
+        "currentUserId": 1,
+        "currentUserEmail": "s@varahitechnologies.com",
+        "RecipientsEmail": "swatikatre@varahitechnologies.com",
+        "subject": "regarding xyz",
+        "body": "message"
+
+    }]
+}

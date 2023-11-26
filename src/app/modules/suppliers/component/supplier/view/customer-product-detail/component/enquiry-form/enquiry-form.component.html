@@ -1,0 +1,74 @@
+<div class="container bg-white mt-3">
+    <h2 class="header-title">
+        Adding a few details of your requirement can get you quick response fome the supplier
+    </h2>
+    <form>
+        <div class="row m-2">
+            <h2 class="title">Quantity</h2>
+            <div class="input-group mb-3">
+                <input
+                    type="text"
+                    class="form-control quntity-box"
+                    placeholder="50"
+                    aria-label="Username"
+                >
+                <input
+                    type="text"
+                    class="form-control quntity-box"
+                    placeholder="bottle"
+                    aria-label="Server"
+                >
+            </div>
+        </div>
+         <div class="row m-2">
+                <h2 class="title">I Want This For:</h2>
+                <div class="input-group  bg-white">
+                    <div class="mb-3">
+                        <div class="input-group-text">
+                            <label class="radio-inline">
+                                <input type="radio" name="optradio" checked>Reselling
+                              </label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group-text">
+                            <label class="radio-inline">
+                                <input type="radio" name="optradio">PCD Pharma Franchise
+                              </label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group-text">
+                            <label class="radio-inline">
+                                <input type="radio" name="optradio">Third Party Manufacturing
+                            </label>
+                        </div>
+                    </div>
+              </div>
+        </div>
+        <div class="row m-2">
+            <h2 class="title">Requirement Details</h2>
+            <div class="input-group mb-3">
+                <input
+                    type="text"
+                    class="form-control input-box"
+                    placeholder=""
+                    aria-label="Username"
+                >
+            </div>
+        </div>
+        <div>
+            <button 
+               type="submit"
+               class="btn btn-primary mr-2"
+               (click)="next()"
+            >
+            Next
+           </button>
+        </div>
+        <div class="row m-3">
+            <p>Your Contact Information:</p>
+            <p>4540645695670</p>
+        </div>
+    </form>
+</div>

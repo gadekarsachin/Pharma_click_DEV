@@ -1,0 +1,95 @@
+<div>
+    <h2 class="d-flex justify-content-center align-items-center">Medicinal Tablets</h2>
+</div>
+<div class="container d-flex justify-content-center">
+    <!-- <div class="cards" *ngFor = "let product of products"> -->
+    <div class="d-flex justify-content-between alien-items-center row w-100 py-2">
+        <div
+            class=" d-flex flex-column card-content "
+            *ngFor="let details of productDetails"
+        >
+            <div class="cards d-flex">
+                <div class="card-body col-xs-12 col-xs-6 col-md-4">
+                    <a routerLink="/home/product/product-details">
+                        <img
+                            class="d-flex justify-content-center align-items-center py-2"
+                            src="{{details.url}}"
+                            alt="..."
+                        >
+                    </a>
+                </div>
+                <div>
+                    <ul class="d-flex row justify-content-between p-5">
+                        <li>
+                            <h3>{{details.prodName}}</h3>
+                        </li>
+                        <li>
+                            <h4>
+                                <i class="fa fa-rupee-sign"></i>
+                                Price:{{details.price}}
+                            </h4>
+                        </li>
+                        <li>Packaging Type: {{details.type}}</li>
+                        <li>Dose: {{details.dose}}</li>
+                        <li>Application:  {{details.application}}</li>
+                        <li>
+                            Medicine Type: {{details.medicine_type}}
+                        </li>
+                        <!-- <li>
+                            <h3>{{details.company_name}}</h3>
+                        </li>
+                        <li>{{details.company_address}}</li> -->
+                    </ul>
+                </div>
+                <!-- <div>
+                    <ul>
+                        <li>
+                            <h3>{{details.company_name}}</h3>
+                        </li>
+                        <li>{{details.company_address}}</li>
+                    </ul>
+                </div> -->
+                
+            </div>
+            <div class="">
+                <ul>
+                    <li>
+                        <h3>{{details.company_name}}</h3>
+                    </li>
+                    <li>{{details.company_address}}</li>
+                    <li><i class="fa fa-phone-volume"></i>&nbsp; Call  {{details.company_phone}}
+                </ul>
+
+                <button class="btn btn-primary m-2 p-2" (click)="submit()">Contact Supplier</button>
+            </div>
+            <br>
+            <br>
+        </div>
+        <!-- <div
+            class="cards d-flex"
+        >
+            <div class="card-body col-xs-6 col-md-4">
+                <a routerLink="/home/product/product-details">
+                    <img
+                    class="d-flex justify-content-center align-items-center py-2"
+                    src="assets/images/img-2.jpg"
+                    alt="..."
+                >
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <ul class="d-flex row justify-content-between p-5">
+                <li>
+                    Product Name:Tablats packeging
+                </li>
+                <li>
+                    Price : 200rss
+                </li>
+                <li>
+                  glass botals and tablate
+                </li>
+            </ul>
+        </div> -->
+    </div>
+</div>

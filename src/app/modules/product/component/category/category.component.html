@@ -1,0 +1,180 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<div class="container category_main_wrapper">
+    <div class="set-to-top">
+        <div class="row justify-content-center">
+            <div class="col-lg-6  text-left">
+                <h2 class="content_heading mb-3">Marketplace</h2>
+            </div>
+        </div>
+        <div class="catSlider_small_device">
+            <div class="row  first_slider" (click)="renderDynamicInputs()">
+                <div class="col-12 menuListCol ">
+                    <ul class="menuList">
+                        <li *ngFor="let cat of categoryList">
+                            <a [class.active-link]="activeClass===cat.Id" (click)="redirect(cat)">
+                                {{cat.Name}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-12 co-sm-12 hidden-sm hidden-xs mt-2">
+            <div class="left_side_icon_listing column_bg_border">
+                <div class="hexagon_img">
+                    <a routerLink="/home/product/category">
+                        <h1 class="title" [routerLinkActive]="'active-link1'"
+                            [class.active-link]="path=='/home/product/category'">
+                            <i class="fa fa-comments nav__icon" aria-hidden="true"></i>
+                            <div class="content">Marketplace</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/allnews">
+                        <h1 class="title">
+                            <i class="fa fa-newspaper-o nav__icon" aria-hidden="true"></i>
+                            <div class="content">News</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/events">
+                        <h1 class="title">
+                            <i class="fa fa-globe nav__icon" aria-hidden="true"></i>
+                            <div class="content">Events</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/blogs">
+                        <h1 class="title">
+                            <i class="fa-solid fa-message nav__icon"></i>
+                            <div class="content">Blogs</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/job">
+                        <h1 class="title">
+                            <i class="fas fa-user-tie nav__icon"></i>
+                            <div class="content">Jobs</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/all-section">
+                        <h1 class="title">
+                            <i class="fa-solid fa-list nav__icon"></i>
+                            <div class="content">All</div>
+                        </h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 co-sm-12 mt-2">
+            <div class="column_bg_border advertiement_main_slider">
+                <div class="row">
+                    <div class="col-12 mt-0">
+                            <!-- ---code for carousal --main-slider -->
+                    <div class="scroll">
+                        <div id="demo" *ngIf="banner.length !== 0" class="carousel slide  px-3 mt-2 " data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div *ngFor="let ytd of banner; let i = index" class="carousel-item {{ (i == 0) ? 'active' : ''}}">
+                                <div [innerHTML]='ytd.ImageContent' alt="Advertiement 1" class="d-block" style="width:100%;height: 18vh;"></div>
+                            </div>
+                        </div>
+                        <div class="carousel-indicators ">
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+                        </div>
+                        </div>
+                    </div>
+                        <!-- <div class="advertiement_slider">
+                            <div>
+                                <img src="./assets/images/img_new5.png" class="img-fluid logimg1" alt="OrgLogo">
+                            </div>
+                            <div>
+                                <img src="./assets/images/img-1.jpg" class="img-fluid logimg1" alt="OrgLogo">
+                            </div>
+                            <div>
+                                <img src="./assets/images/img-2.jpg" class="img-fluid logimg1" alt="OrgLogo">
+                            </div>
+                           
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="column_bg_border">
+                <div class="mb-5">
+                    <h2 class="content_medium_heading mb-5">Categories</h2>
+                </div>
+                <div class="row mt-5 scroll_slider">
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-4 mx-auto my-3 category_listing_bottom"
+                        *ngFor="let obj of categoryList">
+                        <div class="hex2 mx-auto" [class.active]="activeClass===obj.Id" (click)="redirect(obj)">
+                            <h5 class="category_title">{{obj.Name}}</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <h2 class="content_medium_heading mb-5">Featured Companies</h2>
+                </div>
+                <div class="featured-companies-sliders">
+                    <marquee behavior="" direction="" style="width:40vw; overflow: hidden;">
+                    <div class="marquee-content">
+                        <div class="marquee-item" *ngFor="let obj of companylog">
+                            <img onerror="this.src='../../../assets/images/adv_img1.png'" class="img-fluid adv_img " [src]="obj.CompanyLogo" alt="">
+                        </div>
+        
+                    </div>
+                    </marquee>
+                    <!-- <div>
+                        <img src="../../../../../assets/images/img_new4.png" class="img-fluid"
+                            alt="Featured Companies Logo">
+                    </div>
+                    <div>
+                        <img src="../../../../../assets/images/img_new4.png" class="img-fluid"
+                            alt="Featured Companies Logo">
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-12 co-sm-12 mt-2 hidden-sm hidden-xs">
+            <div class="right_side_listing column_bg_border mb-5">
+                <div class="p-2 pt-0">
+                    <div class="mt-0">
+                        <h2 class="content_medium_heading mb-5">Categories</h2>
+                    </div>
+                    <div class="">
+                        <ul class="category_listing">
+                            <li *ngFor="let cat of categoryList">
+                                <a [class.active-link]="activeClass===cat.Id" (click)="redirect(cat)" style="text-decoration: none;">
+                                    {{cat.Name}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right_side_listing column_bg_border">
+                <div class="p-2 pt-0">
+                    <div class="mt-0">
+                        <h2 class="content_medium_heading mb-5">Advertiesment</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

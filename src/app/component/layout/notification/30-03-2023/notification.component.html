@@ -1,0 +1,164 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<!-- <app-header1></app-header1> -->
+ <div class=" mainheder1 pb-2" id="mobile_header"> 
+    <div class="row navs1 ">
+        <div class="col-4 ">
+            <i class="fa fa-arrow-left fa-arrow-left11 mx-4 mt-5 pt-2" (click)="goesBack()" aria-hidden="true"></i>
+        </div>
+        <div class="col-4">
+            <img src="../../../../assets/images/Brand_logo01.png" class="img-fluid logimg mt-3" alt="OrgLogo">
+        </div>
+        <div class="col-2">
+            
+        </div>
+        <div class="col-2">
+            
+        </div>
+    </div>
+</div> 
+<div class=" mainheder1 pb-2" id="web_header">
+    <div class="row navs1 ">
+       
+        <div class="col-4">
+            <img src="./assets/images/Brand_logo01.png" class="img-fluid logimg mt-3" alt="OrgLogo">
+        </div>
+        <div class="col-4 " style="margin-left: -55px;">
+            <i class="fa fa-arrow-left fa-arrow-left11 mx-4 mt-5 pt-2" (click)="goesBack()" aria-hidden="true"></i>
+        </div>
+        <div class="col-2">
+            <!-- <img src="/assets/images/share_PNG27.png" alt="Share" style=" display: block; margin-left: 40px; margin-right: auto; width: 18px; height:18px;margin-top: 21px;"> -->
+        </div>
+        <div class="col-2">
+            <!-- <i *ngIf="!allSavedNews.includes(objData.Id)" class="fa fa-bookmark-o mt-5 pt-2 mx-4" aria-hidden="true" (click)="saveNews()"></i>
+            <i *ngIf="allSavedNews.includes(objData.Id)" class="fa fa-bookmark  mt-5 pt-2 mx-4 fa-2x" aria-hidden="true"></i> -->
+            <!-- <i class="far fa-share menuIcon"></i>  -->
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 hidden-sm hidden-xs">    
+            <div class="container2">
+            <div class="gallery">
+                <div class="img">
+                    <a routerLink="/home/product/category">
+                        <h1 class="title1">
+                            <i class="fa fa-comments nav__icon" aria-hidden="true"></i>
+                            <div class="content">Marketplace</div>
+                        </h1>
+                    </a>
+                </div>
+                 <div class="img pharmaclick">
+                    <h1 class="title1" style="background: white; color: rgb(32,72,99);">
+                        <img src="/assets/images/uuu.png" alt="" style="height: 55px;" class="nav__icon">
+                        <div class="content" style="font-weight: 600;">PharmaClick</div>
+                    </h1>
+                </div>
+                <div class="img">
+                    <a routerLink="/allnews">
+                        <h1 class="title1">
+                            <i class="fa fa-newspaper-o nav__icon" aria-hidden="true"></i>
+                            <div class="content">News</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="img">
+                    <a routerLink="/events">
+                        <h1 class="title1">
+                            <i class="fa fa-globe nav__icon" aria-hidden="true"></i>
+                            <div class="content">Events</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="img">
+                    <a routerLink="/blogs">
+                        <h1 class="title1">
+                            <i class="fa-solid fa-message nav__icon"></i>
+                            <div class="content">Blogs</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="img">
+                    <a routerLink="/all-section">
+                        <h1 class="title1">
+                            <i class="fa-solid fa-list nav__icon"></i>
+                            <div class="content">All</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="img">
+                    <a routerLink="/job">
+                        <h1 class="title1">
+                            <i class="fas fa-user-tie nav__icon"></i>
+                            <div class="content">Jobs</div>
+                        </h1>
+                    </a>
+                </div> 
+    
+            </div>
+    
+      </div>
+    </div>
+    <div class="col-md-6">     
+       
+        <div class="mainheader">
+            <div class="scrollermain mx-2">
+                <h5 class="noti_title mx-3">NOTIFICATION</h5>
+                <div class="scroller">
+                    <p class="mx-3"> No Notification.</p>
+                    <!-- <div class="row notif_List mx-3 py-3 my-3" *ngFor="let obj of nList">
+                        <div class="col-3 text-center my-auto">
+                            <div class="bgcolor mx-2" ngSwitch="{{obj.NotificationId}}">
+                                <i class="fa fa-comments icon" *ngSwitchCase="1" aria-hidden="true"></i>
+                                <i class="fa fa-newspaper-o icon" *ngSwitchCase="2" aria-hidden="true"></i>
+                                <i class="fa fa-globe icon" *ngSwitchCase="3" aria-hidden="true"></i>
+                                <i class=" fa-solid fa-message nav__icon icon" *ngSwitchCase="4"></i>
+                                <i class="fas fa-user-tie nav__icon icon" *ngSwitchCase="5" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <div class=" time">
+                                <span>{{obj.WeekTime | date}}</span>
+                                <span class="float-end"> {{calcDate(obj)}}&nbsp; {{hourTime(obj)}}&nbsp;</span>
+                            </div>
+                            <div class="notific_title my-2">
+                                {{obj.NotificationName}}
+                            </div>
+                            <div class="notific_desc">
+                                {{obj.Description}}
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <app-footer></app-footer>
+
+
+
+      </div>
+          <div class="col-md-3 hidden-sm hidden-xs ">
+        <div class="classadd text-center">
+           <p>Advertiesment</p>
+       </div>
+       <div class="classadd2 text-center">
+           <p>Advertiesment</p>
+       </div>
+       <div class="classadd1 text-center">
+           <p>Advertiesment</p>
+       </div> 
+</div>
+</div>
+      </div>
+
+
+
+
+<app-footer></app-footer>

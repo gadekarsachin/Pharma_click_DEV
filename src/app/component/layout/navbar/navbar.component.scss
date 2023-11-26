@@ -1,0 +1,127 @@
+hr {
+    margin: 0;
+}
+
+
+/* .navTitle{
+     padding: 10px 15px;
+ } */
+
+.profile {
+    padding-top: 6rem;
+    margin-left: 35%;
+}
+
+.profileImg {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 4rem;
+}
+
+.profileTitle {
+    font-family: 'Aclonica', sans-serif;
+    width: 100%;
+    margin-left: -20px;
+    padding-top: 1.2rem;
+}
+
+.profileList,
+.msgList,
+.calList,
+.bookList,
+.contactList,
+.settingList,
+.helpList,
+.signOutList {
+    position: relative;
+}
+
+.profileList>i,
+.msgList>i,
+.calList>i,
+.bookList>i,
+.contactList>i,
+.settingList>i,
+.helpList>i,
+.signOutList>i {
+    position: absolute;
+    top: 1.9rem;
+    left: 0;
+    font-size: 1.5rem;
+}
+
+.navList {
+    margin-left: 15%;
+    list-style: none;
+}
+
+.subList {
+    padding: 2rem 2rem 2rem 3.3rem;
+    font-size: 1.5rem;
+    font-family: 'Aclonica', sans-serif;
+}
+
+.subList>a {
+    text-decoration: none;
+    color: black;
+}
+
+.profileList {
+    margin-top: 3.3rem;
+}
+
+.nav__links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100vh;
+    width: 300px;
+    background-color: white;
+    transform: translateX(-300px);
+    transition: transform 0.3s;
+    overflow: scroll;
+}
+
+.nav--open .nav__links {
+    transform: translateX(0);
+    box-shadow: 0 0 10px black;
+}
+
+.nav__link {
+    display: flex;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 1.5rem;
+    padding: 15px 17px;
+    background: transform 0.2s;
+}
+
+.nav__link--active {
+    background-color: aquamarine;
+}
+
+.nav__link--active,
+.nav__link:hover {
+    background-color: aquamarine;
+}
+
+.nav__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.nav--open .nav__overlay {
+    visibility: visible;
+    opacity: 1;
+}

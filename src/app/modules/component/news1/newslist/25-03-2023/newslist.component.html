@@ -1,0 +1,786 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<div class=" mainheder pb-2">
+
+    <div class="row navs" id="menu">
+        <div class="col-4">
+            <div class="menuDiv">
+                <i class="fa fa-bars menuIcon mx-4 mt-2" aria-hidden="true" (click)="openMenu()"></i>
+            </div>
+        </div>
+        <div class="col-4 ">
+            <img src="./assets/images/Brand_logo01.png" class="img-fluid logimg mt-3 " alt="OrgLogo">
+        </div>
+        <div class="col-2 ">
+            <div class="menuDiv" (click)="openSearch()">
+                <i class="fa fa-search menuIcon mt-2 mx-2 float-end" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="col-2 bell">
+            <div class="notifier new">
+                <a routerLink="/notifications"><i class="bell1 fa fa-bell-o" aria-hidden="true"></i>
+                    <div class="badge">.</div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="row navs1 " id="hamburger">
+
+        <div class="col-lg-3 ">
+            <img src="./assets/images/Brand_logo01.png " class="img-fluid logimg1 mt-3 " alt="OrgLogo ">
+        </div>
+        <div class="col-lg-4 ">
+            <div class="menuDiv " (click)="openSearch() ">
+                <i class="fa fa-search menuIcon mt-2 mx-2 float-end " aria-hidden="true "></i>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="menuDiv1">
+                <i class="fa fa-bars menuIcon mx-4 mt-2 " aria-hidden="true " (click)="openMenu() "></i>
+            </div>
+        </div>
+        <div class="col-lg-1 bell ">
+            <div class="notifier new ">
+                <a routerLink="/notifications"><i class="bell1 fa fa-bell-o " aria-hidden="true "></i></a>
+                <div class="badge ">.</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="container">
+    <!-- <div class=" mainheder pb-2">
+        <div class="row navs ">
+            <div class="col-4">
+                <i class="fa fa-arrow-left mx-4 mt-5 pt-2" (click)="goBack()" aria-hidden="true"></i>
+            </div>
+    
+            <div class="col-4 ">
+                <img src="../../../../assets/images/Brand_logo01.png" class="img-fluid logimg mt-3" alt="OrgLogo">
+            </div>
+            <div class="col-2">
+                <img id="share" src="/assets/images/share_PNG27.png" (click)="sendMsg()" alt="Share">
+            </div>
+            <div class="col-2" (click)="saveCompany()">
+                <i *ngIf="!allSavedCompany.includes(companyData.CompanyId)" class="fa fa-bookmark-o  mt-5 pt-2 mx-4 fa-2x" aria-hidden="true"></i>
+                <i *ngIf="allSavedCompany.includes(companyData.CompanyId)" class="fa fa-bookmark  mt-5 pt-2 mx-4 fa-2x" aria-hidden="true"></i>
+               
+            </div>
+        </div>
+    </div>   -->
+    <div class="row">
+        <div class="col-md-3  hidden-sm hidden-xs">
+            <!-- <app-menu></app-menu>   -->
+            <div class="container2">
+                <div class="gallery">
+                    <div class="img">
+                        <a routerLink="/home/product/category/allnews/Newslist">
+                            <h1 class="title1">
+                                <i class="fa fa-comments nav__icon" aria-hidden="true"></i>
+                                <div class="content">Marketplace</div>
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="img pharmaclick">
+                        <h1 class="title1" style="background: white; color: rgb(32,72,99);">
+                            <img src="/assets/images/uuu.png" alt="" style="height: 55px;" class="nav__icon">
+                            <div class="content" style="font-weight: 600;">PharmaClick</div>
+                        </h1>
+                    </div>
+                    <div class="img">
+                        <a routerLink="/allnews" [routerLinkActive]="'active-link1'">
+                            <h1 class="title1" [routerLinkActive]="'active-link1'"
+                                [class.active-link1]="path1=='/allnews/Newslist' ">
+                                <i class="fa fa-newspaper-o nav__icon" aria-hidden="true"></i>
+                                <div class="content">News</div>
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="img">
+                        <a routerLink="/events" [routerLinkActive]="'active-link1'">
+                            <h1 class="title1">
+                                <i class="fa fa-globe nav__icon" aria-hidden="true"></i>
+                                <div class="content">Events</div>
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="img">
+                        <a routerLink="/blogs" [routerLinkActive]="'active-link1'">
+                            <h1 class="title1">
+                                <i class="fa-solid fa-message nav__icon"></i>
+                                <div class="content">Blogs</div>
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="img">
+                        <a routerLink="/all-section" [routerLinkActive]="'active-link1'">
+                            <h1 class="title1">
+                                <i class="fa-solid fa-list nav__icon"></i>
+                                <div class="content">All</div>
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="img">
+                        <a routerLink="/job" [routerLinkActive]="'active-link1'">
+                            <h1 class="title1">
+                                <i class="fas fa-user-tie nav__icon"></i>
+                                <div class="content">Jobs</div>
+                            </h1>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+
+
+            <div [class]="classMenu">
+
+                <div class="main1" id="sideNavClose">
+                    <div class="nav__links" id="closN">
+                        <a class="closebtn" (click)="closeNav()"><i class="fa-solid fa-xmark"></i></a>
+
+                        <div class="profile justify-content-center mb-2">
+                            <!-- <img class="profileImg" src="../../../../assets/images/profile.png" alt="Profile Image"> -->
+                            <span class="profileImgBack"><img class="profilepic" [src]="base64textString"
+                                    alt="Profile Image"
+                                    onerror="this.src='../../../../../assets/images/user.png'"></span>
+
+                            <h2 class="profileTitle mt-2 ">{{profileName}}</h2>
+                        </div>
+                        <ul class="mx-auto">
+                            <li><i class="far fa-user px-2"></i> <a routerLink="/profile" class="px-2">My Account</a>
+                            </li>
+                            <li><i class="fa fa-briefcase px-2"></i>
+                                <a routerLink="/profile" class="px-2">Job Profile</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-bookmark-o px-3" aria-hidden="true"></i>
+                                <a class="feat-btn">Saved Items
+                                    <!-- <span class="fas fa-caret-down first"></span> -->
+                                    <span class="fa-solid fa-angle-right first  px-3" aria-hidden="true"></span>
+                                </a>
+                                <ul class="feat-show">
+                                    <li><a routerLink="/GetSaveItem/Company">Companies</a></li>
+                                    <li><a routerLink="/GetSaveItem/News">News</a></li>
+                                    <li><a routerLink="/GetSaveItem/Events">Events</a></li>
+                                    <li><a>Blogs</a></li>
+                                    <li><a>Jobs</a></li>
+                                </ul>
+                            </li>
+                            <li><i class="fa-solid fa-message px-2" style="font-weight: normal;"></i> <a
+                                    class="px-2">Chat</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-calendar-o px-2 "></i> <a class="px-2 ">Calender</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-star-o px-2 "></i> <a class="px-2 ">Rated Companies</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-thumbs-o-up px-2 "></i> <a class="px-2 ">Following</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-cog px-3" aria-hidden="true"></i>
+                                <a class="feat-btn1">Setting
+                                    <!-- <span class="fas fa-caret-down first"></span> -->
+                                    <span class="fa-solid fa-angle-right first1  px-3" aria-hidden="true"></span>
+                                </a>
+                                <ul class="feat-show1">
+                                    <li>
+                                        <a>Notification</a>
+                                    </li>
+                                    <li><a routerLink="/auth/change-password">Change Password</a></li>
+                                    <li><a routerLink="/alert">Alert</a></li>
+                                    <li><a>Rate Us</a></li>
+                                    <li (click)="moveToPrivacy()">
+                                        <a routerLink="/privacyPolicy ">Privacy & policy</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <i class="far fa-circle-question px-2 "></i> <a class="px-2 ">Help & FAQs</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope-o px-2 "></i> <a routerLink="/contact" class="px-2 ">Contact
+                                    Us</a>
+                            </li>
+                            <li>
+                                <a class="px-2 " (click)="logout()"> <i class="fas fa-arrow-right-to-bracket px-2 "></i>
+                                    Sign Out</a>
+                            </li>
+                        </ul>
+
+
+                    </div>
+
+                    <div class=" nav__overlay " (click)="closeMenu() "></div>
+                </div>
+            </div>
+            <!-- <div class=" mainheder pb-2">
+
+    <div class="row navs">
+        <div class="col-4">
+            <div class="menuDiv">
+                <i class="fa fa-bars menuIcon mx-4 mt-2" aria-hidden="true" (click)="openMenu()"></i>
+            </div>
+        </div>
+        <div class="col-4 ">
+            <img src="../../../../assets/images/Brand_logo01.png" class="img-fluid logimg mt-3 " alt="OrgLogo">
+        </div>
+        <div class="col-2 ">
+            <div class="menuDiv" (click)="openSearch()">
+                <i class="fa fa-search menuIcon mt-2 mx-2 float-end" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="col-2 bell">
+            <div class="notifier new">
+                <a routerLink="/notifications"><i class="bell1 fa fa-bell-o" aria-hidden="true"></i>
+                <div class="badge">.</div></a>
+            </div>
+        </div>
+
+    </div>
+
+</div> -->
+
+            <!-- <app-navbar [classList]="classList" (toggleEvent)="receiveMessage($event)"></app-navbar> -->
+            <app-search-news [classSearch]="classSearch" (toggleEvent)="receiveSearchMesg($event)"></app-search-news>
+
+            <!-- --------------------------------------- -->
+            <div id="div1">
+                <div class="nav ">
+                    <!-- <div class="col-11"><button class="appTour" (click)="startTour();">Application Tour</button></div> -->
+                    <div class="row mx-1" id="newstopics1">
+                        <div class="col-2">
+                            <h6 class="h6 text-center" (click)="renderDynamicInputs()">NEWS</h6>
+                        </div>
+                        <div class="col-10">
+
+                            <div class="slider stepOne">
+                                <div class="row  first_slider" style="overflow: scroll;">
+                                    <div class="col-12 menuListCol">
+                                        <ul class="menuList">
+
+                                            <li style="display:none !important;">
+                                                <a class="active anch  mobile-nav-tab"></a>
+                                            </li>
+                                            <li *ngFor="let dd of newsMenu"><a class="anch mobile-nav-tab newClassItem"
+                                                    [attr.id]="dd.CategoryName"
+                                                    [class.active-link]="activeClass===dd.CategoryName"
+                                                    (click)="getNewsCat(dd.CategoryName)">{{dd.CategoryName}}</a></li>
+
+
+                                            <!-- <li>
+                                <a class=" anch active mobile-nav-tab"></a>
+                            </li>
+                            <li><a class=" anch active mobile-nav-tab" id="corporate-tab">CORPORATE</a> </li>
+                            <li><a class="anch mobile-nav-tab" id="biotechnology-tab">BOITECHNOLOGY</a></li>
+                            <li><a class="anch mobile-nav-tab" id="environment-tab">ENVIRONMENT</a></li>
+                            <li><a class="anch mobile-nav-tab" id="bioproduct-tab">BOIPRODUCT</a></li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- slider  -->
+                        </div>
+                        <!-- <div class="my-4">
+            </div> -->
+                        <div [ngClass]="{
+                'd-none':!showBtns,
+                'd-block':showBtns
+            }">
+                        </div>
+                    </div>
+                    <!-- row 3 -->
+                </div>
+                <!-- ===================================================== -->
+                <!-- <div class="Super_grand_Div">        -->
+                <div class="mobile-nav-content">
+                    <div class="main content-item newstopics1" id="scroll_slider">
+
+                        <div class="grand_Div" (click)="renderDynamicInputs()">
+                            <h5 class="title mx-3 my-3">TODAY'S NEWS</h5>
+                            <div *ngIf="!todayNews || todayNews.length === 0">
+                                <p class="mx-3"> There is no news for Today.</p>
+                            </div>
+                            <div style="max-height: 63vh">
+                                <!-- <span *ngIf="allNews ">No YESTERDAYS NEWS </span> -->
+
+                                <div class=" row mx-3 py-2 Parent_Div my-4 " *ngFor="let n of todayNews">
+                                    <div class="col-4 col-lg-3" (click)="newsData(n.Id) ">
+                                        <img onerror="this.src='../../../../../assets/images/img_new.png'"
+                                            src="{{n.NewsImglink.replace('/api/v1/News/','/')}} " alt="news "
+                                            class="img-center "
+                                            style="height: 18vh; width: 100%; padding: 4px;border-radius: 13px; ">
+                                    </div>
+                                    <div class="col-8 col-lg-9 today ">
+                                        <div class="row " (click)="newsData(n.Id) ">
+                                            <a (click)="newsData(n.Id ) " class="links ">{{n.Title}}</a>
+                                        </div>
+                                        <div class="innerDiv row mt-5 mb-2 ">
+                                            <div class="col-6 " (click)="newsData(n.Id) ">
+                                                <span class="float-start ">{{calcDate(n)}}&nbsp;</span>
+                                                <span class="float-start ">{{hourTime(n)}}&nbsp;</span>
+                                            </div>
+                                            <div class="col-6 ">
+                                                <span class="float-end ">
+                                                    <i id="share" class="fa fa-share mx-3 " aria-hidden="true "
+                                                        (click)="sendMsg()"></i>
+                                                    <i *ngIf="!allSavedNews.includes(n.Id)" class="fa fa-bookmark-o "
+                                                        aria-hidden="true " (click)="saveNews(n.Id)"></i>
+                                                    <i *ngIf="allSavedNews.includes(n.Id)" class="fa fa-bookmark "
+                                                        aria-hidden="true " (click)="saveNews(n.Id)"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- grand_Div --------------------------------------------------------------------->
+                        <!--Yesterday News  -->
+
+                        <div class="grand_Div2 ">
+                            <div class="yestNews">
+                                <h5 class="title mx-3 my-3" (click)="renderDynamicInputs()">YESTERDAY'S NEWS</h5>
+
+                                <!-- <span *ngIf="allNews ">No YESTERDAYS NEWS </span> -->
+                                <div *ngIf="!yesterdayNews || yesterdayNews.length === 0">
+                                    <p class="mx-3"> There is no news for Yesterday.</p>
+                                </div>
+                                <div style="max-height: 65vh; overflow-y: scroll;">
+                                    <div *ngFor="let n of yesterdayNews">
+                                        <div class="row mx-3 py-2 Parent_Div my-4 ">
+                                            <div class="col-4 col-lg-3" (click)="newsData(n.Id) ">
+                                                <img onerror="this.src='../../../../../assets/images/img_new.png'"
+                                                    src="{{n.NewsImglink.replace('/api/v1/News/','/')}} " alt="news "
+                                                    class="img-center "
+                                                    style="height: 18vh; width: 100%; border-radius: 13px; ">
+                                            </div>
+                                            <div class="col-8 col-lg-9 today ">
+                                                <div class="row " (click)="newsData(n.Id) ">
+                                                    <a class="links ">{{n.Title}}</a>
+                                                </div>
+                                                <div class="innerDiv row mt-5 mb-2 ">
+                                                    <div class="col-6 " (click)="newsData(n.Id) ">
+                                                        <span class="float-start ">{{calcDate(n)}}&nbsp;</span>
+                                                        <span class="float-start ">{{hourTime(n)}}&nbsp;</span>
+                                                    </div>
+                                                    <div class="col-6 ">
+                                                        <span class="float-end ">
+                                                            <i id="share" class="fa fa-share mx-3 " aria-hidden="true "
+                                                                (click)="sendMsg()"></i>
+                                                            <i *ngIf="!allSavedNews.includes(n.Id)"
+                                                                class="fa fa-bookmark-o " aria-hidden="true "
+                                                                (click)="saveNews(n.Id)"></i>
+                                                            <i *ngIf="allSavedNews.includes(n.Id)"
+                                                                class="fa fa-bookmark " aria-hidden="true "
+                                                                (click)="saveNews(n.Id)"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row Parent_Div -->
+
+                            <!-- grand_Div -->
+                            <!-- -------------------------------------------------------------------------------------- -->
+                            <section id="g2" class="newCat" *ngFor="let n1 of getNewsMenu;"
+                                (click)="renderDynamicInputs()">
+
+                                <h5 class="title mx-3 my-3 anch mobile-nav-tab"
+                                    [class.active]="activeClass===n1.CategoryName" [attr.id]="n1.CategoryName"
+                                    (click)="getNewsCat(n1.CategoryName)">{{n1.CategoryName | uppercase}} <i
+                                        class="fa fa-chevron-right mx-1 " aria-hidden="true "></i> </h5>
+                                <div class="grand_Div1 ">
+                                    <!-- <img src="../../../../assets/images/adv_news.png " alt="Adervtisment " class="img-fluid w-100 px-3 mt-4 "> -->
+                                    <div class="row mx-2 ">
+                                        <ng-container *ngFor="let n of allNews">
+                                            <div class="col-6 col-md-4 col-lg-4 my-4 "
+                                                *ngIf=" n1.CategoryName == n.CategoryName  " style="height: 32vh">
+                                                <div *ngIf="!allNews || allNews.length === 0">
+                                                    <p class="mx-3">Not Available {{allNews.CategoryName}} News </p>
+                                                </div>
+                                                <div class="biobg " style="width: 100%; height: 100%; ">
+                                                    <img (click)="newsData(n.Id) "
+                                                        onerror="this.src='../../../../../assets/images/img_new4.png'"
+                                                        src="{{n.NewsImglink.replace('/api/v1/News/','/')}}" alt="news "
+                                                        class="img-center ">
+                                                    <div class="text " (click)="newsData(n.Id) ">
+                                                        <a class="links1">{{n.Title}}</a>
+                                                    </div>
+                                                    <div class="text_hours row ">
+                                                        <div class="col-6" (click)="newsData(n.Id) ">
+                                                            <span class="float-start ">{{calcDate(n)}}&nbsp;</span>
+                                                            <span class="float-start ">{{hourTime(n)}}&nbsp;</span>
+                                                        </div>
+                                                        <div class="col-6 ">
+                                                            <span class="float-end ">
+                                                                <i id="share" class="fa fa-share mx-3 "
+                                                                    aria-hidden="true " (click)="sendMsg()"></i>
+                                                                <i *ngIf="!allSavedNews.includes(n.Id)"
+                                                                    class="fa fa-bookmark-o " aria-hidden="true "
+                                                                    (click)="saveNews(n.Id)"></i>
+                                                                <i *ngIf="allSavedNews.includes(n.Id)"
+                                                                    class="fa fa-bookmark " aria-hidden="true "
+                                                                    (click)="saveNews(n.Id)"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </ng-container>
+                                    </div>
+                                    <!-- row mx-2 -->
+                                </div>
+                                <!-- grand_Div -->
+                            </section>
+                            <!-- =============================================================== -->
+                            <!--ENVIRONMENT News  -->
+                            <!-- <section id="g3 ">
+                    <h5 class="title mx-3 my-3 " (click)="goBack() ">ENVIRONMENTAL <i class="fa fa-chevron-right mx-1 " aria-hidden="true "></i> </h5>
+                    <div class="grand_Div1 ">
+                        <img src="../../../../assets/images/adv_news.png " alt="Adervtisment " class="img-fluid w-100 px-3 mt-4 ">
+                        <div class="row mx-2 ">
+                            <div *ngIf="!environmentNews || environmentNews.length === 0">
+                                <p class="mx-3">Not Available Environment News </p>
+                            </div>
+                            <div class="col-6 my-4 " *ngFor="let n of environmentNews | slice:0:4; ">
+                                <div class="biobg " style="width: 100%; height: 100%; ">
+                                    <img src="../../../../../assets/images/img_new4.png " alt="news " class="img-center ">
+                                    <div class="text ">
+                                        <a (click)="newsData(n.Id) " class="links ">{{n.Title}}</a>
+                                    </div>
+                                    <div class="text_hours row ">
+                                        <div class="col-6 ">
+                                            <span class="float-start ">{{calcDate(n)}}&nbsp;</span>
+                                            <span class="float-start ">{{hourTime(n)}}&nbsp;</span>
+                                        </div>
+                                        <div class="col-6 ">
+                                            <span class="float-end ">
+                                    <i class="fa fa-share mx-3 " aria-hidden="true " (click)="sendMsg()"></i>
+                                    <i *ngIf="!allSavedNews.includes(n.Id)" class="fa fa-bookmark-o " aria-hidden="true " (click)="saveNews(n.Id)"></i>
+                                    <i *ngIf="allSavedNews.includes(n.Id)" class="fa fa-bookmark " aria-hidden="true " (click)="saveNews(n.Id)"></i>
+                                    </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+            </div>
+            </section> -->
+                        </div>
+                    </div>
+                    <!-- grand div of yest -->
+                    <!-- </div> -->
+                    <!-- grand div of today -->
+                    <!-- </div> -->
+                    <!-- super -->
+
+                    <div style="display:none; height: 75vh; overflow-y: auto; overflow-x: hidden; "
+                        *ngFor="let dd of newsMenu" [id]="dd.CategoryName" class="content-item ">
+
+                        <div class="row">
+                            <div class="col-2">
+                                <a (click)="goBack() " class="fa fa-arrow-left mx-4 mt-4" aria-hidden="true"></a>
+                            </div>
+                            <div class="col-10  mt-3">
+                                <h1 class="news_cat">{{clickCatNews}}</h1>
+                            </div>
+                        </div>
+
+
+
+                        <div *ngIf="!getCatWiseAllNews || getCatWiseAllNews.length === 0">
+                            <p class="mx-3">Not Available {{clickCatNews}} News </p>
+                        </div>
+
+                        <div class="row mx-3 py-2 Parent_Div my-4 " *ngFor="let n1 of getCatWiseAllNews ">
+                            <div class="col-4 col-lg-3" (click)="newsData(n1.Id) ">
+                                <img onerror="this.src='../../../../../assets/images/img_new.png'"
+                                    src="{{n1.NewsImglink.replace('/api/v1/News?categoryName='+n1.CategoryName.replaceAll(' & ','%20&%20').replaceAll(' ','%20')+'/','/')}}"
+                                    alt="news " style="height: 18vh; width: 100%; padding: 4px;border-radius: 13px; ">
+                            </div>
+                            <div class="col-8 col-lg-8 today ">
+                                <div class="row " (click)="newsData(n1.Id) ">
+                                    <a class="links ">{{n1.Title}}</a>
+                                </div>
+                                <div class="innerDiv row mt-5 mb-2 ">
+                                    <div class="col-6 " (click)="newsData(n1.Id) ">
+                                        <span class="float-start ">{{calcDate(n1)}}&nbsp;</span>
+                                        <span class="float-start ">{{hourTime(n1)}}&nbsp;</span>
+                                    </div>
+                                    <div class="col-6 ">
+                                        <span class="float-end ">
+                                            <i id="share" class="fa fa-share mx-3 " aria-hidden="true "
+                                                (click)="sendMsg()"></i>
+                                            <i *ngIf="!allSavedNews.includes(n1.Id)" class="fa fa-bookmark-o "
+                                                aria-hidden="true " (click)="saveNews(n1.Id)"></i>
+                                            <i *ngIf="allSavedNews.includes(n1.Id)" class="fa fa-bookmark "
+                                                aria-hidden="true " (click)="saveNews(n1.Id)"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- <div style="display:none; height: 70vh; overflow-y: auto; overflow-x: hidden; " id="biotechnology " class="content-item ">
+            <div class="row">
+                <div class="col-2">
+                    <a (click)="goBack() " class="fa fa-arrow-left mx-4 mt-4" aria-hidden="true"></a>
+                </div>
+                <div class="col-10  mt-3">
+                    <h1>{{clickCatNews}}</h1>
+                </div>
+            </div>
+
+
+            <div *ngIf="!getCatWiseAllNews || getCatWiseAllNews.length === 0">
+                <p class="mx-3">Not Available {{clickCatNews}} News </p>
+            </div>
+
+            <div (click)="newsData(n1.Id) " class="row mx-3 py-2 Parent_Div my-4 " *ngFor="let n1 of getCatWiseAllNews ">
+                <div class="col-4 ">
+                    <img onerror="this.src='../../../../../assets/images/img_new.png'" src="{{n1.NewsImglink.replace('/api/v1/News?categoryName='+n1.CategoryName.replace(' ','%20')+'/','/')}}" alt="news " style="height: 18vh; width: 100%; padding: 4px; border-radius: 13px;">
+                </div>
+                <div class="col-8 today ">
+                    <div class="row ">
+                        <a class="links ">{{n1.Title}}</a>
+                    </div>
+                    <div class="innerDiv row mt-5 mb-2 ">
+                        <div class="col-6 ">
+                            <span class="float-start ">{{calcDate(n1)}}&nbsp;</span>
+                            <span class="float-start ">{{hourTime(n1)}}&nbsp;</span>
+                        </div>
+                        <div class="col-6 ">
+                            <span class="float-end ">
+                        <i class="fa fa-share mx-3 " aria-hidden="true " (click)="sendMsg()"></i>
+                        <i *ngIf="!allSavedNews.includes(n1.Id)" class="fa fa-bookmark-o " aria-hidden="true " (click)="saveNews(n1.Id)"></i>
+                        <i *ngIf="allSavedNews.includes(n1.Id)" class="fa fa-bookmark " aria-hidden="true " (click)="saveNews(n1.Id)"></i>
+                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="display:none; height: 70vh; overflow-y: auto; overflow-x: hidden; " id="corporate " class=" content-item ">
+
+            <div class="row">
+                <div class="col-2">
+                    <a (click)="goBack() " class="fa fa-arrow-left mx-4 mt-4" aria-hidden="true"></a>
+                </div>
+                <div class="col-10  mt-3">
+                    <h1>{{clickCatNews}}</h1>
+                </div>
+            </div>
+
+            <div *ngIf="!getCatWiseAllNews || getCatWiseAllNews.length === 0">
+                <p class="mx-3">Not Available {{clickCatNews}} News</p>
+            </div>
+            <div (click)="newsData(n.Id) " class="row mx-3 py-2 Parent_Div my-4 " *ngFor="let n of getCatWiseAllNews ">
+                <div class="col-4 ">
+                    <img onerror="this.src='../../../../../assets/images/img_new.png'" src="{{n.NewsImglink.replace('/api/v1/News?categoryName='+n.CategoryName.replace(' ','%20')+'/','/')}} " alt="news " style="height: 18vh; width: 100%; padding: 4px; border-radius: 13px;">
+                </div>
+                <div class="col-8 today ">
+                    <div class="row ">
+                        <a class="links ">{{n.Title}}</a>
+                    </div>
+                    <div class="innerDiv row mt-5 mb-2 ">
+                        <div class="col-6 ">
+                            <span class="float-start ">{{calcDate(n)}}&nbsp;</span>
+                            <span class="float-start ">{{hourTime(n)}}&nbsp;</span>
+                        </div>
+                        <div class="col-6 ">
+                            <span class="float-end ">
+                        <i class="fa fa-share mx-3 " aria-hidden="true " (click)="sendMsg()"></i>
+                        <i *ngIf="!allSavedNews.includes(n.Id)"class="fa fa-bookmark-o " aria-hidden="true " (click)="saveNews(n.Id)"></i>
+                        <i *ngIf="allSavedNews.includes(n.Id)" class="fa fa-bookmark " aria-hidden="true " (click)="saveNews(n.Id)"></i>
+                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> -->
+
+
+
+                    <!-- <div style="display:none; height: 70vh; overflow-y: auto; overflow-x: hidden; " id="environment " class="content-item ">
+
+            <div class="row">
+                <div class="col-2">
+                    <a (click)="goBack() " class="fa fa-arrow-left mx-4 mt-4" aria-hidden="true"></a>
+                </div>
+                <div class="col-10  mt-3">
+                    <h1>{{clickCatNews}} </h1>
+                </div>
+            </div>
+
+            <div *ngIf="!getCatWiseAllNews || getCatWiseAllNews.length === 0">
+                <p class="mx-3">Not Available {{clickCatNews}} News </p>
+            </div>
+
+            <div (click)="newsData(n.Id) " class="row mx-3 py-2 Parent_Div my-4 " *ngFor="let n of getCatWiseAllNews ">
+                <div class="col-4 ">
+                    <img src="{{n.NewsImglink.replace('/api/v1/News?categoryName='+n.CategoryName.replace(' ','%20')+'/','/')}}" alt="news " style="height: 18vh; width: 100%; padding: 4px; border-radius: 13px;">
+                </div>
+                <div class="col-8 today ">
+                    <div class="row ">
+                        <a class="links ">{{n.Title}}</a>
+                    </div>
+                    <div class="innerDiv row mt-5 mb-2 ">
+                        <div class="col-6 ">
+                            <span class="float-start ">{{calcDate(n)}}&nbsp;</span>
+                            <span class="float-start ">{{hourTime(n)}}&nbsp;</span>
+                        </div>
+                        <div class="col-6 ">
+                            <span class="float-end ">
+                        <i class="fa fa-share mx-3 " aria-hidden="true " (click)="sendMsg()"></i>
+                        <i *ngIf="!allSavedNews.includes(n.Id)" class="fa fa-bookmark-o " aria-hidden="true " (click)="saveNews(n.Id)"></i>
+                        <i *ngIf="allSavedNews.includes(n.Id)" class="fa fa-bookmark " aria-hidden="true " (click)="saveNews(n.Id)"></i>
+                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+                </div>
+            </div>
+
+            <!-- Search Data -->
+            <!-- <div style="height: 79.2vh; overflow-y: auto;" id="div2">
+
+    <div class="row">
+        <div class="col-2">
+            <a (click)="goBack() " class="fa fa-arrow-left mx-4 mt-4" aria-hidden="true"></a>
+        </div>
+        <div class="col-10  mt-3">
+            <h1>Search News List</h1>
+        </div>
+    </div>
+
+    <div *ngIf="!getSearchData || getSearchData.length === 0">
+        <p class="mx-3 my-3">Search News Not Found</p>
+    </div>
+
+    <div  class="row mx-3 py-2 Parent_Div my-4 " *ngFor="let n of getSearchData ">
+        <div class="col-4 " (click)="newsData(n.Id) ">
+            <img onerror="this.src='../../../../../assets/images/img_new.png'" src="{{n.NewsImglink.replace(n.NewsImglink.substring(n.NewsImglink.indexOf('/api'),n.NewsImglink.indexOf('/media')),'/')}} " alt="news " style="height: 18vh; width: 100%; padding: 4px; border-radius: 13px;">
+        </div>
+        <div class="col-8 today ">
+            <div class="row " (click)="newsData(n.Id) ">
+                <a class="links ">{{n.Title}}</a>
+            </div>
+            <div class="innerDiv row mt-5 mb-2 ">
+                <div class="col-6 " (click)="newsData(n.Id) ">
+                    <span class="float-start ">{{calcDate(n)}}&nbsp;</span>
+                    <span class="float-start ">{{hourTime(n)}}&nbsp;</span>
+                </div>
+                <div class="col-6 ">
+                    <span class="float-end ">
+                <i id="share" class="fa fa-share mx-3 " aria-hidden="true " (click)="sendMsg()"></i>
+                <i *ngIf="!allSavedNews.includes(n.Id)" class="fa fa-bookmark-o " aria-hidden="true " (click)="saveNews(n.Id)"></i>
+                <i *ngIf="allSavedNews.includes(n.Id)" class="fa fa-bookmark " aria-hidden="true " (click)="saveNews(n.Id)"></i>
+            </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div> -->
+
+
+            <!-- <app-footer></app-footer> -->
+
+        </div>
+
+        <div class="col-md-3 hidden-sm hidden-xs ">
+            <div class="classadd1 text-center">
+                <p>Advertiesment</p>
+            </div>
+            <div class="nav ">
+                <!-- <div class="col-11"><button class="appTour" (click)="startTour();">Application Tour</button></div> -->
+                <div class="row mx-1" id="newstopics12">
+                    <!-- <div class="col-2">
+                 <h6 class="h6 text-center" (click)="renderDynamicInputs()">NEWS</h6>
+             </div> -->
+                    <div class="col-10">
+
+                        <div class="slider stepOne">
+                            <h2 class="name" style="margin-left: 36px; margin-top: 11px;"> <b>Topics</b></h2>
+                            <div class="row  first_slider21" style="overflow: scroll;">
+                                <div class="col-12 menuListCol21">
+                                    <ul class="menuList21">
+
+                                        <li style="display:none !important;">
+                                            <a class="active anch  mobile-nav-tab"></a>
+                                        </li>
+                                        <li *ngFor="let dd of newsMenu"><a class="anch mobile-nav-tab newClassItem"
+                                                [attr.id]="dd.CategoryName"
+                                                [class.active-link]="activeClass===dd.CategoryName"
+                                                (click)="getNewsCat(dd.CategoryName)">{{dd.CategoryName}}</a></li>
+
+
+                                        <!-- <li>
+                                 <a class=" anch active mobile-nav-tab"></a>
+                             </li>
+                             <li><a class=" anch active mobile-nav-tab" id="corporate-tab">CORPORATE</a> </li>
+                             <li><a class="anch mobile-nav-tab" id="biotechnology-tab">BOITECHNOLOGY</a></li>
+                             <li><a class="anch mobile-nav-tab" id="environment-tab">ENVIRONMENT</a></li>
+                             <li><a class="anch mobile-nav-tab" id="bioproduct-tab">BOIPRODUCT</a></li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- slider  -->
+                    </div>
+                    <!-- <div class="my-4">
+             </div> -->
+                    <div [ngClass]="{
+                 'd-none':!showBtns,
+                 'd-block':showBtns
+             }">
+                    </div>
+                </div>
+                <!-- row 3 -->
+            </div>
+            <div class="classadd  text-center">
+                <p>Advertiesment</p>
+            </div>
+            <!-- <div class="classadd1 text-center">
+         <p>Advertiesment</p>
+     </div> -->
+        </div>
+
+
+    </div>
+</div>
+<app-footer></app-footer>

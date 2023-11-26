@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.cordova.pharmaClick" version="1.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <platform name="android">
+        <icon density="ldpi" src="src/assets/images/PharamClick04.png" />
+        <icon density="mdpi" src="src/assets/images/PharamClick04.png" />
+        <icon density="hdpi" src="src/assets/images/PharamClick04.png" />
+        <icon density="xhdpi" src="src/assets/images/PharamClick04.png" />
+        <icon density="xxhdpi" src="src/assets/images/PharamClick04.png" />
+        <icon density="xxxhdpi" src="src/assets/images/PharamClick04.png" />
+    </platform>
+
+<!-- fb -->
+
+
+
+
+  <!-- <string name="facebook_app_id">1234</string>
+  <string name="fb_login_protocol_scheme">fb1234</string>
+  <string name="facebook_client_token">56789</string> -->
+
+
+
+  <!-- <platform name="android">
+  <config-file parent="/resources" >
+      <string name="fb_app_id">1073726543296976</string>
+      <string name="fb_app_name">PharmaClick</string>
+  </config-file>
+  </platform> -->
+<!-- <plugin name="cordova-plugin-facebook4" spec="^3.1.0">
+    <variable name="APP_ID" value="1073726543296976" />
+    <variable name="APP_NAME" value="PharmaClick" />
+</plugin> -->
+
+    <!-- fb -->
+ 
+    <plugin name="cordova-plugin-googleplus" source="npm">
+        <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.521276623139-38efp6j3h0kh87rfpjhij5lktieo5vpo" />
+    </plugin>
+    <platform name="android">
+    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="src/assets/images/PharmaClick1.png" />
+
+    </platform>
+    <preference name="android-targetSdkVersion" value="32" />
+  <preference name="android-minSdkVersion" value="21" />
+
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="backgroundColor" value="#FFFFFF" />
+    <name>PharmaClick</name>
+    <description>Pharma Click App</description>
+    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
+        Varahi Technologies Team
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+</widget>

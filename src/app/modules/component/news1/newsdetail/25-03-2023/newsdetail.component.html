@@ -1,0 +1,325 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+
+<div class="container">
+    <div class=" mainheder1 pb-2"id="web_header">
+        <div class="row navs1 ">
+            <div class="col-4 col-sm-3" id="pharmalogo">
+                <img src="./assets/images/Brand_logo01.png" class="img-fluid logimg1 mt-3" alt="OrgLogo">
+            </div>
+            <div class="col-4 col-sm-4" style="margin-left: -4px;">
+                <i class="fa fa-arrow-left fa-arrow-left11 mx-4 mt-5 pt-2" (click)="goesBack()" aria-hidden="true"></i>
+            </div>
+            <div class="col-2 col-sm-3" (click)="sendMsg()" style="margin-right: -176px;">
+                <img  id="share" src="./assets/images/share_PNG27.png" alt="Share">
+            </div>
+            <div class="col-2 bookmark">
+                <i *ngIf="!allSavedNews.includes(objData.Id)" class="fa fa-bookmark-o mt-5 pt-2 mx-4" aria-hidden="true" (click)="saveNews()"></i>
+                <i *ngIf="allSavedNews.includes(objData.Id)" class="fa fa-bookmark  mt-5 pt-2 mx-4 fa-2x" aria-hidden="true" (click)="saveNews()"></i>
+                <!-- <i class="far fa-share menuIcon"></i>  -->
+            </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 hidden-sm hidden-xs">   
+        <!-- <app-menu></app-menu>  -->
+        <div class="container2">
+        <div class="gallery">
+            <div class="img">
+                <a routerLink="/home/product/category"[routerLinkActive]="'active-link1'">
+                    <h1 class="title">
+                        <i class="fa fa-comments nav__icon" aria-hidden="true"></i>
+                        <div class="content">Marketplace</div>
+                    </h1>
+                </a>
+            </div>
+             <div class="img pharmaclick">
+                <h1 class="title" style="background: white; color: rgb(32,72,99);">
+                    <img src="/assets/images/uuu.png" alt="" style="height: 55px;" class="nav__icon">
+                    <div class="content" style="font-weight: 600;">PharmaClick</div>
+                </h1>
+            </div>
+            <div class="img">
+                <a routerLink="/allnews">
+                    <h1 class="title"[routerLinkActive]="'active-link1'" [class.active-link1]="path1=='/allnews/Newsdetail' ">
+                        <i class="fa fa-newspaper-o nav__icon" aria-hidden="true"></i>
+                        <div class="content">News</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/events"[routerLinkActive]="'active-link1'">
+                    <h1 class="title">
+                        <i class="fa fa-globe nav__icon" aria-hidden="true"></i>
+                        <div class="content">Events</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/blogs"[routerLinkActive]="'active-link1'">
+                    <h1 class="title">
+                        <i class="fa-solid fa-message nav__icon"></i>
+                        <div class="content">Blogs</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/all-section"[routerLinkActive]="'active-link1'">
+                    <h1 class="title">
+                        <i class="fa-solid fa-list nav__icon"></i>
+                        <div class="content">All</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/job"[routerLinkActive]="'active-link1'">
+                    <h1 class="title">
+                        <i class="fas fa-user-tie nav__icon"></i>
+                        <div class="content">Jobs</div>
+                    </h1>
+                </a>
+            </div> 
+
+        </div>
+
+  </div>
+</div>
+      <div class="col-md-6">
+        <div class=" mainheder1 pb-2" id="mobile_header">
+            <div class="row navs1 ">
+                <div class="col-4 col-sm-4">
+                    <i class="fa fa-arrow-left fa-arrow-left11 mx-4 mt-5 pt-2" (click)="goesBack()" aria-hidden="true"></i>
+                </div>
+        
+                <div class="col-4 col-sm-3" id="pharmalogo">
+                    <img src="./assets/images/Brand_logo01.png" class="img-fluid logimg mt-3" alt="OrgLogo">
+                </div>
+                <div class="col-2 col-sm-3" (click)="sendMsg()">
+                    <img  id="share" src="./assets/images/share_PNG27.png" alt="Share">
+                </div>
+                <div class="col-2 bookmark">
+                    <i *ngIf="!allSavedNews.includes(objData.Id)" class="fa fa-bookmark-o mt-5 pt-2 mx-4" aria-hidden="true" (click)="saveNews()"></i>
+                    <i *ngIf="allSavedNews.includes(objData.Id)" class="fa fa-bookmark  mt-5 pt-2 mx-4 fa-2x" aria-hidden="true" (click)="saveNews()"></i>
+                    <!-- <i class="far fa-share menuIcon"></i>  -->
+                </div>
+            </div>
+        </div>
+        <!-- -------row- -->
+        <!-- =========== -->
+        <div class="main scroll_slider" *ngFor="let c of newsallinfo">
+        
+            <div>
+        
+                <div class="row">
+                    <div class="col-12 ">
+                        <h5 class="mx-3 heading">{{c.Title}}</h5>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-12 col-md-8 ">
+                        <div class="img-heading">
+                            <img id="news_img" src='./assets/images/pexels-pixabay-208512.jpg' class="img-fluid"
+                            src="{{c.NewsImglink.replace('/api/v1/NewsById?newsId='+c.Id+'&userId='+this.getuserdata.CompanyId+'/','/')}}">
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <h5 class="h5 my-3 mx-3 desc_title text-secondary"><span class="mx-2">{{c.Author}} </span>
+                        <span style="font-family:Times New Roman ;">{{calcDate(c)}}&nbsp;</span>
+                        <span>{{hourTime(c)}}&nbsp;</span> </h5>
+                    <div class="col-12">
+                        <div [innerHTML]="c.Full" class="px-3 desc"></div>
+                    </div>
+                </div>
+        
+            </div>
+            <div class="comment mx-3 my-3">
+                <h5 class="comnt my-3 ">Comment</h5>
+                <form [formGroup]="myForm" (ngSubmit)="onSubmitForm()">
+                    <textarea class="form-control tarea" formControlName="NewsComment" required [ngClass]="{'is-invalid': isSubmitted && f.NewsComment.errors}" style="min-width: 98%; height:16vh; border-radius: 12px;"></textarea>
+                    <button class="btn btnpost" [disabled]="myForm.invalid">Post</button>
+                </form>
+            </div>
+            <!-- Id : 8 Likes : 0 NewsComment : "very informative news ......." NewsCommentDate : "2022-10-20T05:55:44" NewsCommentTitle : null NewsCommenterImg : null NewsCommenterName : "Shubham Sale" Reply : null -->
+        
+            <div class="comment_list">
+                <h5 class="mx-3 commthead">Comments ({{commentCount}})</h5>
+                <div class="scrollercommt">
+                    <div class="row my-2 w-100 mx-auto" *ngFor="let cmts of c.NewsComments; let i=index">
+        
+                        <div class="col-2">
+                            <img onerror="this.src='./assets/images/user.png'" [src]="cmts.NewsCommenterImg" alt="" class=" mx-3 img-fluid idimg1">
+                        </div>
+                        <div class="col-8">
+                            <h5 class="commtname">{{cmts.NewsCommenterName}} </h5>
+                            <div class="timecomt">
+        
+                                <h5 class="h5 my-3 mx-3 desc_title text-secondary">
+                                    <span style="font-family:Times New Roman ;">{{calcDate1(cmts)}}&nbsp;</span>
+                                    <span>{{hourTime2(cmts)}}&nbsp;</span> </h5>
+                            </div>
+                            <div class="comtbord  pb-2 ">{{cmts.NewsComment}}</div>
+                            <div class="my-2 commtmedia">
+                                <span class="mr-5"><i class="fa fa-heart"  (click)="(commentLike(cmts.Id,!cmts.IsLiked))" [ngStyle]="{'color': cmts.IsLiked===false ? 'gray' : 'red'}"    [id]="'likediv'+i" aria-hidden="true"></i><small  class="mx-1">Liked {{cmts.Likes}}</small></span>
+        
+                                <span (click)="replayshow(i)" (click)="commentId(cmts.Id)"><i class="fa fa-comment-o " aria-hidden="true"></i><small class="mx-1">{{cmts.AllReply.length}} Reply</small></span>
+                            </div>
+        
+                        </div>
+                        <!-- [attr.id]="cmts.Id" -->
+                        <div [id]="'replaydiv'+i" class=" comment mx-3 my-3 " style="display: none;">
+                            <form [formGroup]="myForms1" (ngSubmit)="(replaySubmit())">
+                                <textarea class="form-control tarea mb-3 " formControlName="ReplyText" required [ngClass]="{'is-invalid': isSubmitted2 && g.ReplyText.errors}" placeholder="Reply to comment " style="width: 98%; height:12vh; border-radius: 12px; "></textarea>
+                                <button class="btn btn-success btn-sm mx-4 " [disabled]="myForms1.invalid">Submit</button><button class="btn btn-danger btn-sm " (click)="replayshow(i)">Cancel</button>
+                            </form>
+        
+                            <div class="replayscroll ">
+                                <h5 class="mx-3 commthead mt-3 ">Replay List...</h5>
+                                <div class="row my-2 w-100 mx-auto " *ngFor="let rply of cmts.AllReply; ">
+        
+                                    <!-- <div class=" col-2 "> -->
+                                    <!-- <img src="../../../../../assets/images/Dipak1-1.JPG " alt=" " class=" mx-3 img-fluid idimg1 "> -->
+                                    <!-- </div>  -->
+        
+                                    <div class="col-12 mb-2 ">
+                                        <h5 class="commtname1 mx-3 ">{{rply.ReplierName}} </h5>
+                                        <div class="timecomt1 mx-3 "> {{calcDate2(rply)}} <span>{{hourTime2(rply)}}&nbsp;</span></div>
+                                        <div class="comtbord1 mx-3 pb-2 ">{{rply.ReplyText}}</div>
+                                    </div>
+                                    <!-- <div class="col-12 mb-2 ">
+                                        <h5 class="commtname1 mx-3 "> Sunil Sale </h5>
+                                        <div class="timecomt1 mx-3 "> 2 min Ago</div>
+                                        <div class="comtbord1 mx-3 pb-2 ">very Goodifugofiuhweoifjiowf</div>
+                                    </div>
+        
+                                    <div class="col-12 mb-2 ">
+                                        <h5 class="commtname1 mx-3 "> Sunil Sale </h5>
+                                        <div class="timecomt1 mx-3 "> 2 min Ago</div>
+                                        <div class="comtbord1 mx-3 pb-2 ">very Goodifugofiuhweoifjiowf</div>
+                                    </div>
+                                    <div class="col-12 mb-2 ">
+                                        <h5 class="commtname1 mx-3 "> Sunil Sale </h5>
+                                        <div class="timecomt1 mx-3 "> 2 min Ago</div>
+                                        <div class="comtbord1 mx-3 pb-2 ">very Goodifugofiuhweoifjiowf</div>
+                                    </div> -->
+                                </div>
+                            </div>
+        
+                        </div>
+        
+        
+                    </div>
+        
+                </div>
+            </div>
+        
+        
+        
+            <div id="demo " class="carousel slide pb-1 px-3 mt-5 " data-bs-ride="carousel ">
+        
+        
+                <!-- The slideshow/carousel -->
+                <div class="carousel-inner ">
+        
+                    <div *ngFor="let ytd of advImg; let i=i ndex " class="carousel-item {{ (i==0 ) ? ' active ' : ' '}} ">
+                        <!-- <img src="../../../assets/images/Adver1.png " alt="Advertiement 1 " class="d-block " style="width:100%;height: 10vh; "> -->
+                        <div [innerHTML]='ytd.ImageContent ' alt="Advertiement 1 " class="d-block " style="width:100%;height: 10vh; "></div>
+                    </div>
+        
+        
+                </div>
+                <!-- carousel-inne -->
+                <!-- Indicators/dots -->
+                <div class="carousel-indicators ">
+                    <button type="button " data-bs-target="#demo " data-bs-slide-to="0 " class="active "></button>
+                    <button type="button " data-bs-target="#demo " data-bs-slide-to="1 "></button>
+                    <button type="button " data-bs-target="#demo " data-bs-slide-to="2 "></button>
+                    <button type="button " data-bs-target="#demo " data-bs-slide-to="3 "></button>
+                </div>
+        
+                <!-- </div> -->
+            </div>
+        
+        
+        </div>
+
+
+      </div>
+   
+      <div class="col-md-3 hidden-sm hidden-xs ">
+        <div class="classadd1 text-center">
+            <p>Advertiesment</p>
+        </div>
+        <div class="nav ">
+         <!-- <div class="col-11"><button class="appTour" (click)="startTour();">Application Tour</button></div> -->
+         <div class="row mx-1" id="newstopics12">
+             <!-- <div class="col-2">
+                 <h6 class="h6 text-center" (click)="renderDynamicInputs()">NEWS</h6>
+             </div> -->
+             <div class="col-10">
+ 
+                 <div class="slider stepOne">
+                    <h2 class="name" style="margin-left: 36px; margin-top: 12px;"> <b>Topics</b></h2>
+                     <div class="row  first_slider21" style="overflow: scroll;">
+                         <div class="col-12 menuListCol21">
+                             <ul class="menuList21">
+ 
+                                 <li style="display:none !important;">
+                                     <a class="active anch  mobile-nav-tab"></a>
+                                 </li>
+                                 <li *ngFor="let dd of newsMenu"><a class="anch mobile-nav-tab newClassItem" [attr.id]="dd.CategoryName"  >{{dd.CategoryName}}</a></li>
+ 
+ 
+                                 <!-- <li>
+                                 <a class=" anch active mobile-nav-tab"></a>
+                             </li>
+                             <li><a class=" anch active mobile-nav-tab" id="corporate-tab">CORPORATE</a> </li>
+                             <li><a class="anch mobile-nav-tab" id="biotechnology-tab">BOITECHNOLOGY</a></li>
+                             <li><a class="anch mobile-nav-tab" id="environment-tab">ENVIRONMENT</a></li>
+                             <li><a class="anch mobile-nav-tab" id="bioproduct-tab">BOIPRODUCT</a></li> -->
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+                 <!-- slider  -->
+             </div>
+             <!-- <div class="my-4">
+             </div> -->
+             <!-- <div [ngClass]="{
+                 'd-none':!showBtns,
+                 'd-block':showBtns
+             }">
+             </div> -->
+         </div>
+         <!-- row 3 -->
+     </div>
+     <div class="classadd  text-center"  >
+         <p>Advertiesment</p>
+     </div>
+     <!-- <div class="classadd1 text-center">
+         <p>Advertiesment</p>
+     </div> -->
+ </div> 
+        
+        
+      </div>    
+  </div>
+  <app-footer></app-footer>
+
+
+
+<!-- Header -->
+
+<!-- main  -->
+
+<app-footer>
+</app-footer>

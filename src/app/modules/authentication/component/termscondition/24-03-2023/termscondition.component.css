@@ -1,0 +1,41 @@
+.navs1 {
+    height: 10vh;
+}
+
+.fa-arrow-left11 {
+    font-size: 18px;
+    color: black;
+}
+
+.logimg {
+    height: 6.6vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.maindiv {
+    height: 89vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.title {
+    font-size: 24px;
+    text-underline-offset: 3px;
+}
+
+.mainhead {
+    font-size: 17px;
+    text-underline-offset: 3px;
+    text-decoration: underline;
+}
+
+.subdiv {
+    font-size: 16px;
+}
+
+.mainol {
+    overflow-y: auto;
+    height: 84vh;
+}

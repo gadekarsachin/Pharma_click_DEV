@@ -1,0 +1,276 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<app-header1></app-header1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 hidden-sm hidden-xs">    
+            <div class="container2">
+            <div class="gallery">
+                <div class="img">
+                    <a routerLink="/home/product/category">
+                        <h1 class="title1">
+                            <i class="fa fa-comments nav__icon" aria-hidden="true"></i>
+                            <div class="content">Marketplace</div>
+                        </h1>
+                    </a>
+                </div>
+                 <div class="img pharmaclick">
+                    <h1 class="title1" style="background: white; color: rgb(32,72,99);">
+                        <img src="./assets/images/uuu.png" alt="" style="height: 55px;" class="nav__icon">
+                        <div class="content" style="font-weight: 600;">PharmaClick</div>
+                    </h1>
+                </div>
+                <div class="img">
+                    <a routerLink="/allnews">
+                        <h1 class="title1">
+                            <i class="fa fa-newspaper-o nav__icon" aria-hidden="true"></i>
+                            <div class="content">News</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="img">
+                    <a routerLink="/events">
+                        <h1 class="title1">
+                            <i class="fa fa-globe nav__icon" aria-hidden="true"></i>
+                            <div class="content">Events</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="img">
+                    <a routerLink="/blogs">
+                        <h1 class="title1">
+                            <i class="fa-solid fa-message nav__icon"></i>
+                            <div class="content">Blogs</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="img">
+                    <a routerLink="/all-section">
+                        <h1 class="title1"[routerLinkActive]="'active-link1'" [class.active-link1]="path1=='/all-section' ">
+                            <i class="fa-solid fa-list nav__icon"></i>
+                            <div class="content">All</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="img">
+                    <a routerLink="/job">
+                        <h1 class="title1">
+                            <i class="fas fa-user-tie nav__icon"></i>
+                            <div class="content">Jobs</div>
+                        </h1>
+                    </a>
+                </div> 
+    
+            </div>
+    
+      </div>
+    </div>
+      <div class="col-md-6">     
+<div class="row">
+    <div class="col-10">
+        <h1 class="market mx-2">Marketplace</h1>
+    </div>
+    <div class="col-2 my-2">
+        <h5 class="view_all">View all</h5>
+    </div>
+</div>
+
+<div class="mainScroller">
+    <div class="slider" style="margin: -2px 10px 0px 0px;">
+        <div class="row first_slider">
+            <div class="col-12 menuListCol mx-3 my-3" *ngFor="let obj of categoryList">
+                <div class="mx-auto menuList" [class.active]="activeClass===obj.Id" (click)="redirect(obj)">
+                    <h1 class="title">{{obj.Name}}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt--5">
+        <div class="col-10">
+            <h1 class="market mx-2">Today's News</h1>
+        </div>
+        <div class="col-2 my-2">
+            <!-- <h5 class="" style="color: #3576a1;  font-weight: bold; margin-left: -15px;">View all</h5> -->
+            <h5 class="view_all">View all</h5>
+        </div>
+    </div>
+    <!-- -------- -->
+    <div class="slider1" style="margin: -2px 10px 0px 0px;">
+        <div class="row first_slider1">
+            <div class="col-12 menuListNews" *ngFor="let n of allNews">
+                <div (click)="newsData(n.Id) " class=" row mx-1 py-2 Parent_Div my-4 " >
+                    <div class="col-5 ">
+                        <img onerror="this.src='./assets/images/img_new.png'" src="{{n.NewsImglink.replace('/api/v1/News/','/')}} " alt="news " class="img-center " style="height: 21vh; width: 100%; padding: 4px;border-radius: 13px; ">
+                    </div>
+                    <div class="col-7 today">
+                        <div class="row ">
+                            <a (click)="newsData(n.Id ) " class="links ">{{n.Title}}</a>
+                        </div>
+                        <div class="innerDiv row mt-5 mb-2 ">
+                            <div class="col-7 ">
+                                <span class="float-start ">{{calcDate(n)}}&nbsp;</span>
+                                <span class="float-start ">{{hourTime(n)}}&nbsp;</span>
+                            </div>
+                            <div class="col-5 ">
+                                <span class="float-end ">
+                                    <img id="share" src="./assets/images/shareim.png" (click)="sendMsg()" alt="Share" style="width: 17px; font-weight: bolder; height: 20px; float: end; margin-top: 4px;">
+                                    <img src="./assets/images/icobook.png" *ngIf="!allSavedNews.includes(n.Id)" (click)="saveNews(n.Id)" alt="Save" style="width: 17px; font-weight: bolder; height: 20px; float: end; margin-top: 4px;">
+                                    <img src="./assets/images/icobook.png" *ngIf="allSavedNews.includes(n.Id)" (click)="saveNews(n.Id)" alt="Save" style="width: 17px; font-weight: bolder; height: 20px; float: end; margin-top: 4px;">
+
+                                    <!-- <i *ngIf="!allSavedNews.includes(n.Id)" class="fa fa-bookmark-o mx-2" aria-hidden="true " (click)="saveNews(n.Id)"></i> -->
+                                    <!-- <i *ngIf="allSavedNews.includes(n.Id)" class="fa fa-bookmark mx-2" aria-hidden="true " (click)="saveNews(n.Id)"></i> -->
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- </div> -->
+<img id="adv" src="./assets/images/adv_news.png " alt="Adervtisment " class="img-fluid w-100 px-3">
+
+<!-- <div class="mainScroller11" style="height: auto; overflow-y: scroll;"> -->
+    <div class="row mt-5">
+        <div class="col-10">
+            <h1 class="market mx-2">Upcoming events</h1>
+        </div>
+        <div class="col-2 my-2">
+            <!-- <h5 class="View" >View all</h5> -->
+            <h5 class="view_all">View all</h5>
+        </div>
+    </div>
+
+    <div class="sliderEvnt" style="margin: -2px 0px 0px -10px;">
+        <div class="row sliderEvent">
+            <div class="col-12 menuListEvent" >
+            <div class="row eventData" *ngFor="let e of eventList">
+                <div class="row mx-1" style="background-color: rgb(30, 71, 97); border-radius: 8px; height: 7vh; color: white;width: 97%;">
+                    <div class="col-7 eventDates" (click)="eventData(e.Id)">
+                        <h3>{{e.StartDateUtc | date}}</h3>
+                    </div>
+                    <!-- <div class="col-3">
+
+                    </div> -->
+                    <div class="col-5">
+                        <img id="share"src="./assets/images/icons8-share-24.png" (click)="sendMsg()" alt="Share" style="width: 17px; font-weight: bolder; height: 20px; float: end; margin-top: 4px;">
+
+                        <a (click)="saveEventD(e)" style="font-size:16px; margin-left: 3px;">
+                            <img src="./assets/images/icons82.png"  alt="Share" style="width: 17px; font-weight: bolder; height: 20px; float: end; margin-top: 9px;">
+                            <!-- <i class="fa-regular fa-bookmark mx-2" id="changeColor"></i> -->
+                            <!-- <i *ngIf="allSavedEvents.includes(e.Id)" class="fa fa-bookmark px-2" aria-hidden="true "></i> -->
+                            
+                            <!-- <img src="assets/images/bookmark.png" alt="save" style="width: 12px;margin-left: 5px; height: 12px;"> -->
+                        </a>
+                    </div>
+                </div>
+                    <div class="row" style="height:7vh;">
+                        <a (click)="eventData(e.Id)">
+                            <h2 class="eventTitle mt-3 mb-3">{{e.Name | uppercase}}</h2>
+                        </a>
+                    </div>
+                    <div class="row mb-3 mt-5" style="width: 100%; margin-left: -14px; height: 7vh; overflow: hidden;">
+                        <!-- <span style="margin-left: -5px; font-size: 12px; font-weight: lighter; display: inline-block; color: #9C9C9C;"> -->
+                        <div class="col-1">
+                            <img src="./assets/images/map.png" height="27px" width="30px" alt="">
+                        </div>
+                        <div class="col-11" style="margin-top: -21px; margin-left: 26px">
+                            <span class="eventVenue">{{e.Venue}}</span>
+                        </div>
+                        <!-- </span>     -->
+                    </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-10">
+            <h1 class="market mx-2">Recent Blogs</h1>
+        </div>
+        <div class="col-2 my-2">
+            <!-- <h5 class="" style="color: #3576a1;  font-weight: bold; margin-left: -15px;">View all</h5> -->
+            <h5 class="view_all">View all</h5>
+        </div>
+    </div>
+
+    <div class="sliderBlog" style="margin: -2px 10px 0px -10px;">
+        <div class="row first_slider1">
+            <div class="col-12 menuListBlogs" *ngFor="let obj of blogList" (click)="blogsData(obj.Id)">
+            <div class="row mx-4 my-3 rowBack" >
+            <!-- <div class="col-12 menuListBlogs" *ngFor="let obj of blogList" (click)="blogsData(obj.Id)"> -->
+
+                <div class="col-7 relat">
+                    <div class="desc mb-4 mt-4">
+                        <a (click)="blogsData(obj.Id)" style="text-decoration: none;"> 
+                    {{obj.Title}}</a>
+                    </div>
+
+                    <span class="mx-1">
+                <img onerror="this.src='./assets/images/user.png'" src="{{obj.AuthourImg}}" alt="" class="img-fluid idimg">
+                 <span class="mx-3 name mt-5">{{obj.AuthorName}}</span>
+                    </span>
+                    <!-- <div class="desc mb-4">
+                        <a (click)="blogsData(obj.Id)" style="text-decoration: none;"> 
+                    {{obj.Title}}</a>
+                    </div> -->
+                    <div class="rel">
+                        <div class="absu mt-4">
+                            <span class="time my-1 mt-5">
+                                <!-- <span>{{obj.PostedAt | date:'MMMM d'}}</span> -->
+                            <span class="mx-2">{{calcDate(obj)}}</span>
+                            <span class="">{{hourTime(obj)}}</span>
+                            </span>
+                            <div class="media">
+                                <img id="share"src="./assets/images/shareim.png" (click)="sendMsg()" alt="Share" style="width: 17px; font-weight: bolder; height: 20px; float: end; margin-top: 4px;">
+                                <img src="./assets/images/icobook.png" *ngIf="!allSavedNews.includes(obj.Id)" (click)="saveNews(obj.Id)" alt="Save" style="width: 17px; font-weight: bolder; height: 20px; float: end; margin-top: 4px;">
+                                <img src="./assets/images/icobook.png" *ngIf="allSavedNews.includes(obj.Id)" (click)="saveNews(obj.Id)" alt="Save" style="width: 17px; font-weight: bolder; height: 20px; float: end; margin-top: 4px;">
+
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+
+                    <img onerror="this.src='./assets/images/img_new2.png'" [src]="obj.BlogImg" class="img-fluid img-center">
+
+                    <!-- Using class throught take image -->
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <img src="./assets/images/adv_news.png " alt="Adervtisment " class="img-fluid w-100 px-3">
+
+
+
+</div>
+
+      </div>
+          <div class="col-md-3 hidden-sm hidden-xs ">
+        <div class="classadd text-center">
+           <p>Advertiesment</p>
+       </div>
+       <div class="classadd2 text-center">
+           <p>Advertiesment</p>
+       </div>
+       <div class="classadd1 text-center">
+           <p>Advertiesment</p>
+       </div> 
+</div>
+</div>
+      </div>
+
+
+
+
+<app-footer></app-footer>

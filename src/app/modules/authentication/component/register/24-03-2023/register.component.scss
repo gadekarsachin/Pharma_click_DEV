@@ -1,0 +1,237 @@
+.main {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.mainimg {
+    height: 6rem;
+    margin-top: 1.9rem;
+}
+
+.inputFirstRow i {
+    font-size: 2.5rem;
+    padding-top: 3.313rem;
+    padding-left: 1.5rem;
+}
+
+.inputLabel {
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: "Pensum Sans";
+    padding-top: 3.063rem;
+    padding-left: 1.813rem;
+}
+
+.inputDesign {
+    padding-left: 4rem;
+    margin-top: 3rem;
+}
+
+.rememberRow {
+    margin-left: 1rem;
+}
+
+.inputMail,
+.inputPass,
+.inputFName,
+.inputLName,
+.inputOrg,
+.inputOrgInfo,
+.inputEdu,
+.inputConfPass,
+.inputRole {
+    width: 89%;
+    padding: 1rem 0 1rem 4.5rem;
+    border-radius: 0.8rem;
+    outline: none;
+    border: 1px solid gray;
+    font-size: 1.7rem;
+    color: gray
+}
+.inputMob{
+    width: 67%;
+    padding: 1rem 0 1rem 4.5rem;
+    border-radius: 0.8rem;
+    outline: none;
+    border: 1px solid gray;
+    font-size: 1.7rem;
+    color: gray;
+    margin-left: 70px;
+}
+
+.inputContainerMail,
+.inputContainerPas,
+.inputContainerFName,
+.inputContainerMob,
+.inputContainerOrg,
+.inputContainerOrgInfo,
+.inputContainerEdu,
+.inputContainerLName,
+.inputContainerConfPas,
+.inputContainerRole {
+    position: relative;
+}
+
+.inputContainerMail>i,
+.inputContainerPas>i,
+.inputContainerFName>i,
+.inputContainerLName>i,
+.inputContainerMob>i,
+.inputContainerOrg>i,
+.inputContainerOrgInfo>i,
+.inputContainerEdu>i,
+.inputContainerConfPas>i,
+.inputContainerRole>i {
+    position: absolute;
+    top: 18px;
+    left: 13px;
+}
+
+.form-check-input[type=checkbox] {
+    border-radius: 0.25em;
+    padding: 7px;
+    margin-left: 20px;
+}
+
+// .inputContainerPas{
+//     position: relative;
+// }
+// .inputContainerPas > i{
+//     position: absolute;
+//     top: 5px;
+//     left: 10px;
+// }
+.loginImage {
+    color: lightgray;
+    font-size: 2.3rem;
+}
+
+.mobIcon{
+    margin-top: -4px;
+    color: lightgray;
+    font-size: 2.3rem;
+    margin-left: 68px;
+}
+
+.inputSwitch {
+    font-size: 2rem;
+}
+
+.rememberCol {
+    margin-top: 1.5rem;
+    margin-left: 4rem;
+}
+
+.forgotDiv {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.forgotLink {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+    font-style: italic;
+}
+
+.invalid-feedback {
+    font-size: 12px;
+    font-weight: bold
+}
+
+.LoginSubmit {
+    position: relative;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 1.5rem;
+    font-family: "Pensum Sans";
+    background-color: #215578 !important;
+    color: white !important;
+}
+
+.submitIcon {
+    position: absolute;
+    right: 2rem;
+    top: 0.5rem;
+    font-size: 2.7rem;
+    color: white;
+    /* border: 1px solid rgb(225, 224, 224); */
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0.6rem;
+    border-radius: 5rem;
+}
+
+.submitRow {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.orRow {
+    // margin-top: 3rem;
+    text-align: center;
+}
+
+.orPart {
+    color: lightGray;
+    font-family: "Pensum Sans";
+}
+
+.socialLogin {
+    padding: 2px;
+}
+
+.socialCol {
+    border: 0.1rem solid rgb(230, 227, 227);
+    border-radius: 2rem;
+}
+
+.socialTitle {
+    margin-left: 1.5rem;
+}
+
+.signUpLink {
+    text-decoration: none;
+    padding-left: 1rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+// -----------
+.nav__links ul {
+    // position: static;
+    display: none;
+}
+
+// .nav__links ul li {
+//     border-bottom: 1px solid lightgray;
+//     color: gray !important;
+// }
+
+.nav__links .feat-show .show {
+    display: block;
+    // margin-left: -7px !important;
+    // width: 40vw !important;
+    // margin-top: 15px;
+}
+.selectIsd{
+    font-size: 12px;
+    position: absolute;
+    margin-left: -1px;
+    margin-top: 0px;
+    word-wrap: normal;
+    display: block;
+    height: 46px;
+    width: 70px;
+    border-radius: 10px;
+    color: gray;
+    border: solid 1px gray;
+}
+.isdOpt{
+    font-size: 12px;
+    font-family: 'Pensum';
+}
+

@@ -1,0 +1,157 @@
+<div class="container-fluid company_details_header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-3 left_arrow">
+                <i class="fa-solid fa-arrow-left mx-4 mt-5 pt-2" (click)="goesBack()" aria-hidden="true"></i>
+            </div>
+            <div class="col-6 logo_image text-center">
+                <img src="./assets/images/Brand_logo01.png" class="img-fluid logimg1" alt="OrgLogo" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container category_main_wrapper category_details_wrapper">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-12 co-sm-12 mt-2 company_details_inner_wrapper news_details_center_wrapper">
+            <div class="column_bg_border event_details_wrapper">
+                <div [ngSwitch]="savedItemType">
+                    <div *ngSwitchCase="'Company'">
+                        <h5 class="title mx-4 my-3">Company Saved List</h5>
+                        <div class="row mt-5 mx-3 compny_Div" *ngFor="let org of savedItemList">
+                            <div class="col-12 cols p-3 my-2" (click)="companyData(org.CompanyId)">
+                                <a style="text-decoration: none;">
+                                    <h5 class="text-start d-inline-block mx-2">{{org.Company}}</h5>
+                                    <span class="float-end allrate">
+                                        <i class="fa fa-star-o text-warning mx-1" aria-hidden="true"></i>
+                                        <span class="rate">{{org.Rating}}</span>
+                                    </span>
+                                    <h6 class="cat_type mx-2">{{org.BusinessType}}</h6>
+                                    <div class="mx-2 descrip" style="word-break: break-all;">
+                                        <span *ngFor="let pro of org.Products;let i = index;">
+                                            <span *ngIf="i<10" style="padding: 0px; margin-right: 4px;">
+                                                {{pro.ProductName }}<span *ngIf="(org.Products.length >= 10 && i<9)||( org.Products.length < 10 && i<org.Products.length-1)">,</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <h5 class="city mx-2 my-2"><i class="fa fa-map-marker" aria-hidden="true"></i> {{org.CompanyAddress }}</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <div *ngIf="!savedItemList || savedItemList.length === 0">
+                            <p class="mx-3">Company list is not available...!</p>
+                        </div>
+                    </div>
+                    <div *ngSwitchCase="'News'">
+                        <h5 class="title mx-4 my-3">News Saved List</h5>
+                        <div class="grand_Div">
+                            <div>
+                                <div class="row mx-3 py-2 Parent_Div my-4" *ngFor="let n of savedItemList ">
+                                    <div class="col-4">
+                                        <img
+                                            onerror="this.src='../../../../../assets/images/img_new.png'"
+                                            src="{{n.NewsImglink.replace(n.NewsImglink.substring(n.NewsImglink.indexOf('/api'),n.NewsImglink.indexOf('/media')),'/')}} "
+                                            alt="news "
+                                            style="height: 18vh; width: 100%; padding: 4px; border-radius: 13px;"
+                                        />
+                                    </div>
+                                    <div class="col-8 today">
+                                        <div class="row">
+                                            <a (click)="newsData(n.Id ) " class="links">{{n.Title}}</a>
+                                        </div>
+                                        <div class="innerDiv row mt-5 mb-2">
+                                            <div class="col-6">
+                                                <span class="float-start">{{calcDate(n)}}&nbsp;</span>
+                                                <span class="float-start">{{hourTime(n)}}&nbsp;</span>
+                                            </div>
+                                            <div class="col-6">
+                                                <span class="float-end"> </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="!savedItemList || savedItemList.length === 0">
+                                <p class="mx-3">News list is not available...!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngSwitchCase="'Events'">
+                        <h5 class="title mx-4 my-3">Events Saved List</h5>
+                        <!-- <div class="container-fluid" style="margin: 5px 8px 5px 5px; overflow-y: auto; height: 78vh;">
+                            <div class="row eventData" *ngFor="let e of savedItemList">
+                                <div class="col-3 eventDates">
+                                    <h3 style="font-weight: bold;">{{e.StartDateUtc | date:'dd'}} - {{e.EndDateUtc | date:'dd'}}</h3>
+                                    <h3 style="margin-top: 5px; font-weight: lighter; font-size: 14px; margin-left: -5px;">
+                                        {{e.EndDateUtc | date:'MMM - yyyy'}}
+                                    </h3>
+                                </div>
+                                <div class="col-9">
+                                    <div class="row mt-4" style="font-size: 15px; font-weight: 500;">
+                                        <a (click)="eventData(e.Id)">
+                                            <h2>{{e.Name | uppercase}}</h2>
+                                        </a>
+                                    </div>
+                                    <div class="row mb-4" style="width: 100%;">
+                                        <div class="col-9 float-start mb-4">
+                                            <span style="margin-left: -5px; font-size: 12px; font-weight: lighter; display: inline-block; color: #9c9c9c;">
+                                                <img src="/assets/images/map.png" height="25px" width="30px" alt="" />
+                                                <span style="margin-left: -8px;">{{e.Venue}}</span>
+                                            </span>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <span class="float-end"> </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="savedItemList.length === 0">
+                                <span style="font-size: 17px;">No events for this month.</span>
+                            </div>
+                        </div> -->
+                        <div class="row main_event_list" *ngFor="let e of savedItemList">
+                            <div class="col-3 col-lg-2 p-0" (click)="eventData(e.Id)" (click)="eventData(e.Id)">
+                                <div class="event_date_bg">
+                                    <h3>{{e.StartDateUtc | date:'dd'}} - {{e.EndDateUtc | date:'dd'}}</h3>
+                                    <h3>{{e.EndDateUtc | date:'MMM - yyyy'}}</h3>
+                                </div>
+                            </div>
+                            <div class="col-9 col-lg-10 event_details">
+                                <div class="row justify-content-between h-100">
+                                    <div class="col-12">
+                                        <div (click)="eventData(e.Id)">
+                                            <h2 class="event_name">{{e.Name | uppercase}}</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row h-100 align-items-end">
+                                            <div class="col-9 d-flex" (click)="eventData(e.Id)">
+                                                <!-- <img src="./assets/images/map.png"alt=""> -->
+                                                <span class="Venue_location icon"><i class="fa fa-map-marker"></i></span>
+                                                <span class="Venue_location text">{{e.Venue}}</span>
+                                            </div>
+                                            <div class="col-3 event_sharing text-right">
+                                                <!-- <i class="fa-solid fa-share-square-o"></i>
+                                                <a (click)="saveEventD(e)" style="font-size: 16px;">
+                                                    <i *ngIf="!allSavedEvents.includes(e.Id)" class="fa-regular fa-bookmark" id="changeColor"></i>
+                                                    <i *ngIf="allSavedEvents.includes(e.Id)" class="fa fa-bookmark" aria-hidden="true "></i>
+                                                </a> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div *ngIf="savedItemList.length === 0">
+                                    <span style="font-size: 17px;">No events for this month.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,266 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/solid.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+<!---------------------------------------->
+<div class="container-fluid company_details_header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-3 left_arrow">
+                <i class="fa fa-arrow-left" (click)="goesBack()" aria-hidden="true"></i>
+            </div>
+            <div class="col-6 logo_image text-center">
+                <img src="./assets/images/Brand_logo01.png" class="img-fluid logimg1" alt="OrgLogo" />
+            </div>
+            <!-- <div class="col-3 bookmark right_arrow" (click)="saveCompany()"> -->
+            <div class="col-3 bookmark right_arrow" *ngIf="objData!==undefined">
+                <i  id="" class="fa fa-share-alt" aria-hidden="true"type="button" data-toggle="modal" data-target="#exampleModalCenter"></i>
+                <i *ngIf="!allSavedNews.includes(objData.Id)" class="fa fa-bookmark-o mt-5 pt-2 mx-4" aria-hidden="true"
+                    (click)="saveNews()"></i>
+                <i *ngIf="allSavedNews.includes(objData.Id)" class="fa fa-bookmark mt-5 pt-2 mx-4 fa-2x"
+                    aria-hidden="true" (click)="saveNews()"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLongTitle" style="font-size: 25px; margin-left:-178px; font-weight: 500;">Share</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="margin-right: -350px;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="social-icons">
+          
+         
+            <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fpharmaclick.co.in%2Fweb%2Fallnews%2FNewsdetail%3Fid%{{newsId}}" target="_blank" rel="noopener noreferrer"class="btn btn-primary" style="background-color: #3b5998; margin-right: 10px; font-size: 22px;" role="button"><i class="fab fa-facebook-f text-white"></i></a> 
+            <a href="https://twitter.com/intent/tweet?text={{share}}&url=http://localhost:4200/allnews/Newsdetail?id={{newsId}}"  target="_blank" rel="noopener noreferrer"class="btn btn-primary" style="background-color: #55acee; margin-right: 10px; font-size: 22px;"  role="button"><i class="fab fa-twitter text-white"></i></a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url={{redirecturl}}&title={{share}}" target="_blank" rel="noopener" class="btn btn-primary" style="background-color: #0077B5; margin-right: 10px; font-size: 22px;"> <i class="fa fa-linkedin text-white"></i>
+  </a>
+            <a href="mailto:?subject={{share}}&body=I%20found%20this%20awesome%20website%20and%20thought%20you%20might%20like%20it:%20http://localhost:4200/allnews/Newsdetail?id={{newsId}}" class="btn btn-primary" style="background-color: #333333; margin-right: 10px; font-size: 22px;" role="button"> <i class="fa fa-envelope text-white"></i></a>
+          
+         
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+   
+<div class="container category_main_wrapper category_details_wrapper">
+    <div class="row">
+        <div class="col-lg-3 col-md-12 co-sm-12 hidden-sm hidden-xs mt-2">
+            <div class="left_side_icon_listing column_bg_border">
+                <div class="hexagon_img">
+                    <a routerLink="/home/product/category">
+                        <h1 class="title">
+                            <i class="fa fa-comments nav__icon" aria-hidden="true"></i>
+                            <div class="content">Marketplace</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/allnews">
+                        <h1 class="title active-link1" [routerLinkActive]="'active-link1'" [class.active-link1]="path1=='/allnews/Newsdetail'" >
+                            <i class="fa fa-newspaper-o nav__icon" aria-hidden="true"></i>
+                            <div class="content">News</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/events">
+                        <h1 class="title">
+                            <i class="fa fa-globe nav__icon" aria-hidden="true"></i>
+                            <div class="content">Events</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/blogs">
+                        <h1 class="title">
+                            <i class="fa-solid fa-message nav__icon"></i>
+                            <div class="content">Blogs</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/job">
+                        <h1 class="title">
+                            <i class="fas fa-user-tie nav__icon"></i>
+                            <div class="content">Jobs</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/all-section">
+                        <h1 class="title">
+                            <i class="fa-solid fa-list nav__icon"></i>
+                            <div class="content">All</div>
+                        </h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 co-sm-12 mt-2 company_details_inner_wrapper news_details_center_wrapper">
+            <div class="column_bg_border">
+                <div class="main scroll_slider" *ngFor="let c of newsallinfo">
+                    <div>
+                        <div class="row justify-content-center">
+                            <div class="col-12 mb-3">
+                                <h5 class="news_heading">{{c.Title}}</h5>
+                                <!-- {{c.NewsImglink.replace('/api/v1/NewsById?newsId='+c.Id+'&userId='+'0'+'/','/')}} -->
+                            </div>
+                            <div class="col-12 col-md-8">
+                                {{shareimg}}
+                                <div class="img-heading" *ngIf="!shareimg">
+                                    <img id="news_img"  src="./assets/images/pexels-pixabay-208512.jpg" class="img-fluid news_image"
+                                        src="{{c.NewsImglink.replace('/api/v1/NewsById?newsId='+c.Id+'&userId='+this.getuserdata.CompanyId+'/','/')}}" />
+                                     
+                                        
+                                    </div>
+                                    <span class="img-heading" *ngIf="getuserdata===null">
+                                        {{shareimg}}
+                                        <img id="news_img"  class="img-fluid news_image"
+                                        src="{{c.NewsImglink.replace('/api/v1/NewsById?newsId='+c.Id+'&userId='+'0'+'/','/')}}" />
+                                    </span>
+                            </div> 
+                        </div>
+
+                        <div class="row news_timing">
+                            <h5 class="desc_title text-secondary mb-3 mt-3">
+                                <span class="mr-2">{{c.Author}} </span>
+                                <span>{{calcDate(c)}}&nbsp;</span>
+                                <span>{{hourTime(c)}}&nbsp;</span>
+                            </h5>
+                            <div class="col-12">
+                                <div [innerHTML]="c.Full" class="news_desc"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment mx-3 my-3">
+                        <h5 class="comnt my-3">Comment</h5>
+                        <form [formGroup]="myForm" (ngSubmit)="onSubmitForm()">
+                            <textarea class="form-control tarea" formControlName="NewsComment" required
+                                [ngClass]="{'is-invalid': isSubmitted && f.NewsComment.errors}"
+                                style="min-width: 98%; height: 16vh; border-radius: 12px;"></textarea>
+                            <button class="btn btnpost" [disabled]="myForm.invalid">Post</button>
+                        </form>
+                    </div>
+                    <div class="comment_list">
+                        <h5 class="mx-3 news_heading">Comments ({{commentCount}})</h5>
+                        <div class="scrollercommt mt-2">
+                            <div class="row my-2 w-100 mx-auto align-items-start" *ngFor="let cmts of c.NewsComments; let i=index">
+                                <div class="col-3">
+                                    <img onerror="this.src='./assets/images/user.png'" [src]="cmts.NewsCommenterImg"
+                                        alt="" class="mx-3 img-fluid idimg1" />
+                                </div>
+                                <div class="col-9">
+                                    <h5 class="commtname">{{cmts.NewsCommenterName}}</h5>
+                                    <div class="timecomt">
+                                        <h5 class="h5 desc_title text-secondary">
+                                        </h5>
+                                        <p class="comment_timing">
+                                            <span>{{calcDate1(cmts)}}&nbsp;</span>
+                                            <span>{{hourTime2(cmts)}}&nbsp;</span>
+                                        </p>
+                                    </div>
+                                    <div class="comtbord pb-2">{{cmts.NewsComment}}</div>
+                                    <div class="my-2 commtmedia">
+                                        <span class="mr-5">
+                                            <i class="fa fa-heart" (click)="(commentLike(cmts.Id,!cmts.IsLiked))"
+                                                [ngStyle]="{'color': cmts.IsLiked===false ? 'gray' : 'red'}"
+                                                [id]="'likediv'+i" aria-hidden="true"></i>
+                                            <small class="mx-1">Liked {{cmts.Likes}}</small>
+                                        </span>
+
+                                        <span (click)="replayshow(i)" (click)="commentId(cmts.Id)"><i
+                                                class="fa fa-comment-o" aria-hidden="true"></i><small
+                                                class="mx-1">{{cmts.AllReply.length}} Reply</small></span>
+                                    </div>
+                                </div>
+                                <div [id]="'replaydiv'+i" class="comment replay_wrapper mx-3 my-3" style="display: none;">
+                                    <form [formGroup]="myForms1" (ngSubmit)="(replaySubmit())">
+                                        <textarea class="form-control tarea mb-3" formControlName="ReplyText" required
+                                            [ngClass]="{'is-invalid': isSubmitted2 && g.ReplyText.errors}"
+                                            placeholder="Reply to comment "
+                                            style="width: 98%; height: 12vh; border-radius: 12px;"></textarea>
+                                        <button class="btn btn-success btn-sm mx-4"
+                                            [disabled]="myForms1.invalid">Submit</button><button
+                                            class="btn btn-danger btn-sm" (click)="replayshow(i)">Cancel</button>
+                                    </form>
+
+                                    <div class="replayscroll">
+                                        <h5 class="mx-3 commthead mt-3">Replay List...</h5>
+                                        <div class="row my-2 w-100 mx-auto" *ngFor="let rply of cmts.AllReply; ">
+                                            <div class="col-12 mb-2">
+                                                <h5 class="commtname1 mx-3">{{rply.ReplierName}}</h5>
+                                                <div class="timecomt1 mx-3">{{calcDate2(rply)}}
+                                                    <span>{{hourTime2(rply)}}&nbsp;</span></div>
+                                                <div class="comtbord1 mx-3 pb-2">{{rply.ReplyText}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="demo " class="carousel slide pb-1 px-3 mt-5" data-bs-ride="carousel ">
+                        <div class="carousel-inner">
+                            <div *ngFor="let ytd of advImg; let i=i ndex "
+                                class="carousel-item {{ (i==0 ) ? ' active ' : ' '}} ">
+                                <div [innerHTML]="ytd.ImageContent " alt="Advertiement 1 " class="d-block"
+                                    style="width: 100%; height: 10vh;"></div>
+                            </div>
+                        </div>
+                        <!-- Indicators/dots -->
+                        <div class="carousel-indicators">
+                            <button type="button " data-bs-target="#demo " data-bs-slide-to="0 "
+                                class="active"></button>
+                            <button type="button " data-bs-target="#demo " data-bs-slide-to="1 "></button>
+                            <button type="button " data-bs-target="#demo " data-bs-slide-to="2 "></button>
+                            <button type="button " data-bs-target="#demo " data-bs-slide-to="3 "></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-12 co-sm-12 mt-2 hidden-sm hidden-xs">
+            <div class="right_side_listing column_bg_border mb-5">
+                <div class="p-2 pt-0">
+                    <div class="mt-0">
+                        <h2 class="content_medium_heading mb-5">Topics</h2>
+                    </div>
+                    <div class="">
+                        <ul class="category_listing">
+                            <li *ngFor="let dd of newsMenu"><a class="anch mobile-nav-tab newClassItem"
+                                [attr.id]="dd.CategoryName" [class.active-link]="activeClass===dd.CategoryName">{{dd.CategoryName}}</a></li>
+                       
+                       
+                                </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right_side_listing column_bg_border">
+                <div class="p-2 pt-0">
+                    <div class="mt-0">
+                        <h2 class="content_medium_heading mb-5">Advertiesment</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---->
+<app-footer></app-footer>

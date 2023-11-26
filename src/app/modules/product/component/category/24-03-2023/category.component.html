@@ -1,0 +1,220 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<div class="container ">
+    <div class="row">
+        <div class="col-md-3 hidden-sm hidden-xs">
+          <!-- <app-menu></app-menu> -->
+            <div class="container2">
+                <div class="gallery">
+                    <div class="img">
+                                <a routerLink="/home/product/category">
+                                    <h1 class="title"[routerLinkActive]="'active-link1'" [class.active-link]="path=='/home/product/category'">
+                                <i class="fa fa-comments nav__icon" aria-hidden="true"></i>
+                                <div class="content">Marketplace</div>
+                            </h1>
+                        </a>
+                    </div>
+                     <div class="img pharmaclick">
+                        <h1 class="title" style="background: white; color: rgb(32,72,99);">
+                            <img src="./assets/images/uuu.png" alt="" style="height: 55px;" class="nav__icon">
+                            <div class="content" style="font-weight: 600;">PharmaClick</div>
+                        </h1>
+                    </div>
+                    <div class="img">
+                        <a routerLink="/allnews">
+                            <h1 class="title">
+                                <i class="fa fa-newspaper-o nav__icon" aria-hidden="true"></i>
+                                <div class="content">News</div>
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="img">
+                        <a routerLink="/events">
+                            <h1 class="title">
+                                <i class="fa fa-globe nav__icon" aria-hidden="true"></i>
+                                <div class="content">Events</div>
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="img">
+                        <a routerLink="/blogs">
+                            <h1 class="title">
+                                <i class="fa-solid fa-message nav__icon"></i>
+                                <div class="content">Blogs</div>
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="img">
+                        <a routerLink="/all-section">
+                            <h1 class="title">
+                                <i class="fa-solid fa-list nav__icon"></i>
+                                <div class="content">All</div>
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="img">
+                        <a routerLink="/job">
+                            <h1 class="title">
+                                <i class="fas fa-user-tie nav__icon"></i>
+                                <div class="content">Jobs</div>
+                            </h1>
+                        </a>
+                    </div> 
+    
+                </div>
+    
+          </div>
+        </div>
+    
+      <div class="col-md-6 ">
+        <div class="" id="tour__container">
+            <div class="container-fluid cat">
+                <div class="row ">
+                    <div class="col-8">
+                        <h1 class="market mx-2">Marketplace</h1>
+                    </div>
+                    <!-- <div class="col-4"><button class="appTour" (click)="startTour();">Application Tour</button></div> -->
+                    <!-- <div class="col-4 appTours" (click)="startTour();">Application Tour</div> -->
+        
+                    <div class="my-4">
+                        <!-- <button class="btnShow" (click)="renderDynamicInputs()"> Show Dynamic Inputs </button> -->
+                    </div>
+                    <!-- <div [ngClass]="{
+                    'd-none':!showBtns,
+                    'd-block':showBtns
+                }">
+        
+                        <div>
+                            <ul class="d-flex mx-4">
+                                <li class="position-relative" (click)="renderInputs(buttonType)" *ngFor="let buttonType of buttonTypes">
+                                    <button [ngClass]="[
+                               (buttonType | lowercase), {
+                              'position-absolute': true
+                              }]">{{buttonType}}</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li *ngFor="let input of inputs">
+                                    <input #introInput type="text" [ngClass]="input" value="{{input}}" />
+                                </li>
+                            </ul>
+                        </div>
+        
+                    </div> -->
+        
+                </div>
+                <div class="slider catSlider1">
+                    <div class="row  first_slider" (click)="renderDynamicInputs()">
+                        <div class="col-12 menuListCol ">
+                            <ul class="menuList">
+                                <li *ngFor="let cat of categoryList">
+                                    <a [class.active-link]="activeClass===cat.Id" (click)="redirect(cat)">
+                                {{cat.Name}}
+                            </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        
+        
+            <!-- ---code for carousal --main-slider -->
+            <div class="scroll">
+                <div id="demo" *ngIf="banner.length !== 0" class="carousel slide  px-3 mt-2 " data-bs-ride="carousel">
+        
+                    <!-- The slideshow/carousel -->
+                    <div class="carousel-inner">
+        
+                        <div *ngFor="let ytd of banner; let i = index" class="carousel-item {{ (i == 0) ? 'active' : ''}}">
+                            <!-- <img src="../../../assets/images/Adver1.png " alt="Advertiement 1" class="d-block" style="width:100%;height: 10vh;"> -->
+                            <div [innerHTML]='ytd.ImageContent' alt="Advertiement 1" class="d-block" style="width:100%;height: 18vh;"></div>
+                        </div>
+        
+        
+                    </div>
+                    <!-- carousel-inne -->
+                    <!-- Indicators/dots -->
+                    <div class="carousel-indicators ">
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+                    </div>
+        
+                    <!-- </div> -->
+                </div>
+                <!-- --------------------------------main-slider--------------------------- -->
+        
+                <!-- Category -->
+        
+                <h5 class="mx-4 market" [class.addMargin]="banner.length === 0" [class.addOldMargin]="banner.length !== 0" (click)="renderDynamicInputs()">CATEGORIES</h5>
+                <div class="mainCategory scroll_slider" [class.setHeight]="banner.length === 0" [class.setOldHeight]="banner.length !== 0">
+        
+        
+                    <div class="container-fluid scroll_slider" style="margin: 40px 10px 10px 0px; ">
+                        <div class="row">
+                            <div class="col-4 col-lg-3 mx-auto my-3" *ngFor="let obj of categoryList">
+                                <div class="hex2 mx-auto" [class.active]="activeClass===obj.Id" (click)="redirect(obj)">
+                                    <h1 class="title1">{{obj.Name}}</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+                <!-- category closed -->
+        
+        
+                <div class="marquee">
+                    <h5 class="my-1 mb-3 mx-3 fet_comp " (click)="renderDynamicInputs()">FEATURED COMPANIES</h5>
+                    <div class="marquee-content mx-3">
+                        <div class="marquee-item" *ngFor="let obj of companylog">
+                            <img onerror="this.src='./assets/images/adv_img1.png'" class="img-fluid adv_img " [src]="obj.CompanyLogo" alt="">
+                        </div>
+                        <div class="marquee-item" *ngFor="let obj of companylog">
+                            <img onerror="this.src='./assets/images/adv_img1.png'" class="img-fluid adv_img " [src]="obj.CompanyLogo" alt="">
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+
+        </div>
+      </div>
+      <div class="col-md-3 hidden-sm hidden-xs" id="right-Content">
+        <div class="classadd1 text-center">
+            <p>Advertiesment</p>
+        </div>
+        <div class="slider1 catSlider1">
+            <div class="row  first_slider1" (click)="renderDynamicInputs()">
+                <div class="col-12 menuListCol1 ">
+                    <ul class="menuList1">
+                        <li *ngFor="let cat of categoryList">
+                            <a [class.active-link]="activeClass===cat.Id" (click)="redirect(cat)">
+                                
+                        {{cat.Name}}
+                    </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="classadd text-center">
+            <p>Advertiesment</p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+

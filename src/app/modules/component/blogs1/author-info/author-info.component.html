@@ -1,0 +1,83 @@
+<div class="mainheader">
+    <div class="const">
+        <div class="row header w-100">
+            <div class="col-4">
+                <i class="fa fa-arrow-left mx-3  mt-4 " aria-hidden="true" (click)="goBack()"></i>
+            </div>
+
+            <div class="col-4 ">
+                <img src="../../../../../assets/images/Brand_logo01.png" class="img-fluid logimg mt-2" alt="OrgLogo">
+            </div>
+            <div class="col-2">
+                <img src="../../../../../assets/images/share_PNG27.png" alt="Share" class="mt-4" style="width: 18px; margin-left: 48px; height: 18px; float: end;">
+            </div>
+            <div class="col-2">
+                <i class="fa fa-bookmark-o  mt-4 mx-4" aria-hidden="true"></i>
+
+            </div>
+        </div>
+
+        <div class="profile mx-3" *ngFor="let obj of athourList">
+            <h5 class="head mb-4">AUTHOR PAGE</h5>
+            <div class="row">
+                <div class="col-2">
+                    <img src="../../../../../assets/images/Dipak1-1.JPG" alt="" class="img-fluid idimgmain  ">
+                </div>
+                <div class="col-5 my-auto my-auto">
+                    <div class="name ">
+                        <h5 class="By">By {{obj.blogAuthorName}}</h5>
+
+                        <h5 chass="Senior" class="br">{{obj.blogAuthorDesignation}}</h5>
+                    </div>
+                </div>
+                <div class="col-5 my-auto">
+                    <button class="btn btnfollw mx-3 ">{{obj.blogFollowers}}&nbsp;Followers </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- nav bar -->
+        <div class="info_nav mx-3">
+            <ul class="nav ">
+                <li class="nav-item">
+                    <a class="nav-link active mobile-nav-tab" id="search-tab">Reads</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mobile-nav-tab" id="menu-tab">About Me</a>
+                </li>
+            </ul>
+        </div>
+        <!-- nav bar -->
+    </div>
+
+    <div class="mobile-nav-content mx-2" *ngFor="let obj of athourList">
+        <div id="search" class="content-item ">
+
+
+            <div class="row mx-4 my-3 rowclr">
+                <div class="col-8">
+                    <span class="mx-1">
+                    <img src="{{obj.blogAthourImg}}" alt="" class="img-fluid idimg mt-1">
+                     <span class="mx-3 name">{{obj.blogAuthorName}}</span>
+                    </span>
+                    <div class="desc ">{{obj.blogTitle}} </div>
+                    <span class="time my-1"><span>{{obj.blogPostedAt}}</span><span class="mx-2">{{obj.lastViewed}}</span></span>
+                    <div class="media py-1">
+                        <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                        <i class="fa fa-share mx-4" aria-hidden="true"></i>
+                        <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <small> {{obj.blogLike}}</small></span>
+                        <span class="mx-4"><i class="fa fa-comment-o " aria-hidden="true"></i><small> {{obj.totalComments}}</small></span>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="{{obj.blogImage}}" alt="" class="blogImg">
+                </div>
+            </div>
+        </div>
+        <div style="display:none" id="menu" class="content-item mx-4">
+            {{obj.blogDescription}}
+        </div>
+    </div>
+
+    <app-footer></app-footer>

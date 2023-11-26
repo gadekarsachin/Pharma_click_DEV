@@ -1,0 +1,152 @@
+<div class="main">
+    <div class="row imgRow">
+        <div class="imgDiv">
+            <img class="mainImg img-fluid" src="./assets/images/Brand_logo01.png" alt="Pharma Logos">
+        </div>
+    </div>
+    <div class="container">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmitForm()">
+            <div class="row inputRow justify-content-center">
+                <div class="col-12 col-lg-12 text-center">
+                    <label class="inputLabel">Log in</label>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-10 col-sm-12 col-12">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-12 inputDesign">
+                                <div class="inputContainerMail">
+                                    <input class="inputMail" id="username" type="email" formControlName="username" required [ngClass]="{'is-invalid':  f.username.errors}" placeholder="abc@email.com">
+                                    <i class="fa-solid fa-envelope loginImage "></i>
+                                    <div *ngIf=" f.username.errors?.required && (f.username.dirty || f.username.touched)" class="invalid-feedback mx-2">Email is required</div>
+                                    <div *ngIf=" f.username.errors?.pattern" class="invalid-feedback mx-2">Please Enter valid email.</div>
+                                </div>
+                
+                            </div>
+                            <div class="col-12 col-lg-12 inputDesign ">
+                                <div class="inputContainerPas ">
+                                    <input class="inputPass  " id="pass" type="password" formControlName="password" required [ngClass]="{'is-invalid': f.password.errors}" placeholder="Your Password">
+                                    <i class="fa-solid fa-lock loginImage "></i>
+                                    <span class="fa fa-eye-slash loginImage eye " aria-hidden="true"></span>
+                
+                                    <div *ngIf="f.password.errors?.required && (f.password.dirty || f.password.touched)" class="invalid-feedback mx-2">Password is required</div>
+                                </div>
+                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="warning">
+                    <div class="mx-3 mt-2">
+                        <h4 class="mx-5 text-danger">Invalid UserId And Password </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row rememberRow justify-content-center ">
+                <div class=" col-lg-3"></div>
+                <div class="col-6 col-md-6 col-lg-3 rememberCol">
+                    <!-- <div class="form-check form-switch ">
+                        <input class="form-check-input inputSwitch " type="checkbox " role="switch " id="flexSwitchCheckDefault ">
+                        <label class="form-check-label " for="flexSwitchCheckDefault ">Remember Me</label>
+                    </div> -->
+                    <!-- Default checked -->
+
+                    <div class="custom-control custom-switch form-check form-switch">
+                        <!-- <input type="checkbox" class="custom-control-input form-check-input inputSwitch" id="rememberMe" (click)="saveData()"> -->
+                        <input type="checkbox" class="custom-control-input form-check-input inputSwitch" id="remember_me">
+                        <label class="custom-control-label" for="customSwitch1">Remember Me</label>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3 forgotDiv ">
+                    <a class="forgotLink " routerLink="/auth/forgot-password">Forgot Password ?</a>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+            
+            <div class="row ">
+                <div class=" col-lg-2"></div>
+                <div class="col-12  col-lg-8">
+                <div class="form-check " >
+                    <input type="checkbox" class="form-check-input mt-2 " id="accepted1" formControlName="accepted1" required [ngClass]="{ 'is-invalid': isSubmitted && f.accepted1.errors }" />
+                    <label class="form-check-label mx-3 " for="check1 "><a routerLink="/auth/terms-condition" class="text-decoration-none">Accept Terms & Conditions</a> </label>
+                </div>
+                </div>
+                <div class=" col-lg-2"></div>
+            </div>
+    
+            <div class="row submitRow ">
+                <div class="col-3 col-md-4 col-lg-5 "></div>
+                <div class="col-6 col-md-4 col-lg-2 ">
+                    <div class="LoginSubmit ">
+                        <!-- <button (click)="signIn() " class="btn btn-primary submitBtn " id="id_complete1" disabled="disabled ">SIGN IN</button> -->
+                        <button class="btn  submitBtn " id="id_complete1" [disabled]="myForm.invalid">SIGN IN</button>
+                        <i class=" fa-solid fa-arrow-right submitIcon "></i>
+                    </div>
+                </div>
+                <div class="col-3 col-md-4 col-lg-5 "></div>
+            </div>
+        </form>
+    </div>
+  
+
+
+    <div class="row orRow ">
+        <div class="col-12 ">
+            <h1 class="orPart ">OR</h1>
+        </div>
+    </div>
+    <div class="row mb-3 ">
+        <div class="col-1 "></div>
+        <div class="col-10 ">
+            <div class="socialLogin text-center">
+                <label class="askAccountTitle ">Don't have an account?</label>
+                <a class="signUpLink " routerLink="/auth/register " (click)="signUp() ">Sign Up</a>
+            </div>
+        </div>
+        <div class="col-1 "></div>
+    </div>
+    <!-- <div class="row ">
+        <div class="col-1 "></div>
+        <div class="col-10 socialCol ">
+            <div class="socialLogin " (click)="signIn() ">
+                <img src="../../../../../assets/icons/icons8-google.svg " alt="Google Icon ">
+                <label class="socialTitle ">Login With Google</label>
+            </div>
+        </div>
+        <div class="col-1 "></div>
+    </div>-->
+
+    <div class="row mt-2 ">
+        <div class="col-1  col-lg-4"></div>
+        <div class="col-10 col-lg-4 socialCol ">
+            <div class="socialLogin " (click)="signInFB() ">
+                <img src="./assets/icons/icons8-facebook.svg " alt="Facebook Icon ">
+                <label class="socialTitle ">Login With Facebook</label>
+            </div>
+        </div>
+        <div class="col-1 col-lg-4"></div>
+    </div>
+
+    <!--  <div class="row mt-2 ">
+        <div class="col-1 "></div>
+        <div class="col-10 socialCol ">
+            <div class="socialLogin ">
+                <img src="../../../../../assets/icons/icons8-linkedin-circled.svg " alt="Linkdin Icon ">
+                <label class="socialTitle ">Login With Linkedin</label>
+            </div>
+        </div>
+        <div class="col-1 "></div>
+    </div> -->
+
+    <!-- <div class="row mt-2 ">
+        <div class="col-1 "></div>
+        <div class="col-10 ">
+            <div class="socialLogin ">
+                <label class="askAccountTitle ">Don't have an account?</label>
+                <a class="signUpLink " routerLink="/auth/register " (click)="signUp() ">Sign Up</a>
+            </div>
+        </div>
+        <div class="col-1 "></div>
+    </div> -->
+
+
+</div>

@@ -1,0 +1,582 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+
+<div class="container">
+    <div class=" mainheder pb-2" id="web_header">
+        <div class="row navs ">
+            <div class="col-4 pharmalogo" >
+                <img src="./assets/images/Brand_logo01.png" class="img-fluid logimg1 mt-3" alt="OrgLogo">
+            </div>
+            <div class="col-4" style="margin-left: -110px;">
+                <i class="fa fa-arrow-left mx-4 mt-5 pt-2" (click)="goBack()" aria-hidden="true"></i>
+            </div>
+            <div class="col-2" style="margin-right: -95px;">
+                <img id="share" src="./assets/images/share_PNG27.png" (click)="sendMsg()" alt="Share"style=" display: block;margin-left: 40px; margin-right: auto; width: 18px; height:18px;margin-top: 21px;">
+            </div>
+            <div class="col-2 bookmark" (click)="saveCompany()">
+                <i *ngIf="!allSavedCompany.includes(companyData.CompanyId)" class="fa fa-bookmark-o  mt-5 pt-2 mx-4 fa-2x" aria-hidden="true"></i>
+                <i *ngIf="allSavedCompany.includes(companyData.CompanyId)" class="fa fa-bookmark  mt-5 pt-2 mx-4 fa-2x" aria-hidden="true"></i>
+             
+            </div>
+        </div>
+    </div> 
+    
+    <div class="row">
+      <div class="col-md-3 hidden-sm hidden-xs">    
+        <!-- <app-menu></app-menu> -->
+        <div class="container2">
+        <div class="gallery">
+            <div class="img">
+                <a routerLink="/home/product/category">
+                    <h1 class="title"[routerLinkActive]="'active-link1'" [class.active-link1]="path1=='/company-data' ">
+                        <i class="fa fa-comments nav__icon" aria-hidden="true"></i>
+                        <div class="content">Marketplace</div>
+                    </h1>
+                </a>
+            </div>
+             <div class="img pharmaclick">
+                <h1 class="title" style="background: white; color: rgb(32,72,99);">
+                    <img src="/assets/images/uuu.png" alt="" style="height: 55px;" class="nav__icon">
+                    <div class="content" style="font-weight: 600;">PharmaClick</div>
+                </h1>
+            </div>
+            <div class="img">
+                <a routerLink="/allnews">
+                    <h1 class="title">
+                        <i class="fa fa-newspaper-o nav__icon" aria-hidden="true"></i>
+                        <div class="content">News</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/events">
+                    <h1 class="title">
+                        <i class="fa fa-globe nav__icon" aria-hidden="true"></i>
+                        <div class="content">Events</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/blogs">
+                    <h1 class="title">
+                        <i class="fa-solid fa-message nav__icon"></i>
+                        <div class="content">Blogs</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/all-section">
+                    <h1 class="title">
+                        <i class="fa-solid fa-list nav__icon"></i>
+                        <div class="content">All</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/job">
+                    <h1 class="title">
+                        <i class="fas fa-user-tie nav__icon"></i>
+                        <div class="content">Jobs</div>
+                    </h1>
+                </a>
+            </div> 
+
+        </div>
+
+  </div>
+</div>
+      <div class="col-md-6">
+        <!-- header -->
+ <div class=" mainheder pb-2" id="mobile_header">
+    <div class="row navs ">
+        <div class="col-4"> 
+            <i class="fa fa-arrow-left mx-4 mt-5 pt-2" (click)="goBack()" aria-hidden="true"></i>
+        </div>
+
+        <div class="col-4 pharmalogo" >
+            <img src="./assets/images/Brand_logo01.png" class="img-fluid logimg mt-3" alt="OrgLogo">
+        </div>
+        <div class="col-2">
+            <img id="share" src="./assets/images/share_PNG27.png" (click)="sendMsg()" alt="Share"style=" display: block;margin-left: 40px; margin-right: auto; width: 18px; height:18px;margin-top: 21px;">
+        </div>
+        <div class="col-2 bookmark" (click)="saveCompany()">
+            <i *ngIf="!allSavedCompany.includes(companyData.CompanyId)" class="fa fa-bookmark-o  mt-5 pt-2 mx-4 fa-2x" aria-hidden="true"></i>
+            <i *ngIf="allSavedCompany.includes(companyData.CompanyId)" class="fa fa-bookmark  mt-5 pt-2 mx-4 fa-2x" aria-hidden="true"></i>
+         
+        </div>
+    </div>
+</div> 
+
+<!-- ----------------------- -->
+<div class="comp">
+    <div class="sub_div">
+
+        <div class="row compTitle mx-2">
+            <div class="col-3">
+                <img onerror="this.src='../../../assets/images/adv_img1.png'" src="data:{{imagePath.ContentType}};base64,{{imagePath.FileContents}}" class="img-fluid  mt-2 imgcomp" alt="Company_Logo">
+                <!-- <img onerror="this.src='../../../assets/images/adv_img1.png'" src="{{companyData.CompanyLogo}}" class="img-fluid  mt-2 imgcomp" alt="Company_Logo"> -->
+            </div>
+            <div class="col-9  comp_name">
+                <!-- <div class="cmpName1"><div class="col-12" style="width: 600px; overflow-x:scroll !important">  -->
+                <!-- </div> -->
+                <h4 class="mt-1 " style="text-transform:lowercase;">{{companyData.Company}}</h4>
+                <!-- </div> -->
+                <h5 style="color:#9C9C9C; line-height: 0.9; font-size: 12px;">{{companyData.BusinessType}}</h5>
+                <p style="font-size: 13px; margin-bottom: 5px; color:  rgb(13, 44, 65); font-weight: 700;"> Rate us :
+
+                    <span data-bs-whatever="@star" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: rgb(32, 72, 99); border-radius: 2px; font-size: 12px;" class="p-1">
+
+                        <i class="fa fa-star text-warning mt-2 mx-1" aria-hidden="true"></i><span class="text-white ratingCls">({{newRating}} )</span>
+                    <div class="modal modal1" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body text-center">
+                                    <i class="fa-solid fa-star mt-2 mx-1 starIcons" (click)="colorChange('1')" id="btn1" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star mt-2 mx-1 starIcons" (click)="colorChange('2')" id="btn2" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star mt-2 mx-1 starIcons" (click)="colorChange('3')" id="btn3" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star mt-2 mx-1 starIcons" (click)="colorChange('4')" id="btn4" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star mt-2 mx-1 starIcons" (click)="colorChange('5')" id="btn5" aria-hidden="true"></i>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-success btn-sm" (click)="submitRatings(companyData)" data-bs-dismiss="modal">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </span>
+
+
+                </p>
+            </div>
+        </div>
+        <!-- row compTitle -->
+
+        <div style="margin-top: 25px;">
+            <div class="row info_nav mx-1 mt-5">
+                <!-- <div class="row  first_slider"> -->
+                <ul class="nav ">
+                    <li class="nav-item " *ngIf="companyData.AboutCompany!==null && companyData.AboutCompany!==''">
+                        <a class="nav-link " (click)="scrollTo('section1')" [ngClass]=" currentSection==='section1' ? 'red-text' : 'green-text'">About Us</a>
+                    </li>
+                    <li class="nav-item" *ngIf="companyData.Products!==null && companyData.Products!==''">
+                        <a class="nav-link " (click)="scrollTo('section2')" [ngClass]=" currentSection==='section2' ? 'red-text' : 'green-text'">Products</a>
+                    </li>
+                    <li class="nav-item" *ngIf="companyData.FDACertificate!==null && companyData.FDACertificate!=='' || companyData.DrugLicense !== null && companyData.DrugLicense !=='' || companyData.MFGLicense !== null && companyData.MFGLicense !=='' || companyData.GMPLicense !== null && companyData.GMPLicense !=='' || companyData.OtherCertificate !== null && companyData.OtherCertificate !==''">
+                        <a class="nav-link " (click)="scrollTo('section3')" [ngClass]=" currentSection==='section3' ? 'red-text' : 'green-text'">Certification/Application</a>
+                    </li>
+                    <li class="nav-item" *ngIf="companyData.ContactPersonName!==null && companyData.ContactPersonName!==''||companyData.ContactPersonDesignation!==null && companyData.ContactPersonDesignation!==''||companyData.CompanyAddress!==null && companyData.CompanyAddress!==''||companyData.MobileNumber!==null && companyData.MobileNumber!==''||companyData.Email!==null && companyData.Email!=='' ">
+                        <a class="nav-link " (click)="scrollTo('section4')" [ngClass]=" currentSection==='section4' ? 'red-text' : 'green-text'">Contact Us</a>
+                    </li>
+                </ul>
+                <!-- </div> -->
+            </div>
+        </div>
+
+        <!-- info_nav -->
+    </div>
+    <!-- sub_div -->
+    <!-- -------------------------------------------------------- -->
+
+
+
+
+    <div class="all_cont scroll_slider" id="parentDiv" appScrollSpy [spiedTags]="['DIV']" (sectionChange)="onSectionChange($event)" style="height:60vh;overflow-y: scroll;">
+        <div id="section1" class="page-section">
+            <!-- <a href=""> -->
+            <p class="mx-4 my-4 desc w-100 mt-1">{{companyData.AboutCompany}}</p>
+            <!-- </a> -->
+        </div>
+        <div id="section2" class="page-section">
+            <h5 class="h5 heading mt-2  " *ngIf="companyData.Products!==null && companyData.Products!==''">Products</h5>
+
+            <div class="row prod my-2">
+                <div class="col-6 " *ngFor="let dd of companyData.Products; let i=index ">
+                    <div class="proddiv row" (click)="productInfo(dd.ProductId)">
+
+                        <div class="col-10 m-auto">
+                            <h5>{{dd.ProductName}}</h5>
+                        </div>
+                        <div class="col-2 my-auto">
+                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div id="section3" class="page-section">
+            <h5 class="h5 heading mt-2" *ngIf="companyData.FDACertificate!==null && companyData.FDACertificate!=='' || companyData.DrugLicense !== null && companyData.DrugLicense !=='' || companyData.MFGLicense !== null && companyData.MFGLicense !=='' || companyData.GMPLicense !== null && companyData.GMPLicense !=='' || companyData.OtherCertificate !== null && companyData.OtherCertificate !==''">Certification/Application</h5>
+            <!-- <img onerror="this.src='../../../assets/images/adv_img1.png'" src="data:{{fda.ContentType}};base64,{{fda.FileContents}}" class="img-fluid  mt-2 " alt="Company_Logo"> -->
+            <!-- <button (click)="openPDFv2()">Open PDF v2</button> -->
+            <!-- <div>
+                    <img (click)="openPDFv2()" src="../../../assets/images/pdf.png" alt="" class="img-fluid pdfcenter">
+                    <h2 (click)="openPDFv2()" class="text-center">{{companyData.FDACertificate}}</h2>
+                </div> -->
+
+            <!-- FDACertificate display  -->
+            <div *ngIf="companyData.FDACertificate !== null && companyData.FDACertificate !=='' ">
+                <h5 class="h5 heading mt-2"><i class="fa fa-caret-right px-2" aria-hidden="true"></i> FDA Certificate</h5>
+
+                <div *ngIf="fda.ContentType == 'image/png'">
+                    <img src="data:{{fda.ContentType}};base64,{{fda.FileContents}}" class="img-fluid  mt-2 pdfcenter" alt="Company_Logo">
+                </div>
+
+                <div *ngIf="fda.ContentType == 'image/jpeg'">
+                    <img src="data:{{fda.ContentType}};base64,{{fda.FileContents}}" class="img-fluid  mt-2 pdfcenter" alt="Company_Logo">
+                </div>
+
+                <div *ngIf="fda.ContentType == 'application/pdf'">
+
+                    <div>
+                        <img (click)="openPDFv2()" src="./assets/images/pdf.png" alt="" class="img-fluid pdfcenter">
+                        <h2 (click)="openPDFv2()" class="text-center">{{companyData.FDACertificate}}</h2>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <!--DrugLicense display  -->
+
+            <div *ngIf="companyData.DrugLicense !== null && companyData.DrugLicense !=='' ">
+
+                <h5 class="h5 heading mt-2"><i class="fa fa-caret-right px-2" aria-hidden="true"></i>Drug License Certificate</h5>
+                <div *ngIf="fda.ContentType == 'image/png'">
+                    <img src="data:{{drug.ContentType}};base64,{{drug.FileContents}}" class="img-fluid  mt-2 pdfcenter" alt="Company_Logo">
+                </div>
+
+                <div *ngIf="fda.ContentType == 'image/jpeg'">
+                    <img src="data:{{drug.ContentType}};base64,{{drug.FileContents}}" class="img-fluid  mt-2 pdfcenter" alt="Company_Logo">
+                </div>
+
+                <div *ngIf="drug.ContentType == 'application/pdf'">
+
+                    <div>
+                        <img (click)="openPDFv3()" src="./assets/images/pdf.png" alt="" class="img-fluid pdfcenter">
+                        <h2 (click)="openPDFv3()" class="text-center">{{companyData.DrugLicense}}</h2>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!--MFGLicense display  -->
+
+            <div *ngIf="companyData.MFGLicense !== null && companyData.MFGLicense !=='' ">
+                <h5 class="h5 heading mt-2"><i class="fa fa-caret-right px-2" aria-hidden="true"></i>MFG License Certificate</h5>
+
+                <div *ngIf="mfg.ContentType == 'image/png'">
+                    <img src="data:{{mfg.ContentType}};base64,{{mfg.FileContents}}" class="img-fluid  mt-2 " alt="Company_Logo">
+                </div>
+
+                <div *ngIf="mfg.ContentType == 'image/jpeg'">
+                    <img src="data:{{mfg.ContentType}};base64,{{mfg.FileContents}}" class="img-fluid  mt-2 " alt="Company_Logo">
+                </div>
+
+                <div *ngIf="mfg.ContentType == 'application/pdf'">
+
+                    <div>
+                        <img (click)="openPDFv4()" src="./assets/images/pdf.png" alt="" class="img-fluid pdfcenter">
+                        <h2 (click)="openPDFv4()" class="text-center">{{companyData.MFGLicense}}</h2>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <!--GMPLicense display  -->
+
+            <div *ngIf="companyData.GMPLicense !== null && companyData.GMPLicense !=='' ">
+                <h5 class="h5 heading mt-2"><i class="fa fa-caret-right px-2" aria-hidden="true"></i>GMP License Certificate</h5>
+
+
+                <div *ngIf="gmp.ContentType == 'image/png'">
+                    <img src="data:{{gmp.ContentType}};base64,{{gmp.FileContents}}" class="img-fluid  mt-2 pdfcenter" alt="Company_Logo">
+                </div>
+
+                <div *ngIf="gmp.ContentType == 'image/jpeg'">
+                    <img src="data:{{gmp.ContentType}};base64,{{gmp.FileContents}}" class="img-fluid  mt-2 pdfcenter" alt="Company_Logo">
+                </div>
+
+                <div *ngIf="gmp.ContentType == 'application/pdf'">
+
+                    <div>
+                        <img (click)="openPDFv5()" src="./assets/images/pdf.png" alt="" class="img-fluid pdfcenter">
+                        <h2 (click)="openPDFv5()" class="text-center">{{companyData.GMPLicense}}</h2>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <!--OtherCertificate display  -->
+
+            <div *ngIf="companyData.OtherCertificate !== null && companyData.OtherCertificate !=='' ">
+                <h5 class="h5 heading mt-2"><i class="fa fa-caret-right px-2" aria-hidden="true"></i>Other Certificate</h5>
+
+
+                <div *ngIf="othercertif.ContentType == 'image/png'">
+                    <img src="data:{{othercertif.ContentType}};base64,{{othercertif.FileContents}}" class="img-fluid  mt-2 " alt="Company_Logo">
+                </div>
+
+                <div *ngIf="othercertif.ContentType == 'image/jpeg'">
+                    <img src="data:{{othercertif.ContentType}};base64,{{othercertif.FileContents}}" class="img-fluid  mt-2 " alt="Company_Logo">
+                </div>
+
+                <div *ngIf="othercertif.ContentType == 'application/pdf'">
+
+                    <div>
+                        <img (click)="openPDFv6()" src="./assets/images/pdf.png" alt="" class="img-fluid pdfcenter">
+                        <h2 (click)="openPDFv6()" class="text-center">{{companyData.OtherCertificate}}</h2>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        <div id="section4" class="page-section">
+            <h5 class="h5 heading mt-3" *ngIf="companyData.ContactPersonName!==null && companyData.ContactPersonName!==''||companyData.ContactPersonDesignation!==null && companyData.ContactPersonDesignation!==''||companyData.CompanyAddress!==null && companyData.CompanyAddress!==''||companyData.MobileNumber!==null && companyData.MobileNumber!==''||companyData.Email!==null && companyData.Email!=='' ">Contact Us</h5>
+            <div class="cont_all">
+
+                <div class="row w-100 pb-4">
+                    <div class="col-2 col-lg-1 mt-3"><i class="fa fa-user-circle" aria-hidden="true"></i></div>
+                    <div class="col-10 col-lg-11 name mt-4">
+
+                        <h5 class="Gurmit mx-5">{{companyData.ContactPersonName}}</h5>
+                        <h5 class="mang mt-3 mx-5">{{companyData.ContactPersonDesignation}}</h5>
+
+                    </div>
+                </div>
+
+                <!-- <span class="add1"> <span class="add2"><b> Corporate office :</b></span> <span class="clr"> 101-103,<b style="line-height: 1.2;">Shyam Kamal 'D',Agarwal Market, Vile Parle(E),</b> </span></span>
+                                        -->
+                <div class="row add1">
+                    <div class="col-4 col-lg-3">
+                        <b class="float-end"> Corporate office :</b>
+                    </div>
+                    <div class="col-8 col-lg-9">
+                        <span class="clr" style="line-height: 1.2;">{{companyData.CompanyAddress}}</span>
+                    </div>
+                </div>
+                <!-- <h5 class="add"><b> Mumbai -</b> <span class="clr"> 400&nbsp;057, India </span></h5> -->
+                <h5 class="add"><b> Phone : </b><span class="clr"> {{companyData.MobileNumber}} </span></h5>
+                <h5 class="add"><b> Mobile : </b><span class="clr"> {{companyData.MobileNumber}} </span></h5>
+                <h5 class="add"><b> Email : </b> <span class="clr"> {{companyData.Email}}</span></h5>
+            </div>
+
+            <h5 class="star mx-4 mt-4">Rating </h5>
+            <div class="mx-4 my-1">
+                <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                <b class="no">{{companyData.FiveStar}}</b>
+            </div>
+
+            <div class="mx-4 my-1">
+                <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                <b class="no">{{companyData.FourStar}}</b>
+            </div>
+
+            <div class="mx-4 my-1">
+                <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                <b class="no">{{companyData.ThreeStar}}</b>
+            </div>
+
+            <div class="mx-4 my-1">
+                <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                <b class="no">{{companyData.TwoStar}}</b>
+            </div>
+
+            <div class="mx-4 my-1">
+                <i class="fa fa-star text-warning mx-1 starss" aria-hidden="true"></i>
+                <b class="no">{{companyData.OneStar}}</b>
+            </div>
+
+
+
+        </div>
+        <!-- ------id contact---- -->
+
+    </div>
+
+</div>
+<!-- Floating Button -->
+
+<div class="fab">
+    <img src="./assets/images/btn.png" alt="">
+</div>
+
+<div class="box">
+    <!-- <button (click)="sendMsg()"> pTHis</button> -->
+    <!-- <a id="shareFB" onclick="sethref()" class="item item1"><img src="../../../assets/images/fb.png" class="img-fluid" alt="" /></a> -->
+
+
+    <!-- <a class="item item2"><img src="../../../assets/images/chatImage.png" class="img-fluid" alt="" /></a> -->
+    <!-- <a class="item "><img src="../../../assets/images/callImage.png" (click)="callData()" class="img-fluid" alt="" /></a>
+    <br>
+    <a class="item" data-bs-toggle="modal" data-bs-target="#emailEnq" style="text-decoration:none;">
+        <i class="fa-solid fa-envelope" style="font-size:24px; color:#16547a;text-decoration: none; "></i>
+    </a> -->
+        <a class="item" routerLink="/chat">
+            <img src="./assets/images/chatImage.png" class="img-fluid" alt="Chat with us" />
+        </a>
+        <br>
+        <a class="item " id="call"><img  src="./assets/images/callImage.png" (click)="callData()" class="img-fluid" alt="" /></a>
+        <br>
+        <a class="item"  data-bs-toggle="modal" data-bs-target="#emailEnq" style="text-decoration:none;">
+            <i class="fa-solid fa-envelope" style="font-size:24px; color:#16547a;text-decoration: none; "></i>
+            <!-- <img src="../../../assets/images/inquiry.png" class="img-fluid" alt="" /> -->
+        </a>
+
+
+    <!-- ------------------------------ -->
+    <!-- <img src="../../../assets/images/wa.png" class="img-fluid" alt="" />  -->
+
+    <!-- --------------- -->
+    <!-- <div class="fab1" (click)="sendMsg()">
+        <img src="../../../assets/images/share.png" alt="" class="icons">
+    </div> -->
+
+    <!-- <div class="box1">
+        <a class=" icon1" id="shareFB" onclick="redirectToSethrefs()">
+            <img src="/assets/images/fb.png" alt="Share">
+        </a> -->
+    <!-- <a class="icon2" id="shareInst" >
+            <img src="/assets/images/inst.png" alt="Share">
+        </a>
+        <a class=" icon3" id="shareTwi" >
+            <img src="/assets/images/tw.png" alt="Share">
+        </a> -->
+    <!-- </div> -->
+</div>
+
+<!-- Floating Button -->
+
+<div class="modal mod2" id="emailEnq" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header modTitleBack">
+                <h5 class="modal-title " id="exampleModalLabel1" style="font-size:18px;">New Message</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="onMailSubmits(contactForm)" #contactForm="ngForm">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">To</label>
+                        <input disabled="text" type="text" class="form-control" name="email" id="email" ngModel #email="ngModel" [ngModel]="companyData.Email" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" id="subject" class="form-control mb-3" name="subject" ngModel required #subject="ngModel">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="12" cols="50" ngModel #message="ngModel"></textarea>
+                    </div> <br>
+                    <hr>
+                    <button type="button" class="btn btn-send" (click)="onMailSubmits(contactForm)" data-bs-dismiss="modal">Send</button> &nbsp;
+                    <button type="button" class="btn btn-secondary btns" data-bs-dismiss="modal">Cancel</button>
+                </form>
+            </div>
+            <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-send" (click)="onMailSubmit(companyData)">Send</button>
+          <button type="button" class="btn btn-secondary btns" data-bs-dismiss="modal">Cancel</button>
+        </div> -->
+        </div>
+
+    </div>
+
+</div>
+
+<div *ngIf="displayBlock" class="modal " id="myModal" role="modal" style="overflow: hidden;">
+    <div class="modal-dialog dialog">
+        <div class="modal-content content rounded-5">
+            <div class="m-3">
+                <span class="header m-3">Product Details</span>
+                <span class="h4 float-end"><i class="fa fa-times text-white bg-black p-2 rounded-circle " aria-hidden="true" data-bs-dismiss="modal"></i></span>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="text-center">
+                    <img *ngIf="productDetail.ProductImage !== ''" src="{{productDetail.ProductImage.replace('/api/v1/ProductById?ProductId='+productDetail.Id+'/','/')}}" alt="" class="imgprod">
+                </div>
+                <span class="header1 m-3 ">{{productDetail.Name}} </span>
+                <!-- <div class="header1 m-3 ">{{productDetail.ProductGrade}}</div> -->
+
+                <div class="header2 m-3 ">{{productDetail.ProductGrade}}</div>
+
+                <div class="proddec" [innerHTML]="productDetail.ProductDescription">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<!-- The Modal for product -->
+
+
+      </div>
+   
+      <div class="col-lg-3 col-md-12 co-sm-12 mt-2 hidden-sm hidden-xs">
+        <div class="right_side_listing column_bg_border mb-5">
+            <div class="p-2 pt-0">
+                <div class="mt-0">
+                    <h2 class="content_medium_heading mb-5">Categories</h2>
+                </div>
+                <div class="">
+                    <ul class="category_listing">
+                        <li *ngFor="let cat of categoryList">
+                            <a [class.active-link]="activeClass===cat.Id" (click)="redirect(cat)">
+                                {{cat.Name}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right_side_listing column_bg_border">
+            <div class="p-2 pt-0">
+                <div class="mt-0">
+                    <h2 class="content_medium_heading mb-5">Advertiesment</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        
+      </div>    
+  </div>
+  <app-footer></app-footer>

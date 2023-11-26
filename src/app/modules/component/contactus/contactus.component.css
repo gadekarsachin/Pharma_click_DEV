@@ -1,0 +1,31 @@
+
+.contact_us_wrapper
+{
+    height: calc(100vh - 110px);
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.contact_wrapper {
+    padding: 50px 0;
+    border-radius: 10px;
+    border: 3px dashed #215578;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+}
+.contact_wrapper h3 {
+    font-weight: bold;
+    color: var(--thm-color);
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.contact_wrapper a {
+    text-decoration: none;
+}
+.contact_wrapper p {
+    font-weight: 400;
+    color: var(--thm-black);
+    font-size: 20px;
+}

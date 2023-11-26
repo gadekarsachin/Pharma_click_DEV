@@ -1,0 +1,416 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<div class=" mainheder pb-2">
+    <div class="row navs1 " id="hamburger">
+        
+        <div class="col-lg-3 ">
+            <img src="./assets/images/Brand_logo01.png " class="img-fluid logimg1 mt-3 " alt="OrgLogo ">
+        </div>
+        <div class="col-lg-4 ">
+            <div class="menuDiv " (click)="openSearch() ">
+                <i class="fa fa-search menuIcon mt-2 mx-2 float-end " aria-hidden="true "></i>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="menuDiv1">
+                <i class="fa fa-bars menuIcon mx-4 mt-2 " aria-hidden="true " (click)="openMenu() "></i>
+            </div>
+        </div>
+        <div class="col-lg-1 bell ">
+            <div class="notifier new ">
+                <a routerLink="/notifications"><i class="bell1 fa fa-bell-o " aria-hidden="true "></i></a>
+                <div class="badge ">.</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="container">
+    <div class="row">
+      <div class="col-md-3 hidden-sm hidden-xs">    
+        <!-- <app-menu></app-menu> -->
+        <div class="container2">
+        <div class="gallery">
+            <div class="img">
+                <a routerLink="/home/product/category"[routerLinkActive]="'active-link1'">
+                    <h1 class="title1">
+                        <i class="fa fa-comments nav__icon" aria-hidden="true"></i>
+                        <div class="content">Marketplace</div>
+                    </h1>
+                </a>
+            </div>
+             <div class="img pharmaclick">
+                <h1 class="title1" style="background: white; color: rgb(32,72,99);">
+                    <img src="/assets/images/uuu.png" alt="" style="height: 55px;" class="nav__icon">
+                    <div class="content" style="font-weight: 600;">PharmaClick</div>
+                </h1>
+            </div>
+            <div class="img">
+                <a routerLink="/allnews"[routerLinkActive]="'active-link1'">
+                    <h1 class="title1">
+                        <i class="fa fa-newspaper-o nav__icon" aria-hidden="true"></i>
+                        <div class="content">News</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/events"[routerLinkActive]="'active-link1'">
+                    <h1 class="title1"[routerLinkActive]="'active-link1'" [class.active-link1]="path1=='/events/events/event-list' ">
+                        <i class="fa fa-globe nav__icon" aria-hidden="true"></i>
+                        <div class="content">Events</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/blogs"[routerLinkActive]="'active-link1'">
+                    <h1 class="title1">
+                        <i class="fa-solid fa-message nav__icon"></i>
+                        <div class="content">Blogs</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/all-section"[routerLinkActive]="'active-link1'">
+                    <h1 class="title1">
+                        <i class="fa-solid fa-list nav__icon"></i>
+                        <div class="content">All</div>
+                    </h1>
+                </a>
+            </div>
+            <div class="img">
+                <a routerLink="/job"[routerLinkActive]="'active-link1'">
+                    <h1 class="title1">
+                        <i class="fas fa-user-tie nav__icon"></i>
+                        <div class="content">Jobs</div>
+                    </h1>
+                </a>
+            </div> 
+
+        </div>
+
+  </div>
+</div>
+      <div class="col-md-6">
+        <div [class]="classMenu" id="mobile_header">
+            <div class="main1" id="sideNavCloseE">
+                <div class="nav__links">
+                    <a class="closebtn" (click)="closeNav()"><i class="fa-solid fa-xmark"></i></a>
+        
+                    <div class="profile justify-content-center mb-2">
+                        <!-- <img class="profileImg" src="../../../../assets/images/profile.png" alt="Profile Image"> -->
+                        <span class="profileImgBack"><img class="profilepic" [src]="base64textString" alt="Profile Image" onerror="this.src='../../../../../assets/images/user.png'"></span>
+        
+                        <h2 class="profileTitle mt-2 ">{{profileName}}</h2>
+                    </div>
+                    <ul class="mx-auto">
+                        <li><i class="far fa-user px-2"></i> <a routerLink="/profile" class="px-2">My Account</a>
+                        </li>
+                        <li><i class="fa fa-briefcase px-2"></i>
+                            <a routerLink="/profile" class="px-2">Job Profile</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-bookmark-o px-3" aria-hidden="true"></i>
+                            <a class="feat-btn">Saved Items
+                            <!-- <span class="fas fa-caret-down first"></span> -->
+                            <span class="fa-solid fa-angle-right first  px-3" aria-hidden="true"></span>
+                            </a>
+                            <ul class="feat-show">
+                                <li><a routerLink="/GetSaveItem/Company">Companies</a></li>
+                                <li><a routerLink="/GetSaveItem/News">News</a></li>
+                                <li><a routerLink="/GetSaveItem/Events">Events</a></li>
+                                <li><a>Blogs</a></li>
+                                <li><a>Jobs</a></li>
+                            </ul>
+                        </li>
+                        <li><i class="fa-solid fa-message px-2" style="font-weight: normal;"></i> <a class="px-2">Chat</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-calendar-o px-2 "></i> <a class="px-2 ">Calender</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-star-o px-2 "></i> <a class="px-2 ">Rated Companies</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-thumbs-o-up px-2 "></i> <a class="px-2 ">Following</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-cog px-3" aria-hidden="true"></i>
+                            <a class="feat-btn1">Setting
+                            <!-- <span class="fas fa-caret-down first"></span> -->
+                            <span class="fa-solid fa-angle-right first1  px-3" aria-hidden="true"></span>
+                            </a>
+                            <ul class="feat-show1">
+                                <li>
+                                    <a>Notification</a>
+                                </li>
+                                <li><a routerLink="/auth/change-password">Change Password</a></li>
+                                <li><a routerLink="/alert">Alert</a></li>
+                                <li><a>Rate Us</a></li>
+                                <li (click)="moveToPrivacy()">
+                                    <a routerLink="/privacyPolicy ">Privacy & policy</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <i class="far fa-circle-question px-2 "></i> <a class="px-2 ">Help & FAQs</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope-o px-2 "></i> <a routerLink="/contact" class="px-2 ">Contact Us</a>
+                        </li>
+                        <li>
+                            <a class="px-2 " (click)="logout()"> <i class="fas fa-arrow-right-to-bracket px-2 "></i> Sign Out</a>
+                        </li>
+                    </ul>
+        
+        
+                </div>
+        
+                <div class=" nav__overlay " (click)="closeMenu() "></div>
+            </div>
+        </div>
+        
+        <div>
+            <div class=" mainheder pb-2" id="hamburger1">
+                <div class="row navs1">
+                    <div class="col-4">
+                        <div class="menuDiv1">
+                            <i class="fa fa-bars menuIcon mx-4 mt-2" aria-hidden="true" (click)="openMenu()"></i>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <img src="./assets/images/Brand_logo01.png" class="img-fluid logimg mt-3 " alt="OrgLogo">
+                    </div>
+                    <div class="col-2 ">
+                        <div class="menuDiv1" (click)="openSearch()">
+                            <i class="fa fa-search menuIcon mt-2 mx-2 float-end" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="col-2 bell">
+                        <div class="notifier new">
+                            <a routerLink="/notifications">
+                                <i class="bell1 fa fa-bell-o" aria-hidden="true"></i>
+                                <div class="badge">.</div>
+                            </a>
+                        </div>
+                    </div>
+        
+                </div>
+        
+            </div>
+        
+            <!-- <app-navbar [classList]="classList" (toggleEvent)="receiveMessage($event)"></app-navbar> -->
+            <app-search-event [classSearch]="classSearch" (toggleEvent)="receiveSearchMesg($event)"></app-search-event>
+        
+        
+            <!-- ------------------------------------------ -->
+            <!-- <div id="map" class="row full">
+            </div> -->
+            <div id="div1">
+        
+                <div class="my-4">
+                    <!-- <button class="btnShow" (click)="renderDynamicInputs()"> Show Dynamic Inputs </button> -->
+                </div>
+                <div [ngClass]="{
+                    'd-none':!showBtns,
+                    'd-block':showBtns
+                }">
+        
+                    <!-- <div>
+                    <ul class="d-flex mx-4">
+                        <li class="position-relative" (click)="renderInputs(buttonType)" *ngFor="let buttonType of buttonTypes">
+                            <button [ngClass]="[
+                               (buttonType | lowercase), {
+                              'position-absolute': true
+                              }]">{{buttonType}}</button>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li *ngFor="let input of inputs">
+                            <input #introInput type="text" [ngClass]="input" value="{{input}}"/>
+                        </li>
+                    </ul>
+                </div> -->
+        
+                </div>
+        
+        
+                <div id="maps" class="row full stepOne" (click)="renderDynamicInputs()">
+                    <img src="./assets/images/mapBlue.png"  style="width: 95%;
+                max-width: 100%; height: 107%;">
+                </div>
+        
+                <div class="slider" id="month">
+                    <div class="row  first_slider stepTwo" (click)="renderDynamicInputs()">
+                        <div class="col-12 menuListCol ">
+                            <ul class="menuList">
+                                <li *ngFor="let obj of monthList">
+                                    <a [class.active-link]="activeClass===obj.month" class="newClassItem" (click)="searchEventByMonth(obj)">{{obj.month}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- <div class="row marquee">
+                <ul *ngFor="let obj of monthList">
+                    <li><a [class.active-link]="activeClass===obj.month" (click)="searchEventByMonth(obj)">{{obj.month}}</a></li>
+                </ul>
+            </div> -->
+                <!-- ---------------- -->
+                <div class="container-fluid stepThree eventlist scroll_slider" (click)="renderDynamicInputs()">
+                    <div class="row eventData" *ngFor="let e of eventList" >
+                        <div class="col-3 col-lg-2 eventDates" (click)="eventData(e.Id)" (click)="eventData(e.Id)">
+                            <h3 style="margin-top: 25px; font-weight: bold;">{{e.StartDateUtc | date:'dd'}} - {{e.EndDateUtc | date:'dd'}}</h3>
+                            <h3 style="margin-top: 5px; font-weight: lighter; font-size: 16px; margin-left: -5px;">{{e.EndDateUtc | date:'MMM - yyyy'}}</h3>
+                        </div>
+                        <div class="col-9 col-lg-10" >
+                            <div class="row mt-4 mb-4" style="font-size: 14px; font-weight:bold;" (click)="eventData(e.Id)">
+                                <!-- <a (click)="eventData(e.Id)"> -->
+                                    <h2 style="font-weight: bolder; height: 5vh;">{{e.Name | uppercase}}</h2>
+                                <!-- </a> -->
+                            </div>
+                            <div class="row mb-5" style="width: 100%; height: 7vh; overflow: hidden; color: rgb(92, 91, 91);">
+                                <div class="col-9 float-start mb-4" (click)="eventData(e.Id)">
+                                <img src="./assets/images/map.png" height="32px" width="34px" alt="">
+                                <span class="Venue" >{{e.Venue}}</span>
+                                </div>
+                                <div class="col-3 mb-4">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <img id="share"  src="./assets/images/share.png" (click)="sendMsg()" alt="Share" style="width: 17px; font-weight: bolder; height: 20px; float: end; margin-top: 4px;">
+                                        </div>
+                                        <div class="col-6">
+        
+                                            <a (click)="saveEventD(e)" style="font-size:16px ;">
+                                                <!-- <div *ngIf = 'alert' class="alert alert-success alert-dismissisable fade-show">
+                                                    <strong>Event saved successfully..!</strong>
+                                                    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert">close</button>
+                                                </div> -->
+                                                <!-- <div (onclick)="getElemetById('changeColor').style.color='green'"> -->
+                                                <i *ngIf="!allSavedEvents.includes(e.Id)" class="fa-regular fa-bookmark mx-2" id="changeColor"></i>
+                                                <i *ngIf="allSavedEvents.includes(e.Id)" class="fa fa-bookmark px-2" aria-hidden="true "></i>
+                                                <!-- </div> -->
+                                                <!-- <img src="assets/images/bookmark.png" alt="save" style="width: 12px;margin-left: 5px; height: 12px;"> -->
+                                            </a>
+                                        </div>
+        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="eventList.length === 0">
+                        <span style="font-size: 17px;">No events for this month.</span>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        
+        
+        <!-- Search Data -->
+        <div style="height: 79.2vh; overflow-y: auto;" id="div2">
+        
+            <div class="row">
+                <div class="col-2">
+                    <a (click)="goBack() " class="fa fa-arrow-left mx-4 mt-4" aria-hidden="true"></a>
+                </div>
+                <div class="col-10  mt-3">
+                    <h1>Search Event List</h1>
+                </div>
+            </div>
+        
+            <div *ngIf="!getSearchData || getSearchData.length === 0">
+                <p class="mx-3 my-3">Search Event Not Found</p>
+            </div>
+        
+            <div class="row eventData" *ngFor="let e of getSearchData">
+                <div class="col-2 eventDates">
+                    <h3>{{e.StartDateUtc | date}}</h3>
+                </div>
+                <div class="col-10">
+                    <div class="row mt-4" style="font-size: 15px; font-weight:500;">
+                        <a (click)="eventData(e.Id)">
+                            <h2>{{e.Name | uppercase}}</h2>
+                        </a>
+                    </div>
+                    <div class="row mb-4" style="width: 100%;">
+                        <div class="col-9 col-lg-10 float-start mb-4">
+                            <span style="margin-left: -5px; font-size: 12px; font-weight: lighter; display: inline-block; color: #9C9C9C;">
+                            <!-- <i class="fa-solid fa-location-dot"></i> -->
+                            <img src="./assets/images/map.png" height="25px" width="30px" alt="">
+                            <span style="margin-left: -8px;">{{e.Venue}}</span>
+                            </span>
+                        </div>
+                        <div class="col-3 col-lg-2 mb-4">
+                            <span class="float-end">
+                            <img src="./assets/images/share.png" (click)="sendMsg()" alt="Share" style="width: 15px; font-weight: bolder; height: 12px; float: end;">
+                                <a (click)="saveEventD(e)"  >
+                                    <!-- <div *ngIf = 'alert' class="alert alert-success alert-dismissisable fade-show">
+                                        <strong>Event saved successfully..!</strong>
+                                        <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert">close</button>
+                                    </div> -->
+                                    <!-- <div (onclick)="getElemetById('changeColor').style.color='green'"> -->
+                                    <i *ngIf="!allSavedEvents.includes(e.Id)" class="fa-regular fa-bookmark mx-2"  id="changeColor" ></i>
+                                    <i *ngIf="allSavedEvents.includes(e.Id)" class="fa fa-bookmark px-2" aria-hidden="true "></i>
+                                    <!-- </div> -->
+                                    <!-- <img src="assets/images/bookmark.png" alt="save" style="width: 12px;margin-left: 5px; height: 12px;"> -->
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        
+        </div>
+        
+
+      </div>
+   
+      <div class="col-md-3 hidden-sm hidden-xs ">
+        <div class="classadd text-center">
+            <p>Advertiesment</p>
+        </div>
+        <div class="slider">
+            <h2 class="name" style="margin-left: 47px; margin-top: 11px;"> <b>MonthList</b></h2>
+            <div class="row  first_slider21 stepTwo" (click)="renderDynamicInputs()">
+                <div class="col-12 menuListCol21 ">
+                    <ul class="menuList21">
+                        <li *ngFor="let obj of monthList">
+                            <a [class.active-link]="activeClass===obj.month" class="newClassItem" (click)="searchEventByMonth(obj)">{{obj.month}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="classadd1 text-center">
+            <p>Advertiesment</p>
+        </div>
+        <div class="classadd2 text-center">
+            <p>Advertiesment</p>
+        </div>
+ </div>
+ 
+ 
+</div>    
+</div>   
+  <app-footer></app-footer>
+
+
+
+
+
+<app-footer></app-footer>

@@ -1,0 +1,39 @@
+/* bottom company Advertisment */
+
+.adv_img {
+    height: 10vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.marquee {
+    /*   overflow: hidden; */
+    height: 15vh;
+}
+
+.marquee-content {
+    display: flex;
+    animation: scrolling 10s linear infinite;
+}
+
+.marquee-item {
+    flex: 0 0 16vw;
+    margin: 0 1vw;
+    margin-left: 50px;
+}
+
+.marquee-item img {
+    display: block;
+    width: 100%;
+}
+
+@keyframes scrolling {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translatex(-144vw);
+    }
+}

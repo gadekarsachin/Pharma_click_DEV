@@ -1,0 +1,88 @@
+.backArrow {
+    font-size: 29px;
+    color: white;
+}
+
+.main {
+    height: 170vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.inputRow {
+    margin-top: 2.5rem;
+}
+
+.updateButtons {
+    border-radius: 5px;
+    background-color: #225679;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 23px;
+    width: 100%;
+}
+
+.cancleButtons {
+    border-radius: 5px;
+    background-color: #fff;
+    color: #225679;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 23px;
+    width: 100%;
+}
+
+.form-control {
+    border-radius: 6px;
+    border: #225679 solid 1px;
+    /* text-transform: capitalize; */
+    font-size: 16px;
+}
+
+.martop-10 {
+    margin-top: 10px;
+}
+
+.row {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.subRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-header {
+    background-color: #225679;
+    border-bottom: 1px solid #225679;
+    border-radius: 12px 12px 0 0 !important;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.card {
+    outline: none;
+    border-radius: 12px 12px 0 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.toast-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  

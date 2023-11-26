@@ -1,0 +1,255 @@
+<!-- <div> -->
+    <div class="main">
+
+        <div class="row inputRow">
+            <form [formGroup]="jobPostForm">
+                <div class="card">
+                    <div class="card-header black-header">
+                        <div class="row align-items-center">
+                            <div class="col-2">
+                                <i class="fa fa-arrow-left" (click)="goBack()" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-10 ">
+                                <span class="main-heading-2 text-center">Post Job Form
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="card-body" style="height:80vh; overflow-y: scroll;">
+    
+                        <div class="row">
+                            <div class="col-md-4 martop-10">
+                                <label class="gray-shade font-normal"> Job Title </label>
+                                <input type="text" name="JobPost" id="JobPost" class="form-control"
+                                    placeholder="Enter Job Title" formControlName="JobPost" />
+    
+                                <div *ngIf="jobPostForm.controls['JobPost'].invalid && (jobPostForm.controls['JobPost'].dirty || jobPostForm.controls['JobPost'].touched)"
+                                    class="error-message">
+                                    <div *ngIf="jobPostForm.controls['JobPost'].errors.pattern">
+                                        <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter Job Title
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-4 martop-10">
+                                <label class="gray-shade font-normal"> Department </label>
+                                <input type="text" name="Department" id="Department" class="form-control"
+                                    placeholder="Enter Department Name" formControlName="Department" />
+    
+                                <div *ngIf="jobPostForm.controls['Department'].invalid && (jobPostForm.controls['Department'].dirty || jobPostForm.controls['Department'].touched)"
+                                    class="error-message">
+                                    <div *ngIf="jobPostForm.controls['Department'].errors.pattern">
+                                        <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter Job Title
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-4 martop-10">
+                                <label class="gray-shade font-normal"> Company Name </label>
+                                <input type="text" name="CompanyName" id="CompanyName" class="form-control"
+                                    placeholder="Enter Company Name" formControlName="CompanyName" />
+    
+                                <div *ngIf="jobPostForm.controls['CompanyName'].invalid && (jobPostForm.controls['CompanyName'].dirty || jobPostForm.controls['CompanyName'].touched)"
+                                    class="error-message">
+                                    <div *ngIf="jobPostForm.controls['CompanyName'].errors.pattern">
+                                        <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter Company Name
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 martop-10">
+                                <label class="gray-shade font-normal"> Posted By </label>
+                                <select name="PostedBy" class="form-control" id="PostedBy" formControlName="PostedBy">
+                                    <option value=null selected>Posted By</option>
+                                    <option value="Company">Company</option>
+                                    <option value="Consultant">Consultant</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 martop-10">
+                                <label class="gray-shade"> Company Email </label>
+                                <input style="text-transform: none;" type="email" name="CompanyEmail" id="CompanyEmail"
+                                    class="form-control" placeholder="Enter Company Email" formControlName="CompanyEmail" />
+    
+                                <div *ngIf="jobPostForm.controls['CompanyEmail'].invalid && (jobPostForm.controls['CompanyEmail'].dirty || jobPostForm.controls['CompanyEmail'].touched)"
+                                    class="error-message">
+                                    <div *ngIf="jobPostForm.controls['CompanyEmail'].errors.pattern">
+                                        <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter Company Email
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="col-md-4 martop-10">
+                                <label class="gray-shade font-normal"> Company Logo </label>
+                                <input type="file" name="CompanyImage" id="CompanyImage" class="form-control"
+                                    placeholder="Enter Company Logo" formControlName="CompanyImage"
+                                    (change)="onUploadChange($event)" />
+    
+                                <div *ngIf="jobPostForm.controls['CompanyImage'].invalid && (jobPostForm.controls['CompanyImage'].dirty || jobPostForm.controls['JobPost'].touched)"
+                                    class="error-message">
+                                    <div *ngIf="jobPostForm.controls['CompanyImage'].errors.pattern">
+                                        <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter Company Logo
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-4 martop-10">
+                                <label class="gray-shade font-normal"> City </label>
+                                <input type="text" name="City" id="City" class="form-control" placeholder="Enter City"
+                                    formControlName="City" />
+    
+                                <div *ngIf="jobPostForm.controls['City'].invalid && (jobPostForm.controls['City'].dirty || jobPostForm.controls['City'].touched)"
+                                    class="error-message">
+                                    <div *ngIf="jobPostForm.controls['City'].errors.pattern">
+                                        <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter City
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 martop-10">
+                                <label class="gray-shade font-normal"> State </label>
+                                <input type="text" name="State" id="State" class="form-control" placeholder="Enter State"
+                                    formControlName="State" />
+    
+                                <div *ngIf="jobPostForm.controls['State'].invalid && (jobPostForm.controls['State'].dirty || jobPostForm.controls['State'].touched)"
+                                    class="error-message">
+                                    <div *ngIf="jobPostForm.controls['State'].errors.pattern">
+                                        <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter State
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="col-md-4 martop-10">
+                                <label class="gray-shade font-normal"> Post Time </label>
+                                <input type="text" name="Date" id="Date" class="form-control" placeholder="Enter Post Time"
+                                    formControlName="Date" />
+    
+                                <div *ngIf="jobPostForm.controls['Date'].invalid && (jobPostForm.controls['Date'].dirty || jobPostForm.controls['JobPost'].touched)"
+                                    class="error-message">
+                                    <div *ngIf="jobPostForm.controls['Date'].errors.pattern">
+                                        <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter Post Time
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-4 martop-10">
+                                <label class="gray-shade font-normal">Salary </label>
+                                <select name="Salary" class="form-control" id="Salary" formControlName="Salary">
+                                    <option value=null selected>Select Salary</option>
+                                    <option value="1-2 LPA">1-2 LPA</option>
+                                    <option value="2-3 LPA">2-3 LPA</option>
+                                    <option value="3-5 LPA">3-5 LPA</option>
+                                    <option value="5-7 LPA">5-7 LPA</option>
+                                    <option value="7-10 LPA">7-10 LPA</option>
+                                    <option value="10-12 LPA">10-12 LPA</option>
+                                    <option value="12-15 LPA">12-15 LPA</option>
+                                    <option value="15-20 LPA">15-20 LPA</option>
+                                    <option value="20-25 LPA">20-25 LPA</option>
+                                    <option value="25-30 LPA">25-30 LPA</option>
+                                    <option value="30-40 LPA">30-40 LPA</option>
+                                    <option value="40-50 LPA">40-50 LPA</option>
+                                    <option value="50-75 LPA">50-75 LPA</option>
+                                    <option value="1-2 cr PA">1-2 cr PA</option>
+                                    <option value="2-5 cr PA">2-5 cr PA</option>
+                                    <option value="5-10 cr PA">5-10 cr PA</option>
+                                    <option value="10 cr+ PA">10 cr+ PA</option>
+                                </select>
+    
+                                <div *ngIf="jobPostForm.controls['Salary'].invalid && (jobPostForm.controls['Salary'].dirty || jobPostForm.controls['Salary'].touched)"
+                                    class="error-message">
+                                    <div *ngIf="jobPostForm.controls['Salary'].errors.pattern">
+                                        <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter Salary
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-4 martop-10">
+                                <label class="gray-shade font-normal"> Job Type </label>
+                                <select name="JobType" class="form-control" id="JobType" formControlName="JobType">
+                                    <option value=null selected>Select Job Type </option>
+                                    <option value="parttime">Part Time</option>
+                                    <option value="fulltime">Full Time</option>
+                                    <option value="remote">Remote</option>
+                                </select>
+    
+                                <div *ngIf="jobPostForm.controls['JobType'].invalid && (jobPostForm.controls['JobType'].dirty || jobPostForm.controls['JobType'].touched)"
+                                    class="error-message">
+                                    <div *ngIf="jobPostForm.controls['JobType'].errors.pattern">
+                                        <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please select Job Type
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="col-md-4 martop-10">
+                                <label class="gray-shade font-normal">Experience </label>
+                                <input type="text" name="Experience" id="Experience" class="form-control"
+                                    placeholder="Enter Experience" formControlName="Experience" />
+    
+                                <div *ngIf="jobPostForm.controls['Experience'].invalid && (jobPostForm.controls['Experience'].dirty || jobPostForm.controls['JobPost'].touched)"
+                                    class="error-message">
+                                    <div *ngIf="jobPostForm.controls['Experience'].errors.pattern">
+                                        <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter Experience
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-4 martop-10">
+                                <label class="gray-shade font-normal"> Job Description </label>
+                                <input type="text" name="Description" id="Description" class="form-control"
+                                    placeholder="Enter Job Description" formControlName="Description" />
+    
+                                <div *ngIf="jobPostForm.controls['Description'].invalid && (jobPostForm.controls['Description'].dirty || jobPostForm.controls['Description'].touched)"
+                                    class="error-message">
+                                    <div *ngIf="jobPostForm.controls['Description'].errors.pattern">
+                                        <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter Company
+                                        Description
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-4 martop-10">
+                                <label class="gray-shade font-normal"> Company Description </label>
+                                <textarea type="text" name="About" id="About" class="form-control"
+                                    placeholder="Enter Company Description" formControlName="About" maxlength="250"
+                                    rows="5">
+                                    </textarea>
+    
+                                <div *ngIf="jobPostForm.controls['About'].invalid && (jobPostForm.controls['About'].dirty || jobPostForm.controls['About'].touched)"
+                                    class="error-message">
+                                    <div *ngIf="jobPostForm.controls['About'].errors.pattern">
+                                        <i class="fa fa-exclamation-circle font-16"></i>&nbsp;Please enter Company
+                                        Description
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+    
+                        <div class="row d-flex subRow">
+                            <div class="col-md-2"></div>
+    
+                            
+                        <div class="col-md-4">
+                            <button class="updateButtons" (click)="submitForm()">Submit</button>
+                        </div>
+
+    
+                            <div class="col-md-4">
+                                <button class="cancleButtons" (click)="cancleForm()">Cancel</button>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                    </div>
+    
+                </div>
+            </form>
+    
+            <!-- <app-footer></app-footer> -->
+        </div>
+    </div>
+    <app-footer></app-footer>
+    <!-- ---------------------------------------------------------------------- -->

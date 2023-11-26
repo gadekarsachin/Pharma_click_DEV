@@ -1,0 +1,347 @@
+.granddiv {
+    height: 79.2vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.job {
+    font-family: 'Pensum Sans';
+    text-shadow: 1px 0 black;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+    text-transform: uppercase;
+}
+
+.inputDesign {
+    padding-left: 4rem;
+    margin-top: 1rem;
+}
+
+.inputContainerjob {
+    position: relative;
+}
+
+.inputContainerjob>i {
+    position: absolute;
+    top: 5px;
+    left: 24px;
+}
+
+.inputjob {
+    padding: 3px 0 3px 4rem;
+    outline: none;
+    font-size: 1.5rem;
+}
+
+.loginImage {
+    color: lightgray;
+    font-size: 20px;
+}
+
+.fa-sliders {
+    font-size: 24px;
+}
+
+.recommand {
+    font-family: 'Pensum Sans';
+    text-shadow: 1px 0 black;
+    letter-spacing: 1px;
+    font-size: 15px;
+    color: black;
+}
+
+.btn {
+    background-color: RGB(32, 72, 99);
+    border: none;
+    color: white;
+    font-size: 11.5px;
+    cursor: pointer;
+    border-radius: 15px;
+    height: 4vh;
+    font-weight: normal;
+}
+
+.main {
+    height: 54vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.companyImg {
+    width: 8vw;
+    background-color: hsl(0, 10%, 95%);
+    border-radius: 41px;
+    height: 5vh;
+    border-radius: 50%;
+}
+
+.jobdiv {
+    margin: 15px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.jobdiv .col-6 h2 {
+    font-size: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.jobdiv .col-6 span {
+    font-size: 14px;
+}
+
+.jobdiv .col-6 .fa-star {
+    font-size: 12px;
+}
+
+.share {
+    width: 17px;
+    font-weight: bolder;
+    height: 19px;
+    float: end;
+    margin-top: 4px;
+}
+
+.fa-bookmark {
+    font-size: 15px
+}
+
+.sal {
+    background-color: hsl(0, 10%, 95%);
+    text-align: center;
+    border-radius: 11px;
+}
+
+.btn-info {
+    background-color: RGB(32, 72, 99) !important;
+    border: none;
+    color: white !important;
+    border-radius: 15px;
+}
+
+.fet_comp {
+    font-family: 'Pensum Sans';
+    font-size: 15px;
+    font-weight: bold;
+    text-shadow: 0 0 black;
+}
+
+.adv_img {
+    height: 14vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20%;
+    padding: 15px;
+    box-shadow: 1px -2px 6px -1px #808080 inset !important
+}
+
+.banner {
+    height: 11vh;
+    position: relative;
+    overflow: hidden;
+    min-width: 200vw;
+    animation: bannermove 15s linear infinite;
+    display: flex;
+    justify-content: space-between;
+}
+
+.banner:hover {
+    /* animation-play-state: paused; */
+}
+
+
+
+@keyframes bannermove {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.marquee-item {
+    flex: 0 0 19vw;
+    margin: 0 1vw;
+    width: 30%;
+    margin-left: 8px;
+}
+
+.marquee-item img {
+    display: block;
+    width: 100%;
+    width: 92px;
+    height: 68px;
+}
+
+
+h1 {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4em;
+    color: #333;
+    -webkit-text-shadow: 0 2px 1px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7);
+    -moz-text-shadow: 0 2px 1px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7);
+    text-shadow: 0 2px 1px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7);
+    word-spacing: 5px;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #222;
+    text-shadow: 0 0 40px #FFFFFF, 0 0 30px #FFFFFF, 0 0 20px #FFFFFF;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    /* background: url(''); */
+    background-size: cover;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    display: table;
+}
+
+.content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.item {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    padding: 8px;
+}
+
+@media only screen and (min-width: 800px) {
+    h1 {
+        font-size: 6em;
+    }
+
+    p {
+        font-size: 1.6em;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    /*   padding: 0 20px; */
+}
+
+/* ----------modal-----filter */
+.modal1 {
+    border-radius: 30px;
+    width: auto;
+}
+
+.modal-content {
+    margin: 10px 50px;
+    width: 340px;
+    height: auto;
+    border-radius: 30px;
+}
+
+
+.modal-content-2 {
+    width: auto;
+    height: auto;
+    margin-top: 25px;
+    border-radius: 30px;
+    padding: 20px 20px;
+}
+
+
+.modal-title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+.fields {
+    width: 120px;
+    display: border-box;
+    height: auto;
+    /* border: 1px solid gray; */
+
+}
+
+ul {
+    margin: -10px 0px -11px -9px;
+    /* width: 120px; */
+
+}
+
+ul li {
+    padding: 11px 3px;
+    font-size: 17px;
+    border: 1px solid rgb(243, 241, 241);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-control {
+    font-size: 15px;
+}
+
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn2 {
+    background-color: #0d4161;
+    border: none;
+    color: white;
+    font-size: 13.5px;
+    cursor: pointer;
+    border-radius: 8px;
+    height: 4vh;
+    font-weight: normal;
+    width: 54px;
+}
+
+.btn1 {
+    font-size: 13.5px;
+    cursor: pointer;
+    border-radius: 8px;
+    height: 4vh;
+    font-weight: bold;
+    width: 54px;
+    color: RGB(32, 72, 99);
+    background-color: white;
+    border: none;
+}
+
+.error-msg {
+    color: red;
+    font-size: small;
+}
+.container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+  }

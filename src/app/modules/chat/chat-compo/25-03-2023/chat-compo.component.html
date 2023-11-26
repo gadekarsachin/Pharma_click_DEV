@@ -1,0 +1,66 @@
+
+<app-header></app-header>
+
+<div class="row mt-5 mb-5">
+      <i class="fa-solid fa-arrow-left backArrow" (click)="goBack()"></i>  
+  <!-- <div class="col-6 profileImg text-center ">
+      <div>
+          <span class="profileImgBack"><img class="profilepic" [src]="base64textString" alt="Profile Image"></span>
+      </div>
+      <h2 style=" color: #225679; font-size: 14px;text-align: center; margin-top: 10px;">{{profileName}}</h2>
+  </div> -->
+</div>
+
+<div class="container" id="chat">
+  <!-- <div class="card contents"> -->
+    <!-- <h5 class="card-header">Let's Chat</h5> -->
+    <!-- <div class="card-body"> -->
+      <div class="row">
+        <div class="mt-2">
+          <span class="profileImgBack">
+          <img onerror="this.src='../../../../../assets/images/user.png'" src="data:{{imagePath.ContentType}};base64,{{imagePath.FileContents}}" class="img-fluid profilepic" alt="Company_Logo">
+          </span>
+          
+         <h5 class="chatHeader">Chat with {{companyData.Company}}</h5>
+        <!-- <a class="closebtn" (click)="closeChat()"><i class="fa-solid fa-xmark"></i></a> -->
+        <hr>
+        </div>
+
+      </div>
+    <div class="row">
+      <div class="chat-message">
+        <div class="chat-message-show-container">
+            <div class="textInput">
+              <ul class="chat-message-show-list" id="message-list">
+                <!-- {{this.currentTime}} -->
+                <div *ngFor="let m of messages">
+                    {{m.message}}
+                </div> 
+            </ul>
+            </div>
+            <div class="chat-message-create-container"> 
+              <div class=" ">
+                  <span class="profileImgBack">
+                    <img class="profilepic" [src]="base64textString" alt="Profile Image" onerror="this.src='../../../../../assets/images/user.png'">
+                  </span>
+                <!-- <h2 style=" color: #225679; font-size: 14px;text-align: center; margin-top: 10px;">{{profileName}}</h2> -->
+              </div>
+
+                <input type="text" class="" (change)="FPass($event)" id="inputs">
+                <button class="chat-message-create-button" (click)="sendMsg()">
+                  <i class="fa-solid fa-paper-plane icons"></i>
+                </button>
+            </div>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+
+<!-- </div> -->
+
+
+
+
+</div>
+
+<app-footer></app-footer>

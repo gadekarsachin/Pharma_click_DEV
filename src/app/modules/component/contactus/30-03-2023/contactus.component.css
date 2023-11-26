@@ -1,0 +1,18 @@
+.container-fluid {
+    height: 90vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    margin-top: 114px;
+    overflow: hidden;
+}
+
+.center {
+    padding: 12px 0;
+    border: 3px dashed #215578;
+    /* text-align: center; */
+    font-family: 'Poppins';
+    padding-top: 1.2rem;
+    font-weight: bold;
+    background-color: rgb(244, 244, 244);
+}

@@ -1,0 +1,349 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<app-header></app-header>
+<div class="container category_main_wrapper">
+    <div class="set-to-top">
+        <div class="row justify-content-center">
+            <div class="col-lg-6  text-left">
+                <h2 class="content_heading mb-3">Marketplace</h2>
+            </div>
+        </div>
+        <div class="catSlider_small_device">
+            <div class="row  first_slider" (click)="renderDynamicInputs()">
+                <div class="col-12 menuListCol ">
+                    <ul class="menuList">
+                        <li *ngFor="let cat of categoryList">
+                            <a [class.active-link]="activeClass===cat.Id" (click)="redirect(cat)">
+                        {{cat.Name}}
+                    </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row category_inner_wrapper">
+        <div class="col-lg-3 col-md-12 co-sm-12 hidden-sm hidden-xs mt-2">
+            <div class="left_side_icon_listing column_bg_border">
+                <div class="hexagon_img">
+                    <a routerLink="/home/product/category">
+                        <h1 class="title active-link1" [routerLinkActive]="'active-link1'"
+                            [class.active-link]="path=='/home/product/category'">
+                            <i class="fa fa-comments nav__icon" aria-hidden="true"></i>
+                            <div class="content">Marketplace</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/allnews">
+                        <h1 class="title">
+                            <i class="fa fa-newspaper-o nav__icon" aria-hidden="true"></i>
+                            <div class="content">News</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/events">
+                        <h1 class="title">
+                            <i class="fa fa-globe nav__icon" aria-hidden="true"></i>
+                            <div class="content">Events</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/blogs">
+                        <h1 class="title">
+                            <i class="fa-solid fa-message nav__icon"></i>
+                            <div class="content">Blogs</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/job">
+                        <h1 class="title">
+                            <i class="fas fa-user-tie nav__icon"></i>
+                            <div class="content">Jobs</div>
+                        </h1>
+                    </a>
+                </div>
+                <div class="hexagon_img">
+                    <a routerLink="/all-section">
+                        <h1 class="title">
+                            <i class="fa-solid fa-list nav__icon"></i>
+                            <div class="content">All</div>
+                        </h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 co-sm-12 mt-2">
+            
+            <div class="column_bg_border">
+                <div class="mb-5">
+                    <div class=" row mx-auto slider1 align-items-center" id="web_slider">
+                        <div class="col-1 arrow_slide">
+                            <i class="fas fa-angle-left"(click)="scrollLeft()"></i>
+                        </div>
+                        <div class="col-10 p-0">
+                            <div class="first_slider1 mx-auto" (click)="renderDynamicInputs()"id="listContainer">
+                                <div class=" menuListCol1 ">
+                                    <ul class="menuList1">
+                                        <li *ngFor="let cat of subCategoryList">
+                                            <a [class.active]="activeClassSub===cat.Id" (click)="redirecting(cat)" class="setposition">
+                                        {{cat.Name}}
+                                    </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1 arrow_slide">
+                            <i class="fas fa-angle-right"(click)="scrollRight()" ></i>
+                        </div>
+                    </div> 
+                </div>
+                <div class="mb-5">
+                    <div class="productCls mx-4" style="color: black;">
+                        <h2 class="content_medium_heading"  style="float: left;">{{selectedPro}}</h2>
+                
+                        <div class="row text-right sortCls" (click)="renderDynamicInputs()">
+                            <h3 style="font-size: 16px;">Sort by:
+                                <select (change)="onChange($event)"class="sorted_Cmp_name"style="text-decoration: none; color: rgb(7, 65, 99); border: 0px;  outline:0px; font-weight: 900;cursor: pointer;">
+                        <option value="companies"style="color:rgb(7, 65, 99); font-size: 15.5px; border: 0px;  outline:0px; cursor: pointer;"><a routerLink="/home/company/company-details">Company</a></option>
+                        <option value="products" style="color:rgb(8, 66, 99); font-size: 15.5px; border: 0px;  outline:0px;cursor: pointer;">Products </option>
+                        </select></h3>
+                        </div>
+                    </div>
+                    <div class="mb-4 mt-3">
+                        <div class="rowproCls scroll_slider w-100" (click)="renderDynamicInputs()">
+                            <div [ngSwitch]="selectedPro" id="scroll_space"  style="float: left; font-weight: 800;width: 100%;">
+                                <!-- <h2 class="mt-0" *ngSwitchDefault>Product</h2> -->
+                                <div class="row" *ngSwitchCase="'products'" style="height: auto; overflow-y: auto; ">
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-11 mt-4" style="margin-left: 0px; ">
+                                                <div *ngIf="!productList || productList.length === 0">
+                                                    <p class="mx-3"> Not Available's product list</p>
+                                                </div>
+                                                <table class="dataTable">
+                    
+                                                    <tr *ngFor="let pro of productList" class="table1">
+                                                        <td id="disa" *ngIf=" activeDatas === true && pro.Name[0] === 'A' || pro.Name[0] === 'a'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disb" *ngIf=" activeDatas === true && (pro.Name[0] === 'B' || pro.Name[0] === 'b')">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disc" *ngIf=" activeDatas === true && pro.Name[0] === 'C' || pro.Name[0] === 'c'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disd" *ngIf=" activeDatas === true && pro.Name[0] === 'D' || pro.Name[0] === 'd'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="dise" *ngIf=" activeDatas === true && pro.Name[0] === 'E' || pro.Name[0] === 'e'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disf" *ngIf=" activeDatas === true && pro.Name[0] === 'F' || pro.Name[0] === 'f'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disg" *ngIf=" activeDatas === true && pro.Name[0] === 'G' || pro.Name[0] === 'g'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="dish" *ngIf=" activeDatas === true && pro.Name[0] === 'H' || pro.Name[0] === 'h'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disi" *ngIf=" activeDatas === true && pro.Name[0] === 'I' || pro.Name[0] === 'i'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disj" *ngIf=" activeDatas === true && pro.Name[0] === 'J' || pro.Name[0] === 'j'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disk" *ngIf=" activeDatas === true && pro.Name[0] === 'K' || pro.Name[0] === 'k'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disl" *ngIf=" activeDatas === true && pro.Name[0] === 'L' || pro.Name[0] === 'l'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="dism" *ngIf=" activeDatas === true && pro.Name[0] === 'M' || pro.Name[0] === 'm'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disn" *ngIf=" activeDatas === true && pro.Name[0] === 'N' || pro.Name[0] === 'n'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="diso" *ngIf=" activeDatas === true && pro.Name[0] === 'O' || pro.Name[0] === 'o'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disp" *ngIf=" activeDatas === true && pro.Name[0] === 'P' || pro.Name[0] === 'p'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disq" *ngIf=" activeDatas === true && pro.Name[0] === 'Q' || pro.Name[0] === 'q'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disr" *ngIf=" activeDatas === true && pro.Name[0] === 'R' || pro.Name[0] === 'r'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="diss" *ngIf=" activeDatas === true && pro.Name[0] === 'S' || pro.Name[0] === 's'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="dist" *ngIf=" activeDatas === true && pro.Name[0] === 'T' || pro.Name[0] === 't'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disu" *ngIf=" activeDatas === true && pro.Name[0] === 'U' || pro.Name[0] === 'u'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disv" *ngIf=" activeDatas === true && (pro.Name[0] === 'V' || pro.Name[0] === 'v')">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disw" *ngIf=" activeDatas === true && pro.Name[0] === 'W' || pro.Name[0] === 'w'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disx" *ngIf=" activeDatas === true && pro.Name[0] === 'X' || pro.Name[0] === 'x'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disy" *ngIf=" activeDatas === true && pro.Name[0] === 'Y' || pro.Name[0] === 'y'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                        <td id="disz" *ngIf=" activeDatas === true && pro.Name[0] === 'Z' || pro.Name[0] === 'z'">{{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                    
+                                                        <td *ngIf=" activeDatas === false">
+                                                            {{pro.Name}}
+                                                            <a (click)="redirectToCompList(pro.Id)">(aaa)</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <!-- col-11 -->
+                                            <div class="col-1 alpha text-center category_aplbhbet">
+                                                <ul style="text-decoration: none">
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disa" class="active1">A</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disb">B</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disc">C</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disd">D</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#dise">E</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disf">F</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disg">G</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#dish">H</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disi">I</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disj">J</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disk">K</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disl">L</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#dism">M</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disn">N</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#diso">O</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disp">P</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disq">Q</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disr">R</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#diss">S</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#dist">T</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disu">U</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disv">V</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disw">W</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disx">X</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disy">Y</a>
+                                                    </li>
+                                                    <li (click)="sendData()">
+                                                        <a href="home/product/product-create#disz">Z</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- --------col-1 -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ----row -->
+                
+                                <div *ngSwitchDefault="'companies'">
+                                    <app-company-detail></app-company-detail>
+                                </div>
+                            </div>
+                            <!-- [ngSwitch] -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-12 co-sm-12 mt-2 hidden-sm hidden-xs">
+            <div class="right_side_listing column_bg_border mb-5">
+                <div class="p-2 pt-0">
+                    <div class="mt-0">
+                        <h2 class="content_medium_heading mb-5">Categories</h2>
+                    </div>
+                    <div class="">
+                        <ul class="category_listing">
+                            <li *ngFor="let cat of categoryList">
+                                <a [class.active-link]="activeClass===cat.Id" (click)="redirect(cat)" style="text-decoration: none;">
+                                    {{cat.Name}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right_side_listing column_bg_border">
+                <div class="p-2 pt-0" >
+                    <div class="mt-0">
+                        <h2 class="content_medium_heading mb-5">Advertiesment</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
